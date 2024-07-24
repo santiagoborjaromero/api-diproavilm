@@ -1,7 +1,6 @@
 <?PHP
 
 use Controller;
-use UsersController;
 
 class RouterController {
 

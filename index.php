@@ -1,7 +1,14 @@
 <?PHP
 /**
+  * UNIVERSIDAD UNIANDES
+  * Facultad de Sistemas Mercantiles
+  * Carrera de Software
+  * Sexto Semestre
+  * Modalidad en Linea
+  * Mayo - Septiembre 2024
   * @author 6UG8
-  * @copyright 2024-07-23
+  * @copyright 6UG8
+  * @created 2024-07-23
   * @license version Alfa
   */
 
