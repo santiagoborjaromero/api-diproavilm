@@ -1,0 +1,5 @@
+{
+    "GET|healthy" : "RouterController::healthy()",
+    "POST|login":  "UsersController::login()",
+    "GET|users" : "UsersController::getAll()"
+}
