@@ -1,6 +1,15 @@
 # Changelog
 
-
+## 2024-07-25
+- Se adiciono estas lineas de codigo porque no funciona igual un cliente restful y la aplicacion cuando se envia por ajax
+    ```php
+        if (!$requestBody){
+            $requestBody = [
+                "username" => $_POST['username'],
+                "password" => $_POST['password']
+            ];
+        }
+    ```
 
 ## 2024-07-24
 ### API
