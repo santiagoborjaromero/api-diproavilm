@@ -9,6 +9,13 @@ class UsersController extends Controller{
 
         $requestBody = json_decode(file_get_contents('php://input'), true);
 
+        if (!$requestBody){
+            $requestBody = [
+                "username" => $_POST['username'],
+                "password" => $_POST['password']
+            ];
+        }
+
         // User::where("username","=",$requestBody["username"]);
 
         $conn = new ConnController();
@@ -50,8 +57,10 @@ class UsersController extends Controller{
             
             $verificacion = UsersController::validToken($token, $message[0]);
             if($verificacion != 'ok'){
-                $status = "error";
-                $message = $verificacion;
+                // $status = "error";
+                // $message = $verificacion;
+                $token = UsersController::setToken( $message[0] );
+                $message[0]["token"] = $token;
             } else {
                 $sql = "UPDATE user 
                         SET token = :token, lastlogged = :lastlogged

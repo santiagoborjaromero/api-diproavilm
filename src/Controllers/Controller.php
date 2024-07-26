@@ -8,7 +8,7 @@ class Controller extends ConnController {
             "message" => $dato
         ];
 
-        return json_encode($resp);
+        return json_encode($resp, JSON_PRETTY_PRINT);
     }
 
     static public function encode($texto){

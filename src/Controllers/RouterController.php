@@ -10,7 +10,11 @@ class RouterController {
 
     public function __construct() {
         $this->metodo = $_SERVER["REQUEST_METHOD"];
-        $this->path = $_SERVER["REQUEST_URI"];
+        // $this->path = $_SERVER["REQUEST_URI"];
+        // if ($this->metodo == "POST"){
+        //     echo Controller::formatoSalida("ok",$_POST['data']);
+        // }
+        $this->path  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $proc_rutas = str_replace("/apidiproavilm/","",$this->path);
         $this->rutas = explode("/",$proc_rutas);
         $this->routes();
