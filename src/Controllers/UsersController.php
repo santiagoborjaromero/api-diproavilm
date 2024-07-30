@@ -75,9 +75,11 @@ class UsersController extends Controller{
 
     static public function getAll(){
 
+        $payload = Middleware::auditSecurity();
+
         $conn = new ConnController();
         $conn->Connect("mysql");
-        $rec = $conn->Execute("select * from product");
+        $rec = $conn->Execute("select * from view_users");
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rec);
     }
@@ -113,9 +115,8 @@ class UsersController extends Controller{
             $auth = "Token no valido, se guardara su IP para auditoria";
             //GUARDAR AUDITORIA
         }
-        
         return $auth;
-
     }
 
+   
 }

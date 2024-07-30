@@ -18,4 +18,7 @@ class Controller extends ConnController {
     static public function decode($texto){
         return openssl_decrypt($texto, "AES-256-CBC", "6UG8key@Un14nd3s", 0 );
     }
+
+
+
 }
