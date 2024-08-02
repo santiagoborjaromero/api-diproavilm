@@ -104,12 +104,25 @@ class UsersController extends Controller{
     }
 
     static public function getAll(){
-
         Middleware::auditSecurity();
         $rs = new Model("view_users");
         $rec = $rs->get();
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rec);
+    }
+
+    static public function save(){
+        $requestBody = json_decode(file_get_contents('php://input'), true);
+
+        // if (!$requestBody){
+        //     $requestBody = [
+        //         "username" => $_POST['username'],
+        //         "password" => $_POST['password']
+        //     ];
+        // }
+        
+        Middleware::auditSecurity();
+
     }
 
     static public function setToken($user){
