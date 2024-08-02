@@ -1,7 +1,6 @@
 <?PHP
 
-// use Controller;
-// use Models\User;
+// require_once("../Models/User.php");
 
 class UsersController extends Controller{
         
@@ -15,6 +14,7 @@ class UsersController extends Controller{
                 "password" => $_POST['password']
             ];
         }
+
 
         // User::where("username","=",$requestBody["username"]);
 

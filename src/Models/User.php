@@ -1,6 +1,5 @@
 <?PHP
 
-use Models;
 
 class User{
     // private $table = "user";

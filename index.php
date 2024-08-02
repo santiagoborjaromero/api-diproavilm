@@ -30,7 +30,6 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header("Content-Type: application/json");
 
 
-
 $app = new RouterController();
 
 ?>
