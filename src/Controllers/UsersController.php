@@ -39,7 +39,7 @@ class UsersController extends Controller{
             $operations = $value["operations"] + 1 ;
         }
 
-        if ($pass != $password ){
+        if (!UsersController::verifyPass($pass, $password)){
             $message = "Contraseña incorrecta";
             $status = "error";
         } else { 
@@ -154,6 +154,63 @@ class UsersController extends Controller{
             //GUARDAR AUDITORIA
         }
         return $auth;
+    }
+
+    static public function cambioclave(){
+        $requestBody = json_decode(file_get_contents('php://input'), true);
+
+        if (!$requestBody){
+            $requestBody = [
+                "username" => $_POST['username'],
+                "password_old" => $_POST['password_old'],
+                "password_new" => $_POST['password_new'],
+            ];
+        }
+        
+        $change = new Model("user");
+        $change->where("username", "=", $requestBody["username"]) ;
+        $rs = $change->get(true);
+        $error = "";
+        $message = "";
+        $iduser = -1;
+        if ($rs){
+            foreach ($rs as $key => $value) {
+                $pass = $value["password"];
+                $iduser = $value["iduser"];
+            }
+
+            if (UsersController::verifyPass($pass, $requestBody["password_old"])){
+                $up = new Model("user");
+                $up->set("password", UsersController::hashed($requestBody["password_new"]));
+                $up->where("iduser", "=", $iduser);
+                $rs = $up->update();
+                $error = "ok";
+                $message = "Cambio de contraseña realizado con exito";
+            } else {
+                $error = "error";
+                $message = "La contraseña anterior con la almacenada no coincide";
+            }
+        } else{
+            $error = "error";
+            $message = "Usuario no valido";
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida($error,$message);
+    }
+
+    static function verifyPass($pass_db, $pass_old){
+        if (password_verify($pass_old, $pass_db)){
+            return true;
+        }
+        return false;
+    }
+
+    static function hashed($pass){
+        $opciones = [
+            'cost' => 12
+        ];
+        return  password_hash($pass, PASSWORD_BCRYPT, $opciones);
     }
 
    

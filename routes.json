@@ -1,5 +1,6 @@
 {
     "GET|healthy" : "RouterController::healthy()",
     "POST|login":  "UsersController::login()",
-    "GET|users" : "UsersController::getAll()"
+    "GET|users" : "UsersController::getAll()",
+    "POST|cambioclave":  "UsersController::cambioclave()"
 }
