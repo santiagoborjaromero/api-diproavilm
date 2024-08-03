@@ -39,62 +39,67 @@ class UsersController extends Controller{
             $operations = $value["operations"] + 1 ;
         }
 
-        if (!UsersController::verifyPass($pass, $password)){
-            $message = "Contraseña incorrecta";
+        if ($pass == "" || $pass == "cambiar"){
+            $message = "establecer clave";
             $status = "error";
-        } else { 
-
-            if (!$rs){
+        } else {
+            if (!UsersController::verifyPass($pass, $password)){
+                $message = "Contraseña incorrecta";
                 $status = "error";
-                $message = "Usuario invalido o inactivo";
-            } else {
-                unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
+            } else { 
     
-                $iduser = $message[0]["iduser"];
-    
-                $idrole = $message[0]["idrole"];
-                // $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                $rs= new Model("view_get_menu");
-                $rs->where("idrole", "=", $idrole);
-                $recRolMenu = $rs->get();
-
-                $rs = new Model("role");
-                $rs->where("idrole", "=", $idrole);
-                $recRol = $rs->get();
-                
-                // $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                
-                $message[0]["menu"] = $recRolMenu;
-                $message[0]["role"] = $recRol;
-                
-                // print($message[0]["token"]);
-        
-                if ($message[0]["token"]===null){
-                    $token = UsersController::setToken( $message[0] );
-                    // print($token);
-                    $message[0]["token"] = $token;
-                } else{
-                    $token = $message[0]["token"];
-                }
-                
-                $verificacion = UsersController::validToken($token, $message[0]);
-                if($verificacion != 'ok'){
-                    // $status = "error";
-                    // $message = $verificacion;
-                    $token = UsersController::setToken( $message[0] );
-                    $message[0]["token"] = $token;
+                if (!$rs){
+                    $status = "error";
+                    $message = "Usuario invalido o inactivo";
                 } else {
-                    $rs_up = new Model("user");
-                    $rs_up->set("token", $token);
-                    $rs_up->set("operations", $operations);
-                    $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
-                    $rs_up->where("iduser", "=", $iduser);
-                    $mensaje = $rs_up->update();
+                    unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
+        
+                    $iduser = $message[0]["iduser"];
+        
+                    $idrole = $message[0]["idrole"];
+                    // $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                    $rs= new Model("view_get_menu");
+                    $rs->where("idrole", "=", $idrole);
+                    $recRolMenu = $rs->get();
+    
+                    $rs = new Model("role");
+                    $rs->where("idrole", "=", $idrole);
+                    $recRol = $rs->get();
                     
-                    // $sql = "UPDATE user 
-                    //         SET token = :token, lastlogged = :lastlogged
-                    //         WHERE iduser= :iduser";
-                    // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
+                    // $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                    
+                    $message[0]["menu"] = $recRolMenu;
+                    $message[0]["role"] = $recRol;
+                    
+                    // print($message[0]["token"]);
+            
+                    if ($message[0]["token"]===null){
+                        $token = UsersController::setToken( $message[0] );
+                        // print($token);
+                        $message[0]["token"] = $token;
+                    } else{
+                        $token = $message[0]["token"];
+                    }
+                    
+                    $verificacion = UsersController::validToken($token, $message[0]);
+                    if($verificacion != 'ok'){
+                        // $status = "error";
+                        // $message = $verificacion;
+                        $token = UsersController::setToken( $message[0] );
+                        $message[0]["token"] = $token;
+                    } else {
+                        $rs_up = new Model("user");
+                        $rs_up->set("token", $token);
+                        $rs_up->set("operations", $operations);
+                        $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
+                        $rs_up->where("iduser", "=", $iduser);
+                        $mensaje = $rs_up->update();
+                        
+                        // $sql = "UPDATE user 
+                        //         SET token = :token, lastlogged = :lastlogged
+                        //         WHERE iduser= :iduser";
+                        // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
+                    }
                 }
             }
         }
@@ -211,6 +216,44 @@ class UsersController extends Controller{
             'cost' => 12
         ];
         return  password_hash($pass, PASSWORD_BCRYPT, $opciones);
+    }
+
+
+    static function establecerclave(){
+        $requestBody = json_decode(file_get_contents('php://input'), true);
+
+        if (!$requestBody){
+            $requestBody = [
+                "username" => $_POST['username'],
+                "password_new" => $_POST['password_new'],
+            ];
+        }
+        
+        $change = new Model("user");
+        $change->where("username", "=", $requestBody["username"]) ;
+        $rs = $change->get(true);
+        $error = "";
+        $message = "";
+        $iduser = -1;
+        if ($rs){
+            foreach ($rs as $key => $value) {
+                $pass = $value["password"];
+                $iduser = $value["iduser"];
+            }
+
+            $up = new Model("user");
+            $up->set("password", UsersController::hashed($requestBody["password_new"]));
+            $up->where("iduser", "=", $iduser);
+            $rs = $up->update();
+            $error = "ok";
+            $message = "Establecimiento de contraseña realizado con exito";
+        } else{
+            $error = "error";
+            $message = "Usuario no valido";
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida($error,$message);
     }
 
    

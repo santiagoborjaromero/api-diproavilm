@@ -2,5 +2,6 @@
     "GET|healthy" : "RouterController::healthy()",
     "POST|login":  "UsersController::login()",
     "GET|users" : "UsersController::getAll()",
-    "POST|cambioclave":  "UsersController::cambioclave()"
+    "POST|cambioclave":  "UsersController::cambioclave()",
+    "POST|establecerclave":  "UsersController::establecerclave()"
 }
