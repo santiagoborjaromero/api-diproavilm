@@ -6,8 +6,8 @@ class ConnController{
         $json_config = json_decode(file_get_contents(__DIR__ . "/../../config.json"), true);
         $connData = $json_config[$connType];
         $dsn = $connData["driver"].":host=".$connData["host"].";port=".$connData["port"].";dbname=".$connData["database"].";charset=utf8";
-        // print($dsn);
-		return $this->db = new PDO(
+        
+		$conn = $this->db = new PDO(
             $dsn,
             $connData["user"],
             $connData["pass"],
@@ -16,6 +16,7 @@ class ConnController{
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             )
         );
+        return $conn;
 	}
 
 	public function Execute($sql, $args = []){

@@ -1,7 +1,15 @@
 {
     "GET|healthy" : "RouterController::healthy()",
+
     "POST|login":  "UsersController::login()",
     "GET|users" : "UsersController::getAll()",
     "POST|cambioclave":  "UsersController::cambioclave()",
-    "POST|establecerclave":  "UsersController::establecerclave()"
+    "POST|establecerclave":  "UsersController::establecerclave()",
+    "POST|saveUser":  "UsersController::saveUser()",
+    "PUT|saveUser":  "UsersController::updateUser()",
+    "DELETE|deleteUser":  "UsersController::deleteUser()",
+    "POST|resetearclave":  "UsersController::resetearClaveUsuario()",
+    "POST|recuperarUsuario":  "UsersController::recuperarUsuario()",
+    
+    "GET|roles":  "RolesController::getAll()"
 }

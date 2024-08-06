@@ -58,9 +58,83 @@ class Model extends ConnController{
         $this->setFields[] = ["field" => $field, "value" => $value, "cadena" => $field . "= :" . $field ];
     }
 
+    public function insertRecord($record = []){
+
+        if ($this->table == "user"){
+            $record["password"] = "cambiar";
+        }
+
+        $f = "";
+        $d = "";
+        $cont = 0;
+        foreach ($record as $k => $v ) {
+            $cont ++;
+
+            $f .= $k;
+            $d .= ":" . $k;
+
+            if ($cont < count($record) ){
+                $f .= ", ";
+                $d .= ",";
+            }
+
+            $params[$k] = $v;
+        }
+
+        $sql = "INSERT INTO " . $this->table . " ({$f}) VALUES ({$d})";
+
+        $conn = new ConnController();
+        $conn->Connect("mysql");
+        $conn->Execute($sql, $params);
+        $sql = "SELECT LAST_INSERT_ID() as last_insert_id";
+        $dataresult = $conn->Execute($sql);
+        return $dataresult;
+    }
+
+    public function updateRecord($record = []){
+
+        $sql = "UPDATE " . $this->table . " SET ";  
+
+        $f = "";
+        $d = "";
+        $cont = 0;
+        foreach ($record as $k => $v ) {
+            $cont ++;
+
+            $sql .= $k . "= :" . $k ;
+            if ($cont < count($record) ){
+                $sql .= ", ";
+            }
+
+            $params[$k] = $v;
+        }
+
+        if (count($this->whereSQL)>0){
+            $sql .= " WHERE ";
+            $cont = 0;
+            foreach ($this->whereSQL as $w  ) {
+                $cont ++;
+                
+                $sql .= $w["cadena"];
+                $params[$w["field"]] = $w["value"];
+    
+                if ($cont < count($this->whereSQL) ){
+                    $sql .= " AND ";
+                }
+            }
+        } else {
+            return "Debe incluir por lo menos una clausula Where";
+        }
+
+        $conn = new ConnController();
+        $conn->Connect("mysql");
+        $dataresult = $conn->Execute($sql, $params);
+        return "Actualización realizada con éxito";
+    }
+
     public function update($hasDeleted = false, ){
 
-        $sql = "UPDATE " . $this->table . " SET ";
+        $sql = "UPDATE " . $this->table . " SET ";  
 
         $cont = 0;
         foreach ($this->setFields as $f  ) {
@@ -87,11 +161,50 @@ class Model extends ConnController{
                     $sql .= " AND ";
                 }
             }
+        } else {
+            return "Debe incluir por lo menos una clausula Where";
         }
         
         $conn = new ConnController();
         $conn->Connect("mysql");
         $dataresult = $conn->Execute($sql, $params);
+        return "Actualización realizada con éxito";
     }
+
+    public function delete($hard=false){
+
+        if ($hard){
+            $sql = "DELETE FROM " . $this->table . " ";  
+        } else {
+            $sql = "UPDATE " . $this->table . " SET deleted_at = '" . date('Y-m-d H:i:s') . "' ";  
+            if ($this->table == "user"){
+                $sql .= ' ,status = 0 ';
+            }
+        }
+
+        if (count($this->whereSQL)>0){
+            $sql .= " WHERE ";
+            $cont = 0;
+            foreach ($this->whereSQL as $w  ) {
+                $cont ++;
+                
+                $sql .= $w["cadena"];
+                $params[$w["field"]] = $w["value"];
+    
+                if ($cont < count($this->whereSQL) ){
+                    $sql .= " AND ";
+                }
+            }
+        } else {
+            return "Debe incluir por lo menos una clausula Where";
+        }
+
+        $conn = new ConnController();
+        $conn->Connect("mysql");
+        $dataresult = $conn->Execute($sql, $params);
+        return "Información eliminada con exito";
+    }
+
+
 
 }

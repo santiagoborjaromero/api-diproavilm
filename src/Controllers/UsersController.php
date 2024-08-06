@@ -1,5 +1,7 @@
 <?PHP
 
+use function PHPSTORM_META\type;
+
 require_once(__DIR__."/../Models/Model.php");
 
 class UsersController extends Controller{
@@ -18,40 +20,39 @@ class UsersController extends Controller{
         $username = $requestBody["username"];
         $password = $requestBody["password"];
 
+        // $conn = new ConnController();
+        // $conn->Connect("mysql");
+        // $rec = $conn->Execute("SELECT * FROM user WHERE username=:username AND status=1 AND deleted_at IS NULL LIMIT 1", $requestBody);
         $user = new Model("user");
         $user->where("username", "=", $username);
         $user->where("status", "=", 1);
         $rs = $user->get(true);
 
-        // $conn = new ConnController();
-        // $conn->Connect("mysql");
-        // $rec = $conn->Execute("SELECT * FROM user WHERE username=:username AND password=:password AND status=1 AND deleted_at IS NULL LIMIT 1", $requestBody);
-        
-        $status = "ok";
-        $message = $rs ;
-        $recRol = [];
-        $recRolMenu = [];
-
-        $pass = "";
-        $operations = 0;
-        foreach ($rs as $key => $value) {
-            $pass = $value["password"];
-            $operations = $value["operations"] + 1 ;
-        }
-
-        if ($pass == "" || $pass == "cambiar"){
-            $message = "establecer clave";
+        if (!$rs){
             $status = "error";
-        } else {
-            if (!UsersController::verifyPass($pass, $password)){
-                $message = "Contraseña incorrecta";
-                $status = "error";
-            } else { 
+            $message = "Usuario invalido o inactivo";
+        } else{
+            
+            $status = "ok";
+            $message = $rs ;
+            $recRol = [];
+            $recRolMenu = [];
     
-                if (!$rs){
+            $pass = "";
+            $operations = 0;
+            foreach ($rs as $key => $value) {
+                $pass = $value["password"];
+                $operations = $value["operations"] + 1 ;
+            }
+    
+            if ($pass == "" || $pass == "cambiar"){
+                $message = "establecer clave";
+                $status = "error";
+            } else {
+                if (!UsersController::verifyPass($pass, $password)){
+                    $message = "Contraseña incorrecta";
                     $status = "error";
-                    $message = "Usuario invalido o inactivo";
-                } else {
+                } else { 
                     unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
         
                     $iduser = $message[0]["iduser"];
@@ -104,6 +105,7 @@ class UsersController extends Controller{
             }
         }
 
+
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
@@ -116,18 +118,94 @@ class UsersController extends Controller{
         echo Controller::formatoSalida("ok",$rec);
     }
 
-    static public function save(){
-        $requestBody = json_decode(file_get_contents('php://input'), true);
-
-        // if (!$requestBody){
-        //     $requestBody = [
-        //         "username" => $_POST['username'],
-        //         "password" => $_POST['password']
-        //     ];
-        // }
+    static public function saveUser(){
         
         Middleware::auditSecurity();
 
+        $requestBody = json_decode(file_get_contents('php://input'), true);
+        // $id = $_GET["id"];
+
+        if (!$requestBody){
+            $requestBody = [
+                "username" => $_POST['username'],
+                "fullname" => $_POST['fullname'],
+                "idrole" => $_POST['idrole'],
+                "lang" => $_POST['lang'],
+                "status" => $_POST['status']
+            ];
+        }
+
+        $user = new Model("user");
+        $user->where("username","=",$requestBody["username"]);
+        $rs = $user->get();
+
+        if ($rs != NULL){
+            $status = "error";
+            $message = "Usuario ya existe, no puede duplicar";
+        } else{
+            $user = new Model("user");
+            $d = $user->insertRecord($requestBody);
+            $status = "ok";
+            $message = $d;
+        }
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static public function updateUser(){
+        
+        Middleware::auditSecurity();
+        
+        $requestBody = json_decode(file_get_contents('php://input'), true);
+        $id = $_GET["id"];
+
+        if (isset($id) && $id<=0){
+            $status = "error";
+            $message = "Id de usuario erronea";
+        }
+
+        if ($status!="error"){
+
+            if (!$requestBody){
+                $ddata  = fopen("php://input", "r");
+                $data = fread($ddata, 1024);
+                $ndata = explode('&', $data);
+                foreach ($ndata as $key) {
+                    $a = explode("=", $key);
+                    $requestBody[$a[0]] = $a[1];
+                }
+            }
+    
+            $user = new Model("user");
+            $user->where("iduser","=",$id);
+            $rs = $user->get();
+    
+            if ($rs != NULL){
+                $user = new Model("user");
+                $user->where("iduser","=",$id);
+                $d = $user->updateRecord($requestBody);
+                $status = "ok";
+                $message = $d;
+            } else{
+                $status = "error";
+                $message = "Usuario no existe";
+            }
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static public function deleteUser(){
+        Middleware::auditSecurity();
+        $id = $_GET["id"];
+        $user = new Model("user");
+        $user->where("iduser", "=", $id);
+        $rs = $user->delete();
+        $status = "ok";
+        $message = $rs;
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
     }
 
     static public function setToken($user){
@@ -175,6 +253,7 @@ class UsersController extends Controller{
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;
         $rs = $change->get(true);
+
         $error = "";
         $message = "";
         $iduser = -1;
@@ -185,10 +264,12 @@ class UsersController extends Controller{
             }
 
             if (UsersController::verifyPass($pass, $requestBody["password_old"])){
+
                 $up = new Model("user");
                 $up->set("password", UsersController::hashed($requestBody["password_new"]));
                 $up->where("iduser", "=", $iduser);
                 $rs = $up->update();
+
                 $error = "ok";
                 $message = "Cambio de contraseña realizado con exito";
             } else {
@@ -217,7 +298,6 @@ class UsersController extends Controller{
         ];
         return  password_hash($pass, PASSWORD_BCRYPT, $opciones);
     }
-
 
     static function establecerclave(){
         $requestBody = json_decode(file_get_contents('php://input'), true);
@@ -254,6 +334,33 @@ class UsersController extends Controller{
 
         http_response_code(200);
         echo Controller::formatoSalida($error,$message);
+    }
+
+
+    static function resetearClaveUsuario(){
+        Middleware::auditSecurity();
+        $id = $_GET["id"];
+        $user = new Model("user");
+        $user->set("password", "cambiar");
+        $user->where("iduser", "=", $id);
+        $rs = $user->update();
+        $status = "ok";
+        $message = $rs;
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static function recuperarUsuario(){
+        Middleware::auditSecurity();
+        $id = $_GET["id"];
+        $user = new Model("user");
+        $user->set("deleted_at", NULL);
+        $user->where("iduser", "=", $id);
+        $rs = $user->update();
+        $status = "ok";
+        $message = $rs;
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
     }
 
    
