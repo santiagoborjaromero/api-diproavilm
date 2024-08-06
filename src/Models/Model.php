@@ -28,19 +28,21 @@ class Model extends ConnController{
         $stringDeletedAt = "";
         if ($hasDeleted) {
             if ($stringWhere == '') $stringWhere = " WHERE ";
-            $stringDeletedAt = "deleted_at IS NULL AND ";
+            $stringDeletedAt = "deleted_at IS NULL ";
         }
 
         $sql = "SELECT * FROM " . $this->table . $stringWhere . $stringDeletedAt;
 
         if (count($this->whereSQL)>0){
+            if ($stringDeletedAt != '') $sql .= " AND ";
             $cont = 0;
             foreach ($this->whereSQL as $w  ) {
                 $cont ++;
                 
+                
                 $sql .= $w["cadena"];
                 $params[$w["field"]] = $w["value"];
-    
+                
                 if ($cont < count($this->whereSQL) ){
                     $sql .= " AND ";
                 }

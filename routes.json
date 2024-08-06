@@ -11,5 +11,8 @@
     "POST|resetearclave":  "UsersController::resetearClaveUsuario()",
     "POST|recuperarUsuario":  "UsersController::recuperarUsuario()",
     
-    "GET|roles":  "RolesController::getAll()"
+    "GET|roles":  "RolesController::getAll()",
+    "POST|saveRole":  "RolesController::saveRole()",
+    "PUT|saveRole":  "RolesController::updateRole()",
+    "DELETE|deleteRole":  "RolesController::deleteRole()"
 }
