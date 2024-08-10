@@ -75,7 +75,10 @@ class Middleware{
                 $requestBody = array();
                 $ddata  = fopen("php://input", "r");
                 $dd = fread($ddata, 1024);
+                
                 $dd = str_replace("+", " ", $dd);
+                $dd = str_replace("%40", "@", $dd);
+
                 if (strpos($dd,"&")){
                     $ndata = explode('&', $dd);
                     foreach ($ndata as $key) {

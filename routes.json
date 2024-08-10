@@ -16,8 +16,22 @@
     "PUT|saveRole":  "RolesController::updateRole()",
     "DELETE|deleteRole":  "RolesController::deleteRole()",
 
+    
     "GET|menus":  "MenuController::getAll()",
     "POST|saveMenu":  "MenuController::saveMenu()",
     "PUT|saveMenu":  "MenuController::updateMenu()",
-    "DELETE|deleteMenu":  "MenuController::deleteMenu()"
+    "DELETE|deleteMenu":  "MenuController::deleteMenu()",
+
+    "GET|bene":  "BeneficiarioController::getAll()",
+    "POST|saveBene":  "BeneficiarioController::saveBeneficiario()",
+    "PUT|saveBene":  "BeneficiarioController::updateBeneficiario()",
+    "DELETE|deleteBene":  "BeneficiarioController::deleteBeneficiario()",
+
+
+    "GET|pais":  "PaisController::getAll()",
+    "GET|provincia":  "ProvinciaController::getAll()",
+    "GET|ciudad":  "CiudadController::getAll()"
+
+
+    
 }

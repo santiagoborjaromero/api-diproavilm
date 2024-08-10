@@ -132,6 +132,7 @@ class Model extends ConnController{
             return "Debe incluir por lo menos una clausula Where";
         }
 
+
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
