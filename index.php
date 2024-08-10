@@ -30,6 +30,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header("Content-Type: application/json");
 
 
+//TODO: Instancia la clase Router
 $app = new RouterController();
 
 ?>

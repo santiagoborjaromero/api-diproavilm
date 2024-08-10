@@ -1,7 +1,6 @@
 <?PHP
 
-use function PHPSTORM_META\type;
-
+// require_once(__DIR__."/../Models/Model.php");
 require_once(__DIR__."/../Models/Model.php");
 
 class UsersController extends Controller{
@@ -20,9 +19,6 @@ class UsersController extends Controller{
         $username = $requestBody["username"];
         $password = $requestBody["password"];
 
-        // $conn = new ConnController();
-        // $conn->Connect("mysql");
-        // $rec = $conn->Execute("SELECT * FROM user WHERE username=:username AND status=1 AND deleted_at IS NULL LIMIT 1", $requestBody);
         $user = new Model("user");
         $user->where("username", "=", $username);
         $user->where("status", "=", 1);
@@ -112,8 +108,10 @@ class UsersController extends Controller{
 
     static public function getAll(){
         Middleware::auditSecurity();
+        
         $rs = new Model("view_users");
         $rec = $rs->get();
+
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rec);
     }
@@ -122,19 +120,8 @@ class UsersController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = json_decode(file_get_contents('php://input'), true);
-        // $id = $_GET["id"];
-
-        if (!$requestBody){
-            $requestBody = [
-                "username" => $_POST['username'],
-                "fullname" => $_POST['fullname'],
-                "idrole" => $_POST['idrole'],
-                "lang" => $_POST['lang'],
-                "status" => $_POST['status']
-            ];
-        }
-
+        $requestBody = Middleware::request();
+        
         $user = new Model("user");
         $user->where("username","=",$requestBody["username"]);
         $rs = $user->get();

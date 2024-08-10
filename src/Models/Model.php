@@ -7,11 +7,13 @@ require_once(__DIR__."/../Controllers/ConnController.php");
 class Model extends ConnController{
 
     public  $table = "";
+    public  $drive = "";
     private $whereSQL = [];
     private $setFields = [];
 
-    public function __construct($table = '') {
+    public function __construct($table = '', $drive = "mysql") {
         $this->table = $table;
+        $this->drive = $drive;
     }
 
     public function where($field, $connector, $value){
@@ -49,8 +51,9 @@ class Model extends ConnController{
             }
         }
 
+
         $conn = new ConnController();
-        $conn->Connect("mysql");
+        $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
 
         return $dataresult;
@@ -72,7 +75,7 @@ class Model extends ConnController{
         foreach ($record as $k => $v ) {
             $cont ++;
 
-            $f .= $k;
+            $f .= "`".$k."`";
             $d .= ":" . $k;
 
             if ($cont < count($record) ){
@@ -85,8 +88,9 @@ class Model extends ConnController{
 
         $sql = "INSERT INTO " . $this->table . " ({$f}) VALUES ({$d})";
 
+
         $conn = new ConnController();
-        $conn->Connect("mysql");
+        $conn->Connect($this->drive);
         $conn->Execute($sql, $params);
         $sql = "SELECT LAST_INSERT_ID() as last_insert_id";
         $dataresult = $conn->Execute($sql);
@@ -103,7 +107,7 @@ class Model extends ConnController{
         foreach ($record as $k => $v ) {
             $cont ++;
 
-            $sql .= $k . "= :" . $k ;
+            $sql .= "`".$k."`= :" . $k ;
             if ($cont < count($record) ){
                 $sql .= ", ";
             }
@@ -129,7 +133,7 @@ class Model extends ConnController{
         }
 
         $conn = new ConnController();
-        $conn->Connect("mysql");
+        $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
         return "Actualización realizada con éxito";
     }
@@ -168,7 +172,7 @@ class Model extends ConnController{
         }
         
         $conn = new ConnController();
-        $conn->Connect("mysql");
+        $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
         return "Actualización realizada con éxito";
     }
@@ -202,7 +206,7 @@ class Model extends ConnController{
         }
 
         $conn = new ConnController();
-        $conn->Connect("mysql");
+        $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
         return "Información eliminada con exito";
     }

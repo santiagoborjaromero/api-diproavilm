@@ -9,15 +9,11 @@ class RouterController {
 
     public function __construct() {
         $this->metodo = $_SERVER["REQUEST_METHOD"];
-        // print($this->metodo);
         $this->ruta = $_GET["ruta"];
         if (!$this->ruta){
             $this->noRoute();
             exit();
         }
-        // $this->path  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        // $proc_rutas = str_replace("/api6ug8/","",$this->path);
-        // $this->rutas = explode("/",$proc_rutas);
         $this->routes();
     }
 

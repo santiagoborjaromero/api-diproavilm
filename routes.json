@@ -3,16 +3,21 @@
 
     "POST|login":  "UsersController::login()",
     "GET|users" : "UsersController::getAll()",
-    "POST|cambioclave":  "UsersController::cambioclave()",
-    "POST|establecerclave":  "UsersController::establecerclave()",
     "POST|saveUser":  "UsersController::saveUser()",
     "PUT|saveUser":  "UsersController::updateUser()",
     "DELETE|deleteUser":  "UsersController::deleteUser()",
+    "POST|cambioclave":  "UsersController::cambioclave()",
+    "POST|establecerclave":  "UsersController::establecerclave()",
     "POST|resetearclave":  "UsersController::resetearClaveUsuario()",
     "POST|recuperarUsuario":  "UsersController::recuperarUsuario()",
     
     "GET|roles":  "RolesController::getAll()",
     "POST|saveRole":  "RolesController::saveRole()",
     "PUT|saveRole":  "RolesController::updateRole()",
-    "DELETE|deleteRole":  "RolesController::deleteRole()"
+    "DELETE|deleteRole":  "RolesController::deleteRole()",
+
+    "GET|menus":  "MenuController::getAll()",
+    "POST|saveMenu":  "MenuController::saveMenu()",
+    "PUT|saveMenu":  "MenuController::updateMenu()",
+    "DELETE|deleteMenu":  "MenuController::deleteMenu()"
 }

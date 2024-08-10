@@ -62,4 +62,41 @@ class Middleware{
         return $payload;
 
     }
+
+    static function request(){
+        $data = json_decode(file_get_contents('php://input'), true);
+        $ddata = fopen("php://input", "r");
+        if ($data){
+            //TODO: Es para raw desde POSTMAN
+            return $data;
+        } else if ($ddata){
+            //TODO: se utiliza cuando el metodo es PUT
+            try{
+                $requestBody = array();
+                $ddata  = fopen("php://input", "r");
+                $dd = fread($ddata, 1024);
+                $dd = str_replace("+", " ", $dd);
+                if (strpos($dd,"&")){
+                    $ndata = explode('&', $dd);
+                    foreach ($ndata as $key) {
+                        $a = explode("=", $key);
+                        $requestBody[$a[0]] = $a[1];
+                    }
+                } else{
+                    $requestBody = $dd;
+                }
+            }catch(Exception $e){
+                $requestBody = null;
+            }
+            return $requestBody;
+        } else if ($_POST){
+            //TODO: Cuando las variables vienen en POST
+            return $_POST;
+        } else if ($_REQUEST){
+            //TODO: Cuando las variables vienen no vienen en POS, vienen en REQUEST
+            return $_REQUEST;
+        } else{
+            //TODO: ** Aun falta ver cuando en POSTMAN se pone en form-data que no captura la informacion que se envia
+        }
+    }
 }
