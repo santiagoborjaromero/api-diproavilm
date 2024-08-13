@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 10/08/2024 04:08:58
+ Date: 13/08/2024 00:13:47
 */
 
 SET NAMES utf8mb4;
@@ -24,22 +24,29 @@ DROP TABLE IF EXISTS `audit`;
 CREATE TABLE `audit`  (
   `idaudit` int NOT NULL AUTO_INCREMENT,
   `iduser` int NOT NULL,
-  `ipaddr` varchar(15) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
+  `ipaddr` text CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
   `action` varchar(10) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
   `route` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
-  `jsoninit` text CHARACTER SET utf16 COLLATE utf16_general_ci NULL,
-  `jsonfinal` text CHARACTER SET utf16 COLLATE utf16_general_ci NULL,
+  `json` text CHARACTER SET utf16 COLLATE utf16_general_ci NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of audit
 -- ----------------------------
+INSERT INTO `audit` VALUES (1, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'GET', 'users', 'null', '2024-08-12 13:21:47', '2024-08-12 16:15:56', NULL);
+INSERT INTO `audit` VALUES (2, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', 'saveBene', '{\"type\":\"A\",\"name\":\"SANTIAGO BORJA ROMERO\",\"comercialname\":\"LOCO\",\"identificationnumber\":\"1712030368\",\"idcountry\":\"50\",\"idprovince\":\"5\",\"idcity\":\"35\",\"address\":\"Espejo y Mexico\",\"parish\":\"Velazco\",\"phone\":\"\",\"email\":\"\",\"web\":\"\",\"creditquota\":\"0\",\"creditdays\":\"0\",\"account\":\"\"}', '2024-08-12 13:26:31', '2024-08-12 16:15:56', NULL);
+INSERT INTO `audit` VALUES (3, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', 'saveBene', '{\"type\":\"P\",\"name\":\"SANTIAGO BORJA ROMERO\",\"comercialname\":\"LOCO\",\"identificationnumber\":\"1712030368S\",\"idcountry\":\"50\",\"idprovince\":\"5\",\"idcity\":\"35\",\"address\":\"Espejo y Mexico\",\"parish\":\"Velazco\",\"phone\":\"\",\"email\":\"\",\"web\":\"\",\"creditquota\":\"0\",\"creditdays\":\"0\",\"account\":\"\"}', '2024-08-12 13:31:16', '2024-08-12 16:15:55', NULL);
+INSERT INTO `audit` VALUES (4, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"UNO\",\"scope\":\"D\",\"status\":\"0\"}', '2024-08-12 13:57:44', '2024-08-12 16:15:55', NULL);
+INSERT INTO `audit` VALUES (5, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=8', '{\"name\":\"UNO\",\"scope\":\"WD\",\"status\":\"0\",\"idrole\":\"8\"}', '2024-08-12 16:10:34', '2024-08-12 16:15:54', NULL);
+INSERT INTO `audit` VALUES (6, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-12 16:11:30', '2024-08-12 16:11:30', NULL);
+INSERT INTO `audit` VALUES (7, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=2', '{\"fullname\":\"Santiago\",\"idrole\":\"2\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"2\"}', '2024-08-12 16:12:17', '2024-08-12 16:12:17', NULL);
+INSERT INTO `audit` VALUES (8, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarUsuario&id=23', '{\"deleted_at\":null,\"iduser\":\"23\"}', '2024-08-13 00:10:38', '2024-08-13 00:10:38', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -72,7 +79,7 @@ CREATE TABLE `beneficiary`  (
   CONSTRAINT `IDXCity` FOREIGN KEY (`idcity`) REFERENCES `city` (`idcity`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXCountry` FOREIGN KEY (`idcountry`) REFERENCES `country` (`idcountry`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXProvince` FOREIGN KEY (`idprovince`) REFERENCES `province` (`idprovince`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 850 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 852 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of beneficiary
@@ -926,6 +933,8 @@ INSERT INTO `beneficiary` VALUES (846, 'P', '1725094591', 50, 19, 177, 'CACUANGO
 INSERT INTO `beneficiary` VALUES (847, 'P', '0992745762001', 50, 19, 177, 'MOTORES Y TRACTORES MOTRAC S.A.', '', '', '022427410', 'pruilova@motrac.ec', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
 INSERT INTO `beneficiary` VALUES (848, 'C', '1712030368', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '099598412', 'san@bo.com', 'tuweb.com', 'Velazco', 1000.00, 100, '1.1.1.01.001', '2024-08-10 03:32:02', '2024-08-10 04:00:39', '2024-08-10 04:00:39');
 INSERT INTO `beneficiary` VALUES (849, 'C', '1712030368001', 50, 5, 35, 'SANTIAGO BORJA', '6UG8', 'Especjo', '', '', '', 'VIll', 0.00, 0, '', '2024-08-10 03:42:33', '2024-08-10 04:00:45', '2024-08-10 04:00:45');
+INSERT INTO `beneficiary` VALUES (850, 'A', '1712030368', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:26:31', '2024-08-12 13:26:31', NULL);
+INSERT INTO `beneficiary` VALUES (851, 'P', '1712030368S', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:31:16', '2024-08-12 13:31:16', NULL);
 
 -- ----------------------------
 -- Table structure for bot_audit
@@ -1896,7 +1905,7 @@ INSERT INTO `menu` VALUES (17, '05.01', 'Configuración', 'fa fa-cog', 'bot_conf
 INSERT INTO `menu` VALUES (18, '05.02', 'Capas Entrada y Salida', 'fas fa-layer-group', 'bot_capas', 0, 1, '2024-07-25 21:50:58', '2024-08-09 10:28:28', NULL);
 INSERT INTO `menu` VALUES (19, '05.03', 'Diccionario de Acciones', 'fas fa-shoe-prints', 'bot_dict', 0, 1, '2024-07-25 21:51:08', '2024-08-09 10:28:31', NULL);
 INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot_audit', 0, 1, '2024-07-25 21:51:17', '2024-08-09 10:28:39', NULL);
-INSERT INTO `menu` VALUES (21, '02.05', 'Auditoría', 'fas fa-user-secret', 'auditoria', 0, 1, '2024-07-25 21:51:27', '2024-08-09 10:27:51', NULL);
+INSERT INTO `menu` VALUES (21, '02.05', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-12 13:39:20', NULL);
 INSERT INTO `menu` VALUES (22, '05.04', 'Usuarios Registrados', 'fab fa-telegram-plane', 'bot_users', 0, 1, '2024-07-25 21:51:48', '2024-08-09 10:28:36', NULL);
 
 -- ----------------------------
@@ -3924,7 +3933,7 @@ CREATE TABLE `role`  (
   PRIMARY KEY (`idrole`) USING BTREE,
   INDEX `IDXROLE`(`idrole` ASC) USING BTREE,
   INDEX `IDXSTATUSROLE`(`idrole` ASC, `status` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role
@@ -3936,6 +3945,7 @@ INSERT INTO `role` VALUES (4, 'Super', 'RWD', 1, '2024-06-21 15:18:44', '2024-06
 INSERT INTO `role` VALUES (5, 'UserBot', '', 0, '2024-07-04 12:49:39', '2024-07-04 12:49:44', NULL);
 INSERT INTO `role` VALUES (6, 'SoloEspiones', 'RD', 1, '2024-08-06 17:42:31', '2024-08-06 17:43:16', '2024-08-06 17:43:16');
 INSERT INTO `role` VALUES (7, 'eLIMINART', 'WD', 0, '2024-08-08 00:11:10', '2024-08-08 00:11:16', '2024-08-08 00:11:16');
+INSERT INTO `role` VALUES (8, 'UNO', 'WD', 0, '2024-08-12 13:57:44', '2024-08-12 16:10:34', NULL);
 
 -- ----------------------------
 -- Table structure for rolemenu
@@ -4117,7 +4127,13 @@ INSERT INTO `user` VALUES (7, 5, 'therichard369', '', 'Ricardo V', 0, 1211357100
 INSERT INTO `user` VALUES (8, 5, 'Hugueins_hv', '', 'Hugueins AHV', 0, 106245323, 'es', 4, NULL, NULL, '2024-07-09 21:57:11', '2024-07-09 21:58:07', NULL);
 INSERT INTO `user` VALUES (9, 5, 'bot', '', '', 0, 0, 'es', 0, NULL, NULL, '2024-07-12 01:19:59', '2024-07-12 15:32:08', NULL);
 INSERT INTO `user` VALUES (10, 5, 'AlyJoBorja', '', 'Aly Borja', 0, 7054851197, 'es', 3, NULL, NULL, '2024-07-13 21:35:18', '2024-07-15 00:34:46', NULL);
-INSERT INTO `user` VALUES (23, 3, 'asdas', 'cambiar', 'asdasd', 0, 0, 'es', 0, NULL, NULL, '2024-08-07 17:35:44', '2024-08-07 17:35:48', '2024-08-07 17:35:48');
+INSERT INTO `user` VALUES (23, 3, 'asdas', 'cambiar', 'asdasd', 0, 0, 'es', 0, NULL, NULL, '2024-08-07 17:35:44', '2024-08-13 00:10:38', NULL);
+
+-- ----------------------------
+-- View structure for view_audit
+-- ----------------------------
+DROP VIEW IF EXISTS `view_audit`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_audit` AS select `a`.`idaudit` AS `idaudit`,`a`.`iduser` AS `iduser`,`u`.`fullname` AS `fullname`,`a`.`created_at` AS `date`,`a`.`ipaddr` AS `ipaddr`,`a`.`action` AS `method`,`a`.`route` AS `route`,`a`.`json` AS `json` from (`audit` `a` join `user` `u` on((`a`.`iduser` = `u`.`iduser`)));
 
 -- ----------------------------
 -- View structure for view_beneficiary
