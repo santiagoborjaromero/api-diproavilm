@@ -2,12 +2,16 @@
 
 class Middleware{
 
-    static public function auditSecurity(){
+    static public function auditSecurity($devolver = false){
 
         $authorization = getallheaders()["Authorization"];
         $token_to_evaluate = explode(" ", $authorization);
         if ($token_to_evaluate[0] == "Bearer"){
             $payload = json_decode(Controller::decode(base64_decode($token_to_evaluate[1])), true);
+
+            if ($devolver){
+                return $payload;
+            } 
 
             $valid = false;
             $valid_c = 0;
@@ -66,6 +70,7 @@ class Middleware{
     static function request(){
         $data = json_decode(file_get_contents('php://input'), true);
         $ddata = fopen("php://input", "r");
+
         if ($data){
             //TODO: Es para raw desde POSTMAN
             return $data;
@@ -73,9 +78,7 @@ class Middleware{
             //TODO: se utiliza cuando el metodo es PUT
             try{
                 $requestBody = array();
-                $ddata  = fopen("php://input", "r");
                 $dd = fread($ddata, 1024);
-                
                 $dd = str_replace("+", " ", $dd);
                 $dd = str_replace("%40", "@", $dd);
 
@@ -98,7 +101,8 @@ class Middleware{
         } else if ($_REQUEST){
             //TODO: Cuando las variables vienen no vienen en POS, vienen en REQUEST
             return $_REQUEST;
-        } else{
+        } else if ($_GET){
+            return $_GET;
             //TODO: ** Aun falta ver cuando en POSTMAN se pone en form-data que no captura la informacion que se envia
         }
     }

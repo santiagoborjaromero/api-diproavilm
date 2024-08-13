@@ -51,7 +51,6 @@ class Model extends ConnController{
             }
         }
 
-
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
@@ -88,6 +87,7 @@ class Model extends ConnController{
 
         $sql = "INSERT INTO " . $this->table . " ({$f}) VALUES ({$d})";
 
+        $this->saveAudit(json_encode($params));
 
         $conn = new ConnController();
         $conn->Connect($this->drive);
@@ -133,6 +133,8 @@ class Model extends ConnController{
         }
 
 
+        $this->saveAudit(json_encode($params));
+
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
@@ -172,6 +174,8 @@ class Model extends ConnController{
             return "Debe incluir por lo menos una clausula Where";
         }
         
+        $this->saveAudit(json_encode($params));
+
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
@@ -206,10 +210,44 @@ class Model extends ConnController{
             return "Debe incluir por lo menos una clausula Where";
         }
 
+        $this->saveAudit(json_encode($params));
+
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
         return "Información eliminada con exito";
+    }
+
+    // public function getIP(){
+    //     $ip = isset($_SERVER['HTTP_CLIENT_IP'])  ? $_SERVER['HTTP_CLIENT_IP']  : (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :  $_SERVER['REMOTE_ADDR']);
+    //     $ip = $_SERVER["HTTP_USER_AGENT"];
+    //     return $ip;
+    // }
+
+
+    public function saveAudit($json = []){
+
+        $data = Middleware::auditSecurity(true);
+
+        $iduser = $data["iduser"];
+        // $ipaddr = $this->getIP();
+        $action = $_SERVER["REQUEST_METHOD"];
+        $route  = $_SERVER["REQUEST_URI"];
+        $ipaddr = $_SERVER["HTTP_USER_AGENT"];
+
+        $params = [
+            "iduser" =>$iduser ,
+            "ipaddr" =>$ipaddr ,
+            "action" =>$action ,
+            "route"   =>$route ,
+            "json" => $json
+        ];
+
+        $sql="INSERT INTO audit (`iduser`, `ipaddr`, `action`, `route`, `json`) VALUE (:iduser, :ipaddr, :action, :route, :json)";
+        $conn = new ConnController();
+        $conn->Connect($this->drive);
+        $conn->Execute($sql, $params);
+
     }
 
 

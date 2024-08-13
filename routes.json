@@ -30,7 +30,10 @@
 
     "GET|pais":  "PaisController::getAll()",
     "GET|provincia":  "ProvinciaController::getAll()",
-    "GET|ciudad":  "CiudadController::getAll()"
+    "GET|ciudad":  "CiudadController::getAll()",
+
+
+    "GET|audit":  "AuditController::getAll()"
 
 
     

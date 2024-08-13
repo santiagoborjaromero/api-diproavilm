@@ -1,4 +1,6 @@
 # Changelog
+## 2024-05-12
+- Se quito el campo json_final en la tabla audit porque incrementa varias consultas para poder guardar lo que antes estaba.
 
 ## 2024-07-25
 - Se adiciono estas lineas de codigo porque no funciona igual un cliente restful y la aplicacion cuando se envia por ajax

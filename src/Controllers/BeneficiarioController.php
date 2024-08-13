@@ -23,7 +23,7 @@ class BeneficiarioController extends Controller{
 
         $menu = new Model("beneficiary");
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
-        $rs = $menu->get();
+        $rs = $menu->get(true);
 
         if ($rs != NULL){
             $status = "error";
@@ -49,7 +49,7 @@ class BeneficiarioController extends Controller{
 
         $menu = new Model("beneficiary");
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
-        $rs = $menu->get();
+        $rs = $menu->get(true);
 
         if ($rs != NULL){
             $user = new Model("beneficiary");
