@@ -33,11 +33,24 @@
     "GET|provincia":  "ProvinciaController::getAll()",
     "GET|ciudad":  "CiudadController::getAll()",
 
-
+    
     "GET|audit":  "AuditController::getAll()",
     
     "GET|menubyrol":  "RoleMenuController::getByRol()",
-    "POST|saveRolMenu":  "RoleMenuController::saveRolMenu()"
+    "POST|saveRolMenu":  "RoleMenuController::saveRolMenu()",
+
+    
+    "GET|productoLineas":  "ProductLineController::getAll()",
+
+    "GET|productoCategorias":  "ProductCategoryController::getAll()",
+
+    "GET|presentacion":  "PresentacionController::getAll()",
+
+    "GET|productos":  "ProductosController::getAll()",
+    "POST|saveProducto":  "ProductosController::save()",
+    "PUT|saveProducto":  "ProductosController::update()",
+    "DELETE|deleteProducto":  "ProductosController::delete()",
+    "POST|recuperarProducto":  "ProductosController::recuperar()"
 
 
     
