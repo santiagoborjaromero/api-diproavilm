@@ -13,6 +13,8 @@ class menuController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    
+
     static public function saveMenu(){
         
         Middleware::auditSecurity();

@@ -12,6 +12,7 @@
     "POST|recuperarUsuario":  "UsersController::recuperarUsuario()",
     
     "GET|roles":  "RolesController::getAll()",
+    "GET|roleshabiles":  "RolesController::getAllAvailables()",
     "POST|saveRole":  "RolesController::saveRole()",
     "PUT|saveRole":  "RolesController::updateRole()",
     "DELETE|deleteRole":  "RolesController::deleteRole()",
@@ -33,7 +34,10 @@
     "GET|ciudad":  "CiudadController::getAll()",
 
 
-    "GET|audit":  "AuditController::getAll()"
+    "GET|audit":  "AuditController::getAll()",
+    
+    "GET|menubyrol":  "RoleMenuController::getByRol()",
+    "POST|saveRolMenu":  "RoleMenuController::saveRolMenu()"
 
 
     

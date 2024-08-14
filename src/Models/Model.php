@@ -10,6 +10,7 @@ class Model extends ConnController{
     public  $drive = "";
     private $whereSQL = [];
     private $setFields = [];
+    private $setOrderBy = [];
 
     public function __construct($table = '', $drive = "mysql") {
         $this->table = $table;
@@ -60,6 +61,10 @@ class Model extends ConnController{
 
     public function set($field,  $value){
         $this->setFields[] = ["field" => $field, "value" => $value, "cadena" => $field . "= :" . $field ];
+    }
+
+    public function orderBy($field){
+        $this->setOrderBy[] = ["field" => $field];
     }
 
     public function insertRecord($record = []){
@@ -217,12 +222,6 @@ class Model extends ConnController{
         $dataresult = $conn->Execute($sql, $params);
         return "Información eliminada con exito";
     }
-
-    // public function getIP(){
-    //     $ip = isset($_SERVER['HTTP_CLIENT_IP'])  ? $_SERVER['HTTP_CLIENT_IP']  : (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] :  $_SERVER['REMOTE_ADDR']);
-    //     $ip = $_SERVER["HTTP_USER_AGENT"];
-    //     return $ip;
-    // }
 
 
     public function saveAudit($json = []){

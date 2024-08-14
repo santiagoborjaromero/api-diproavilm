@@ -12,6 +12,15 @@ class RolesController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    static public function getAllAvailables(){
+        Middleware::auditSecurity();
+        $role = new Model("view_roles_by_nusers");
+        $role->where("status" , "=", 1);
+        $rs = $role->get(true);
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+
 
     static public function saveRole(){
         
@@ -98,6 +107,8 @@ class RolesController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
+
+    
 
 
 
