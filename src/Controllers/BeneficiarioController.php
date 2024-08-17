@@ -9,7 +9,7 @@ class BeneficiarioController extends Controller{
         Middleware::auditSecurity();
         
         $role = new Model("view_beneficiary");
-        $rs = $role->get(true);
+        $rs = $role->get();
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);

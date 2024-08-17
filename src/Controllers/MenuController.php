@@ -8,7 +8,7 @@ class menuController extends Controller{
     static public function getAll(){
         Middleware::auditSecurity();
         $role = new Model("menu");
-        $rs = $role->get(true);
+        $rs = $role->get();
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
@@ -87,6 +87,32 @@ class menuController extends Controller{
         } else{
             $status = "error";
             $message = "La ruta del menu que desea eliminar no existe";
+        }
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static public function recuperar(){
+        
+        Middleware::auditSecurity();
+
+        $id = $_GET["id"];
+
+        $menu = new Model("menu");
+        $menu->where("idmenu","=",$id);
+        $rs = $menu->get();
+
+        if ($rs != NULL){
+            $user = new Model("menu");
+            $user->set("deleted_at", NULL);
+            $user->where("idmenu", "=", $id);
+            $d = $user->update();
+
+            $status = "ok";
+            $message = $id;
+        } else{
+            $status = "error";
+            $message = "El menu no existe";
         }
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);

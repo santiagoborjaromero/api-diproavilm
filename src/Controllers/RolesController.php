@@ -7,7 +7,7 @@ class RolesController extends Controller{
     static public function getAll(){
         Middleware::auditSecurity();
         $role = new Model("view_roles_by_nusers");
-        $rs = $role->get(true);
+        $rs = $role->get();
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
@@ -103,6 +103,32 @@ class RolesController extends Controller{
         
         $status = "ok";
         $message = $rs;
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static public function recuperar(){
+        
+        Middleware::auditSecurity();
+
+        $id = $_GET["id"];
+
+        $menu = new Model("role");
+        $menu->where("idrole","=",$id);
+        $rs = $menu->get();
+
+        if ($rs != NULL){
+            $user = new Model("role");
+            $user->set("deleted_at", NULL);
+            $user->where("idrole", "=", $id);
+            $d = $user->update();
+
+            $status = "ok";
+            $message = $id;
+        } else{
+            $status = "error";
+            $message = "El rol no existe";
+        }
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
