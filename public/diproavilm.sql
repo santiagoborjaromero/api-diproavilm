@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 16/08/2024 15:53:20
+ Date: 17/08/2024 00:32:51
 */
 
 SET NAMES utf8mb4;
@@ -23,7 +23,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `audit`;
 CREATE TABLE `audit`  (
   `idaudit` int NOT NULL AUTO_INCREMENT,
-  `iduser` int NOT NULL,
+  `iduser` int NULL DEFAULT NULL,
   `ipaddr` text CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL,
   `action` varchar(10) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
   `route` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
@@ -34,7 +34,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 150 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of audit
@@ -100,6 +100,94 @@ INSERT INTO `audit` VALUES (58, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Ap
 INSERT INTO `audit` VALUES (59, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:10:27', '2024-08-14 02:10:27', NULL);
 INSERT INTO `audit` VALUES (60, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProducto&id=41', '{\"deleted_at\":null,\"idproduct\":\"41\"}', '2024-08-14 02:10:33', '2024-08-14 02:10:33', NULL);
 INSERT INTO `audit` VALUES (61, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:10:43', '2024-08-14 02:10:43', NULL);
+INSERT INTO `audit` VALUES (62, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveUser&id=-1', '{\"fullname\":\"Rija\",\"idrole\":\"2\",\"lang\":\"es\",\"status\":\"1\",\"username\":\"Rita\",\"password\":\"cambiar\"}', '2024-08-16 18:45:43', '2024-08-16 18:45:43', NULL);
+INSERT INTO `audit` VALUES (63, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"Cualquier ROl\",\"scope\":\"RWD\",\"status\":\"1\"}', '2024-08-16 18:46:25', '2024-08-16 18:46:25', NULL);
+INSERT INTO `audit` VALUES (64, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=3', '{\"fullname\":\"Hugo\",\"idrole\":\"1\",\"lang\":\"es\",\"status\":\"0\",\"iduser\":\"3\"}', '2024-08-16 18:47:14', '2024-08-16 18:47:14', NULL);
+INSERT INTO `audit` VALUES (65, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=resetearclave&id=2', '{\"password\":\"cambiar\",\"iduser\":\"2\"}', '2024-08-16 18:47:29', '2024-08-16 18:47:29', NULL);
+INSERT INTO `audit` VALUES (66, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=resetearclave&id=4', '{\"password\":\"cambiar\",\"iduser\":\"4\"}', '2024-08-16 19:27:41', '2024-08-16 19:27:41', NULL);
+INSERT INTO `audit` VALUES (67, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=9', '{\"name\":\"Cualquier+ROl\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"9\"}', '2024-08-16 19:27:58', '2024-08-16 19:27:58', NULL);
+INSERT INTO `audit` VALUES (68, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=9', '{\"idrole\":\"9\"}', '2024-08-16 19:29:05', '2024-08-16 19:29:05', NULL);
+INSERT INTO `audit` VALUES (69, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=8', '{\"idrole\":\"8\"}', '2024-08-16 19:29:27', '2024-08-16 19:29:27', NULL);
+INSERT INTO `audit` VALUES (70, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=4', '{\"idrole\":\"4\"}', '2024-08-16 19:29:34', '2024-08-16 19:29:34', NULL);
+INSERT INTO `audit` VALUES (71, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"BUEN\",\"scope\":\"RWD\",\"status\":\"1\"}', '2024-08-16 19:32:26', '2024-08-16 19:32:26', NULL);
+INSERT INTO `audit` VALUES (72, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', 'null', '2024-08-16 19:38:19', '2024-08-16 19:38:19', NULL);
+INSERT INTO `audit` VALUES (73, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasd\",\"scope\":\"RWD\",\"status\":\"1\"}', '2024-08-16 19:39:35', '2024-08-16 19:39:35', NULL);
+INSERT INTO `audit` VALUES (74, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdasda\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:48:20', '2024-08-16 19:48:20', NULL);
+INSERT INTO `audit` VALUES (75, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdas\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:48:36', '2024-08-16 19:48:36', NULL);
+INSERT INTO `audit` VALUES (76, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"sfsdfsdfsd\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:49:07', '2024-08-16 19:49:07', NULL);
+INSERT INTO `audit` VALUES (77, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"sdfsdfsd\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:49:17', '2024-08-16 19:49:17', NULL);
+INSERT INTO `audit` VALUES (78, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"sssssss\",\"scope\":\"\",\"status\":\"1\"}', '2024-08-16 19:51:20', '2024-08-16 19:51:20', NULL);
+INSERT INTO `audit` VALUES (79, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"sasa\",\"scope\":\"R\",\"status\":\"0\"}', '2024-08-16 19:52:25', '2024-08-16 19:52:25', NULL);
+INSERT INTO `audit` VALUES (80, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdas\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:52:51', '2024-08-16 19:52:51', NULL);
+INSERT INTO `audit` VALUES (81, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asas\",\"scope\":\"RW\",\"status\":\"0\"}', '2024-08-16 19:53:13', '2024-08-16 19:53:13', NULL);
+INSERT INTO `audit` VALUES (82, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"sss\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:54:08', '2024-08-16 19:54:08', NULL);
+INSERT INTO `audit` VALUES (83, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdasdasdas\",\"scope\":\"RW\",\"status\":\"1\"}', '2024-08-16 19:54:44', '2024-08-16 19:54:44', NULL);
+INSERT INTO `audit` VALUES (84, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"a\",\"scope\":\"R\",\"status\":\"0\"}', '2024-08-16 19:55:44', '2024-08-16 19:55:44', NULL);
+INSERT INTO `audit` VALUES (85, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdasdasdas\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:56:22', '2024-08-16 19:56:22', NULL);
+INSERT INTO `audit` VALUES (86, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdas\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:57:36', '2024-08-16 19:57:36', NULL);
+INSERT INTO `audit` VALUES (87, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asdasdassssss\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:59:09', '2024-08-16 19:59:09', NULL);
+INSERT INTO `audit` VALUES (88, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"s2\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 19:59:22', '2024-08-16 19:59:22', NULL);
+INSERT INTO `audit` VALUES (89, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"s3\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 20:00:43', '2024-08-16 20:00:43', NULL);
+INSERT INTO `audit` VALUES (90, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=26', '{\"idrole\":\"26\"}', '2024-08-16 20:04:31', '2024-08-16 20:04:31', NULL);
+INSERT INTO `audit` VALUES (91, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=25', '{\"idrole\":\"25\"}', '2024-08-16 20:04:42', '2024-08-16 20:04:42', NULL);
+INSERT INTO `audit` VALUES (92, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=27', '{\"idrole\":\"27\"}', '2024-08-16 20:04:49', '2024-08-16 20:04:49', NULL);
+INSERT INTO `audit` VALUES (93, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=28', '{\"idrole\":\"28\"}', '2024-08-16 20:04:54', '2024-08-16 20:04:54', NULL);
+INSERT INTO `audit` VALUES (94, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=29', '{\"idrole\":\"29\"}', '2024-08-16 20:05:01', '2024-08-16 20:05:01', NULL);
+INSERT INTO `audit` VALUES (95, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=24', '{\"idrole\":\"24\"}', '2024-08-16 20:05:07', '2024-08-16 20:05:07', NULL);
+INSERT INTO `audit` VALUES (96, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=10', '{\"idrole\":\"10\"}', '2024-08-16 20:05:14', '2024-08-16 20:05:14', NULL);
+INSERT INTO `audit` VALUES (97, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"Nuevo Rolsasda%2B%2B%2B%2B%2B\",\"scope\":\"RWD\",\"status\":\"0\"}', '2024-08-16 21:44:32', '2024-08-16 21:44:32', NULL);
+INSERT INTO `audit` VALUES (98, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=30', '{\"name\":\"Nuevo+Rolsasda%252B%252B%252B%252B%252B\",\"scope\":\"RWD\",\"status\":\"0\",\"idrole\":\"30\"}', '2024-08-16 21:44:58', '2024-08-16 21:44:58', NULL);
+INSERT INTO `audit` VALUES (99, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=30', '{\"name\":\"Nuevo%2BRolsasda%25252B%25252B%25252B%25252B%25252B\",\"scope\":\"RWD\",\"status\":\"0\",\"idrole\":\"30\"}', '2024-08-16 21:46:13', '2024-08-16 21:46:13', NULL);
+INSERT INTO `audit` VALUES (100, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=30', '{\"name\":\"Nuevo%2BRolsasda%25252B%25252B%25252B%25252B%25252B\",\"scope\":\"RWD\",\"status\":\"0\",\"idrole\":\"30\"}', '2024-08-16 21:46:53', '2024-08-16 21:46:53', NULL);
+INSERT INTO `audit` VALUES (101, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveRole&id=-1', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\"}', '2024-08-16 22:36:22', '2024-08-16 22:36:22', NULL);
+INSERT INTO `audit` VALUES (102, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=30', '{\"idrole\":\"30\"}', '2024-08-16 22:36:35', '2024-08-16 22:36:35', NULL);
+INSERT INTO `audit` VALUES (103, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:38:21', '2024-08-16 22:38:21', NULL);
+INSERT INTO `audit` VALUES (104, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:38:39', '2024-08-16 22:38:39', NULL);
+INSERT INTO `audit` VALUES (105, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:38:57', '2024-08-16 22:38:57', NULL);
+INSERT INTO `audit` VALUES (106, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:39:56', '2024-08-16 22:39:56', NULL);
+INSERT INTO `audit` VALUES (107, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:40:11', '2024-08-16 22:40:11', NULL);
+INSERT INTO `audit` VALUES (108, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:40:59', '2024-08-16 22:40:59', NULL);
+INSERT INTO `audit` VALUES (109, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:41:21', '2024-08-16 22:41:21', NULL);
+INSERT INTO `audit` VALUES (110, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:43:20', '2024-08-16 22:43:20', NULL);
+INSERT INTO `audit` VALUES (111, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:43:36', '2024-08-16 22:43:36', NULL);
+INSERT INTO `audit` VALUES (112, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:43:47', '2024-08-16 22:43:47', NULL);
+INSERT INTO `audit` VALUES (113, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:44:22', '2024-08-16 22:44:22', NULL);
+INSERT INTO `audit` VALUES (114, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:44:48', '2024-08-16 22:44:48', NULL);
+INSERT INTO `audit` VALUES (115, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:47:22', '2024-08-16 22:47:22', NULL);
+INSERT INTO `audit` VALUES (116, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:47:33', '2024-08-16 22:47:33', NULL);
+INSERT INTO `audit` VALUES (117, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:48:45', '2024-08-16 22:48:45', NULL);
+INSERT INTO `audit` VALUES (118, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:49:37', '2024-08-16 22:49:37', NULL);
+INSERT INTO `audit` VALUES (119, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:49:43', '2024-08-16 22:49:43', NULL);
+INSERT INTO `audit` VALUES (120, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:50:05', '2024-08-16 22:50:05', NULL);
+INSERT INTO `audit` VALUES (121, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:52:25', '2024-08-16 22:52:25', NULL);
+INSERT INTO `audit` VALUES (122, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:52:25', '2024-08-16 22:52:25', NULL);
+INSERT INTO `audit` VALUES (123, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:52:46', '2024-08-16 22:52:46', NULL);
+INSERT INTO `audit` VALUES (124, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:52:46', '2024-08-16 22:52:46', NULL);
+INSERT INTO `audit` VALUES (125, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=31', '{\"name\":\"asd2SSsdasa\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"31\"}', '2024-08-16 22:53:08', '2024-08-16 22:53:08', NULL);
+INSERT INTO `audit` VALUES (126, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:53:26', '2024-08-16 22:53:26', NULL);
+INSERT INTO `audit` VALUES (127, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=31', '{\"idrole\":\"31\"}', '2024-08-16 22:53:26', '2024-08-16 22:53:26', NULL);
+INSERT INTO `audit` VALUES (128, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveUser&id=-1', '{\"fullname\":\"Usuario Test\",\"idrole\":\"3\",\"lang\":\"es\",\"status\":\"0\",\"username\":\"UsuarioTest\",\"password\":\"cambiar\"}', '2024-08-16 22:56:36', '2024-08-16 22:56:36', NULL);
+INSERT INTO `audit` VALUES (129, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=3', '{\"name\":\"Usuario\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"3\"}', '2024-08-16 22:57:11', '2024-08-16 22:57:11', NULL);
+INSERT INTO `audit` VALUES (130, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"03.04\",\"name\":\"Kardex\",\"icon\":\"fas fa-boxes\",\"route\":\"kardex\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-08-16 23:00:38', '2024-08-16 23:00:38', NULL);
+INSERT INTO `audit` VALUES (131, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=7', '{\"order\":\"03.04\",\"name\":\"Registro de movimiento\",\"icon\":\"fas fa-truck-loading\",\"route\":\"movimientos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"7\"}', '2024-08-16 23:01:17', '2024-08-16 23:01:17', NULL);
+INSERT INTO `audit` VALUES (132, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-16 23:02:00', '2024-08-16 23:02:00', NULL);
+INSERT INTO `audit` VALUES (133, NULL, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=establecerclave', '{\"password\":\"$2y$12$eAar1nNNWJs\\/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS\",\"iduser\":2}', '2024-08-16 23:11:38', '2024-08-16 23:11:38', NULL);
+INSERT INTO `audit` VALUES (134, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveProducto&id=-1', '{\"name\":\"BBBBB\",\"description\":\"BBBB\",\"productcode\":\"21343243das\",\"barcode\":\"87954612321321\",\"idpresentation\":\"1\",\"idproductline\":\"1\",\"idproductcategory\":\"1\",\"price\":\"15\",\"status\":\"1\",\"accountcost\":\"5.1.01.01.02\",\"accountsales\":\"4.1.01.02\",\"accountinv\":\"1.1.03.01.02\"}', '2024-08-16 23:19:06', '2024-08-16 23:19:06', NULL);
+INSERT INTO `audit` VALUES (135, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=42', '{\"idproduct\":\"42\"}', '2024-08-16 23:19:19', '2024-08-16 23:19:19', NULL);
+INSERT INTO `audit` VALUES (136, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarRol&id=4', '{\"deleted_at\":null,\"idrole\":\"4\"}', '2024-08-16 23:55:17', '2024-08-16 23:55:17', NULL);
+INSERT INTO `audit` VALUES (137, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=4', '{\"idrole\":\"4\"}', '2024-08-16 23:55:25', '2024-08-16 23:55:25', NULL);
+INSERT INTO `audit` VALUES (138, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteRole&id=4', '{\"idrole\":\"4\"}', '2024-08-16 23:55:25', '2024-08-16 23:55:25', NULL);
+INSERT INTO `audit` VALUES (139, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=28', '{\"idmenu\":\"28\"}', '2024-08-16 23:57:23', '2024-08-16 23:57:23', NULL);
+INSERT INTO `audit` VALUES (140, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=8', '{\"order\":\"03.05\",\"name\":\"Productos\",\"icon\":\"fas fa-box-open\",\"route\":\"productos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"8\"}', '2024-08-17 00:08:25', '2024-08-17 00:08:25', NULL);
+INSERT INTO `audit` VALUES (141, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarMenu&id=28', '{\"deleted_at\":null,\"idmenu\":\"28\"}', '2024-08-17 00:10:11', '2024-08-17 00:10:11', NULL);
+INSERT INTO `audit` VALUES (142, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=8', '{\"order\":\"03.05\",\"name\":\"Productos\",\"icon\":\"fas fa-box-open\",\"route\":\"productos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"8\"}', '2024-08-17 00:11:03', '2024-08-17 00:11:03', NULL);
+INSERT INTO `audit` VALUES (143, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=28', '{\"order\":\"03.05\",\"name\":\"Kardex\",\"icon\":\"fas fa-boxes\",\"route\":\"kardex\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"28\"}', '2024-08-17 00:11:08', '2024-08-17 00:11:08', NULL);
+INSERT INTO `audit` VALUES (144, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"\",\"name\":\"Men%C3%BA de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:13:28', '2024-08-17 00:13:28', NULL);
+INSERT INTO `audit` VALUES (145, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:15:30', '2024-08-17 00:15:30', NULL);
+INSERT INTO `audit` VALUES (146, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:19:41', '2024-08-17 00:19:41', NULL);
+INSERT INTO `audit` VALUES (147, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:25:27', '2024-08-17 00:25:27', NULL);
+INSERT INTO `audit` VALUES (148, 2, 'PostmanRuntime/7.41.1', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men\\u00fa de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":0,\"status\":1,\"idmenu\":\"4\"}', '2024-08-17 00:27:16', '2024-08-17 00:27:16', NULL);
+INSERT INTO `audit` VALUES (149, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA+de+Opciones\",\"icon\":\"fas+fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:31:05', '2024-08-17 00:31:05', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -1933,7 +2021,7 @@ CREATE TABLE `menu`  (
   INDEX `submenu`(`submenu` ASC) USING BTREE,
   INDEX `status`(`status` ASC) USING BTREE,
   INDEX `deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu
@@ -1941,11 +2029,11 @@ CREATE TABLE `menu`  (
 INSERT INTO `menu` VALUES (1, '02', 'Administación', 'fa fa-cog', NULL, 1, 1, '2024-06-21 15:00:39', '2024-08-09 10:27:27', NULL);
 INSERT INTO `menu` VALUES (2, '02.01', 'Usuarios', 'fas fa-user', 'users', 0, 1, '2024-06-21 15:00:50', '2024-08-09 10:27:32', NULL);
 INSERT INTO `menu` VALUES (3, '02.03', 'Roles', 'fas fa-shield-alt', 'roles', 0, 1, '2024-06-21 15:01:00', '2024-08-13 12:31:28', NULL);
-INSERT INTO `menu` VALUES (4, '02.02', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-13 12:28:31', NULL);
-INSERT INTO `menu` VALUES (5, '03.02', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-13 12:29:08', NULL);
+INSERT INTO `menu` VALUES (4, '02.02', 'Men%C3%BA+de+Opciones', 'fas+fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-17 00:31:05', NULL);
+INSERT INTO `menu` VALUES (5, '03.01', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-17 00:11:30', NULL);
 INSERT INTO `menu` VALUES (6, '03', 'Almacén', 'fas fa-box-open', NULL, 1, 1, '2024-06-21 15:09:14', '2024-08-09 10:27:55', NULL);
-INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimiento', 'fa fa-cog', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-13 12:29:10', NULL);
-INSERT INTO `menu` VALUES (8, '03.01', 'Productos', 'far fa-file-archive', 'productos', 0, 1, '2024-06-21 15:09:43', '2024-08-13 12:27:24', NULL);
+INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimiento', 'fas fa-truck-loading', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-17 00:11:50', NULL);
+INSERT INTO `menu` VALUES (8, '03.02', 'Productos', 'fas fa-box-open', 'productos', 0, 1, '2024-06-21 15:09:43', '2024-08-17 00:11:48', NULL);
 INSERT INTO `menu` VALUES (9, '01', 'Dashboards', 'fas fa-chart-bar', NULL, 1, 1, '2024-06-21 15:09:59', '2024-08-09 10:27:23', NULL);
 INSERT INTO `menu` VALUES (10, '04', 'Informes', 'far fa-file-archive', NULL, 1, 1, '2024-06-21 15:49:08', '2024-08-09 10:28:06', NULL);
 INSERT INTO `menu` VALUES (11, '04.01', 'Listado de Usuarios', 'far fa-file-archive', 'lst_usuarios', 0, 1, '2024-06-21 15:49:22', '2024-08-09 10:28:09', NULL);
@@ -1960,6 +2048,7 @@ INSERT INTO `menu` VALUES (19, '05.03', 'Diccionario de Acciones', 'fas fa-shoe-
 INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot_audit', 0, 1, '2024-07-25 21:51:17', '2024-08-09 10:28:39', NULL);
 INSERT INTO `menu` VALUES (21, '02.04', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-13 12:31:39', NULL);
 INSERT INTO `menu` VALUES (22, '05.04', 'Usuarios Registrados', 'fab fa-telegram-plane', 'bot_users', 0, 1, '2024-07-25 21:51:48', '2024-08-09 10:28:36', NULL);
+INSERT INTO `menu` VALUES (28, '03.04', 'Kardex', 'fas fa-boxes', 'kardex', 0, 1, '2024-08-16 23:00:38', '2024-08-17 00:11:42', NULL);
 
 -- ----------------------------
 -- Table structure for movementtype
@@ -2044,7 +2133,7 @@ CREATE TABLE `product`  (
   CONSTRAINT `IDXCategory` FOREIGN KEY (`idproductcategory`) REFERENCES `productcategory` (`idproductcategory`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXLine` FOREIGN KEY (`idproductline`) REFERENCES `productline` (`idproductline`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXPre` FOREIGN KEY (`idpresentation`) REFERENCES `presentation` (`idpresentation`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product
@@ -2086,6 +2175,7 @@ INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN
 INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 28.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
 INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 42.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:02:40', NULL);
 INSERT INTO `product` VALUES (41, 1, 2, 4, 'A1', 'A2', 'AAAAAA', 'Cosa aaaa', 0.0000, 0.0000, 2.00, 0.0000, 0.0000, '', 1, '', '', '', '2024-08-14 01:38:39', '2024-08-14 02:10:43', '2024-08-14 02:10:43');
+INSERT INTO `product` VALUES (42, 1, 1, 1, '21343243das', '87954612321321', 'BBBBB', 'BBBB', 0.0000, 0.0000, 15.00, 0.0000, 0.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-08-16 23:19:06', '2024-08-16 23:19:19', '2024-08-16 23:19:19');
 
 -- ----------------------------
 -- Table structure for productcategory
@@ -3978,7 +4068,7 @@ INSERT INTO `province` VALUES (24, 50, 'Zamora Chinchipe', '19');
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role`  (
   `idrole` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
+  `name` text CHARACTER SET utf16 COLLATE utf16_general_ci NULL,
   `scope` varchar(10) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '' COMMENT 'R|W|D',
   `status` int NULL DEFAULT 1 COMMENT '1-Active 0-Inactive',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -3987,7 +4077,7 @@ CREATE TABLE `role`  (
   PRIMARY KEY (`idrole`) USING BTREE,
   INDEX `IDXROLE`(`idrole` ASC) USING BTREE,
   INDEX `IDXSTATUSROLE`(`idrole` ASC, `status` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role
@@ -3995,11 +4085,8 @@ CREATE TABLE `role`  (
 INSERT INTO `role` VALUES (1, 'Reporteador', 'R', 1, '2024-06-21 15:17:20', '2024-06-21 15:17:48', NULL);
 INSERT INTO `role` VALUES (2, 'Administrador', 'RWD', 1, '2024-06-21 15:17:44', '2024-08-06 18:35:25', NULL);
 INSERT INTO `role` VALUES (3, 'Usuario', 'RWD', 1, '2024-06-21 15:18:01', '2024-06-21 15:18:06', NULL);
-INSERT INTO `role` VALUES (4, 'Super', 'RWD', 1, '2024-06-21 15:18:44', '2024-06-21 15:18:44', NULL);
+INSERT INTO `role` VALUES (4, 'Super', 'RWD', 1, '2024-06-21 15:18:44', '2024-08-16 23:55:25', '2024-08-16 23:55:25');
 INSERT INTO `role` VALUES (5, 'UserBot', '', 0, '2024-07-04 12:49:39', '2024-07-04 12:49:44', NULL);
-INSERT INTO `role` VALUES (6, 'SoloEspiones', 'RD', 1, '2024-08-06 17:42:31', '2024-08-06 17:43:16', '2024-08-06 17:43:16');
-INSERT INTO `role` VALUES (7, 'eLIMINART', 'WD', 0, '2024-08-08 00:11:10', '2024-08-08 00:11:16', '2024-08-08 00:11:16');
-INSERT INTO `role` VALUES (8, 'UNO', 'WD', 0, '2024-08-12 13:57:44', '2024-08-12 16:10:34', NULL);
 
 -- ----------------------------
 -- Table structure for rolemenu
@@ -4014,72 +4101,44 @@ CREATE TABLE `rolemenu`  (
   INDEX `IDME`(`idmenu` ASC) USING BTREE,
   CONSTRAINT `IDME` FOREIGN KEY (`idmenu`) REFERENCES `menu` (`idmenu`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXROL` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 160 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 263 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rolemenu
 -- ----------------------------
-INSERT INTO `rolemenu` VALUES (23, 3, 6);
-INSERT INTO `rolemenu` VALUES (24, 3, 7);
-INSERT INTO `rolemenu` VALUES (25, 3, 8);
-INSERT INTO `rolemenu` VALUES (26, 3, 9);
 INSERT INTO `rolemenu` VALUES (69, 1, 10);
 INSERT INTO `rolemenu` VALUES (70, 1, 11);
 INSERT INTO `rolemenu` VALUES (71, 1, 12);
 INSERT INTO `rolemenu` VALUES (72, 1, 13);
 INSERT INTO `rolemenu` VALUES (73, 1, 14);
-INSERT INTO `rolemenu` VALUES (86, 2, 9);
-INSERT INTO `rolemenu` VALUES (87, 2, 15);
-INSERT INTO `rolemenu` VALUES (88, 2, 1);
-INSERT INTO `rolemenu` VALUES (89, 2, 2);
-INSERT INTO `rolemenu` VALUES (90, 2, 4);
-INSERT INTO `rolemenu` VALUES (91, 2, 3);
-INSERT INTO `rolemenu` VALUES (92, 2, 21);
-INSERT INTO `rolemenu` VALUES (93, 2, 6);
-INSERT INTO `rolemenu` VALUES (94, 2, 8);
-INSERT INTO `rolemenu` VALUES (95, 2, 5);
-INSERT INTO `rolemenu` VALUES (96, 2, 7);
-INSERT INTO `rolemenu` VALUES (97, 2, 10);
-INSERT INTO `rolemenu` VALUES (98, 2, 11);
-INSERT INTO `rolemenu` VALUES (99, 2, 12);
-INSERT INTO `rolemenu` VALUES (100, 2, 13);
-INSERT INTO `rolemenu` VALUES (101, 2, 14);
-INSERT INTO `rolemenu` VALUES (102, 2, 16);
-INSERT INTO `rolemenu` VALUES (103, 2, 17);
-INSERT INTO `rolemenu` VALUES (104, 2, 18);
-INSERT INTO `rolemenu` VALUES (105, 2, 19);
-INSERT INTO `rolemenu` VALUES (106, 2, 22);
-INSERT INTO `rolemenu` VALUES (107, 2, 20);
-INSERT INTO `rolemenu` VALUES (108, 4, 9);
-INSERT INTO `rolemenu` VALUES (109, 4, 15);
-INSERT INTO `rolemenu` VALUES (110, 4, 1);
-INSERT INTO `rolemenu` VALUES (111, 4, 2);
-INSERT INTO `rolemenu` VALUES (112, 4, 4);
-INSERT INTO `rolemenu` VALUES (113, 4, 3);
-INSERT INTO `rolemenu` VALUES (114, 4, 21);
-INSERT INTO `rolemenu` VALUES (115, 4, 6);
-INSERT INTO `rolemenu` VALUES (116, 4, 8);
-INSERT INTO `rolemenu` VALUES (117, 4, 5);
-INSERT INTO `rolemenu` VALUES (118, 4, 7);
-INSERT INTO `rolemenu` VALUES (119, 4, 10);
-INSERT INTO `rolemenu` VALUES (120, 4, 11);
-INSERT INTO `rolemenu` VALUES (121, 4, 12);
-INSERT INTO `rolemenu` VALUES (122, 4, 13);
-INSERT INTO `rolemenu` VALUES (123, 4, 14);
-INSERT INTO `rolemenu` VALUES (124, 4, 16);
-INSERT INTO `rolemenu` VALUES (125, 4, 17);
-INSERT INTO `rolemenu` VALUES (126, 4, 18);
-INSERT INTO `rolemenu` VALUES (127, 4, 19);
-INSERT INTO `rolemenu` VALUES (128, 4, 22);
-INSERT INTO `rolemenu` VALUES (129, 4, 20);
-INSERT INTO `rolemenu` VALUES (152, 8, 9);
-INSERT INTO `rolemenu` VALUES (153, 8, 15);
-INSERT INTO `rolemenu` VALUES (154, 8, 1);
-INSERT INTO `rolemenu` VALUES (155, 8, 2);
-INSERT INTO `rolemenu` VALUES (156, 8, 4);
-INSERT INTO `rolemenu` VALUES (157, 8, 3);
-INSERT INTO `rolemenu` VALUES (158, 8, 21);
-INSERT INTO `rolemenu` VALUES (159, 8, 6);
+INSERT INTO `rolemenu` VALUES (235, 3, 9);
+INSERT INTO `rolemenu` VALUES (236, 3, 15);
+INSERT INTO `rolemenu` VALUES (237, 3, 6);
+INSERT INTO `rolemenu` VALUES (238, 3, 8);
+INSERT INTO `rolemenu` VALUES (239, 3, 7);
+INSERT INTO `rolemenu` VALUES (240, 2, 9);
+INSERT INTO `rolemenu` VALUES (241, 2, 15);
+INSERT INTO `rolemenu` VALUES (242, 2, 1);
+INSERT INTO `rolemenu` VALUES (243, 2, 2);
+INSERT INTO `rolemenu` VALUES (244, 2, 4);
+INSERT INTO `rolemenu` VALUES (245, 2, 3);
+INSERT INTO `rolemenu` VALUES (246, 2, 21);
+INSERT INTO `rolemenu` VALUES (247, 2, 6);
+INSERT INTO `rolemenu` VALUES (248, 2, 8);
+INSERT INTO `rolemenu` VALUES (249, 2, 5);
+INSERT INTO `rolemenu` VALUES (250, 2, 7);
+INSERT INTO `rolemenu` VALUES (251, 2, 28);
+INSERT INTO `rolemenu` VALUES (252, 2, 10);
+INSERT INTO `rolemenu` VALUES (253, 2, 11);
+INSERT INTO `rolemenu` VALUES (254, 2, 12);
+INSERT INTO `rolemenu` VALUES (255, 2, 13);
+INSERT INTO `rolemenu` VALUES (256, 2, 14);
+INSERT INTO `rolemenu` VALUES (257, 2, 16);
+INSERT INTO `rolemenu` VALUES (258, 2, 17);
+INSERT INTO `rolemenu` VALUES (259, 2, 18);
+INSERT INTO `rolemenu` VALUES (260, 2, 19);
+INSERT INTO `rolemenu` VALUES (261, 2, 22);
+INSERT INTO `rolemenu` VALUES (262, 2, 20);
 
 -- ----------------------------
 -- Table structure for transaction
@@ -4186,14 +4245,14 @@ CREATE TABLE `user`  (
   PRIMARY KEY (`iduser`) USING BTREE,
   INDEX `IDXROLE`(`idrole` ASC) USING BTREE,
   CONSTRAINT `IDXROLE` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 2, 'jorge', 'cambiar', 'Jorge', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:30:34', '2024-08-06 03:26:32', NULL);
-INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$Wi9AKbsfScIIPWV3jLUnTe33vjl4216PLxrCZTcbDM01mchImLJ0q', 'Santiago', 1, 0, 'es', 15, '2024-08-03 01:46:43', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QmFxcWJLRTRtdnRtREY4K0FhYTg2Lzd0dzJTaEppQkw2R210TTNxalhFckE9PQ==', '2024-06-21 15:30:47', '2024-08-05 22:19:05', NULL);
-INSERT INTO `user` VALUES (3, 1, 'hugo', 'cambiar', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-13 23:34:55', NULL);
+INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 15, '2024-08-03 01:46:43', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:30:47', '2024-08-16 23:11:38', NULL);
+INSERT INTO `user` VALUES (3, 1, 'hugo', 'cambiar', 'Hugo', 0, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-16 18:47:14', NULL);
 INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:15', '2024-08-06 03:23:02', NULL);
 INSERT INTO `user` VALUES (5, 2, 'rick', '', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-02 23:53:36', NULL);
 INSERT INTO `user` VALUES (6, 5, 'SantiagoDieum', '', 'Santiago Borja', 0, 1427181793, 'es', 294, NULL, NULL, '2024-07-04 13:14:09', '2024-08-02 23:53:36', NULL);
@@ -4202,12 +4261,14 @@ INSERT INTO `user` VALUES (8, 5, 'Hugueins_hv', '', 'Hugueins AHV', 0, 106245323
 INSERT INTO `user` VALUES (9, 5, 'bot', '', '', 0, 0, 'es', 0, NULL, NULL, '2024-07-12 01:19:59', '2024-07-12 15:32:08', NULL);
 INSERT INTO `user` VALUES (10, 5, 'AlyJoBorja', '', 'Aly Borja', 0, 7054851197, 'es', 3, NULL, NULL, '2024-07-13 21:35:18', '2024-07-15 00:34:46', NULL);
 INSERT INTO `user` VALUES (23, 3, 'asdas', 'cambiar', 'asdasd', 0, 0, 'es', 0, NULL, NULL, '2024-08-07 17:35:44', '2024-08-13 23:33:07', '2024-08-13 23:33:07');
+INSERT INTO `user` VALUES (24, 2, 'Rita', 'cambiar', 'Rija', 1, 0, 'es', 0, NULL, NULL, '2024-08-16 18:45:43', '2024-08-16 18:45:43', NULL);
+INSERT INTO `user` VALUES (25, 3, 'UsuarioTest', 'cambiar', 'Usuario Test', 0, 0, 'es', 0, NULL, NULL, '2024-08-16 22:56:36', '2024-08-16 22:56:36', NULL);
 
 -- ----------------------------
 -- View structure for view_audit
 -- ----------------------------
 DROP VIEW IF EXISTS `view_audit`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_audit` AS select `a`.`idaudit` AS `idaudit`,`a`.`iduser` AS `iduser`,`u`.`fullname` AS `fullname`,`a`.`created_at` AS `date`,`a`.`ipaddr` AS `ipaddr`,`a`.`action` AS `method`,`a`.`route` AS `route`,`a`.`json` AS `json` from (`audit` `a` join `user` `u` on((`a`.`iduser` = `u`.`iduser`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_audit` AS select `a`.`idaudit` AS `idaudit`,`a`.`iduser` AS `iduser`,`u`.`fullname` AS `fullname`,`a`.`created_at` AS `date`,`a`.`ipaddr` AS `ipaddr`,`a`.`action` AS `method`,`a`.`route` AS `route`,`a`.`json` AS `json` from (`audit` `a` left join `user` `u` on((`a`.`iduser` = `u`.`iduser`)));
 
 -- ----------------------------
 -- View structure for view_beneficiary

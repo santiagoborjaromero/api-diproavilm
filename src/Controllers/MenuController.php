@@ -14,7 +14,6 @@ class menuController extends Controller{
     }
 
     
-
     static public function saveMenu(){
         
         Middleware::auditSecurity();
@@ -64,7 +63,6 @@ class menuController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
-
 
 
     static public function deleteMenu(){
