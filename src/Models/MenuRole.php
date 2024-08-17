@@ -12,7 +12,6 @@ class MenuRole {
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
 
-        
         //TODO: Crear los items de menu para el rol 
 
         if ($requestBody){
@@ -27,13 +26,13 @@ class MenuRole {
                     $sql .= ", ";
                 }
             }
-    
+
             $conn = new ConnController();
             $conn->Connect($this->drive);
             $dataresult = $conn->Execute($sql);
-            $dataresult = "ok" ;
+            $dataresult = "Grabacion de rol exitosa" ;
         } else {
-            $dataresult = "ok" ;
+            $dataresult = "no datos" ;
         }
         
         return $dataresult;

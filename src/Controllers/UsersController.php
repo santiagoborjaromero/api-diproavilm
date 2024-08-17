@@ -1,11 +1,12 @@
 <?PHP
 
-// require_once(__DIR__."/../Models/Model.php");
 require_once(__DIR__."/../Models/Model.php");
 
 class UsersController extends Controller{
         
     static public function login(){
+
+        // Middleware::noAuditSecurity();
 
         $requestBody = json_decode(file_get_contents('php://input'), true);
 
@@ -299,6 +300,7 @@ class UsersController extends Controller{
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;
         $rs = $change->get(true);
+
         $error = "";
         $message = "";
         $iduser = -1;
@@ -312,6 +314,7 @@ class UsersController extends Controller{
             $up->set("password", UsersController::hashed($requestBody["password_new"]));
             $up->where("iduser", "=", $iduser);
             $rs = $up->update();
+
             $error = "ok";
             $message = "Establecimiento de contraseña realizado con exito";
         } else{

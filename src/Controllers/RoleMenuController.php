@@ -33,8 +33,9 @@ class RoleMenuController extends Controller{
 
     static public function saveRolMenu(){
         Middleware::auditSecurity();
-
+        
         $requestBody = $_POST;
+        if (!$requestBody) $requestBody = Middleware::request();
 
         $idrole = $_GET["id"];
 

@@ -26,14 +26,7 @@ class RolesController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = json_decode(file_get_contents('php://input'), true);
-        if (!$requestBody){
-            $requestBody = [
-                "name" => $_POST['name'],
-                "scope" => $_POST['scope'],
-                "status" => $_POST['status']
-            ];
-        }
+        $requestBody = Middleware::request();
 
         $user = new Model("role");
         $user->where("name","=",$requestBody["name"]);
@@ -98,10 +91,16 @@ class RolesController extends Controller{
 
     static public function deleteRole(){
         Middleware::auditSecurity();
-        $id = $_GET["id"];
+        $idrole = $_GET["id"];
+
         $user = new Model("role");
-        $user->where("idrole", "=", $id);
+        $user->where("idrole", "=", $idrole);
         $rs = $user->delete();
+
+        $user = new Model("rolemenu");
+        $user->where("idrole", "=", $idrole);
+        $rs = $user->delete(true);
+        
         $status = "ok";
         $message = $rs;
         http_response_code(200);

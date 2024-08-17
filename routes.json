@@ -50,8 +50,12 @@
     "POST|saveProducto":  "ProductosController::save()",
     "PUT|saveProducto":  "ProductosController::update()",
     "DELETE|deleteProducto":  "ProductosController::delete()",
-    "POST|recuperarProducto":  "ProductosController::recuperar()"
+    "POST|recuperarProducto":  "ProductosController::recuperar()",
+
+    "GET|transacciones":  "MovimientosController::getAll()",
 
 
+    "GET|movtipos":  "MovimientoTiposController::getAll()",
+    "GET|movtipo":  "MovimientoTiposController::getOne()"
     
 }

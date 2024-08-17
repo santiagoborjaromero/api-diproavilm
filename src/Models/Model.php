@@ -90,7 +90,7 @@ class Model extends ConnController{
             $params[$k] = $v;
         }
 
-        $sql = "INSERT INTO " . $this->table . " ({$f}) VALUES ({$d})";
+        $sql = "INSERT INTO `" . $this->table . "` ({$f}) VALUES ({$d})";
 
         $this->saveAudit(json_encode($params));
 
@@ -99,7 +99,7 @@ class Model extends ConnController{
         $conn->Execute($sql, $params);
         $sql = "SELECT LAST_INSERT_ID() as last_insert_id";
         $dataresult = $conn->Execute($sql);
-        return $dataresult;
+        return $dataresult[0]["last_insert_id"];
     }
 
     public function updateRecord($record = []){
@@ -228,8 +228,11 @@ class Model extends ConnController{
 
         $data = Middleware::auditSecurity(true);
 
-        $iduser = $data["iduser"];
-        // $ipaddr = $this->getIP();
+        $iduser = null;
+        if ($data){
+            $iduser = $data["iduser"];
+        }
+
         $action = $_SERVER["REQUEST_METHOD"];
         $route  = $_SERVER["REQUEST_URI"];
         $ipaddr = $_SERVER["HTTP_USER_AGENT"];

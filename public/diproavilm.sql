@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 13/08/2024 00:13:47
+ Date: 16/08/2024 15:53:20
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of audit
@@ -47,6 +47,59 @@ INSERT INTO `audit` VALUES (5, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) App
 INSERT INTO `audit` VALUES (6, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-12 16:11:30', '2024-08-12 16:11:30', NULL);
 INSERT INTO `audit` VALUES (7, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=2', '{\"fullname\":\"Santiago\",\"idrole\":\"2\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"2\"}', '2024-08-12 16:12:17', '2024-08-12 16:12:17', NULL);
 INSERT INTO `audit` VALUES (8, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarUsuario&id=23', '{\"deleted_at\":null,\"iduser\":\"23\"}', '2024-08-13 00:10:38', '2024-08-13 00:10:38', NULL);
+INSERT INTO `audit` VALUES (9, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-13 21:23:04', '2024-08-13 21:23:04', NULL);
+INSERT INTO `audit` VALUES (10, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:44:21', '2024-08-13 22:44:21', NULL);
+INSERT INTO `audit` VALUES (11, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:45:29', '2024-08-13 22:45:29', NULL);
+INSERT INTO `audit` VALUES (12, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-13 22:50:28', '2024-08-13 22:50:28', NULL);
+INSERT INTO `audit` VALUES (13, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:53:23', '2024-08-13 22:53:23', NULL);
+INSERT INTO `audit` VALUES (14, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:54:26', '2024-08-13 22:54:26', NULL);
+INSERT INTO `audit` VALUES (15, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:55:44', '2024-08-13 22:55:44', NULL);
+INSERT INTO `audit` VALUES (16, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:56:12', '2024-08-13 22:56:12', NULL);
+INSERT INTO `audit` VALUES (17, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:56:39', '2024-08-13 22:56:39', NULL);
+INSERT INTO `audit` VALUES (18, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:57:00', '2024-08-13 22:57:00', NULL);
+INSERT INTO `audit` VALUES (19, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:57:48', '2024-08-13 22:57:48', NULL);
+INSERT INTO `audit` VALUES (20, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:57:59', '2024-08-13 22:57:59', NULL);
+INSERT INTO `audit` VALUES (21, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:58:12', '2024-08-13 22:58:12', NULL);
+INSERT INTO `audit` VALUES (22, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 22:59:31', '2024-08-13 22:59:31', NULL);
+INSERT INTO `audit` VALUES (23, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:00:01', '2024-08-13 23:00:01', NULL);
+INSERT INTO `audit` VALUES (24, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:00:37', '2024-08-13 23:00:37', NULL);
+INSERT INTO `audit` VALUES (25, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:01:09', '2024-08-13 23:01:09', NULL);
+INSERT INTO `audit` VALUES (26, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:01:23', '2024-08-13 23:01:23', NULL);
+INSERT INTO `audit` VALUES (27, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:01:52', '2024-08-13 23:01:52', NULL);
+INSERT INTO `audit` VALUES (28, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:02:09', '2024-08-13 23:02:09', NULL);
+INSERT INTO `audit` VALUES (29, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:02:19', '2024-08-13 23:02:19', NULL);
+INSERT INTO `audit` VALUES (30, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=1', '{\"name\":\"Reporteador\",\"scope\":\"R\",\"status\":\"1\",\"idrole\":\"1\"}', '2024-08-13 23:02:47', '2024-08-13 23:02:47', NULL);
+INSERT INTO `audit` VALUES (31, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=8', '{\"name\":\"UNO\",\"scope\":\"WD\",\"status\":\"0\",\"idrole\":\"8\"}', '2024-08-13 23:08:46', '2024-08-13 23:08:46', NULL);
+INSERT INTO `audit` VALUES (32, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:09:58', '2024-08-13 23:09:58', NULL);
+INSERT INTO `audit` VALUES (33, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:10:04', '2024-08-13 23:10:04', NULL);
+INSERT INTO `audit` VALUES (34, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:11:33', '2024-08-13 23:11:33', NULL);
+INSERT INTO `audit` VALUES (35, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:11:37', '2024-08-13 23:11:37', NULL);
+INSERT INTO `audit` VALUES (36, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:11:52', '2024-08-13 23:11:52', NULL);
+INSERT INTO `audit` VALUES (37, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:11:57', '2024-08-13 23:11:57', NULL);
+INSERT INTO `audit` VALUES (38, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-13 23:31:11', '2024-08-13 23:31:11', NULL);
+INSERT INTO `audit` VALUES (39, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-13 23:31:16', '2024-08-13 23:31:16', NULL);
+INSERT INTO `audit` VALUES (40, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=4', '{\"name\":\"Super\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"4\"}', '2024-08-13 23:31:22', '2024-08-13 23:31:22', NULL);
+INSERT INTO `audit` VALUES (41, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:32:05', '2024-08-13 23:32:05', NULL);
+INSERT INTO `audit` VALUES (42, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=5', '{\"name\":\"UserBot\",\"scope\":\"\",\"status\":\"0\",\"idrole\":\"5\"}', '2024-08-13 23:32:13', '2024-08-13 23:32:13', NULL);
+INSERT INTO `audit` VALUES (43, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=8', '{\"name\":\"UNO\",\"scope\":\"WD\",\"status\":\"0\",\"idrole\":\"8\"}', '2024-08-13 23:32:20', '2024-08-13 23:32:20', NULL);
+INSERT INTO `audit` VALUES (44, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=23', '{\"fullname\":\"asdasd\",\"idrole\":\"3\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"23\"}', '2024-08-13 23:33:01', '2024-08-13 23:33:01', NULL);
+INSERT INTO `audit` VALUES (45, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteUser&id=23', '{\"iduser\":\"23\"}', '2024-08-13 23:33:07', '2024-08-13 23:33:07', NULL);
+INSERT INTO `audit` VALUES (46, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=3', '{\"fullname\":\"Hugo\",\"idrole\":\"8\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"3\"}', '2024-08-13 23:34:37', '2024-08-13 23:34:37', NULL);
+INSERT INTO `audit` VALUES (47, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=3', '{\"fullname\":\"Hugo\",\"idrole\":\"3\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"3\"}', '2024-08-13 23:34:47', '2024-08-13 23:34:47', NULL);
+INSERT INTO `audit` VALUES (48, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveUser&id=3', '{\"fullname\":\"Hugo\",\"idrole\":\"1\",\"lang\":\"es\",\"status\":\"1\",\"iduser\":\"3\"}', '2024-08-13 23:34:55', '2024-08-13 23:34:55', NULL);
+INSERT INTO `audit` VALUES (49, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveProducto&id=-1', '{\"name\":\"AAAAAA\",\"description\":\"Cosa aaaa\",\"productcode\":\"A1\",\"barcode\":\"A2\",\"idpresentation\":\"1\",\"idproductline\":\"2\",\"idproductcategory\":\"undefined\",\"price\":\"1\",\"status\":\"0\",\"accountcost\":\"\",\"accountsales\":\"\",\"accountinv\":\"\"}', '2024-08-14 01:34:07', '2024-08-14 01:34:07', NULL);
+INSERT INTO `audit` VALUES (50, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveProducto&id=-1', '{\"name\":\"AAAAAA\",\"description\":\"Cosa aaaa\",\"productcode\":\"A1\",\"barcode\":\"A2\",\"idpresentation\":\"1\",\"idproductline\":\"2\",\"idproductcategory\":\"undefined\",\"price\":\"12\",\"status\":\"0\",\"accountcost\":\"\",\"accountsales\":\"\",\"accountinv\":\"\"}', '2024-08-14 01:34:44', '2024-08-14 01:34:44', NULL);
+INSERT INTO `audit` VALUES (51, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveProducto&id=-1', '{\"name\":\"AAAAAA\",\"description\":\"Cosa aaaa\",\"productcode\":\"A1\",\"barcode\":\"A2\",\"idpresentation\":\"1\",\"idproductline\":\"2\",\"idproductcategory\":\"4\",\"price\":\"2\",\"status\":\"0\",\"accountcost\":\"\",\"accountsales\":\"\",\"accountinv\":\"\"}', '2024-08-14 01:38:39', '2024-08-14 01:38:39', NULL);
+INSERT INTO `audit` VALUES (52, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveProducto&id=41', '{\"name\":\"AAAAAA\",\"description\":\"Cosa aaaa\",\"productcode\":\"A1\",\"barcode\":\"A2\",\"idpresentation\":\"1\",\"idproductline\":\"2\",\"idproductcategory\":\"4\",\"price\":\"2\",\"status\":\"1\",\"accountcost\":\"\",\"accountsales\":\"\",\"accountinv\":\"\",\"idproduct\":\"41\"}', '2024-08-14 01:40:30', '2024-08-14 01:40:30', NULL);
+INSERT INTO `audit` VALUES (53, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 01:43:04', '2024-08-14 01:43:04', NULL);
+INSERT INTO `audit` VALUES (54, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProducto&id=41', '{\"deleted_at\":null,\"idproduct\":\"41\"}', '2024-08-14 02:07:01', '2024-08-14 02:07:01', NULL);
+INSERT INTO `audit` VALUES (55, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:09:11', '2024-08-14 02:09:11', NULL);
+INSERT INTO `audit` VALUES (56, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProducto&id=41', '{\"deleted_at\":null,\"idproduct\":\"41\"}', '2024-08-14 02:09:17', '2024-08-14 02:09:17', NULL);
+INSERT INTO `audit` VALUES (57, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:09:56', '2024-08-14 02:09:56', NULL);
+INSERT INTO `audit` VALUES (58, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProducto&id=41', '{\"deleted_at\":null,\"idproduct\":\"41\"}', '2024-08-14 02:10:09', '2024-08-14 02:10:09', NULL);
+INSERT INTO `audit` VALUES (59, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:10:27', '2024-08-14 02:10:27', NULL);
+INSERT INTO `audit` VALUES (60, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProducto&id=41', '{\"deleted_at\":null,\"idproduct\":\"41\"}', '2024-08-14 02:10:33', '2024-08-14 02:10:33', NULL);
+INSERT INTO `audit` VALUES (61, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProducto&id=41', '{\"idproduct\":\"41\"}', '2024-08-14 02:10:43', '2024-08-14 02:10:43', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -1880,19 +1933,19 @@ CREATE TABLE `menu`  (
   INDEX `submenu`(`submenu` ASC) USING BTREE,
   INDEX `status`(`status` ASC) USING BTREE,
   INDEX `deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
 INSERT INTO `menu` VALUES (1, '02', 'Administación', 'fa fa-cog', NULL, 1, 1, '2024-06-21 15:00:39', '2024-08-09 10:27:27', NULL);
 INSERT INTO `menu` VALUES (2, '02.01', 'Usuarios', 'fas fa-user', 'users', 0, 1, '2024-06-21 15:00:50', '2024-08-09 10:27:32', NULL);
-INSERT INTO `menu` VALUES (3, '02.02', 'Roles', 'fas fa-shield-alt', 'roles', 0, 1, '2024-06-21 15:01:00', '2024-08-09 10:27:38', NULL);
-INSERT INTO `menu` VALUES (4, '02.03', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-09 10:27:40', NULL);
-INSERT INTO `menu` VALUES (5, '02.04', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-09 10:27:47', NULL);
+INSERT INTO `menu` VALUES (3, '02.03', 'Roles', 'fas fa-shield-alt', 'roles', 0, 1, '2024-06-21 15:01:00', '2024-08-13 12:31:28', NULL);
+INSERT INTO `menu` VALUES (4, '02.02', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-13 12:28:31', NULL);
+INSERT INTO `menu` VALUES (5, '03.02', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-13 12:29:08', NULL);
 INSERT INTO `menu` VALUES (6, '03', 'Almacén', 'fas fa-box-open', NULL, 1, 1, '2024-06-21 15:09:14', '2024-08-09 10:27:55', NULL);
-INSERT INTO `menu` VALUES (7, '03.01', 'Registro de movimiento', 'fa fa-cog', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-09 10:27:59', NULL);
-INSERT INTO `menu` VALUES (8, '03.02', 'XXXXX', 'far fa-file-archive', NULL, 0, 0, '2024-06-21 15:09:43', '2024-08-09 10:28:04', NULL);
+INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimiento', 'fa fa-cog', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-13 12:29:10', NULL);
+INSERT INTO `menu` VALUES (8, '03.01', 'Productos', 'far fa-file-archive', 'productos', 0, 1, '2024-06-21 15:09:43', '2024-08-13 12:27:24', NULL);
 INSERT INTO `menu` VALUES (9, '01', 'Dashboards', 'fas fa-chart-bar', NULL, 1, 1, '2024-06-21 15:09:59', '2024-08-09 10:27:23', NULL);
 INSERT INTO `menu` VALUES (10, '04', 'Informes', 'far fa-file-archive', NULL, 1, 1, '2024-06-21 15:49:08', '2024-08-09 10:28:06', NULL);
 INSERT INTO `menu` VALUES (11, '04.01', 'Listado de Usuarios', 'far fa-file-archive', 'lst_usuarios', 0, 1, '2024-06-21 15:49:22', '2024-08-09 10:28:09', NULL);
@@ -1905,7 +1958,7 @@ INSERT INTO `menu` VALUES (17, '05.01', 'Configuración', 'fa fa-cog', 'bot_conf
 INSERT INTO `menu` VALUES (18, '05.02', 'Capas Entrada y Salida', 'fas fa-layer-group', 'bot_capas', 0, 1, '2024-07-25 21:50:58', '2024-08-09 10:28:28', NULL);
 INSERT INTO `menu` VALUES (19, '05.03', 'Diccionario de Acciones', 'fas fa-shoe-prints', 'bot_dict', 0, 1, '2024-07-25 21:51:08', '2024-08-09 10:28:31', NULL);
 INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot_audit', 0, 1, '2024-07-25 21:51:17', '2024-08-09 10:28:39', NULL);
-INSERT INTO `menu` VALUES (21, '02.05', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-12 13:39:20', NULL);
+INSERT INTO `menu` VALUES (21, '02.04', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-13 12:31:39', NULL);
 INSERT INTO `menu` VALUES (22, '05.04', 'Usuarios Registrados', 'fab fa-telegram-plane', 'bot_users', 0, 1, '2024-07-25 21:51:48', '2024-08-09 10:28:36', NULL);
 
 -- ----------------------------
@@ -1924,8 +1977,8 @@ CREATE TABLE `movementtype`  (
 -- ----------------------------
 -- Records of movementtype
 -- ----------------------------
-INSERT INTO `movementtype` VALUES (1, 'FV', 'Venta', 30, 'E');
-INSERT INTO `movementtype` VALUES (2, 'FC', 'Compra', 0, 'I');
+INSERT INTO `movementtype` VALUES (1, 'FV', 'Salida de bodega a cliente', 30, 'E');
+INSERT INTO `movementtype` VALUES (2, 'FC', 'Ingreso de bodega por proveedor', 0, 'I');
 INSERT INTO `movementtype` VALUES (3, 'AS', 'Saldo Incial', 0, 'I');
 INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'A');
 INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'E');
@@ -1988,10 +2041,10 @@ CREATE TABLE `product`  (
   INDEX `IDXPre`(`idpresentation` ASC) USING BTREE,
   INDEX `IDXLine`(`idproductline` ASC) USING BTREE,
   INDEX `IDXCategory`(`idproductcategory` ASC) USING BTREE,
-  CONSTRAINT `IDXCategory` FOREIGN KEY (`idproductcategory`) REFERENCES `productcategory` (`idproductocategory`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `IDXCategory` FOREIGN KEY (`idproductcategory`) REFERENCES `productcategory` (`idproductcategory`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXLine` FOREIGN KEY (`idproductline`) REFERENCES `productline` (`idproductline`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXPre` FOREIGN KEY (`idpresentation`) REFERENCES `presentation` (`idpresentation`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product
@@ -2032,15 +2085,16 @@ INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMO
 INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 59.0000, 9.00, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:08:17', NULL);
 INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 28.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
 INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 42.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:02:40', NULL);
+INSERT INTO `product` VALUES (41, 1, 2, 4, 'A1', 'A2', 'AAAAAA', 'Cosa aaaa', 0.0000, 0.0000, 2.00, 0.0000, 0.0000, '', 1, '', '', '', '2024-08-14 01:38:39', '2024-08-14 02:10:43', '2024-08-14 02:10:43');
 
 -- ----------------------------
 -- Table structure for productcategory
 -- ----------------------------
 DROP TABLE IF EXISTS `productcategory`;
 CREATE TABLE `productcategory`  (
-  `idproductocategory` int NOT NULL AUTO_INCREMENT,
+  `idproductcategory` int NOT NULL AUTO_INCREMENT,
   `description` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`idproductocategory`) USING BTREE
+  PRIMARY KEY (`idproductcategory`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -3955,57 +4009,77 @@ CREATE TABLE `rolemenu`  (
   `idrolemenu` int NOT NULL AUTO_INCREMENT,
   `idrole` int NOT NULL,
   `idmenu` int NOT NULL,
-  `status` int NOT NULL DEFAULT 1 COMMENT '1-Active    0-Inactive',
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idrolemenu`) USING BTREE,
   INDEX `IDXROL`(`idrole` ASC) USING BTREE,
   INDEX `IDME`(`idmenu` ASC) USING BTREE,
   CONSTRAINT `IDME` FOREIGN KEY (`idmenu`) REFERENCES `menu` (`idmenu`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXROL` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 160 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rolemenu
 -- ----------------------------
-INSERT INTO `rolemenu` VALUES (2, 2, 1, 1, '2024-06-21 15:20:16', '2024-06-21 15:20:16', NULL);
-INSERT INTO `rolemenu` VALUES (3, 2, 2, 1, '2024-06-21 15:20:17', '2024-06-21 15:20:27', NULL);
-INSERT INTO `rolemenu` VALUES (4, 2, 3, 1, '2024-06-21 15:20:18', '2024-06-21 15:20:28', NULL);
-INSERT INTO `rolemenu` VALUES (6, 2, 5, 1, '2024-06-21 15:20:20', '2024-06-21 15:20:26', NULL);
-INSERT INTO `rolemenu` VALUES (7, 2, 6, 1, '2024-06-21 15:20:20', '2024-06-21 15:20:26', NULL);
-INSERT INTO `rolemenu` VALUES (8, 2, 7, 1, '2024-06-21 15:20:21', '2024-06-21 15:20:29', NULL);
-INSERT INTO `rolemenu` VALUES (9, 2, 8, 1, '2024-06-21 15:20:22', '2024-06-21 15:20:26', NULL);
-INSERT INTO `rolemenu` VALUES (10, 2, 9, 1, '2024-06-21 15:20:22', '2024-06-21 15:21:06', NULL);
-INSERT INTO `rolemenu` VALUES (11, 4, 1, 1, '2024-06-21 15:21:49', '2024-06-21 15:21:49', NULL);
-INSERT INTO `rolemenu` VALUES (12, 4, 2, 1, '2024-06-21 15:21:53', '2024-06-21 15:21:53', NULL);
-INSERT INTO `rolemenu` VALUES (13, 4, 3, 1, '2024-06-21 15:21:56', '2024-06-21 15:21:56', NULL);
-INSERT INTO `rolemenu` VALUES (14, 4, 4, 1, '2024-06-21 15:21:58', '2024-06-21 15:21:58', NULL);
-INSERT INTO `rolemenu` VALUES (15, 4, 5, 1, '2024-06-21 15:22:03', '2024-06-21 15:22:03', NULL);
-INSERT INTO `rolemenu` VALUES (16, 4, 6, 1, '2024-06-21 15:22:09', '2024-06-21 15:22:09', NULL);
-INSERT INTO `rolemenu` VALUES (18, 4, 7, 1, '2024-06-21 15:22:17', '2024-06-21 15:22:17', NULL);
-INSERT INTO `rolemenu` VALUES (19, 4, 8, 1, '2024-06-21 15:22:20', '2024-06-21 15:22:20', NULL);
-INSERT INTO `rolemenu` VALUES (20, 4, 9, 1, '2024-06-21 15:22:23', '2024-06-21 15:22:23', NULL);
-INSERT INTO `rolemenu` VALUES (21, 1, 6, 1, '2024-06-21 15:22:44', '2024-06-21 15:22:44', NULL);
-INSERT INTO `rolemenu` VALUES (22, 1, 8, 1, '2024-06-21 15:22:46', '2024-06-21 15:22:46', NULL);
-INSERT INTO `rolemenu` VALUES (23, 3, 6, 1, '2024-06-21 15:23:53', '2024-06-21 15:23:53', NULL);
-INSERT INTO `rolemenu` VALUES (24, 3, 7, 1, '2024-06-21 15:23:55', '2024-06-21 15:23:55', NULL);
-INSERT INTO `rolemenu` VALUES (25, 3, 8, 1, '2024-06-21 15:23:58', '2024-06-21 15:23:58', NULL);
-INSERT INTO `rolemenu` VALUES (26, 3, 9, 1, '2024-06-21 15:24:03', '2024-06-21 15:24:03', NULL);
-INSERT INTO `rolemenu` VALUES (27, 2, 10, 1, '2024-06-21 15:52:06', '2024-06-21 15:52:06', NULL);
-INSERT INTO `rolemenu` VALUES (28, 2, 11, 1, '2024-06-21 15:52:11', '2024-06-21 15:52:11', NULL);
-INSERT INTO `rolemenu` VALUES (29, 2, 12, 1, '2024-06-21 15:52:14', '2024-06-21 15:52:14', NULL);
-INSERT INTO `rolemenu` VALUES (30, 2, 13, 1, '2024-06-21 15:52:18', '2024-06-21 15:52:18', NULL);
-INSERT INTO `rolemenu` VALUES (31, 2, 14, 1, '2024-06-21 15:52:21', '2024-06-21 15:52:21', NULL);
-INSERT INTO `rolemenu` VALUES (32, 2, 15, 1, '2024-07-25 21:26:39', '2024-07-25 21:27:10', NULL);
-INSERT INTO `rolemenu` VALUES (33, 2, 4, 1, '2024-07-25 21:47:48', '2024-07-25 21:47:48', NULL);
-INSERT INTO `rolemenu` VALUES (34, 2, 16, 1, '2024-07-25 21:58:30', '2024-07-25 21:58:30', NULL);
-INSERT INTO `rolemenu` VALUES (35, 2, 17, 1, '2024-07-25 21:58:35', '2024-07-25 21:58:35', NULL);
-INSERT INTO `rolemenu` VALUES (36, 2, 18, 1, '2024-07-25 21:58:37', '2024-07-25 21:58:37', NULL);
-INSERT INTO `rolemenu` VALUES (37, 2, 19, 1, '2024-07-25 21:58:40', '2024-07-25 21:58:40', NULL);
-INSERT INTO `rolemenu` VALUES (38, 2, 20, 1, '2024-07-25 21:58:43', '2024-07-25 21:58:43', NULL);
-INSERT INTO `rolemenu` VALUES (39, 2, 21, 1, '2024-07-25 21:58:46', '2024-07-25 21:58:46', NULL);
-INSERT INTO `rolemenu` VALUES (40, 2, 22, 1, '2024-07-25 21:58:50', '2024-07-25 21:58:56', NULL);
+INSERT INTO `rolemenu` VALUES (23, 3, 6);
+INSERT INTO `rolemenu` VALUES (24, 3, 7);
+INSERT INTO `rolemenu` VALUES (25, 3, 8);
+INSERT INTO `rolemenu` VALUES (26, 3, 9);
+INSERT INTO `rolemenu` VALUES (69, 1, 10);
+INSERT INTO `rolemenu` VALUES (70, 1, 11);
+INSERT INTO `rolemenu` VALUES (71, 1, 12);
+INSERT INTO `rolemenu` VALUES (72, 1, 13);
+INSERT INTO `rolemenu` VALUES (73, 1, 14);
+INSERT INTO `rolemenu` VALUES (86, 2, 9);
+INSERT INTO `rolemenu` VALUES (87, 2, 15);
+INSERT INTO `rolemenu` VALUES (88, 2, 1);
+INSERT INTO `rolemenu` VALUES (89, 2, 2);
+INSERT INTO `rolemenu` VALUES (90, 2, 4);
+INSERT INTO `rolemenu` VALUES (91, 2, 3);
+INSERT INTO `rolemenu` VALUES (92, 2, 21);
+INSERT INTO `rolemenu` VALUES (93, 2, 6);
+INSERT INTO `rolemenu` VALUES (94, 2, 8);
+INSERT INTO `rolemenu` VALUES (95, 2, 5);
+INSERT INTO `rolemenu` VALUES (96, 2, 7);
+INSERT INTO `rolemenu` VALUES (97, 2, 10);
+INSERT INTO `rolemenu` VALUES (98, 2, 11);
+INSERT INTO `rolemenu` VALUES (99, 2, 12);
+INSERT INTO `rolemenu` VALUES (100, 2, 13);
+INSERT INTO `rolemenu` VALUES (101, 2, 14);
+INSERT INTO `rolemenu` VALUES (102, 2, 16);
+INSERT INTO `rolemenu` VALUES (103, 2, 17);
+INSERT INTO `rolemenu` VALUES (104, 2, 18);
+INSERT INTO `rolemenu` VALUES (105, 2, 19);
+INSERT INTO `rolemenu` VALUES (106, 2, 22);
+INSERT INTO `rolemenu` VALUES (107, 2, 20);
+INSERT INTO `rolemenu` VALUES (108, 4, 9);
+INSERT INTO `rolemenu` VALUES (109, 4, 15);
+INSERT INTO `rolemenu` VALUES (110, 4, 1);
+INSERT INTO `rolemenu` VALUES (111, 4, 2);
+INSERT INTO `rolemenu` VALUES (112, 4, 4);
+INSERT INTO `rolemenu` VALUES (113, 4, 3);
+INSERT INTO `rolemenu` VALUES (114, 4, 21);
+INSERT INTO `rolemenu` VALUES (115, 4, 6);
+INSERT INTO `rolemenu` VALUES (116, 4, 8);
+INSERT INTO `rolemenu` VALUES (117, 4, 5);
+INSERT INTO `rolemenu` VALUES (118, 4, 7);
+INSERT INTO `rolemenu` VALUES (119, 4, 10);
+INSERT INTO `rolemenu` VALUES (120, 4, 11);
+INSERT INTO `rolemenu` VALUES (121, 4, 12);
+INSERT INTO `rolemenu` VALUES (122, 4, 13);
+INSERT INTO `rolemenu` VALUES (123, 4, 14);
+INSERT INTO `rolemenu` VALUES (124, 4, 16);
+INSERT INTO `rolemenu` VALUES (125, 4, 17);
+INSERT INTO `rolemenu` VALUES (126, 4, 18);
+INSERT INTO `rolemenu` VALUES (127, 4, 19);
+INSERT INTO `rolemenu` VALUES (128, 4, 22);
+INSERT INTO `rolemenu` VALUES (129, 4, 20);
+INSERT INTO `rolemenu` VALUES (152, 8, 9);
+INSERT INTO `rolemenu` VALUES (153, 8, 15);
+INSERT INTO `rolemenu` VALUES (154, 8, 1);
+INSERT INTO `rolemenu` VALUES (155, 8, 2);
+INSERT INTO `rolemenu` VALUES (156, 8, 4);
+INSERT INTO `rolemenu` VALUES (157, 8, 3);
+INSERT INTO `rolemenu` VALUES (158, 8, 21);
+INSERT INTO `rolemenu` VALUES (159, 8, 6);
 
 -- ----------------------------
 -- Table structure for transaction
@@ -4119,7 +4193,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 2, 'jorge', 'cambiar', 'Jorge', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:30:34', '2024-08-06 03:26:32', NULL);
 INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$Wi9AKbsfScIIPWV3jLUnTe33vjl4216PLxrCZTcbDM01mchImLJ0q', 'Santiago', 1, 0, 'es', 15, '2024-08-03 01:46:43', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QmFxcWJLRTRtdnRtREY4K0FhYTg2Lzd0dzJTaEppQkw2R210TTNxalhFckE9PQ==', '2024-06-21 15:30:47', '2024-08-05 22:19:05', NULL);
-INSERT INTO `user` VALUES (3, 2, 'hugo', 'cambiar', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-06 01:08:32', NULL);
+INSERT INTO `user` VALUES (3, 1, 'hugo', 'cambiar', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-13 23:34:55', NULL);
 INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:15', '2024-08-06 03:23:02', NULL);
 INSERT INTO `user` VALUES (5, 2, 'rick', '', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-02 23:53:36', NULL);
 INSERT INTO `user` VALUES (6, 5, 'SantiagoDieum', '', 'Santiago Borja', 0, 1427181793, 'es', 294, NULL, NULL, '2024-07-04 13:14:09', '2024-08-02 23:53:36', NULL);
@@ -4127,7 +4201,7 @@ INSERT INTO `user` VALUES (7, 5, 'therichard369', '', 'Ricardo V', 0, 1211357100
 INSERT INTO `user` VALUES (8, 5, 'Hugueins_hv', '', 'Hugueins AHV', 0, 106245323, 'es', 4, NULL, NULL, '2024-07-09 21:57:11', '2024-07-09 21:58:07', NULL);
 INSERT INTO `user` VALUES (9, 5, 'bot', '', '', 0, 0, 'es', 0, NULL, NULL, '2024-07-12 01:19:59', '2024-07-12 15:32:08', NULL);
 INSERT INTO `user` VALUES (10, 5, 'AlyJoBorja', '', 'Aly Borja', 0, 7054851197, 'es', 3, NULL, NULL, '2024-07-13 21:35:18', '2024-07-15 00:34:46', NULL);
-INSERT INTO `user` VALUES (23, 3, 'asdas', 'cambiar', 'asdasd', 0, 0, 'es', 0, NULL, NULL, '2024-08-07 17:35:44', '2024-08-13 00:10:38', NULL);
+INSERT INTO `user` VALUES (23, 3, 'asdas', 'cambiar', 'asdasd', 0, 0, 'es', 0, NULL, NULL, '2024-08-07 17:35:44', '2024-08-13 23:33:07', '2024-08-13 23:33:07');
 
 -- ----------------------------
 -- View structure for view_audit
@@ -4169,19 +4243,25 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_get_users` AS selec
 -- View structure for view_movements
 -- ----------------------------
 DROP VIEW IF EXISTS `view_movements`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select `p`.`idproduct` AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,year(cast(`t`.`date` as date)) AS `anio`,month(cast(`t`.`date` as date)) AS `mes`,dayofmonth(cast(`t`.`date` as date)) AS `dia`,quarter(cast(`t`.`date` as date)) AS `trimestre`,week(cast(`t`.`date` as date),0) AS `semana`,`b`.`name` AS `beneficiario`,`b`.`type` AS `tipo`,`b`.`idcountry` AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,`b`.`idprovince` AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,`b`.`idcity` AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductocategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select `p`.`idproduct` AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,year(cast(`t`.`date` as date)) AS `anio`,month(cast(`t`.`date` as date)) AS `mes`,dayofmonth(cast(`t`.`date` as date)) AS `dia`,quarter(cast(`t`.`date` as date)) AS `trimestre`,week(cast(`t`.`date` as date),0) AS `semana`,`b`.`name` AS `beneficiario`,`b`.`type` AS `tipo`,`b`.`idcountry` AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,`b`.`idprovince` AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,`b`.`idcity` AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`)));
 
 -- ----------------------------
 -- View structure for view_products
 -- ----------------------------
 DROP VIEW IF EXISTS `view_products`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_products` AS select `pr`.`name` AS `presentation`,`pl`.`description` AS `line`,`pc`.`description` AS `category`,`p`.`idproduct` AS `idproduct`,`p`.`idpresentation` AS `idpresentation`,`p`.`idproductline` AS `idproductline`,`p`.`idproductcategory` AS `idproductcategory`,`p`.`productcode` AS `productcode`,`p`.`barcode` AS `barcode`,`p`.`name` AS `name`,`p`.`description` AS `description`,`p`.`cost` AS `cost`,`p`.`stock` AS `stock`,`p`.`price` AS `price`,`p`.`stock_min` AS `stock_min`,`p`.`stock_max` AS `stock_max`,`p`.`image` AS `image`,`p`.`status` AS `status`,`p`.`accountcost` AS `accountcost`,`p`.`accountsales` AS `accountsales`,`p`.`accountinv` AS `accountinv`,`p`.`created_at` AS `created_at`,`p`.`udated_at` AS `udated_at`,`p`.`deleted_at` AS `deleted_at` from (((`product` `p` join `presentation` `pr` on((`pr`.`idpresentation` = `p`.`idpresentation`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductocategory` = `p`.`idproductcategory`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_products` AS select `pr`.`name` AS `presentation`,`pl`.`description` AS `line`,`pc`.`description` AS `category`,`p`.`idproduct` AS `idproduct`,`p`.`idpresentation` AS `idpresentation`,`p`.`idproductline` AS `idproductline`,`p`.`idproductcategory` AS `idproductcategory`,`p`.`productcode` AS `productcode`,`p`.`barcode` AS `barcode`,`p`.`name` AS `name`,`p`.`description` AS `description`,`p`.`cost` AS `cost`,`p`.`stock` AS `stock`,`p`.`price` AS `price`,`p`.`stock_min` AS `stock_min`,`p`.`stock_max` AS `stock_max`,`p`.`image` AS `image`,`p`.`status` AS `status`,`p`.`accountcost` AS `accountcost`,`p`.`accountsales` AS `accountsales`,`p`.`accountinv` AS `accountinv`,`p`.`created_at` AS `created_at`,`p`.`udated_at` AS `udated_at`,`p`.`deleted_at` AS `deleted_at` from (((`product` `p` join `presentation` `pr` on((`pr`.`idpresentation` = `p`.`idpresentation`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`)));
 
 -- ----------------------------
 -- View structure for view_roles_by_nusers
 -- ----------------------------
 DROP VIEW IF EXISTS `view_roles_by_nusers`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_roles_by_nusers` AS select `r`.`idrole` AS `idrole`,`r`.`name` AS `name`,`r`.`scope` AS `scope`,`r`.`status` AS `status`,`r`.`created_at` AS `created_at`,`r`.`updated_at` AS `updated_at`,`r`.`deleted_at` AS `deleted_at`,(select count(`u`.`iduser`) from `user` `u` where (`u`.`idrole` = `r`.`idrole`)) AS `nusuarios` from `role` `r`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_roles_by_nusers` AS select `r`.`idrole` AS `idrole`,`r`.`name` AS `name`,`r`.`scope` AS `scope`,`r`.`status` AS `status`,`r`.`created_at` AS `created_at`,`r`.`updated_at` AS `updated_at`,`r`.`deleted_at` AS `deleted_at`,(select count(`u`.`iduser`) from `user` `u` where (`u`.`idrole` = `r`.`idrole`)) AS `nusuarios`,(select count(`rm`.`idmenu`) from `rolemenu` `rm` where (`r`.`idrole` = `rm`.`idrole`)) AS `nmenus` from `role` `r`;
+
+-- ----------------------------
+-- View structure for view_transaction
+-- ----------------------------
+DROP VIEW IF EXISTS `view_transaction`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_transaction` AS select `t`.`idtransaction` AS `idtransaction`,`t`.`date` AS `date`,`t`.`idbeneficiary` AS `idbeneficiary`,`b`.`name` AS `beneficiary_name`,`t`.`idmovementtype` AS `idmovementtype`,`mt`.`name` AS `type`,`t`.`numberdocument` AS `numberdocument`,`t`.`reference` AS `reference`,`t`.`subtotal` AS `subtotal`,`t`.`total` AS `total`,`t`.`iduser` AS `iduser`,`u`.`fullname` AS `fullname`,(select count(0) from `productmovement` `pm` where (`pm`.`idtransaction` = `t`.`idtransaction`)) AS `nitems` from (((`transaction` `t` join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `user` `u` on((`u`.`iduser` = `t`.`iduser`)));
 
 -- ----------------------------
 -- View structure for view_users
