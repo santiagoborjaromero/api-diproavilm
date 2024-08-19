@@ -52,6 +52,12 @@ class Model extends ConnController{
             }
         }
 
+        if( count($this->setOrderBy)>0 ){
+            foreach ($this->setOrderBy as $key => $value) {
+                $sql .= " ORDER BY `{$value['field']}` {$value['order']}";
+            }
+        }
+
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql, $params);
@@ -63,8 +69,8 @@ class Model extends ConnController{
         $this->setFields[] = ["field" => $field, "value" => $value, "cadena" => $field . "= :" . $field ];
     }
 
-    public function orderBy($field){
-        $this->setOrderBy[] = ["field" => $field];
+    public function orderBy($field, $order){
+        $this->setOrderBy[] = ["field" => $field, "order" => $order];
     }
 
     public function insertRecord($record = []){

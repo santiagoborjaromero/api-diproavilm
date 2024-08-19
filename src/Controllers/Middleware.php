@@ -25,6 +25,7 @@ class Middleware{
              * Chequeo de estructura de token
              */
 
+
             $dic = ["iduser", "idrole", "expire_at"];
             foreach($dic as $d){
                 if (array_key_exists($d, $payload)){

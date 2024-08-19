@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 17/08/2024 00:32:51
+ Date: 19/08/2024 12:03:15
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 150 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 176 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of audit
@@ -188,6 +188,32 @@ INSERT INTO `audit` VALUES (146, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 INSERT INTO `audit` VALUES (147, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:25:27', '2024-08-17 00:25:27', NULL);
 INSERT INTO `audit` VALUES (148, 2, 'PostmanRuntime/7.41.1', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men\\u00fa de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":0,\"status\":1,\"idmenu\":\"4\"}', '2024-08-17 00:27:16', '2024-08-17 00:27:16', NULL);
 INSERT INTO `audit` VALUES (149, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA+de+Opciones\",\"icon\":\"fas+fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:31:05', '2024-08-17 00:31:05', NULL);
+INSERT INTO `audit` VALUES (150, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men%C3%BA+de+Opciones\",\"icon\":\"fas%2Bfa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 00:34:37', '2024-08-17 00:34:37', NULL);
+INSERT INTO `audit` VALUES (151, 2, 'PostmanRuntime/7.41.1', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men\\u00fa de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":0,\"status\":1,\"idmenu\":\"4\"}', '2024-08-17 00:36:51', '2024-08-17 00:36:51', NULL);
+INSERT INTO `audit` VALUES (152, 2, 'PostmanRuntime/7.41.1', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men\\u00fa de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":0,\"status\":1,\"idmenu\":\"4\"}', '2024-08-17 00:37:44', '2024-08-17 00:37:44', NULL);
+INSERT INTO `audit` VALUES (153, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=4', '{\"order\":\"02.02\",\"name\":\"Men\\u00fa de Opciones\",\"icon\":\"fas fa-prescription-bottle\",\"route\":\"menu\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"4\"}', '2024-08-17 01:01:44', '2024-08-17 01:01:44', NULL);
+INSERT INTO `audit` VALUES (154, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"04.05\",\"name\":\"Listado de productos por numero de movimientos\",\"icon\":\"far fa-file-archive\",\"route\":\"nummovimientos\",\"submenu\":\"0\",\"status\":\"0\"}', '2024-08-17 01:04:49', '2024-08-17 01:04:49', NULL);
+INSERT INTO `audit` VALUES (155, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=29', '{\"order\":\"04.05\",\"name\":\"Productos por n\\u00famero de movimientos\",\"icon\":\"far fa-file-archive\",\"route\":\"nummovimientos\",\"submenu\":\"0\",\"status\":\"0\",\"idmenu\":\"29\"}', '2024-08-17 01:05:09', '2024-08-17 01:05:09', NULL);
+INSERT INTO `audit` VALUES (156, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=29', '{\"order\":\"04.05\",\"name\":\"Productos por n\\u00famero de movimientos\",\"icon\":\"far fa-file-archive\",\"route\":\"lst_nummovimientos\",\"submenu\":\"0\",\"status\":\"0\",\"idmenu\":\"29\"}', '2024-08-17 01:05:23', '2024-08-17 01:05:23', NULL);
+INSERT INTO `audit` VALUES (157, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"04.05\",\"name\":\"Inventario Valorizado\",\"icon\":\"far fa-file-archive\",\"route\":\"lst_invvalorado\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-08-17 01:06:24', '2024-08-17 01:06:24', NULL);
+INSERT INTO `audit` VALUES (158, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=29', '{\"order\":\"04.05\",\"name\":\"Productos por n\\u00famero de movimientos\",\"icon\":\"far fa-file-archive\",\"route\":\"lst_nummovimientos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"29\"}', '2024-08-17 01:06:29', '2024-08-17 01:06:29', NULL);
+INSERT INTO `audit` VALUES (159, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-17 01:08:12', '2024-08-17 01:08:12', NULL);
+INSERT INTO `audit` VALUES (160, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"02.05\",\"name\":\"admincito\",\"icon\":\"fa fa-cog\",\"route\":\"asdasd\",\"submenu\":\"0\",\"status\":\"0\"}', '2024-08-17 01:15:02', '2024-08-17 01:15:02', NULL);
+INSERT INTO `audit` VALUES (161, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"02.05\",\"name\":\"amin2\",\"icon\":\"fa fa-cog\",\"route\":\"sadas\",\"submenu\":\"0\",\"status\":\"0\"}', '2024-08-17 01:15:34', '2024-08-17 01:15:34', NULL);
+INSERT INTO `audit` VALUES (162, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"02.07\",\"name\":\"s3sss\",\"icon\":\"fa fa-cog\",\"route\":\"saz2\",\"submenu\":\"0\",\"status\":\"0\"}', '2024-08-17 01:27:39', '2024-08-17 01:27:39', NULL);
+INSERT INTO `audit` VALUES (163, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=31', '{\"idmenu\":\"31\"}', '2024-08-17 01:27:56', '2024-08-17 01:27:56', NULL);
+INSERT INTO `audit` VALUES (164, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=33', '{\"idmenu\":\"33\"}', '2024-08-17 01:28:01', '2024-08-17 01:28:01', NULL);
+INSERT INTO `audit` VALUES (165, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=32', '{\"idmenu\":\"32\"}', '2024-08-17 01:28:05', '2024-08-17 01:28:05', NULL);
+INSERT INTO `audit` VALUES (166, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"02.08\",\"name\":\"Santiago Borja\",\"icon\":\"fa fa-cog\",\"route\":\"asdasdasdasdasd\",\"submenu\":\"0\",\"status\":\"0\"}', '2024-08-17 01:28:16', '2024-08-17 01:28:16', NULL);
+INSERT INTO `audit` VALUES (167, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"01.02\",\"name\":\"Compras\",\"icon\":\"fas fa-shopping-cart\",\"route\":\"dashcompras\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-08-17 01:38:33', '2024-08-17 01:38:33', NULL);
+INSERT INTO `audit` VALUES (168, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=35', '{\"order\":\"01.02\",\"name\":\"Compras\",\"icon\":\"fas fa-chart-bar\",\"route\":\"dashcompras\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"35\"}', '2024-08-17 01:38:54', '2024-08-17 01:38:54', NULL);
+INSERT INTO `audit` VALUES (169, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-17 01:42:24', '2024-08-17 01:42:24', NULL);
+INSERT INTO `audit` VALUES (170, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=establecerclave', '{\"password\":\"$2y$12$nKDUhRshuMdplcHvok8nVe37Hj.1EAu1vli5QPAig3nO2YuXx8AWe\",\"iduser\":1}', '2024-08-19 09:27:52', '2024-08-19 09:27:52', NULL);
+INSERT INTO `audit` VALUES (171, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"Q0hlTHR3elRaeFhsSG0vbk55dlloelRYaU5UVTFFeXh3UFEyVEFOenppOHk0OTJHSkUvb2JHUVNjSkFVRkNvMm50aFM5bVBuVWtUSFpVSUhRS3AzL0E9PQ==\",\"operations\":1,\"lastlogged\":\"2024-08-19 09:28:05\",\"iduser\":1}', '2024-08-19 09:28:05', '2024-08-19 09:28:05', NULL);
+INSERT INTO `audit` VALUES (172, 1, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"03.05\",\"name\":\"Tipo de Movimientos\",\"icon\":\"fas fa-ticket-alt\",\"route\":\"movtipo\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-08-19 09:33:33', '2024-08-19 09:33:33', NULL);
+INSERT INTO `audit` VALUES (173, 1, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-19 09:33:52', '2024-08-19 09:33:52', NULL);
+INSERT INTO `audit` VALUES (174, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"02.05\",\"name\":\"Configuracion General\",\"icon\":\"fa fa-cog\",\"route\":\"config\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-08-19 11:23:18', '2024-08-19 11:23:18', NULL);
+INSERT INTO `audit` VALUES (175, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-08-19 11:23:32', '2024-08-19 11:23:32', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -195,7 +221,7 @@ INSERT INTO `audit` VALUES (149, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 DROP TABLE IF EXISTS `beneficiary`;
 CREATE TABLE `beneficiary`  (
   `idbeneficiary` int NOT NULL AUTO_INCREMENT,
-  `type` enum('C','P','A') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT 'C' COMMENT 'C-Cliente P-Proveedor A-Ambos',
+  `type` enum('C','P','A','E') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT 'C' COMMENT 'C-Cliente P-Proveedor A-Ambos',
   `identificationnumber` varchar(50) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '' COMMENT 'Numero de cedula, ruc, pasaporte, o tax number en caso de ser internacionales',
   `idcountry` int NOT NULL DEFAULT 0,
   `idprovince` int NOT NULL DEFAULT 0,
@@ -1091,7 +1117,7 @@ CREATE TABLE `bot_audit`  (
   PRIMARY KEY (`idbotaudit`) USING BTREE,
   INDEX `FkUser`(`iduser` ASC) USING BTREE,
   CONSTRAINT `FkUser` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 355 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 398 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of bot_audit
@@ -1353,25 +1379,49 @@ INSERT INTO `bot_audit` VALUES (351, 6, 'al susto', 'saludo', '{\"message_id\": 
 INSERT INTO `bot_audit` VALUES (352, 6, 'al susto', 'despedida', '{\"message_id\": 731, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1721178471, \"text\": \"al susto\"}', '2024-07-16 20:07:51');
 INSERT INTO `bot_audit` VALUES (353, 6, 'al susto', 'despedida', '{\"message_id\": 734, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1721178498, \"text\": \"al susto\"}', '2024-07-16 20:08:17');
 INSERT INTO `bot_audit` VALUES (354, 6, 'necesito un listado de productos ahora', 'lista_productos', '{\"message_id\": 737, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1721181703, \"text\": \"necesito un listado de productos ahora\"}', '2024-07-16 21:01:43');
-
--- ----------------------------
--- Table structure for bot_config
--- ----------------------------
-DROP TABLE IF EXISTS `bot_config`;
-CREATE TABLE `bot_config`  (
-  `idbotconfig` int NOT NULL AUTO_INCREMENT,
-  `iduser` int NULL DEFAULT 0,
-  `module` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
-  `vvalue` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`idbotconfig`) USING BTREE,
-  INDEX `IDXUserID`(`iduser` ASC) USING BTREE,
-  CONSTRAINT `IDXUserID` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of bot_config
--- ----------------------------
-INSERT INTO `bot_config` VALUES (5, 9, 'switch_ia_bot', 'redneuronal');
+INSERT INTO `bot_audit` VALUES (355, 6, 'hola', 'saludo', '{\"message_id\": 779, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723882945, \"text\": \"Hola\"}', '2024-08-17 03:22:24');
+INSERT INTO `bot_audit` VALUES (356, 6, 'hola', 'saludo', '{\"message_id\": 807, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723883880, \"text\": \"Hola\"}', '2024-08-17 03:37:59');
+INSERT INTO `bot_audit` VALUES (357, 6, 'hola', 'saludo', '{\"message_id\": 809, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723883967, \"text\": \"Hola\"}', '2024-08-17 03:39:26');
+INSERT INTO `bot_audit` VALUES (358, 6, 'hola', 'saludo', '{\"message_id\": 811, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723883985, \"text\": \"Hola\"}', '2024-08-17 03:39:44');
+INSERT INTO `bot_audit` VALUES (359, 6, 'hola', 'saludo', '{\"message_id\": 813, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884008, \"text\": \"Hola\"}', '2024-08-17 03:40:07');
+INSERT INTO `bot_audit` VALUES (360, 6, 'hola', 'saludo', '{\"message_id\": 815, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884044, \"text\": \"Hola\"}', '2024-08-17 03:40:43');
+INSERT INTO `bot_audit` VALUES (361, 6, 'hola', 'saludo', '{\"message_id\": 817, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884219, \"text\": \"Hola\"}', '2024-08-17 03:43:38');
+INSERT INTO `bot_audit` VALUES (362, 6, 'hola', 'saludo', '{\"message_id\": 819, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884312, \"text\": \"Hola\"}', '2024-08-17 03:45:11');
+INSERT INTO `bot_audit` VALUES (363, 6, 'hola', 'saludo', '{\"message_id\": 821, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884400, \"text\": \"Hola\"}', '2024-08-17 03:46:39');
+INSERT INTO `bot_audit` VALUES (364, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 824, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884670, \"text\": \"lista de usuarios\"}', '2024-08-17 03:51:09');
+INSERT INTO `bot_audit` VALUES (365, 6, 'hola', 'saludo', '{\"message_id\": 826, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884730, \"text\": \"hola\"}', '2024-08-17 03:52:08');
+INSERT INTO `bot_audit` VALUES (366, 6, 'hola', 'saludo', '{\"message_id\": 828, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884778, \"text\": \"hola\"}', '2024-08-17 03:52:57');
+INSERT INTO `bot_audit` VALUES (367, 6, 'hola', 'saludo', '{\"message_id\": 830, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723884846, \"text\": \"Hola\"}', '2024-08-17 03:54:05');
+INSERT INTO `bot_audit` VALUES (368, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 833, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885116, \"text\": \"lista de usuarios\"}', '2024-08-17 03:58:35');
+INSERT INTO `bot_audit` VALUES (369, 6, 'hola', 'saludo', '{\"message_id\": 836, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885313, \"text\": \"Hola\"}', '2024-08-17 04:02:31');
+INSERT INTO `bot_audit` VALUES (370, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 839, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885367, \"text\": \"lista de usuarios\"}', '2024-08-17 04:02:46');
+INSERT INTO `bot_audit` VALUES (371, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 842, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885480, \"text\": \"lista de usuarios\"}', '2024-08-17 04:04:39');
+INSERT INTO `bot_audit` VALUES (372, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 845, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885530, \"text\": \"lista de usuarios\"}', '2024-08-17 04:05:39');
+INSERT INTO `bot_audit` VALUES (373, 6, 'lista e usuarios', 'lista_productos', '{\"message_id\": 849, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885657, \"text\": \"lista e usuarios\"}', '2024-08-17 04:07:36');
+INSERT INTO `bot_audit` VALUES (374, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 851, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885754, \"text\": \"lista de usuarios\"}', '2024-08-17 04:09:21');
+INSERT INTO `bot_audit` VALUES (375, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 853, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885833, \"text\": \"lista de usuarios\"}', '2024-08-17 04:10:32');
+INSERT INTO `bot_audit` VALUES (376, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 855, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885952, \"text\": \"lista de usuarios\"}', '2024-08-17 04:12:31');
+INSERT INTO `bot_audit` VALUES (377, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 857, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723885972, \"text\": \"lista de usuarios\"}', '2024-08-17 04:12:51');
+INSERT INTO `bot_audit` VALUES (378, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 859, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886147, \"text\": \"lista de usuarios\"}', '2024-08-17 04:15:46');
+INSERT INTO `bot_audit` VALUES (379, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 861, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886164, \"text\": \"lista de usuarios\"}', '2024-08-17 04:16:03');
+INSERT INTO `bot_audit` VALUES (380, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 863, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886219, \"text\": \"lista de usuarios\"}', '2024-08-17 04:16:58');
+INSERT INTO `bot_audit` VALUES (381, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 865, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886327, \"text\": \"lista de usuarios\"}', '2024-08-17 04:18:46');
+INSERT INTO `bot_audit` VALUES (382, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 867, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886383, \"text\": \"lista de usuarios\"}', '2024-08-17 04:19:42');
+INSERT INTO `bot_audit` VALUES (383, 6, 'lista de users', 'lista_productos', '{\"message_id\": 871, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886530, \"text\": \"lista de users\"}', '2024-08-17 04:22:09');
+INSERT INTO `bot_audit` VALUES (384, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 875, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886588, \"text\": \"Lista de usuarios\"}', '2024-08-17 04:23:07');
+INSERT INTO `bot_audit` VALUES (385, 6, 'lista de usuarios', 'lista_productos', '{\"message_id\": 886, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886706, \"text\": \"lista de usuarios\"}', '2024-08-17 04:25:05');
+INSERT INTO `bot_audit` VALUES (386, 6, 'quiero el reporte de usuarios', 'lista_productos', '{\"message_id\": 890, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886732, \"text\": \"quiero el reporte de usuarios\"}', '2024-08-17 04:25:31');
+INSERT INTO `bot_audit` VALUES (387, 6, 'informe de usuarios', 'lista_productos', '{\"message_id\": 894, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886744, \"text\": \"informe de usuarios\"}', '2024-08-17 04:25:43');
+INSERT INTO `bot_audit` VALUES (388, 6, 'listado de productos', 'lista_productos', '{\"message_id\": 898, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886755, \"text\": \"listado de productos\"}', '2024-08-17 04:25:54');
+INSERT INTO `bot_audit` VALUES (389, 6, 'movimientos', 'movimientos', '{\"message_id\": 902, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886762, \"text\": \"movimientos\"}', '2024-08-17 04:26:01');
+INSERT INTO `bot_audit` VALUES (390, 6, 'movimientos', 'movimientos', '{\"message_id\": 904, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886865, \"text\": \"movimientos\"}', '2024-08-17 04:27:44');
+INSERT INTO `bot_audit` VALUES (391, 6, 'movimientos', 'movimientos', '{\"message_id\": 906, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723886904, \"text\": \"movimientos\"}', '2024-08-17 04:28:24');
+INSERT INTO `bot_audit` VALUES (392, 6, 'movimientos', 'movimientos', '{\"message_id\": 908, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887134, \"text\": \"movimientos\"}', '2024-08-17 04:32:13');
+INSERT INTO `bot_audit` VALUES (393, 6, 'movimientos', 'movimientos', '{\"message_id\": 910, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887233, \"text\": \"movimientos\"}', '2024-08-17 04:33:51');
+INSERT INTO `bot_audit` VALUES (394, 6, 'movimientos', 'movimientos', '{\"message_id\": 912, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887280, \"text\": \"movimientos\"}', '2024-08-17 04:34:39');
+INSERT INTO `bot_audit` VALUES (395, 6, 'movimientos', 'movimientos', '{\"message_id\": 914, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887316, \"text\": \"movimientos\"}', '2024-08-17 04:35:15');
+INSERT INTO `bot_audit` VALUES (396, 6, 'movimientos', 'movimientos', '{\"message_id\": 916, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887326, \"text\": \"movimientos\"}', '2024-08-17 04:35:25');
+INSERT INTO `bot_audit` VALUES (397, 6, 'movimientos', 'movimientos', '{\"message_id\": 918, \"from\": {\"id\": 1427181793, \"is_bot\": false, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"language_code\": \"es\"}, \"chat\": {\"id\": 1427181793, \"first_name\": \"Santiago\", \"last_name\": \"Borja\", \"username\": \"SantiagoDieum\", \"type\": \"private\"}, \"date\": 1723887399, \"text\": \"movimientos\"}', '2024-08-17 04:36:38');
 
 -- ----------------------------
 -- Table structure for bot_dictionary
@@ -1423,7 +1473,7 @@ CREATE TABLE `bot_spelling`  (
   `confirmed` int NOT NULL DEFAULT 0 COMMENT 'Si se encuentra confirmado o no para que sea parete de la capa de entrada',
   PRIMARY KEY (`idbotspelling`) USING BTREE,
   INDEX `IDXword`(`wordfind` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 157 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 161 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of bot_spelling
@@ -1573,7 +1623,11 @@ INSERT INTO `bot_spelling` VALUES (147, 'dame el resumen de usuarios', 'lista_us
 INSERT INTO `bot_spelling` VALUES (148, 'dame alguna cosa de productos', 'lista_productos', 1);
 INSERT INTO `bot_spelling` VALUES (149, 'quiero algo de stock', 'stock', 1);
 INSERT INTO `bot_spelling` VALUES (154, 'al susto', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (155, 'necesito un listado de productos ahora', 'lista_productos', 0);
+INSERT INTO `bot_spelling` VALUES (155, 'necesito un listado de productos ahora', 'lista_productos', 1);
+INSERT INTO `bot_spelling` VALUES (157, 'lista e usuarios', 'lista_usuarios', 1);
+INSERT INTO `bot_spelling` VALUES (158, 'lista de users', 'lista_usuarios', 1);
+INSERT INTO `bot_spelling` VALUES (159, 'quiero el reporte de usuarios', 'lista_productos', 0);
+INSERT INTO `bot_spelling` VALUES (160, 'informe de usuarios', 'lista_productos', 0);
 
 -- ----------------------------
 -- Table structure for city
@@ -1790,6 +1844,32 @@ INSERT INTO `city` VALUES (196, 22, 'Shushufindi');
 INSERT INTO `city` VALUES (197, 22, 'Sucumbíos');
 INSERT INTO `city` VALUES (198, 23, 'Ambato');
 INSERT INTO `city` VALUES (199, 23, 'Baños de Agua Santa');
+
+-- ----------------------------
+-- Table structure for config
+-- ----------------------------
+DROP TABLE IF EXISTS `config`;
+CREATE TABLE `config`  (
+  `idconfig` int NOT NULL AUTO_INCREMENT,
+  `order` int NULL DEFAULT 0,
+  `variable` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
+  `label` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT NULL,
+  `vvalue` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`idconfig`) USING BTREE,
+  INDEX `variable`(`variable` ASC) USING BTREE,
+  INDEX `order`(`order` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of config
+-- ----------------------------
+INSERT INTO `config` VALUES (5, 88, 'switch_ia_bot', 'Bot Switch', 'redneuronal');
+INSERT INTO `config` VALUES (8, 0, 'empresa_nombre', 'Nombre Empresa', 'DIPROAVILM Cia. Ltda.');
+INSERT INTO `config` VALUES (9, 1, 'empresa_ruc', 'RUC', '1700000000001');
+INSERT INTO `config` VALUES (10, 2, 'empresa_direccion', 'Dirección', 'Quito');
+INSERT INTO `config` VALUES (11, 3, 'empresa_telefono', 'Teléfono', '0990000000');
+INSERT INTO `config` VALUES (12, 4, 'empresa_establecimiento', 'No. Establecimiento', '001');
+INSERT INTO `config` VALUES (13, 5, 'empresa_pto_venta', 'No. Punto de Venta', '003');
 
 -- ----------------------------
 -- Table structure for country
@@ -2021,7 +2101,7 @@ CREATE TABLE `menu`  (
   INDEX `submenu`(`submenu` ASC) USING BTREE,
   INDEX `status`(`status` ASC) USING BTREE,
   INDEX `deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu
@@ -2029,7 +2109,7 @@ CREATE TABLE `menu`  (
 INSERT INTO `menu` VALUES (1, '02', 'Administación', 'fa fa-cog', NULL, 1, 1, '2024-06-21 15:00:39', '2024-08-09 10:27:27', NULL);
 INSERT INTO `menu` VALUES (2, '02.01', 'Usuarios', 'fas fa-user', 'users', 0, 1, '2024-06-21 15:00:50', '2024-08-09 10:27:32', NULL);
 INSERT INTO `menu` VALUES (3, '02.03', 'Roles', 'fas fa-shield-alt', 'roles', 0, 1, '2024-06-21 15:01:00', '2024-08-13 12:31:28', NULL);
-INSERT INTO `menu` VALUES (4, '02.02', 'Men%C3%BA+de+Opciones', 'fas+fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-17 00:31:05', NULL);
+INSERT INTO `menu` VALUES (4, '02.02', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-17 00:36:51', NULL);
 INSERT INTO `menu` VALUES (5, '03.01', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-17 00:11:30', NULL);
 INSERT INTO `menu` VALUES (6, '03', 'Almacén', 'fas fa-box-open', NULL, 1, 1, '2024-06-21 15:09:14', '2024-08-09 10:27:55', NULL);
 INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimiento', 'fas fa-truck-loading', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-17 00:11:50', NULL);
@@ -2049,6 +2129,11 @@ INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot
 INSERT INTO `menu` VALUES (21, '02.04', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-13 12:31:39', NULL);
 INSERT INTO `menu` VALUES (22, '05.04', 'Usuarios Registrados', 'fab fa-telegram-plane', 'bot_users', 0, 1, '2024-07-25 21:51:48', '2024-08-09 10:28:36', NULL);
 INSERT INTO `menu` VALUES (28, '03.04', 'Kardex', 'fas fa-boxes', 'kardex', 0, 1, '2024-08-16 23:00:38', '2024-08-17 00:11:42', NULL);
+INSERT INTO `menu` VALUES (29, '04.05', 'Productos por número de movimientos', 'far fa-file-archive', 'lst_nummovimientos', 0, 1, '2024-08-17 01:04:49', '2024-08-17 01:06:29', NULL);
+INSERT INTO `menu` VALUES (30, '04.06', 'Inventario Valorizado', 'far fa-file-archive', 'lst_invvalorado', 0, 1, '2024-08-17 01:06:24', '2024-08-17 01:06:49', NULL);
+INSERT INTO `menu` VALUES (35, '01.02', 'Compras', 'fas fa-chart-bar', 'dashcompras', 0, 1, '2024-08-17 01:38:33', '2024-08-17 01:38:54', NULL);
+INSERT INTO `menu` VALUES (36, '03.05', 'Tipo de Movimientos', 'fas fa-ticket-alt', 'movtipo', 0, 1, '2024-08-19 09:33:33', '2024-08-19 09:33:33', NULL);
+INSERT INTO `menu` VALUES (37, '02.05', 'Configuracion General', 'fa fa-cog', 'config', 0, 1, '2024-08-19 11:23:18', '2024-08-19 11:23:18', NULL);
 
 -- ----------------------------
 -- Table structure for movementtype
@@ -2059,20 +2144,20 @@ CREATE TABLE `movementtype`  (
   `acronym` varchar(5) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
   `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
   `sequential` bigint NULL DEFAULT 0,
-  `entry` enum('I','E','A') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT 'E' COMMENT 'I-Ingreso E-Egreso  A-Ambos',
+  `requeriments` enum('P','C','A','E') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT 'P' COMMENT 'P-Proveedores   C-Clientes',
   PRIMARY KEY (`idmovementtype`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of movementtype
 -- ----------------------------
-INSERT INTO `movementtype` VALUES (1, 'FV', 'Salida de bodega a cliente', 30, 'E');
-INSERT INTO `movementtype` VALUES (2, 'FC', 'Ingreso de bodega por proveedor', 0, 'I');
-INSERT INTO `movementtype` VALUES (3, 'AS', 'Saldo Incial', 0, 'I');
-INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'A');
-INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'E');
-INSERT INTO `movementtype` VALUES (6, 'BA', 'Baja de Inventario', 0, 'E');
-INSERT INTO `movementtype` VALUES (7, 'TF', 'Toma Fisica', 0, 'I');
+INSERT INTO `movementtype` VALUES (1, 'FV', 'Comprobante de ingreso', 30, 'C');
+INSERT INTO `movementtype` VALUES (2, 'FC', 'Comprobante de egreso', 0, 'P');
+INSERT INTO `movementtype` VALUES (3, 'AS', 'Saldo Incial', 0, 'P');
+INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'C');
+INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'C');
+INSERT INTO `movementtype` VALUES (6, 'BA', 'Baja de Inventario', 0, 'C');
+INSERT INTO `movementtype` VALUES (7, 'TF', 'Toma Fisica', 0, 'C');
 
 -- ----------------------------
 -- Table structure for presentation
@@ -4101,7 +4186,7 @@ CREATE TABLE `rolemenu`  (
   INDEX `IDME`(`idmenu` ASC) USING BTREE,
   CONSTRAINT `IDME` FOREIGN KEY (`idmenu`) REFERENCES `menu` (`idmenu`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXROL` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 263 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 369 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of rolemenu
@@ -4116,29 +4201,34 @@ INSERT INTO `rolemenu` VALUES (236, 3, 15);
 INSERT INTO `rolemenu` VALUES (237, 3, 6);
 INSERT INTO `rolemenu` VALUES (238, 3, 8);
 INSERT INTO `rolemenu` VALUES (239, 3, 7);
-INSERT INTO `rolemenu` VALUES (240, 2, 9);
-INSERT INTO `rolemenu` VALUES (241, 2, 15);
-INSERT INTO `rolemenu` VALUES (242, 2, 1);
-INSERT INTO `rolemenu` VALUES (243, 2, 2);
-INSERT INTO `rolemenu` VALUES (244, 2, 4);
-INSERT INTO `rolemenu` VALUES (245, 2, 3);
-INSERT INTO `rolemenu` VALUES (246, 2, 21);
-INSERT INTO `rolemenu` VALUES (247, 2, 6);
-INSERT INTO `rolemenu` VALUES (248, 2, 8);
-INSERT INTO `rolemenu` VALUES (249, 2, 5);
-INSERT INTO `rolemenu` VALUES (250, 2, 7);
-INSERT INTO `rolemenu` VALUES (251, 2, 28);
-INSERT INTO `rolemenu` VALUES (252, 2, 10);
-INSERT INTO `rolemenu` VALUES (253, 2, 11);
-INSERT INTO `rolemenu` VALUES (254, 2, 12);
-INSERT INTO `rolemenu` VALUES (255, 2, 13);
-INSERT INTO `rolemenu` VALUES (256, 2, 14);
-INSERT INTO `rolemenu` VALUES (257, 2, 16);
-INSERT INTO `rolemenu` VALUES (258, 2, 17);
-INSERT INTO `rolemenu` VALUES (259, 2, 18);
-INSERT INTO `rolemenu` VALUES (260, 2, 19);
-INSERT INTO `rolemenu` VALUES (261, 2, 22);
-INSERT INTO `rolemenu` VALUES (262, 2, 20);
+INSERT INTO `rolemenu` VALUES (341, 2, 9);
+INSERT INTO `rolemenu` VALUES (342, 2, 15);
+INSERT INTO `rolemenu` VALUES (343, 2, 35);
+INSERT INTO `rolemenu` VALUES (344, 2, 1);
+INSERT INTO `rolemenu` VALUES (345, 2, 2);
+INSERT INTO `rolemenu` VALUES (346, 2, 4);
+INSERT INTO `rolemenu` VALUES (347, 2, 3);
+INSERT INTO `rolemenu` VALUES (348, 2, 21);
+INSERT INTO `rolemenu` VALUES (349, 2, 37);
+INSERT INTO `rolemenu` VALUES (350, 2, 6);
+INSERT INTO `rolemenu` VALUES (351, 2, 5);
+INSERT INTO `rolemenu` VALUES (352, 2, 8);
+INSERT INTO `rolemenu` VALUES (353, 2, 7);
+INSERT INTO `rolemenu` VALUES (354, 2, 28);
+INSERT INTO `rolemenu` VALUES (355, 2, 36);
+INSERT INTO `rolemenu` VALUES (356, 2, 10);
+INSERT INTO `rolemenu` VALUES (357, 2, 11);
+INSERT INTO `rolemenu` VALUES (358, 2, 12);
+INSERT INTO `rolemenu` VALUES (359, 2, 13);
+INSERT INTO `rolemenu` VALUES (360, 2, 14);
+INSERT INTO `rolemenu` VALUES (361, 2, 29);
+INSERT INTO `rolemenu` VALUES (362, 2, 30);
+INSERT INTO `rolemenu` VALUES (363, 2, 16);
+INSERT INTO `rolemenu` VALUES (364, 2, 17);
+INSERT INTO `rolemenu` VALUES (365, 2, 18);
+INSERT INTO `rolemenu` VALUES (366, 2, 19);
+INSERT INTO `rolemenu` VALUES (367, 2, 22);
+INSERT INTO `rolemenu` VALUES (368, 2, 20);
 
 -- ----------------------------
 -- Table structure for transaction
@@ -4250,12 +4340,12 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 2, 'jorge', 'cambiar', 'Jorge', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:30:34', '2024-08-06 03:26:32', NULL);
+INSERT INTO `user` VALUES (1, 2, 'jorge', '$2y$12$nKDUhRshuMdplcHvok8nVe37Hj.1EAu1vli5QPAig3nO2YuXx8AWe', 'Jorge', 1, 0, 'es', 1, '2024-08-19 09:28:05', 'Q0hlTHR3elRaeFhsSG0vbk55dlloelRYaU5UVTFFeXh3UFEyVEFOenppOHk0OTJHSkUvb2JHUVNjSkFVRkNvMm50aFM5bVBuVWtUSFpVSUhRS3AzL0E9PQ==', '2024-06-21 15:30:34', '2024-08-19 09:28:05', NULL);
 INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 15, '2024-08-03 01:46:43', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:30:47', '2024-08-16 23:11:38', NULL);
 INSERT INTO `user` VALUES (3, 1, 'hugo', 'cambiar', 'Hugo', 0, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-16 18:47:14', NULL);
 INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:15', '2024-08-06 03:23:02', NULL);
 INSERT INTO `user` VALUES (5, 2, 'rick', '', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-02 23:53:36', NULL);
-INSERT INTO `user` VALUES (6, 5, 'SantiagoDieum', '', 'Santiago Borja', 0, 1427181793, 'es', 294, NULL, NULL, '2024-07-04 13:14:09', '2024-08-02 23:53:36', NULL);
+INSERT INTO `user` VALUES (6, 5, 'SantiagoDieum', '', 'Santiago Borja', 0, 1427181793, 'es', 337, NULL, NULL, '2024-07-04 13:14:09', '2024-08-17 04:36:38', NULL);
 INSERT INTO `user` VALUES (7, 5, 'therichard369', '', 'Ricardo V', 0, 1211357100, 'es', 6, NULL, NULL, '2024-07-09 21:49:54', '2024-07-09 21:53:03', NULL);
 INSERT INTO `user` VALUES (8, 5, 'Hugueins_hv', '', 'Hugueins AHV', 0, 106245323, 'es', 4, NULL, NULL, '2024-07-09 21:57:11', '2024-07-09 21:58:07', NULL);
 INSERT INTO `user` VALUES (9, 5, 'bot', '', '', 0, 0, 'es', 0, NULL, NULL, '2024-07-12 01:19:59', '2024-07-12 15:32:08', NULL);
@@ -4286,7 +4376,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_city` AS select `c`
 -- View structure for view_clients
 -- ----------------------------
 DROP VIEW IF EXISTS `view_clients`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_clients` AS select distinct `b`.`idbeneficiary` AS `idbeneficiary`,`b`.`identificationnumber` AS `identifiacion`,`b`.`name` AS `nombre`,`b`.`comercialname` AS `nombrecomercial`,`b`.`address` AS `direccion`,`b`.`phone` AS `telefono`,`b`.`email` AS `email`,`b`.`web` AS `web`,`c`.`name` AS `pais`,`p`.`name` AS `provincia`,`cc`.`name` AS `ciudad`,`b`.`parish` AS `parroquia` from (((`beneficiary` `b` join `country` `c` on((`b`.`idcountry` = `c`.`idcountry`))) join `province` `p` on((`p`.`idprovince` = `b`.`idprovince`))) join `city` `cc` on((`cc`.`idcity` = `b`.`idcity`))) where (`b`.`type` = 'C');
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_clients` AS select distinct cast(`b`.`idbeneficiary` as char charset utf8mb4) AS `idbeneficiary`,`b`.`identificationnumber` AS `identifiacion`,`b`.`name` AS `nombre`,`b`.`comercialname` AS `nombrecomercial`,`b`.`address` AS `direccion`,`b`.`phone` AS `telefono`,`b`.`email` AS `email`,`b`.`web` AS `web`,`c`.`name` AS `pais`,`p`.`name` AS `provincia`,`cc`.`name` AS `ciudad`,`b`.`parish` AS `parroquia` from (((`beneficiary` `b` join `country` `c` on((`b`.`idcountry` = `c`.`idcountry`))) join `province` `p` on((`p`.`idprovince` = `b`.`idprovince`))) join `city` `cc` on((`cc`.`idcity` = `b`.`idcity`))) where (`b`.`type` = 'C');
 
 -- ----------------------------
 -- View structure for view_get_menu
@@ -4304,7 +4394,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_get_users` AS selec
 -- View structure for view_movements
 -- ----------------------------
 DROP VIEW IF EXISTS `view_movements`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select `p`.`idproduct` AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,year(cast(`t`.`date` as date)) AS `anio`,month(cast(`t`.`date` as date)) AS `mes`,dayofmonth(cast(`t`.`date` as date)) AS `dia`,quarter(cast(`t`.`date` as date)) AS `trimestre`,week(cast(`t`.`date` as date),0) AS `semana`,`b`.`name` AS `beneficiario`,`b`.`type` AS `tipo`,`b`.`idcountry` AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,`b`.`idprovince` AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,`b`.`idcity` AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select cast(`p`.`idproduct` as char charset utf8mb4) AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,cast(year(cast(`t`.`date` as date)) as char charset utf8mb4) AS `anio`,cast(month(cast(`t`.`date` as date)) as char charset utf8mb4) AS `mes`,cast(dayofmonth(cast(`t`.`date` as date)) as char charset utf8mb4) AS `dia`,cast(quarter(cast(`t`.`date` as date)) as char charset utf8mb4) AS `trimestre`,cast(week(cast(`t`.`date` as date),0) as char charset utf8mb4) AS `semana`,`b`.`name` AS `beneficiario`,cast(`b`.`type` as char charset utf8mb4) AS `tipo`,cast(`b`.`idcountry` as char charset utf8mb4) AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,cast(`b`.`idprovince` as char charset utf8mb4) AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,cast(`b`.`idcity` as char charset utf8mb4) AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`)));
 
 -- ----------------------------
 -- View structure for view_products

@@ -1,5 +1,7 @@
 {
     "GET|healthy" : "RouterController::healthy()",
+    
+    "GET|config":  "ConfigController::getAll()",
 
     "POST|login":  "UsersController::login()",
     "GET|users" : "UsersController::getAll()",
@@ -58,6 +60,13 @@
 
 
     "GET|movtipos":  "MovimientoTiposController::getAll()",
-    "GET|movtipo":  "MovimientoTiposController::getOne()"
+    "GET|movtipo":  "MovimientoTiposController::getOne()",
+
+
+
+    "GET|botrequest":  "BotController::execSql()"
+
+
+
     
 }
