@@ -28,6 +28,7 @@
     "POST|recuperarMenu":  "MenuController::recuperar()",
 
     "GET|bene":  "BeneficiarioController::getAll()",
+    "GET|benesByType":  "BeneficiarioController::getByType()",
     "POST|saveBene":  "BeneficiarioController::saveBeneficiario()",
     "PUT|saveBene":  "BeneficiarioController::updateBeneficiario()",
     "DELETE|deleteBene":  "BeneficiarioController::deleteBeneficiario()",

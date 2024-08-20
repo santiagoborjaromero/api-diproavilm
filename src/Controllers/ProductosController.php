@@ -8,6 +8,7 @@ class ProductosController extends Controller{
     static public function getAll(){
         Middleware::auditSecurity();
         $role = new Model("view_products");
+        $role->orderBy("name","asc");
         $rs = $role->get();
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);

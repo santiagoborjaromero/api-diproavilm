@@ -15,6 +15,20 @@ class BeneficiarioController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    static public function getByType(){
+        Middleware::auditSecurity();
+
+        $tipo = $_GET["tipo"];
+        
+        $role = new Model("view_beneficiary");
+        $role->where("type", "=", $tipo);
+        $role->orderBy("nombre", "asc");
+        $rs = $role->get();
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+
     static public function saveBeneficiario(){
         
         Middleware::auditSecurity();
