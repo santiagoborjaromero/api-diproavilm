@@ -1,6 +1,7 @@
 <?PHP
 
 require_once(__DIR__."/../Models/Model.php");
+require_once(__DIR__."/../Models/Transaction.php");
 
 class MovimientosController extends Controller{
 
@@ -17,18 +18,21 @@ class MovimientosController extends Controller{
 
         $requestBody = Middleware::request();
 
-        $role = new Model("view_transaction");
+        $trans= new Transaction();
+        $rs = $trans->getData($requestBody);
 
-        if ($requestBody){
-            foreach ($requestBody as $key => $value) {
-                if ($key == "date") {
-                    $role->where($key, "BETWEEN", $value);
-                } else{
-                    $role->where($key, "=", $value);
-                }
-            }
-        }
-        $rs = $role->get();
+        // $role = new Model("view_transaction");
+
+        // if ($requestBody){
+        //     foreach ($requestBody as $key => $value) {
+        //         if ($key == "date") {
+        //             $role->where($key, "BETWEEN", $value);
+        //         } else{
+        //             $role->where($key, "=", $value);
+        //         }
+        //     }
+        // }
+        // $rs = $role->get();
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
