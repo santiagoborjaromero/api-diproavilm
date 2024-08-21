@@ -2,17 +2,14 @@
 
 class Middleware{
 
-    static public function noAuditSecurity($devolver = false){
-        return true;
-    }
     static public function auditSecurity($devolver = false){
 
         $authorization = getallheaders()["Authorization"];
         $token_to_evaluate = explode(" ", $authorization);
-
+        
         if ($token_to_evaluate[0] == "Bearer"){
             $payload = json_decode(Controller::decode(base64_decode($token_to_evaluate[1])), true);
-
+            
             if ($devolver){
                 return $payload;
             } 
@@ -59,12 +56,8 @@ class Middleware{
 
             // return $valid;
         } else{
-            if ($authorization){
-                $valid = false;
-                $razon = "El token se encuentra mal formado, el formato correcto es Bearer";
-            } else {
-                return null;
-            }
+            $valid = false;
+            $razon = "El token se encuentra mal formado, el formato correcto es Bearer";
         }
 
         // return ["status"=>$valid, "razon"=>$razon];

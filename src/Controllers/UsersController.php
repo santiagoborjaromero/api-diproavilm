@@ -6,8 +6,6 @@ class UsersController extends Controller{
         
     static public function login(){
 
-        // Middleware::noAuditSecurity();
-
         $requestBody = json_decode(file_get_contents('php://input'), true);
 
         if (!$requestBody){

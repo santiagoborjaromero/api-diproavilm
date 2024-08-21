@@ -58,12 +58,13 @@
     "POST|recuperarProducto":  "ProductosController::recuperar()",
 
     "GET|transacciones":  "MovimientosController::getAll()",
+    "GET|transaccionesFiltro":  "MovimientosController::getByFilter()",
+    "POST|saveTransaction":  "MovimientosController::save()",
+    "PUT|saveTransaction":  "MovimientosController::update()",
 
 
     "GET|movtipos":  "MovimientoTiposController::getAll()",
     "GET|movtipo":  "MovimientoTiposController::getOne()",
-
-
 
     "GET|botrequest":  "BotController::execSql()"
 
