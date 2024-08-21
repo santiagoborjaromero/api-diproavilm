@@ -60,8 +60,8 @@ class Model extends ConnController{
 
         // echo $sql;
         // die();
-        print_r($params);
-        die();
+        // print_r($params);
+        // die();
 
         $conn = new ConnController();
         $conn->Connect($this->drive);
