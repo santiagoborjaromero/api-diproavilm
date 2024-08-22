@@ -237,7 +237,7 @@ class Model extends ConnController{
 
     public function saveAudit($json = []){
 
-        $data = Middleware::auditSecurity(true);
+        $data = Middleware::getDataToken();
 
         $iduser = null;
         if ($data){

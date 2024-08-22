@@ -286,15 +286,9 @@ class UsersController extends Controller{
     }
 
     static function establecerclave(){
-        $requestBody = json_decode(file_get_contents('php://input'), true);
 
-        if (!$requestBody){
-            $requestBody = [
-                "username" => $_POST['username'],
-                "password_new" => $_POST['password_new'],
-            ];
-        }
-        
+        $requestBody = Middleware::request();
+
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;
         $rs = $change->get(true);

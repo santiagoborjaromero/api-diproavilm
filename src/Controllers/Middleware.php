@@ -69,6 +69,17 @@ class Middleware{
 
     }
 
+
+    static public function getDataToken(){
+        $authorization = getallheaders()["Authorization"];
+        $token_to_evaluate = explode(" ", $authorization);
+        // $payload = [];
+        $payload = json_decode(Controller::decode(base64_decode($token_to_evaluate[1])), true);
+        $valid = true;
+        return $payload;
+
+    }
+
     static function request(){
         $requestBody = array();
         
