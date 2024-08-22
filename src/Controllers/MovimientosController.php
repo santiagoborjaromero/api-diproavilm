@@ -71,7 +71,7 @@ class MovimientosController extends Controller{
                 $newi["total"] = $value["total"];
 
                 $productmovement = new Model("productmovement");
-                $idmovmentproduct= $productmovement->insertRecord($newi);
+                $productmovement->insertRecord($newi);
             }
         }
         

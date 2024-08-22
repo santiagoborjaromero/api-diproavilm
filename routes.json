@@ -56,6 +56,7 @@
     "PUT|saveProducto":  "ProductosController::update()",
     "DELETE|deleteProducto":  "ProductosController::delete()",
     "POST|recuperarProducto":  "ProductosController::recuperar()",
+    "POST|kardex":  "ProductosController::kardex()",
 
     "GET|transacciones":  "MovimientosController::getAll()",
     "GET|transaccionesFiltro":  "MovimientosController::getByFilter()",

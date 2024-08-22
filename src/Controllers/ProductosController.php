@@ -1,6 +1,7 @@
 <?PHP
 
 require_once(__DIR__."/../Models/Model.php");
+require_once(__DIR__."/../Models/Product.php");
 
 
 class ProductosController extends Controller{
@@ -125,6 +126,24 @@ class ProductosController extends Controller{
             $status = "error";
             $message = "El producto que desea eliminar no existe";
         }
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+
+    static public function kardex(){
+        
+        Middleware::auditSecurity();
+
+        $requestBody = Middleware::request();
+        $id = $_GET["id"];
+
+        $kardx = new Product();
+        $rs = $kardx->generarKardex($id);
+
+        $status = "ok";
+        $message = $rs;
+
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
