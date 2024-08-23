@@ -14,6 +14,8 @@ class Middleware{
                 return $payload;
             } 
 
+       
+
             $valid = false;
             $valid_c = 0;
             $razon = "";
@@ -39,6 +41,9 @@ class Middleware{
                 $razon = "Token, estructura inválida";
             }
 
+     
+
+            // echo json_encode($payload);
 
             /** 
              * Chequeo de fecha de expiracion
@@ -53,6 +58,8 @@ class Middleware{
                     $razon = "Token ha expirado";
                 }
             }
+
+      
 
             // return $valid;
         } else{
@@ -137,13 +144,6 @@ class Middleware{
                     } else if ($appContent == "application/x-www-form-urlencoded" || $cnt[0] == "application/x-www-form-urlencoded"){
                         //TODO: PAra x-www-form-urlencoded o PUT en formularios
                         parse_str($str, $requestBody);
-                        // if (strpos($str,"&")){
-                        //     $nd = explode('&', $str);
-                        //     foreach ($nd as $key) {
-                        //         $a = explode("=", $key);
-                        //         $requestBody[$a[0]] = $a[1];
-                        //     }
-                        // }
                     } 
                 }
             }

@@ -62,10 +62,14 @@
     "GET|transaccionesFiltro":  "MovimientosController::getByFilter()",
     "POST|saveTransaction":  "MovimientosController::save()",
     "PUT|saveTransaction":  "MovimientosController::update()",
-
-
+    
     "GET|movtipos":  "MovimientoTiposController::getAll()",
+    "GET|movtiposSinFiltro":  "MovimientoTiposController::getAllWF()",
     "GET|movtipo":  "MovimientoTiposController::getOne()",
+    "POST|saveMovTipo":  "MovimientoTiposController::save()",
+    "PUT|saveMovTipo":  "MovimientoTiposController::update()",
+    "DELETE|movtipoDelete":  "MovimientoTiposController::delete()",
+    "POST|movtipoRecuperar":  "MovimientoTiposController::recuperar()",
 
     "GET|botrequest":  "BotController::execSql()"
 
