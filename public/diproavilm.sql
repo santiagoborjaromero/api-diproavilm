@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 21/08/2024 00:59:39
+ Date: 23/08/2024 01:23:39
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 226 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 254 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of audit
@@ -264,6 +264,34 @@ INSERT INTO `audit` VALUES (222, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?
 INSERT INTO `audit` VALUES (223, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveTransaction', '{\"idtransaction\":91,\"idproduct\":\"18\",\"entry\":\"I\",\"qty\":10,\"price\":10,\"total\":100}', '2024-08-20 13:54:41', '2024-08-20 13:54:41', NULL);
 INSERT INTO `audit` VALUES (224, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"iduser\":2,\"idbeneficiary\":\"76\",\"idmovementtype\":\"2\",\"date\":\"2024-08-20 17:46:07\",\"numberdocument\":\"125-012-001589111\",\"subtotal\":\"1500\",\"discount\":\"0\",\"total\":\"1500\",\"reference\":\"\"}', '2024-08-20 17:46:07', '2024-08-20 17:46:07', NULL);
 INSERT INTO `audit` VALUES (225, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":92,\"idproduct\":\"17\",\"entry\":\"I\",\"qty\":\"125\",\"price\":\"12\",\"total\":\"1500\"}', '2024-08-20 17:46:07', '2024-08-20 17:46:07', NULL);
+INSERT INTO `audit` VALUES (226, NULL, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=establecerclave', '{\"password\":\"$2y$12$JfgZQaHQi\\/yELIpCWyhm9.70LE5A2rAIss8\\/9TyN7NuOWlRvz\\/FOC\",\"iduser\":3}', '2024-08-22 17:55:33', '2024-08-22 17:55:33', NULL);
+INSERT INTO `audit` VALUES (227, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=establecerclave', '{\"password\":\"$2y$12$S719rXL1v.ORZC15Yx\\/.1.9y.exKaAfiwHXiL.AktrFAZGJF5iA.y\",\"iduser\":4}', '2024-08-22 17:56:32', '2024-08-22 17:56:32', NULL);
+INSERT INTO `audit` VALUES (228, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"aE5zSGdtSlQ5Ym9vM2RadEJMSnhvUGxMbHZ0UUxwT1JCYTRTZDBtQWo4ZEVZNlh4N3R2YWRLOUJYbHo2Mm1kbDArVmFwTnpVV2YwaEViM2F5RVczWUE9PQ==\",\"operations\":1,\"lastlogged\":\"2024-08-22 17:56:45\",\"iduser\":4}', '2024-08-22 17:56:45', '2024-08-22 17:56:45', NULL);
+INSERT INTO `audit` VALUES (229, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=resetearclave&id=4', '{\"password\":\"cambiar\",\"iduser\":\"4\"}', '2024-08-22 17:57:37', '2024-08-22 17:57:37', NULL);
+INSERT INTO `audit` VALUES (230, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:38:43', '2024-08-23 00:38:43', NULL);
+INSERT INTO `audit` VALUES (231, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:42:11', '2024-08-23 00:42:11', NULL);
+INSERT INTO `audit` VALUES (232, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:43:54', '2024-08-23 00:43:54', NULL);
+INSERT INTO `audit` VALUES (233, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:43:57', '2024-08-23 00:43:57', NULL);
+INSERT INTO `audit` VALUES (234, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:44:08', '2024-08-23 00:44:08', NULL);
+INSERT INTO `audit` VALUES (235, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:46:44', '2024-08-23 00:46:44', NULL);
+INSERT INTO `audit` VALUES (236, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:47:28', '2024-08-23 00:47:28', NULL);
+INSERT INTO `audit` VALUES (237, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:48:18', '2024-08-23 00:48:18', NULL);
+INSERT INTO `audit` VALUES (238, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:48:23', '2024-08-23 00:48:23', NULL);
+INSERT INTO `audit` VALUES (239, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:48:25', '2024-08-23 00:48:25', NULL);
+INSERT INTO `audit` VALUES (240, 2, 'PostmanRuntime/7.41.1', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"iduser\":2,\"idbeneficiary\":null,\"idmovementtype\":null,\"date\":null,\"numberdocument\":null,\"subtotal\":null,\"discount\":null,\"total\":null,\"reference\":null}', '2024-08-23 00:48:26', '2024-08-23 00:48:26', NULL);
+INSERT INTO `audit` VALUES (241, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=saveMovTipo&id=-1', '{\"acronym\":\"ssss\",\"name\":\"asd2SSsdasa\",\"sequential\":\"0\",\"beneficiarytype\":\"P\",\"entry\":\"I\",\"typevalue\":\"C\"}', '2024-08-23 00:49:18', '2024-08-23 00:49:18', NULL);
+INSERT INTO `audit` VALUES (242, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMovTipo&id=9', '{\"acronym\":\"ssss\",\"name\":\"asd2SSsdasa\",\"sequential\":\"0\",\"beneficiarytype\":\"P\",\"entry\":\"I\",\"typevalue\":\"C\",\"idmovementtype\":\"9\"}', '2024-08-23 00:49:30', '2024-08-23 00:49:30', NULL);
+INSERT INTO `audit` VALUES (243, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=8', '{\"idmovementtype\":\"8\"}', '2024-08-23 00:50:08', '2024-08-23 00:50:08', NULL);
+INSERT INTO `audit` VALUES (244, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'POST', '/api6ug8/?ruta=movtipoRecuperar&id=8', '{\"deleted_at\":null,\"idmovementtype\":\"8\"}', '2024-08-23 00:50:15', '2024-08-23 00:50:15', NULL);
+INSERT INTO `audit` VALUES (245, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=8', '{\"idmovementtype\":\"8\"}', '2024-08-23 00:50:21', '2024-08-23 00:50:21', NULL);
+INSERT INTO `audit` VALUES (246, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=9', '{\"idmovementtype\":\"9\"}', '2024-08-23 00:50:41', '2024-08-23 00:50:41', NULL);
+INSERT INTO `audit` VALUES (247, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=7', '{\"idmovementtype\":\"7\"}', '2024-08-23 00:50:45', '2024-08-23 00:50:45', NULL);
+INSERT INTO `audit` VALUES (248, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=6', '{\"idmovementtype\":\"6\"}', '2024-08-23 00:50:51', '2024-08-23 00:50:51', NULL);
+INSERT INTO `audit` VALUES (249, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMovTipo&id=2', '{\"acronym\":\"FC\",\"name\":\"Compra\",\"sequential\":\"0\",\"beneficiarytype\":\"P\",\"entry\":\"I\",\"typevalue\":\"C\",\"idmovementtype\":\"2\"}', '2024-08-23 00:51:03', '2024-08-23 00:51:03', NULL);
+INSERT INTO `audit` VALUES (250, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMovTipo&id=1', '{\"acronym\":\"FV\",\"name\":\"Venta\",\"sequential\":\"30\",\"beneficiarytype\":\"C\",\"entry\":\"E\",\"typevalue\":\"P\",\"idmovementtype\":\"1\"}', '2024-08-23 00:51:08', '2024-08-23 00:51:08', NULL);
+INSERT INTO `audit` VALUES (251, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'DELETE', '/api6ug8/?ruta=movtipoDelete&id=3', '{\"idmovementtype\":\"3\"}', '2024-08-23 00:51:45', '2024-08-23 00:51:45', NULL);
+INSERT INTO `audit` VALUES (252, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=36', '{\"order\":\"03.05\",\"name\":\"Tipo de Comprobantes\",\"icon\":\"fas fa-ticket-alt\",\"route\":\"movtipo\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"36\"}', '2024-08-23 01:07:40', '2024-08-23 01:07:40', NULL);
+INSERT INTO `audit` VALUES (253, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=7', '{\"order\":\"03.03\",\"name\":\"Registro de movimientos\",\"icon\":\"fas fa-truck-loading\",\"route\":\"movimientos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"7\"}', '2024-08-23 01:07:48', '2024-08-23 01:07:48', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -2164,7 +2192,7 @@ INSERT INTO `menu` VALUES (3, '02.03', 'Roles', 'fas fa-shield-alt', 'roles', 0,
 INSERT INTO `menu` VALUES (4, '02.02', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-17 00:36:51', NULL);
 INSERT INTO `menu` VALUES (5, '03.01', 'Beneficiarios', 'fas fa-briefcase', 'beneficiarios', 0, 1, '2024-06-21 15:01:45', '2024-08-17 00:11:30', NULL);
 INSERT INTO `menu` VALUES (6, '03', 'Almacén', 'fas fa-box-open', NULL, 1, 1, '2024-06-21 15:09:14', '2024-08-09 10:27:55', NULL);
-INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimiento', 'fas fa-truck-loading', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-17 00:11:50', NULL);
+INSERT INTO `menu` VALUES (7, '03.03', 'Registro de movimientos', 'fas fa-truck-loading', 'movimientos', 0, 1, '2024-06-21 15:09:17', '2024-08-23 01:07:48', NULL);
 INSERT INTO `menu` VALUES (8, '03.02', 'Productos', 'fas fa-box-open', 'productos', 0, 1, '2024-06-21 15:09:43', '2024-08-17 00:11:48', NULL);
 INSERT INTO `menu` VALUES (9, '01', 'Dashboards', 'fas fa-chart-bar', NULL, 1, 1, '2024-06-21 15:09:59', '2024-08-09 10:27:23', NULL);
 INSERT INTO `menu` VALUES (10, '04', 'Informes', 'far fa-file-archive', NULL, 1, 1, '2024-06-21 15:49:08', '2024-08-09 10:28:06', NULL);
@@ -2184,7 +2212,7 @@ INSERT INTO `menu` VALUES (28, '03.04', 'Kardex', 'fas fa-boxes', 'kardex', 0, 1
 INSERT INTO `menu` VALUES (29, '04.05', 'Productos por número de movimientos', 'far fa-file-archive', 'lst_nummovimientos', 0, 1, '2024-08-17 01:04:49', '2024-08-17 01:06:29', NULL);
 INSERT INTO `menu` VALUES (30, '04.06', 'Inventario Valorizado', 'far fa-file-archive', 'lst_invvalorado', 0, 1, '2024-08-17 01:06:24', '2024-08-17 01:06:49', NULL);
 INSERT INTO `menu` VALUES (35, '01.02', 'Compras', 'fas fa-chart-bar', 'dashcompras', 0, 1, '2024-08-17 01:38:33', '2024-08-17 01:38:54', NULL);
-INSERT INTO `menu` VALUES (36, '03.05', 'Tipo de Movimientos', 'fas fa-ticket-alt', 'movtipo', 0, 1, '2024-08-19 09:33:33', '2024-08-19 09:33:33', NULL);
+INSERT INTO `menu` VALUES (36, '03.05', 'Tipo de Comprobantes', 'fas fa-ticket-alt', 'movtipo', 0, 1, '2024-08-19 09:33:33', '2024-08-23 01:07:40', NULL);
 INSERT INTO `menu` VALUES (37, '02.05', 'Configuracion General', 'fa fa-cog', 'config', 0, 1, '2024-08-19 11:23:18', '2024-08-19 11:23:18', NULL);
 
 -- ----------------------------
@@ -2193,26 +2221,27 @@ INSERT INTO `menu` VALUES (37, '02.05', 'Configuracion General', 'fa fa-cog', 'c
 DROP TABLE IF EXISTS `movementtype`;
 CREATE TABLE `movementtype`  (
   `idmovementtype` int NOT NULL AUTO_INCREMENT,
-  `acronym` varchar(5) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
-  `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
-  `sequential` bigint NULL DEFAULT 0,
-  `beneficiarytype` enum('P','C','A','E') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT 'P' COMMENT 'P-Proveedores   C-Clientes',
-  `entry` enum('I','E','A') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT 'I' COMMENT 'I-Ingreso E-Egreso A-Ambos asientos pueden coexistir',
-  `typevalue` enum('C','P') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT 'C' COMMENT 'C-Costo P-PVP',
-  `calculatenumdoc` enum('0','1') CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '0',
+  `acronym` varchar(5) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
+  `name` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '',
+  `sequential` bigint NOT NULL DEFAULT 0,
+  `beneficiarytype` enum('P','C','A','E') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT 'P' COMMENT 'P-Proveedores   C-Clientes',
+  `entry` enum('I','E','A') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT 'I' COMMENT 'I-Ingreso E-Egreso A-Ambos asientos pueden coexistir',
+  `typevalue` enum('C','P') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT 'C' COMMENT 'C-Costo P-PVP',
+  `calculatenumdoc` enum('0','1') CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL DEFAULT '0' COMMENT '1-Si 0-No',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idmovementtype`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of movementtype
 -- ----------------------------
-INSERT INTO `movementtype` VALUES (1, 'FV', 'Venta', 30, 'C', 'E', 'C', '1');
-INSERT INTO `movementtype` VALUES (2, 'FC', 'Compra', 0, 'P', 'I', 'P', '0');
-INSERT INTO `movementtype` VALUES (3, 'AS', 'Saldo Incial', 0, 'E', 'I', 'C', '1');
-INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'E', 'A', 'C', '1');
-INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'E', 'E', 'C', '1');
-INSERT INTO `movementtype` VALUES (6, 'BA', 'Baja de Inventario', 0, 'E', 'E', 'C', '1');
-INSERT INTO `movementtype` VALUES (7, 'TF', 'Toma Fisica', 0, 'E', 'A', 'C', '1');
+INSERT INTO `movementtype` VALUES (1, 'FV', 'Venta', 30, 'C', 'E', 'P', '1', '2024-08-22 23:33:21', '2024-08-23 00:51:08', NULL);
+INSERT INTO `movementtype` VALUES (2, 'FC', 'Compra', 0, 'P', 'I', 'C', '0', '2024-08-22 23:33:21', '2024-08-23 00:51:03', NULL);
+INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'E', 'A', 'C', '1', '2024-08-22 23:33:21', '2024-08-22 23:33:21', NULL);
+INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'E', 'E', 'C', '1', '2024-08-22 23:33:21', '2024-08-22 23:33:21', NULL);
+INSERT INTO `movementtype` VALUES (9, 'ssss', 'asd2SSsdasa', 0, 'P', 'I', 'C', '0', '2024-08-23 00:49:18', '2024-08-23 00:50:41', '2024-08-23 00:50:41');
 
 -- ----------------------------
 -- Table structure for presentation
@@ -2294,7 +2323,7 @@ INSERT INTO `product` VALUES (13, 1, 2, 2, 'BCC', '2201909191891', 'BALVIT CERDO
 INSERT INTO `product` VALUES (14, 1, 2, 2, 'BCE', '2201909191983', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 2.0000, 67.0000, 3.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
 INSERT INTO `product` VALUES (15, 1, 2, 2, 'BAF', '2201909186828', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 2.0000, 49.0000, 3.00, 1.0000, 38.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
 INSERT INTO `product` VALUES (16, 1, 3, 3, 'P000000031', '9132052567598', 'BANDEJA CP-100 COMEDERO (PACA)', 'BANDEJA CP-100 COMEDERO (PACA)', 2.0000, 80.0000, 3.00, 1.0000, 1.1000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-07-17 10:14:07', NULL);
-INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 8.0000, 15163.0000, 12.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-20 17:46:07', NULL);
+INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 11.0675, 163.0000, 12.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-22 13:09:16', NULL);
 INSERT INTO `product` VALUES (18, 1, 2, 3, 'P000000041', '1111841491823', 'CALIERMUTIN 100 PREMIX X 25 KG', 'CALIERMUTIN 100 PREMIX X 25 KG', 1.0000, 77.0000, 1.50, 1.0000, 4.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-20 13:54:41', NULL);
 INSERT INTO `product` VALUES (19, 10, 1, 2, 'P000000005', '1071747301964', 'CHASQUI', 'CHASQUI', 1.0000, 71.0000, 1.50, 1.0000, 89.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
 INSERT INTO `product` VALUES (20, 1, 2, 3, 'P000000043', '9271818561866', 'DESINFECTANTE TH4 5 LT', 'DESINFECTANTE TH4 5 LT', 8.0000, 44.0000, 12.00, 1.0000, 11.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
@@ -2309,7 +2338,7 @@ INSERT INTO `product` VALUES (28, 1, 3, 3, '00031', '1300950349907', 'INMUNAIR-1
 INSERT INTO `product` VALUES (29, 11, 1, 1, 'P000000003', '1061540376221', 'MAIZ AMARILLO', 'MAIZ AMARILLO', 1.0000, 75.0000, 1.50, 1.0000, 1.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:14:07', NULL);
 INSERT INTO `product` VALUES (30, 1, 4, 4, 'P000000024', '8311002014981', 'POLLO BB', 'POLLO BB', 0.8500, 76.0000, 1.28, 1.0000, 15.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:14:07', NULL);
 INSERT INTO `product` VALUES (31, 1, 2, 4, 'P000000025', '9080043093741', 'POLLO CRIOLLO', 'POLLO CRIOLLO', 0.3300, 54.0000, 0.50, 1.0000, 22.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:08:17', NULL);
-INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.8800, 31.0000, 1.32, 1.0000, 17.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:14:07', NULL);
+INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.7358, 31.0000, 1.32, 1.0000, 17.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-22 13:12:37', NULL);
 INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMOTOR L X GL', 'PROMOTOR L X GL', 5.0000, 114.0000, 7.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:14:07', NULL);
 INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 59.0000, 9.00, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:08:17', NULL);
 INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 28.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-07-17 10:05:02', NULL);
@@ -4399,9 +4428,9 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 2, 'jorge', '$2y$12$nKDUhRshuMdplcHvok8nVe37Hj.1EAu1vli5QPAig3nO2YuXx8AWe', 'Jorge', 1, 0, 'es', 1, '2024-08-19 09:28:05', 'Q0hlTHR3elRaeFhsSG0vbk55dlloelRYaU5UVTFFeXh3UFEyVEFOenppOHk0OTJHSkUvb2JHUVNjSkFVRkNvMm50aFM5bVBuVWtUSFpVSUhRS3AzL0E9PQ==', '2024-06-21 15:30:34', '2024-08-19 09:28:05', NULL);
 INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 15, '2024-08-03 01:46:43', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:30:47', '2024-08-16 23:11:38', NULL);
-INSERT INTO `user` VALUES (3, 1, 'hugo', 'cambiar', 'Hugo', 0, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-16 18:47:14', NULL);
-INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:15', '2024-08-06 03:23:02', NULL);
-INSERT INTO `user` VALUES (5, 2, 'rick', '', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-02 23:53:36', NULL);
+INSERT INTO `user` VALUES (3, 1, 'hugo', '$2y$12$JfgZQaHQi/yELIpCWyhm9.70LE5A2rAIss8/9TyN7NuOWlRvz/FOC', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-22 17:55:33', NULL);
+INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 1, '2024-08-22 17:56:45', 'aE5zSGdtSlQ5Ym9vM2RadEJMSnhvUGxMbHZ0UUxwT1JCYTRTZDBtQWo4ZEVZNlh4N3R2YWRLOUJYbHo2Mm1kbDArVmFwTnpVV2YwaEViM2F5RVczWUE9PQ==', '2024-06-21 15:31:15', '2024-08-22 17:57:37', NULL);
+INSERT INTO `user` VALUES (5, 2, 'rick', 'cambiar', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-22 17:47:49', NULL);
 INSERT INTO `user` VALUES (6, 5, 'SantiagoDieum', '', 'Santiago Borja', 0, 1427181793, 'es', 337, NULL, NULL, '2024-07-04 13:14:09', '2024-08-17 04:36:38', NULL);
 INSERT INTO `user` VALUES (7, 5, 'therichard369', '', 'Ricardo V', 0, 1211357100, 'es', 6, NULL, NULL, '2024-07-09 21:49:54', '2024-07-09 21:53:03', NULL);
 INSERT INTO `user` VALUES (8, 5, 'Hugueins_hv', '', 'Hugueins AHV', 0, 106245323, 'es', 4, NULL, NULL, '2024-07-09 21:57:11', '2024-07-09 21:58:07', NULL);
@@ -4578,7 +4607,10 @@ delimiter ;;
 CREATE PROCEDURE `sp_kardex`(IN `toDATO` BIGINT,IN `toSHOW` INT)
 BEGIN
 DECLARE loERROR 		INTEGER DEFAULT 0;DECLARE loPRODID 		BIGINT DEFAULT 0;DECLARE loDOCKXID 	BIGINT DEFAULT 0;DECLARE loID 			BIGINT DEFAULT 0;
-DECLARE loNEWID 			BIGINT DEFAULT 0;DECLARE loNOMBRE		VARCHAR(500) DEFAULT '';DECLARE loTIPODOC	 	VARCHAR(50) DEFAULT '';DECLARE loFECHA	 	VARCHAR(50) DEFAULT '';DECLARE loNUMDOC		VARCHAR(50) DEFAULT '';DECLARE loBENE			VARCHAR(500) DEFAULT '';DECLARE loASIENTO		VARCHAR(1) DEFAULT '';DECLARE loBODEGAID	BIGINT DEFAULT 0;DECLARE loDATO2		BIGINT DEFAULT 0;DECLARE loBODEGA		VARCHAR(200) DEFAULT '';DECLARE loING_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loING_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loING_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loPVP			DOUBLE(20,4) DEFAULT 0;DECLARE loPACK			VARCHAR(1) DEFAULT '';DECLARE loCLASE		VARCHAR(1) DEFAULT '';DECLARE loTIPO 		VARCHAR(5) DEFAULT ''; DECLARE faux CURSOR for 		SELECT 
+DECLARE loNEWID 			BIGINT DEFAULT 0;DECLARE loNOMBRE		VARCHAR(500) DEFAULT '';DECLARE loTIPODOC	 	VARCHAR(50) DEFAULT '';DECLARE loFECHA	 	VARCHAR(50) DEFAULT '';DECLARE loNUMDOC		VARCHAR(50) DEFAULT '';DECLARE loBENE			VARCHAR(500) DEFAULT '';DECLARE loASIENTO		VARCHAR(1) DEFAULT '';DECLARE loBODEGAID	BIGINT DEFAULT 0;DECLARE loDATO2		BIGINT DEFAULT 0;DECLARE loBODEGA		VARCHAR(200) DEFAULT '';DECLARE loING_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loING_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loING_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loEGR_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_CANT	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_COSTO	DOUBLE(20,4) DEFAULT 0;DECLARE loSAL_TOTAL	DOUBLE(20,4) DEFAULT 0;DECLARE loPVP			DOUBLE(20,4) DEFAULT 0;DECLARE loPACK			VARCHAR(1) DEFAULT '';DECLARE loCLASE		VARCHAR(1) DEFAULT '';DECLARE loTIPO 		VARCHAR(5) DEFAULT '';
+
+DECLARE loSALCOST			DOUBLE(20,4) DEFAULT 0;
+DECLARE loSALSTOCK		DOUBLE(20,4) DEFAULT 0; DECLARE faux CURSOR for 		SELECT 
       v.idproducto, 
       v.nombre,
       v.asiento,
@@ -4643,7 +4675,14 @@ START TRANSACTION;	OPEN faux;		FETCH NEXT FROM faux INTO loID,loNOMBRE,loASIEN
 			IF (ISNULL(loSAL_TOTAL)=1) THEN 				SET loSAL_TOTAL = 0;			END IF ;						IF loASIENTO="I" THEN				UPDATE tmp_kardex t					SET 						t.sal_cant = COALESCE(loSAL_CANT,0),						t.sal_costo = COALESCE(loSAL_COSTO,0),						t.sal_total = COALESCE(loSAL_TOTAL,0)					WHERE 						t.id = loNEWID;			ELSE				UPDATE tmp_kardex t					SET 						t.egr_costo = COALESCE(loEGR_COSTO,0),						t.egr_total = COALESCE(loEGR_TOTAL,0),						t.sal_cant = COALESCE(loSAL_CANT,0),						t.sal_costo = COALESCE(loSAL_COSTO,0),						t.sal_total = COALESCE(loSAL_TOTAL,0)					WHERE 						t.id = loNEWID;			END IF;
       
       			SET loERROR=0;			FETCH NEXT FROM faux INTO loID,loNOMBRE,loASIENTO,loTIPODOC,loNUMDOC,loBENE,loFECHA,loING_CANT,loING_COSTO,loING_TOTAL,loEGR_CANT;		END WHILE;
-	CLOSE faux;COMMIT ;
+	CLOSE faux;
+  
+  
+  SELECT sal_cant,sal_costo INTO loSALSTOCK, loSALCOST FROM tmp_kardex ORDER BY id DESC LIMIT 1;
+  
+  UPDATE product SET stock = loSALSTOCK, cost=loSALCOST WHERE idproduct = toDATO;
+
+COMMIT ;
 IF toSHOW = 1 THEN
   SELECT * FROM tmp_kardex order by fecha;
 END IF;
