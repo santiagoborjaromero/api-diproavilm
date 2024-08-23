@@ -6,14 +6,16 @@ class UsersController extends Controller{
         
     static public function login(){
 
-        $requestBody = json_decode(file_get_contents('php://input'), true);
+        // $requestBody = json_decode(file_get_contents('php://input'), true);
 
-        if (!$requestBody){
-            $requestBody = [
-                "username" => $_POST['username'],
-                "password" => $_POST['password']
-            ];
-        }
+        // if (!$requestBody){
+        //     $requestBody = [
+        //         "username" => $_POST['username'],
+        //         "password" => $_POST['password']
+        //     ];
+        // }
+
+        $requestBody = Middleware::request();
 
         $username = $requestBody["username"];
         $password = $requestBody["password"];
@@ -142,40 +144,22 @@ class UsersController extends Controller{
         
         Middleware::auditSecurity();
         
-        $requestBody = json_decode(file_get_contents('php://input'), true);
+        $requestBody = Middleware::request();
         $id = $_GET["id"];
 
-        if (isset($id) && $id<=0){
-            $status = "error";
-            $message = "Id de usuario erronea";
-        }
+        $user = new Model("user");
+        $user->where("iduser","=",$id);
+        $rs = $user->get();
 
-        if ($status!="error"){
-
-            if (!$requestBody){
-                $ddata  = fopen("php://input", "r");
-                $data = fread($ddata, 1024);
-                $ndata = explode('&', $data);
-                foreach ($ndata as $key) {
-                    $a = explode("=", $key);
-                    $requestBody[$a[0]] = $a[1];
-                }
-            }
-    
+        if ($rs != NULL){
             $user = new Model("user");
             $user->where("iduser","=",$id);
-            $rs = $user->get();
-    
-            if ($rs != NULL){
-                $user = new Model("user");
-                $user->where("iduser","=",$id);
-                $d = $user->updateRecord($requestBody);
-                $status = "ok";
-                $message = $d;
-            } else{
-                $status = "error";
-                $message = "Usuario no existe";
-            }
+            $d = $user->updateRecord($requestBody);
+            $status = "ok";
+            $message = $d;
+        } else{
+            $status = "error";
+            $message = "Usuario no existe";
         }
 
         http_response_code(200);
