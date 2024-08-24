@@ -45,6 +45,8 @@
     "POST|saveRolMenu":  "RoleMenuController::saveRolMenu()",
 
     
+    "GET|tipoIdentificacion":  "TipoIdentificacionController::getAll()",
+    
     "GET|productoLineas":  "ProductLineController::getAll()",
 
     "GET|productoCategorias":  "ProductCategoryController::getAll()",
