@@ -2,6 +2,8 @@
     "GET|healthy" : "RouterController::healthy()",
     
     "GET|config":  "ConfigController::getAll()",
+    "PUT|saveconfig":  "ConfigController::update()",
+    "POST|saveconfig":  "ConfigController::save()",
 
     "POST|login":  "UsersController::login()",
     "GET|users" : "UsersController::getAll()",
