@@ -6,15 +6,6 @@ class UsersController extends Controller{
         
     static public function login(){
 
-        // $requestBody = json_decode(file_get_contents('php://input'), true);
-
-        // if (!$requestBody){
-        //     $requestBody = [
-        //         "username" => $_POST['username'],
-        //         "password" => $_POST['password']
-        //     ];
-        // }
-
         $requestBody = Middleware::request();
 
         $username = $requestBody["username"];
@@ -53,51 +44,61 @@ class UsersController extends Controller{
                     unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
         
                     $iduser = $message[0]["iduser"];
-        
                     $idrole = $message[0]["idrole"];
-                    // $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                    $rs= new Model("view_get_menu");
-                    $rs->where("idrole", "=", $idrole);
-                    $recRolMenu = $rs->get();
-    
+
+                    //TODO: Que pasaría si el rol esta desactivado o status = 0??? Se debe enviar un mensaje y no permitir ingreso
                     $rs = new Model("role");
                     $rs->where("idrole", "=", $idrole);
-                    $recRol = $rs->get();
-                    
-                    // $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                    
-                    $message[0]["menu"] = $recRolMenu;
-                    $message[0]["role"] = $recRol;
-                    
-                    // print($message[0]["token"]);
-            
-                    if ($message[0]["token"]===null){
-                        $token = UsersController::setToken( $message[0] );
-                        // print($token);
-                        $message[0]["token"] = $token;
-                    } else{
-                        $token = $message[0]["token"];
-                    }
-                    
-                    $verificacion = UsersController::validToken($token, $message[0]);
-                    if($verificacion != 'ok'){
-                        // $status = "error";
-                        // $message = $verificacion;
-                        $token = UsersController::setToken( $message[0] );
-                        $message[0]["token"] = $token;
+                    $rs->where("status", "=", 1);
+                    $recRol = $rs->get(true);
+
+                    if ($recRol == NULL){
+                        $status = "error";
+                        $message = "El Rol del usuario se encuentra inhabilitado para acceder al sistema. Contactese con el administrador.";
                     } else {
-                        $rs_up = new Model("user");
-                        $rs_up->set("token", $token);
-                        $rs_up->set("operations", $operations);
-                        $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
-                        $rs_up->where("iduser", "=", $iduser);
-                        $mensaje = $rs_up->update();
+    
+                        // $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                        $rs= new Model("view_get_menu");
+                        $rs->where("idrole", "=", $idrole);
+                        $recRolMenu = $rs->get();
                         
-                        // $sql = "UPDATE user 
-                        //         SET token = :token, lastlogged = :lastlogged
-                        //         WHERE iduser= :iduser";
-                        // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
+                        // $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                        
+                        $message[0]["menu"] = $recRolMenu;
+                        $message[0]["role"] = $recRol;
+                        
+                        // print($message[0]["token"]);
+                
+                        if ($message[0]["token"]===null){
+                            $token = UsersController::setToken( $message[0] );
+                            // print($token);
+                            $message[0]["token"] = $token;
+                        } else{
+                            $token = $message[0]["token"];
+                        }
+                        
+                        $verificacion = UsersController::validToken($token, $message[0]);
+                        if($verificacion != 'ok'){
+                            // $status = "error";
+                            // $message = $verificacion;
+                            $token = UsersController::setToken( $message[0] );
+                            $message[0]["token"] = $token;
+                        } else {
+                            $rs_up = new Model("user");
+                            $rs_up->set("token", $token);
+                            $rs_up->set("operations", $operations);
+                            $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
+                            $rs_up->where("iduser", "=", $iduser);
+                            $mensaje = $rs_up->update();
+                            
+                            // $sql = "UPDATE user 
+                            //         SET token = :token, lastlogged = :lastlogged
+                            //         WHERE iduser= :iduser";
+                            // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
+                        }
+
                     }
+
                 }
             }
         }

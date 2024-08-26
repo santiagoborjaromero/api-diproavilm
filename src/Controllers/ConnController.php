@@ -3,11 +3,34 @@ class ConnController{
 	private PDO $db;
 
     public function Connect($connType) {
-        $json_config = json_decode(file_get_contents(__DIR__ . "/../../config.json"), true);
+        $file_config = __DIR__ . "/../../config.json";
+        if (!file_exists($file_config)){
+            $structure = '{
+    "mysql": {
+        "driver": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "user": "admin",
+        "pass": "admin",
+        "database": "diproavilm"
+    },
+    "sqlserver":{
+        "driver": "MS MSSQL",
+        "host": "",
+        "port": 0,
+        "user": "",
+        "pass": "",
+        "database": "diproavilm"
+    }
+            }';
+            file_put_contents($file_config, $structure);
+            die("Error en la configuracion del acceso a la base de datos: config.json");
+        }
+        $json_config = json_decode(file_get_contents($file_config), true);
         $connData = $json_config[$connType];
         $dsn = $connData["driver"].":host=".$connData["host"].";port=".$connData["port"].";dbname=".$connData["database"].";charset=utf8";
         
-		$conn = $this->db = new PDO(
+        $conn = $this->db = new PDO(
             $dsn,
             $connData["user"],
             $connData["pass"],
@@ -18,6 +41,7 @@ class ConnController{
             )
         );
         return $conn;
+
 	}
 
 	public function Execute($sql, $args = []){

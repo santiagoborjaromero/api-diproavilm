@@ -26,8 +26,16 @@ class RouterController {
     }
     
     function routes(){
-        $routerList = json_decode(file_get_contents(__DIR__ . "/../../routes.json"), true);
-
+        $file_routes = __DIR__ . "/../../routes.json";
+        if (!file_exists($file_routes)){
+            $structure = '{
+    "GET|healthy" : "RouterController::healthy()",
+}';
+            file_put_contents($file_routes, $structure);
+            die("Error en la configuracion de las rutas: routes.json");
+        }
+        
+        $routerList = json_decode(file_get_contents($file_routes), true);
         $found = false;
         $event = "";
         $ruta_a_buscar = $this->metodo . "|" . $this->ruta;
