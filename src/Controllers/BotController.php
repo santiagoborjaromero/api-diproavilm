@@ -7,17 +7,112 @@ require_once(__DIR__."/../Models/Bot.php");
 
 class BotController extends Controller{
 
-    static public function getAll(){
+    static public function capasGetAll(){
         Middleware::auditSecurity();
 
-        $requestBody = $_GET;
-
-        $au = new Audit();
-        $rs = $au->getData($requestBody);
+        $bot = new Model("bot_spelling");
+        $rs = $bot->get(true);
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
+
+    static public function capasSave(){
+        Middleware::auditSecurity();
+
+        $requestBody = Middleware::request();
+
+        $menu = new Model("bot_spelling");
+        $menu->where("wordfind","=",$requestBody["wordfind"]);
+        $menu->where("menurun","=",$requestBody["menurun"]);
+        $rs = $menu->get();
+
+        if ($rs != NULL){
+            $status = "error";
+            $message = "La capa ya existe, no se puede duplicar";
+        } else{
+            $user = new Model("bot_spelling");
+            $d = $user->insertRecord($requestBody);
+            $status = "ok";
+            $message = $d;
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$message);
+    }
+
+    static public function capasUpdate(){
+        Middleware::auditSecurity();
+
+        $requestBody = Middleware::request();
+        $id = $_GET["id"];
+
+        $menu = new Model("bot_spelling");
+        $menu->where("idbotspelling","=",$id);
+        $rs = $menu->get();
+
+        if ($rs == NULL){
+            $status = "error";
+            $message = "La capa no existe";
+        } else{
+            $menu = new Model("bot_spelling");
+            $menu->where("idbotspelling","=",$id);
+            $d = $menu->updateRecord($requestBody);
+            $status = "ok";
+            $message = $d;
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$message);
+    }
+
+    static public function capasDelete(){
+        Middleware::auditSecurity();
+
+        $id = $_GET["id"];
+
+        $menu = new Model("bot_spelling");
+        $menu->where("idbotspelling","=",$id);
+        $rs = $menu->get();
+
+        if ($rs != NULL){
+            $user = new Model("bot_spelling");
+            $user->where("idbotspelling", "=", $id);
+            $d = $user->delete();
+
+            $status = "ok";
+            $message = $id;
+        } else{
+            $status = "error";
+            $message = "La capa que desea eliminar no existe";
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$message);
+    }
+
+    static public function getDictionary(){
+        Middleware::auditSecurity();
+
+        $bot = new Model("bot_dictionary");
+        $rs = $bot->get();
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+    // static public function getAll(){
+    //     Middleware::auditSecurity();
+
+    //     $requestBody = $_GET;
+
+    //     $au = new Audit();
+    //     $rs = $au->getData($requestBody);
+
+    //     http_response_code(200);
+    //     echo Controller::formatoSalida("ok",$rs);
+    // }
+
+
 
 
     static public function execSql(){
