@@ -1,5 +1,7 @@
 <?PHP
 
+require_once(__DIR__."/Audit.php");
+
 class MenuRole {
     private $drive = "mysql";
 
@@ -26,6 +28,10 @@ class MenuRole {
                     $sql .= ", ";
                 }
             }
+
+            $requestBody["idrole"] = $idrole;
+            $audit = new Audit();
+            $audit->saveAudit(json_encode($requestBody));
 
             $conn = new ConnController();
             $conn->Connect($this->drive);

@@ -1,6 +1,9 @@
 <?PHP
 
+//TODO: Clase que hace el papel de interceptor de ruta 
 class Middleware{
+
+    //TODO: Metodo que verifica el token la validez y caducidad, devoolviendo los datos del usuario 
 
     static public function auditSecurity($devolver = false){
 
@@ -14,16 +17,11 @@ class Middleware{
                 return $payload;
             } 
 
-       
-
             $valid = false;
             $valid_c = 0;
             $razon = "";
 
-            /** 
-             * Chequeo de estructura de token
-             */
-
+            //TODO: Chequeo de estructura de token
 
             $dic = ["iduser", "idrole", "expire_at"];
             foreach($dic as $d){
@@ -37,17 +35,11 @@ class Middleware{
                 $razon = "ok1";
             } else {
                 $valid = false;
-                // echo Controller::formatoSalida("error", "Token inválido");
                 $razon = "Token, estructura inválida";
             }
 
      
-
-            // echo json_encode($payload);
-
-            /** 
-             * Chequeo de fecha de expiracion
-             */
+            //TODO: Chequeo de fecha de expiracion
             if ($valid){
                 if ( $payload["expire_at"] >= date("Y-m-d H:i:s")){
                     $valid = true;
@@ -58,16 +50,11 @@ class Middleware{
                     $razon = "Token ha expirado";
                 }
             }
-
-      
-
-            // return $valid;
         } else{
             $valid = false;
-            $razon = "El token se encuentra mal formado, el formato correcto es Bearer";
+            $razon = "El token se encuentra mal formado. El formato correcto es Bearer";
         }
 
-        // return ["status"=>$valid, "razon"=>$razon];
         if (!$valid){
             echo Controller::formatoSalida("error", $razon);
             exit();
@@ -76,17 +63,16 @@ class Middleware{
 
     }
 
-
+    //TODO: Devuelve los datos del token del usuario
     static public function getDataToken(){
         $authorization = getallheaders()["Authorization"];
         $token_to_evaluate = explode(" ", $authorization);
-        // $payload = [];
         $payload = json_decode(Controller::decode(base64_decode($token_to_evaluate[1])), true);
-        $valid = true;
         return $payload;
 
     }
 
+    //TODO: Metodo que captura toda las formas en que se puede recibir informacion en varios metodos
     static function request(){
         $requestBody = array();
         
@@ -99,7 +85,7 @@ class Middleware{
             $requestBody = $data;
         }
 
-        //TODO: Para form-data
+        //TODO: OPCION 2 Datos enviados con form-data
         if(!$requestBody){
             $data = fopen('php://input', 'r');
             $str = fread($data, 8192);
@@ -109,6 +95,8 @@ class Middleware{
                     parse_str($str, $requestBody);
                 } else{
                     $cnt = explode(";",$appContent);
+
+                    //TODO: cuando a mas de form-data ees multipart
                     if ($cnt[0] == "multipart/form-data"){
                         $vd = explode("=",$cnt[1])[1];
                         $str = str_replace($vd, "", $str);
@@ -119,7 +107,6 @@ class Middleware{
                         $str = str_replace(chr(13), "", $str);
                         $str = str_replace(chr(27), "", $str);
                         $strArr = explode("\n", $str);
-                        // die();
     
                         $arReq = [];
                         $old = "";
@@ -142,22 +129,23 @@ class Middleware{
                         }
                         $requestBody = $arReq;
                     } else if ($appContent == "application/x-www-form-urlencoded" || $cnt[0] == "application/x-www-form-urlencoded"){
-                        //TODO: PAra x-www-form-urlencoded o PUT en formularios
+                        //TODO: Para x-www-form-urlencoded o PUT en formularios
                         parse_str($str, $requestBody);
                     } 
                 }
             }
         }
 
+        //TODO: Metodo POST
         if(!$requestBody){
             $requestBody = $_POST;
         }
 
+
+        //TODO: y si despues de todo no ha capturado nada se utiliza el metodo REQUEST
         if(!$requestBody){
             $requestBody = $_REQUEST;
         }
-        
-        
 
         return $requestBody;
     }

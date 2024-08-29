@@ -1,5 +1,6 @@
 <?PHP
 
+//TODO: Metodo Para gestionar y estandarizar errores
 class ErrorHandler{
 
     public static function handleException(Throwable $exception): void {

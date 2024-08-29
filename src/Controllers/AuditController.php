@@ -16,4 +16,5 @@ class AuditController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
+
 }

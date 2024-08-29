@@ -100,20 +100,6 @@ class BotController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
-    // static public function getAll(){
-    //     Middleware::auditSecurity();
-
-    //     $requestBody = $_GET;
-
-    //     $au = new Audit();
-    //     $rs = $au->getData($requestBody);
-
-    //     http_response_code(200);
-    //     echo Controller::formatoSalida("ok",$rs);
-    // }
-
-
-
 
     static public function execSql(){
         $sql = $_GET["sql"];
