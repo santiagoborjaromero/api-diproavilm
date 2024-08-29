@@ -11,11 +11,27 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 24/08/2024 00:44:03
+ Date: 29/08/2024 01:35:05
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for atak
+-- ----------------------------
+DROP TABLE IF EXISTS `atak`;
+CREATE TABLE `atak`  (
+  `idatak` int NOT NULL AUTO_INCREMENT,
+  `ipaddr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
+  `useragent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idatak`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of atak
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for audit
@@ -34,7 +50,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 276 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 297 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of audit
@@ -314,6 +330,27 @@ INSERT INTO `audit` VALUES (272, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 INSERT INTO `audit` VALUES (273, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":93,\"idproduct\":\"1\",\"entry\":\"I\",\"qty\":\"100\",\"price\":\"5\",\"total\":\"500\"}', '2024-08-23 18:22:33', '2024-08-23 18:22:33', NULL);
 INSERT INTO `audit` VALUES (274, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveBene&id=852', '{\"type\":\"A\",\"name\":\"DIPROAVILM\",\"comercialname\":\"DIPROAVILM\",\"ididentificationtype\":\"1\",\"identificationnumber\":\"1792677610001\",\"idcountry\":\"50\",\"idprovince\":\"19\",\"idcity\":\"177\",\"address\":\"\",\"parish\":\"\",\"phone\":\"\",\"email\":\"\",\"web\":\"\",\"creditquota\":\"0\",\"creditdays\":\"0\",\"account\":\"\",\"idbeneficiary\":\"852\"}', '2024-08-24 00:33:02', '2024-08-24 00:33:02', NULL);
 INSERT INTO `audit` VALUES (275, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveBene&id=852', '{\"type\":\"E\",\"name\":\"DIPROAVILM\",\"comercialname\":\"DIPROAVILM\",\"ididentificationtype\":\"1\",\"identificationnumber\":\"1792677610001\",\"idcountry\":\"50\",\"idprovince\":\"19\",\"idcity\":\"177\",\"address\":\"\",\"parish\":\"\",\"phone\":\"\",\"email\":\"\",\"web\":\"\",\"creditquota\":\"0\",\"creditdays\":\"0\",\"account\":\"\",\"idbeneficiary\":\"852\"}', '2024-08-24 00:33:11', '2024-08-24 00:33:11', NULL);
+INSERT INTO `audit` VALUES (276, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveconfig&id=9', '{\"order\":\"1\",\"label\":\"RUC\",\"variable\":\"empresa_ruc\",\"vvalue\":\"1792677610001\",\"idconfig\":\"9\"}', '2024-08-26 00:48:45', '2024-08-26 00:48:45', NULL);
+INSERT INTO `audit` VALUES (277, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveconfig&id=15', '{\"order\":\"89\",\"label\":\"Rol default de BOT\",\"variable\":\"rol_bot\",\"vvalue\":\"5\",\"idconfig\":\"15\"}', '2024-08-26 00:49:10', '2024-08-26 00:49:10', NULL);
+INSERT INTO `audit` VALUES (278, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveconfig&id=11', '{\"order\":\"3\",\"label\":\"Tel\\u00e9fono\",\"variable\":\"empresa_telefono\",\"vvalue\":\"0990000001\",\"idconfig\":\"11\"}', '2024-08-26 02:41:13', '2024-08-26 02:41:13', NULL);
+INSERT INTO `audit` VALUES (279, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=17', '{\"idmenu\":\"17\"}', '2024-08-26 19:16:47', '2024-08-26 19:16:47', NULL);
+INSERT INTO `audit` VALUES (280, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=botcapasSave&id=-1', '{\"wordfind\":\"casa\",\"menurun\":\"10\",\"confirmed\":\"0\"}', '2024-08-26 20:53:30', '2024-08-26 20:53:30', NULL);
+INSERT INTO `audit` VALUES (281, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botcapasSave&id=161', '{\"wordfind\":\"casas\",\"menurun\":\"menu\",\"confirmed\":\"0\",\"idbotspelling\":\"161\"}', '2024-08-26 21:04:45', '2024-08-26 21:04:45', NULL);
+INSERT INTO `audit` VALUES (282, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botcapasSave&id=161', '{\"wordfind\":\"casasasd asd asd\",\"menurun\":\"saludo\",\"confirmed\":\"0\",\"idbotspelling\":\"161\"}', '2024-08-26 21:04:52', '2024-08-26 21:04:52', NULL);
+INSERT INTO `audit` VALUES (283, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botcapasSave&id=160', '{\"wordfind\":\"informe de usuarios\",\"menurun\":\"lista_usuarios\",\"confirmed\":\"1\",\"idbotspelling\":\"160\"}', '2024-08-26 23:01:22', '2024-08-26 23:01:22', NULL);
+INSERT INTO `audit` VALUES (284, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=161', '{\"idbotspelling\":\"161\"}', '2024-08-27 01:19:22', '2024-08-27 01:19:22', NULL);
+INSERT INTO `audit` VALUES (285, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botcapasSave&id=159', '{\"wordfind\":\"quiero el reporte de usuarios\",\"menurun\":\"lista_usuarios\",\"confirmed\":\"1\",\"idbotspelling\":\"159\"}', '2024-08-27 01:21:25', '2024-08-27 01:21:25', NULL);
+INSERT INTO `audit` VALUES (286, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=45', '{\"idbotspelling\":\"45\"}', '2024-08-28 23:26:37', '2024-08-28 23:26:37', NULL);
+INSERT INTO `audit` VALUES (287, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=46', '{\"idbotspelling\":\"46\"}', '2024-08-28 23:26:44', '2024-08-28 23:26:44', NULL);
+INSERT INTO `audit` VALUES (288, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=47', '{\"idbotspelling\":\"47\"}', '2024-08-28 23:26:50', '2024-08-28 23:26:50', NULL);
+INSERT INTO `audit` VALUES (289, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=48', '{\"idbotspelling\":\"48\"}', '2024-08-28 23:26:56', '2024-08-28 23:26:56', NULL);
+INSERT INTO `audit` VALUES (290, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botcapasDelete&id=49', '{\"idbotspelling\":\"49\"}', '2024-08-28 23:27:01', '2024-08-28 23:27:01', NULL);
+INSERT INTO `audit` VALUES (291, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=botdicSave&id=-1', '{\"menu\":\"ccc\",\"description\":\"ascasc\",\"ismenu\":\"0\",\"action\":\"T\",\"txt\":\"ascascascasc\\nasc\\nasc\\nas\\ncas\\nc\\nasc\\nasc\"}', '2024-08-29 00:52:48', '2024-08-29 00:52:48', NULL);
+INSERT INTO `audit` VALUES (292, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botdicSave&id=26', '{\"menu\":\"ccc\",\"description\":\"ascasc\",\"ismenu\":\"0\",\"action\":\"Q\",\"txt\":\"ascascascasc\\nasc\\nasc\\nas\\ncas\\nc\\nasc\\nasc\",\"idbotdic\":\"26\"}', '2024-08-29 00:52:59', '2024-08-29 00:52:59', NULL);
+INSERT INTO `audit` VALUES (293, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botdicSave&id=26', '{\"menu\":\"ccc\",\"description\":\"asd asd asd asd asd\",\"ismenu\":\"1\",\"action\":\"M\",\"txt\":\"ascascascasc\\nasc\\nasc\\nas\\ncasas dasd asd \\nc\\nasc\\nasc\",\"idbotdic\":\"26\"}', '2024-08-29 00:53:20', '2024-08-29 00:53:20', NULL);
+INSERT INTO `audit` VALUES (294, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botdicsDelete&id=26', '{\"idbotdic\":\"26\"}', '2024-08-29 00:53:27', '2024-08-29 00:53:27', NULL);
+INSERT INTO `audit` VALUES (295, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=botdicSave&id=-1', '{\"menu\":\"Calro\",\"description\":\"askdjlaskjda\",\"ismenu\":\"0\",\"action\":\"T\",\"txt\":\"<nombre><tiempo><fecha>\"}', '2024-08-29 01:15:30', '2024-08-29 01:15:30', NULL);
+INSERT INTO `audit` VALUES (296, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botdicsDelete&id=27', '{\"idbotdic\":\"27\"}', '2024-08-29 01:15:36', '2024-08-29 01:15:36', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -345,10 +382,10 @@ CREATE TABLE `beneficiary`  (
   INDEX `IDXCountry`(`idcountry` ASC) USING BTREE,
   INDEX `IDXProvince`(`idprovince` ASC) USING BTREE,
   INDEX `ididentificationtype`(`ididentificationtype` ASC) USING BTREE,
+  CONSTRAINT `beneficiary_ibfk_1` FOREIGN KEY (`ididentificationtype`) REFERENCES `identificationtype` (`ididentificationtype`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXCity` FOREIGN KEY (`idcity`) REFERENCES `city` (`idcity`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXCountry` FOREIGN KEY (`idcountry`) REFERENCES `country` (`idcountry`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `IDXProvince` FOREIGN KEY (`idprovince`) REFERENCES `province` (`idprovince`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `beneficiary_ibfk_1` FOREIGN KEY (`ididentificationtype`) REFERENCES `identificationtype` (`ididentificationtype`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `IDXProvince` FOREIGN KEY (`idprovince`) REFERENCES `province` (`idprovince`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 853 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -1534,37 +1571,37 @@ DROP TABLE IF EXISTS `bot_dictionary`;
 CREATE TABLE `bot_dictionary`  (
   `idbotdic` int NOT NULL AUTO_INCREMENT,
   `menu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `action` enum('T','Q','F','U') CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'T' COMMENT 'T-Text, Q-Query, F-Open File',
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL,
+  `ismenu` int NOT NULL DEFAULT 0 COMMENT 'Si es menu para que se despliegue en el bot',
+  `action` enum('T','Q','F','M') CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'T' COMMENT 'T-Text, Q-Query, F-Open Filem M-Menu',
   `txt` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL,
   `field_search` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idbotdic`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bot_dictionary
 -- ----------------------------
-INSERT INTO `bot_dictionary` VALUES (1, 'menu', 'T', 'Menu de Opciones\r\n\r\n/ayuda - Despliega las opciones de ayuda.\r\n/lista_productos - Listado de productos.\r\n/lista_usuarios - Listado de usuarios.\r\n/lista_clientes - Listado de clientes.\r\n/movimientos - Movimientos de productos\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (2, 'reportes', 'T', 'Menu de Reportes\r\n\r\n/lista_productos - Listado de productos.\r\n/lista_usuarios - Listado de usuarios.\r\n/lista_stock - Listado de stock por producto.\r\n/movimientos - Movimientos de productos\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (3, 'lista_usuarios', 'Q', 'SELECT CAST(iduser as CHAR) as id, fullname as nombre, rolename as rol FROM view_get_users WHERE status = 1 AND deleted_at IS NULL', 'fullname');
-INSERT INTO `bot_dictionary` VALUES (4, 'lista_productos', 'Q', 'SELECT \r\n  presentation as presentacion,\r\n  line as linea,\r\n  category as categoria,\r\n  productcode as codigo,\r\n  name as nombre,\r\n  CAST(cost AS CHAR) AS costo, \r\n  CAST(stock as CHAR) AS stock,\r\n  CAST(price as CHAR) AS precio,\r\n  CAST(stock_min as CHAR) AS stock_min,\r\n  CAST(stock_max as CHAR) AS stock_max\r\nFROM \r\n  view_products\r\nWHERE \r\n   status = 1', 'name');
-INSERT INTO `bot_dictionary` VALUES (6, 'ingreso', 'T', 'Menu de Ingreso de Datos\r\n\r\n\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (7, 'egreso', 'T', 'Menu de Egreso de Datos\r\n\r\n\r\n\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (8, 'stock', 'T', 'Menu de Stock\r\n\r\nEsta es una prueba de stock\r\n\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (9, 'saludo', 'T', 'Hola <nombre>, <tiempo>\r\n\r\nSoy 6UG8 bot, un asistente inteligente de la empresa DIPROAVILM,\r\ncomo te puedo ayudar el día de hoy.\r\n\r\n/menu - Para desplegar el listado de opciones del menú\r\n/ayuda - Para saber mas de como puedes ingresar tus requerimientos.\r\n\r\n\r\n\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (10, 'ayuda', 'T', 'Opcion de Ayuda\r\n\r\nSoy /6UG8 bot, un asistente inteligente de la empresa DIPROAVILM.\r\n\r\n- Puedes ingresar las opciones del menu con un / o sin nada, Ej: /ayuda o ayuda.\r\n- Puedes separar las opciones con una coma ( , ), asi indicaras que necesitas que se filtre la información con ese texto que acabas de indicar Ej: listado_usuarios,Carmen\r\n- En cualquier momento puedes ingresar la opcion que mas prefieras.\r\n- Todos los resultados saldran en formato CSV, a fin de que puedas copiarlos y abrirlos en una hoja de calculo.\r\n\r\n/menu - Despliega las opciones del menú.\r\n\r\nUn saludo, \r\n6UG8 bot\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (11, '6UG8', 'T', 'Soy 6UG8 bot, un asistente inteligente de la empresa DIPROAVILM.\r\n\r\n- Mis creadores son:\r\n     Hugo Alfredo Herrera Villalva\r\n     Jaime Santiago Borja Romero\r\n     Joel Darío Brito Parra\r\n     Jorge Luis López Romo\r\n     Ricardo Vaca Miño   \r\n\r\nDel 6 semestre de la carrera de Software de la Universidad UNIANDES.\r\n\r\n- Las herramientas usadas para mi creación son:\r\n    Python\r\n    Entorno virtual python\r\n    MySql\r\n    Telegram Plugins\r\n\r\n\r\n/menu - Despliega las opciones del menú.\r\n\r\nUn saludo, \r\n6UG8 bot', '');
-INSERT INTO `bot_dictionary` VALUES (12, 'lista_existencias', 'T', 'Aun en desarrollo\r\n\r\n\r\n\r\n\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n ', '');
-INSERT INTO `bot_dictionary` VALUES (13, 'hora', 'T', 'La hora actual es <time>\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (14, 'fecha', 'T', 'La fecha actual es <fecha>', '');
-INSERT INTO `bot_dictionary` VALUES (15, 'cambiar_formato', 'T', 'Los formatos disponibles son:\r\n\r\n/format_csv\r\n/format_tabspace\r\n\r\n\r\n/menu - Regresar.', '');
-INSERT INTO `bot_dictionary` VALUES (16, 'format_csv', 'U', 'UPDATE bot_config SET vvalue = \'csv\' WHERE module = \'FORMATO SALIDA\'', '');
-INSERT INTO `bot_dictionary` VALUES (17, 'format_tabspace', 'U', 'UPDATE bot_config SET vvalue = \'tab\' WHERE module = \'FORMATO SALIDA\'', '');
-INSERT INTO `bot_dictionary` VALUES (18, 'congusto', 'T', 'Puedo ayudarte el algo mas?', '');
-INSERT INTO `bot_dictionary` VALUES (19, 'despedida', 'T', 'Un gusto ayudarte <nombre>, <tiempo>. chao.', '');
-INSERT INTO `bot_dictionary` VALUES (20, 'start', 'T', 'Hola <nombre>, <tiempo>\r\nBienvenid@\r\n\r\nSoy 6UG8 bot, un asistente de informes de la empresa DIPROAVILM,\r\ncomo te puedo ayudar el día de hoy.\r\n\r\n/menu - Para desplegar el listado de opciones del menú\r\n/ayuda - Para saber mas de como puedes ingresar tus requerimientos.\r\n\r\n\r\n\r\n\r\n', '');
-INSERT INTO `bot_dictionary` VALUES (21, 'lista_clientes', 'Q', 'SELECT * FROM view_clients', '');
-INSERT INTO `bot_dictionary` VALUES (22, 'movimientos', 'Q', 'SELECT * FROM view_movements', '');
-INSERT INTO `bot_dictionary` VALUES (24, 'cambio_clave', 'Q', 'CALL set_password(<userid>,<password>)', '');
+INSERT INTO `bot_dictionary` VALUES (1, 'menu', 'Menú de Opciones', 1, 'M', 'SELECT \r\n    CONCAT(\"/\", menu) as `menu`,\r\n    `description`\r\nFROM \r\n    bot_dictionary \r\nWHERE \r\n    ismenu = 1\r\nORDER BY \r\n    menu', '', '2024-08-28 20:51:48', '2024-08-28 23:38:18', NULL);
+INSERT INTO `bot_dictionary` VALUES (2, 'reportes', 'Listado de reportes', 0, 'T', 'Menu de Reportes\r\n\r\n/lista_productos - Listado de productos.\r\n/lista_usuarios - Listado de usuarios.\r\n/lista_stock - Listado de stock por producto.\r\n/movimientos - Movimientos de productos\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:29:53', NULL);
+INSERT INTO `bot_dictionary` VALUES (3, 'lista_usuarios', 'Lista los usuarios del sistema', 1, 'Q', 'SELECT \r\n    CAST(iduser as CHAR) as id, \r\n    fullname as nombre, \r\n    rolename as rol \r\nFROM \r\n    view_get_users \r\nWHERE \r\n    status = 1 AND deleted_at IS NULL', 'fullname', '2024-08-28 20:51:48', '2024-08-28 23:29:56', NULL);
+INSERT INTO `bot_dictionary` VALUES (4, 'lista_productos', 'Lista los productos', 1, 'Q', 'SELECT \r\n  presentation as presentacion,\r\n  line as linea,\r\n  category as categoria,\r\n  productcode as codigo,\r\n  name as nombre,\r\n  CAST(cost AS CHAR) AS costo, \r\n  CAST(stock as CHAR) AS stock,\r\n  CAST(price as CHAR) AS precio,\r\n  CAST(stock_min as CHAR) AS stock_min,\r\n  CAST(stock_max as CHAR) AS stock_max\r\nFROM \r\n  view_products\r\nWHERE \r\n   status = 1', 'name', '2024-08-28 20:51:48', '2024-08-28 23:29:57', NULL);
+INSERT INTO `bot_dictionary` VALUES (9, 'saludo', 'Texto para saludo', 0, 'T', 'Hola <nombre>, <tiempo>\r\n\r\nSoy 6UG8 bot, un asistente inteligente de la empresa DIPROAVILM,\r\ncomo te puedo ayudar el día de hoy.\r\n\r\n/menu - Para desplegar el listado de opciones del menú\r\n/ayuda - Para saber mas de como puedes ingresar tus requerimientos.\r\n\r\n\r\n\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:36:17', NULL);
+INSERT INTO `bot_dictionary` VALUES (10, 'ayuda', 'Text de ayuda', 1, 'T', 'Opcion de Ayuda\r\n\r\nSoy /6UG8 bot, un asistente inteligente de la empresa DIPROAVILM.\r\n\r\n- Puedes ingresar las opciones del menu con un / o sin nada, Ej: /ayuda o ayuda.\r\n- Puedes separar las opciones con una coma ( , ), asi indicaras que necesitas que se filtre la información con ese texto que acabas de indicar Ej: listado_usuarios,Carmen\r\n- En cualquier momento puedes ingresar la opcion que mas prefieras.\r\n- Todos los resultados saldran en formato CSV, a fin de que puedas copiarlos y abrirlos en una hoja de calculo.\r\n\r\n/menu - Despliega las opciones del menú.\r\n\r\nUn saludo, \r\n6UG8 bot\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:30:00', NULL);
+INSERT INTO `bot_dictionary` VALUES (11, '6UG8', 'Quien Soy', 1, 'T', 'Soy 6UG8 bot, un asistente inteligente de la empresa DIPROAVILM.\r\n\r\n- Mis creadores son:\r\n     Hugo Alfredo Herrera Villalva\r\n     Jaime Santiago Borja Romero\r\n     Joel Darío Brito Parra\r\n     Jorge Luis López Romo\r\n     Ricardo Vaca Miño   \r\n\r\nDel 6 semestre de la carrera de Software de la Universidad UNIANDES.\r\n\r\n- Las herramientas usadas para mi creación son:\r\n    Python\r\n    Entorno virtual python\r\n    MySql\r\n    Telegram Plugins\r\n\r\n\r\n/menu - Despliega las opciones del menú.\r\n\r\nUn saludo, \r\n6UG8 bot', '', '2024-08-28 20:51:48', '2024-08-28 23:35:31', NULL);
+INSERT INTO `bot_dictionary` VALUES (12, 'lista_existencias', 'Listado de existencias', 1, 'T', 'Aun en desarrollo\r\n\r\n\r\n\r\n\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n ', '', '2024-08-28 20:51:48', '2024-08-28 23:30:02', NULL);
+INSERT INTO `bot_dictionary` VALUES (13, 'hora', 'Hora actual', 0, 'T', 'La hora actual es <time>\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:21:50', NULL);
+INSERT INTO `bot_dictionary` VALUES (14, 'fecha', 'Fecha actual', 0, 'T', 'La fecha actual es <fecha>', '', '2024-08-28 20:51:48', '2024-08-28 23:21:57', NULL);
+INSERT INTO `bot_dictionary` VALUES (18, 'congusto', 'Pregunta', 0, 'T', 'Puedo ayudarte el algo mas?', '', '2024-08-28 20:51:48', '2024-08-28 23:22:06', NULL);
+INSERT INTO `bot_dictionary` VALUES (19, 'despedida', 'texto de despedida', 0, 'T', 'Un gusto ayudarte <nombre>, <tiempo>. chao.', '', '2024-08-28 20:51:48', '2024-08-28 23:22:19', NULL);
+INSERT INTO `bot_dictionary` VALUES (20, 'start', 'Inicio', 0, 'T', 'Hola <nombre>, <tiempo>\r\nBienvenid@\r\n\r\nSoy 6UG8 bot, un asistente de informes de la empresa DIPROAVILM,\r\ncomo te puedo ayudar el día de hoy.\r\n\r\n/menu - Para desplegar el listado de opciones del menú\r\n/ayuda - Para saber mas de como puedes ingresar tus requerimientos.\r\n\r\n\r\n\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:22:22', NULL);
+INSERT INTO `bot_dictionary` VALUES (21, 'lista_clientes', 'Listado de Clientes', 1, 'Q', 'SELECT * FROM view_clients', '', '2024-08-28 20:51:48', '2024-08-28 23:30:05', NULL);
+INSERT INTO `bot_dictionary` VALUES (22, 'movimientos', 'Listado de Movimientos del dia', 1, 'Q', 'SELECT * FROM view_movements', '', '2024-08-28 20:51:48', '2024-08-28 23:30:07', NULL);
+INSERT INTO `bot_dictionary` VALUES (26, 'ccc', 'asd asd asd asd asd', 1, 'M', 'ascascascasc\nasc\nasc\nas\ncasas dasd asd \nc\nasc\nasc', '', '2024-08-29 00:52:48', '2024-08-29 00:53:27', '2024-08-29 00:53:27');
+INSERT INTO `bot_dictionary` VALUES (27, 'Calro', 'askdjlaskjda', 0, 'T', '<nombre><tiempo><fecha>', '', '2024-08-29 01:15:30', '2024-08-29 01:15:36', '2024-08-29 01:15:36');
 
 -- ----------------------------
 -- Table structure for bot_spelling
@@ -1575,163 +1612,167 @@ CREATE TABLE `bot_spelling`  (
   `wordfind` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL DEFAULT '',
   `menurun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL DEFAULT 'menu',
   `confirmed` int NOT NULL DEFAULT 0 COMMENT 'Si se encuentra confirmado o no para que sea parete de la capa de entrada',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idbotspelling`) USING BTREE,
   INDEX `IDXword`(`wordfind` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 161 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 162 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bot_spelling
 -- ----------------------------
-INSERT INTO `bot_spelling` VALUES (1, 'hola', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (2, 'hi', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (3, 'hello', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (4, 'start', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (5, 'ayuda', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (6, 'help', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (7, 'reportes', 'reportes', 1);
-INSERT INTO `bot_spelling` VALUES (8, 'reports', 'reportes', 1);
-INSERT INTO `bot_spelling` VALUES (9, 'stock', 'stock', 1);
-INSERT INTO `bot_spelling` VALUES (10, 'existencias', 'stock', 1);
-INSERT INTO `bot_spelling` VALUES (11, 'ingreso', 'ingreso', 1);
-INSERT INTO `bot_spelling` VALUES (12, 'egreso', 'egreso', 1);
-INSERT INTO `bot_spelling` VALUES (13, 'lista_productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (14, 'products', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (16, 'lista_usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (17, 'user', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (18, 'users', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (20, 'lista_stock', 'lista_existencias', 1);
-INSERT INTO `bot_spelling` VALUES (21, 'lista_existencias', 'lista_existencias', 1);
-INSERT INTO `bot_spelling` VALUES (22, 'saludos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (24, 'ayudes', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (25, 'ayudita', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (26, 'ayudas', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (27, 'mano', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (29, 'usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (30, 'productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (31, 'usuario', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (32, 'menu', 'menu', 1);
-INSERT INTO `bot_spelling` VALUES (33, 'opciones', 'menu', 1);
-INSERT INTO `bot_spelling` VALUES (34, 'saludo', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (36, 'time', 'hora', 1);
-INSERT INTO `bot_spelling` VALUES (37, 'tiempo', 'hora', 1);
-INSERT INTO `bot_spelling` VALUES (38, 'hora', 'hora', 1);
-INSERT INTO `bot_spelling` VALUES (39, 'date', 'fecha', 1);
-INSERT INTO `bot_spelling` VALUES (40, 'fecha', 'fecha', 1);
-INSERT INTO `bot_spelling` VALUES (41, 'dias', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (42, 'tardes', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (43, 'noches', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (44, 'listas_productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (45, 'cambiar_formato', 'cambiar_formato', 1);
-INSERT INTO `bot_spelling` VALUES (46, 'cambia_formato', 'cambiar_formato', 1);
-INSERT INTO `bot_spelling` VALUES (47, 'cambio_formato', 'cambiar_formato', 1);
-INSERT INTO `bot_spelling` VALUES (48, 'format_csv', 'format_csv', 1);
-INSERT INTO `bot_spelling` VALUES (49, 'format_tabspace', 'format_tabspace', 1);
-INSERT INTO `bot_spelling` VALUES (50, 'gracias', 'congusto', 1);
-INSERT INTO `bot_spelling` VALUES (51, 'opcion ', 'menu', 1);
-INSERT INTO `bot_spelling` VALUES (52, 'chao', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (53, 'despedida', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (54, 'despido', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (55, 'bye', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (56, 'opciones', 'menu', 1);
-INSERT INTO `bot_spelling` VALUES (57, 'amable', 'congusto', 1);
-INSERT INTO `bot_spelling` VALUES (58, 'agradecido', 'congusto', 1);
-INSERT INTO `bot_spelling` VALUES (59, 'muy gentil', 'congusto', 1);
-INSERT INTO `bot_spelling` VALUES (60, 'listas_usuario', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (61, 'quiero este momento el listado de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (62, 'quiero nuevamente el listado de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (63, 'cuando digo usuario es usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (64, 'listado de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (65, 'menu', 'menu', 1);
-INSERT INTO `bot_spelling` VALUES (66, 'reportes', 'reportes', 1);
-INSERT INTO `bot_spelling` VALUES (67, 'ayuda', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (68, 'lista_usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (69, 'lista_stock', 'lista_existencias', 1);
-INSERT INTO `bot_spelling` VALUES (70, 'lista_productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (71, 'buenos dias', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (72, 'buenas tardes', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (73, 'hello', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (74, 'hols', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (75, 'como estas', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (76, 'hola', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (77, 'hola como estas', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (78, 'necesito ayuda', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (79, 'help', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (80, 'listado de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (81, 'listado de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (82, 'lista de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (83, 'saludo', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (84, 'como esta hoy te envio un saludo', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (85, 'usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (86, 'saludo como estas', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (87, 'hi', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (88, 'saludos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (89, 'saludos cordiales', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (90, 'quisiera saber la lista de productos que tiene disponible', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (91, 'lista de stockl', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (92, 'hey que tal', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (93, 'hey como estas', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (94, 'saludos como estas', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (95, 'menu', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (96, 'reportes de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (97, 'reporte de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (98, 'listado productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (99, 'gracias', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (100, 'muy gentil', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (101, 'chao', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (102, 'me despido', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (103, 'lista de usuarios', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (104, 'listado de productows', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (105, 'listado de producto', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (106, 'listado de productos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (107, 'lista de proditos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (108, 'productos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (109, 'lista_productos afrecho', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (110, 'me gustaria tener reportes de preductos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (111, 'reporte de productos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (112, 'dame ayuda', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (113, 'necesito una ayuda pro favor', 'ayuda', 1);
-INSERT INTO `bot_spelling` VALUES (114, 'productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (115, 'quiero este momento el listado de usuarios', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (116, 'quiero nuevamente el listado de usuarios', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (117, 'cuando digo usuario es usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (118, 'como nos encontramos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (119, 'dame tus productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (120, 'necesito las existencias de los productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (121, 'alguna cosa mas', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (122, 'necesito productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (123, 'hola necesito saber de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (124, 'necesito informe de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (125, 'quiero saber la lista de usuarios', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (126, 'reporte de clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (127, 'quiero la lista de clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (128, 'una lista de clientes por favor', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (129, 'listado de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (130, 'clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (131, 'lista_clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (132, 'listado de clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (133, 'lista de clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (134, 'hola saludos', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (135, 'hola buenos dias', 'saludo', 1);
-INSERT INTO `bot_spelling` VALUES (136, 'entregame el listado de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (137, 'se gentil y proporciname la lista de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (138, 'se gentil y proporciname la lista de clientes', 'lista_clientes', 1);
-INSERT INTO `bot_spelling` VALUES (139, 'se gentil y proporcioname la lista de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (140, 'movimientos', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (141, 'lista de movimientos', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (142, 'reporte de movimientos', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (143, 'lista de movimientos', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (144, 'mov', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (145, 'listado de movimientos', 'movimientos', 1);
-INSERT INTO `bot_spelling` VALUES (146, 'listado de usuarios', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (147, 'dame el resumen de usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (148, 'dame alguna cosa de productos', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (149, 'quiero algo de stock', 'stock', 1);
-INSERT INTO `bot_spelling` VALUES (154, 'al susto', 'despedida', 1);
-INSERT INTO `bot_spelling` VALUES (155, 'necesito un listado de productos ahora', 'lista_productos', 1);
-INSERT INTO `bot_spelling` VALUES (157, 'lista e usuarios', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (158, 'lista de users', 'lista_usuarios', 1);
-INSERT INTO `bot_spelling` VALUES (159, 'quiero el reporte de usuarios', 'lista_productos', 0);
-INSERT INTO `bot_spelling` VALUES (160, 'informe de usuarios', 'lista_productos', 0);
+INSERT INTO `bot_spelling` VALUES (1, 'hola', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (2, 'hi', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (3, 'hello', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (4, 'start', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (5, 'ayuda', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (6, 'help', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (7, 'reportes', 'reportes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (8, 'reports', 'reportes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (9, 'stock', 'stock', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (10, 'existencias', 'stock', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (11, 'ingreso', 'ingreso', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (12, 'egreso', 'egreso', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (13, 'lista_productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (14, 'products', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (16, 'lista_usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (17, 'user', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (18, 'users', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (20, 'lista_stock', 'lista_existencias', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (21, 'lista_existencias', 'lista_existencias', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (22, 'saludos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (24, 'ayudes', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (25, 'ayudita', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (26, 'ayudas', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (27, 'mano', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (29, 'usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (30, 'productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (31, 'usuario', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (32, 'menu', 'menu', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (33, 'opciones', 'menu', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (34, 'saludo', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (36, 'time', 'hora', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (37, 'tiempo', 'hora', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (38, 'hora', 'hora', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (39, 'date', 'fecha', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (40, 'fecha', 'fecha', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (41, 'dias', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (42, 'tardes', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (43, 'noches', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (44, 'listas_productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (45, 'cambiar_formato', 'cambiar_formato', 1, '2024-08-26 19:53:05', '2024-08-28 23:26:37', '2024-08-28 23:26:37');
+INSERT INTO `bot_spelling` VALUES (46, 'cambia_formato', 'cambiar_formato', 1, '2024-08-26 19:53:05', '2024-08-28 23:26:44', '2024-08-28 23:26:44');
+INSERT INTO `bot_spelling` VALUES (47, 'cambio_formato', 'cambiar_formato', 1, '2024-08-26 19:53:05', '2024-08-28 23:26:50', '2024-08-28 23:26:50');
+INSERT INTO `bot_spelling` VALUES (48, 'format_csv', 'format_csv', 1, '2024-08-26 19:53:05', '2024-08-28 23:26:56', '2024-08-28 23:26:56');
+INSERT INTO `bot_spelling` VALUES (49, 'format_tabspace', 'format_tabspace', 1, '2024-08-26 19:53:05', '2024-08-28 23:27:01', '2024-08-28 23:27:01');
+INSERT INTO `bot_spelling` VALUES (50, 'gracias', 'congusto', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (51, 'opcion ', 'menu', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (52, 'chao', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (53, 'despedida', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (54, 'despido', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (55, 'bye', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (56, 'opciones', 'menu', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (57, 'amable', 'congusto', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (58, 'agradecido', 'congusto', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (59, 'muy gentil', 'congusto', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (60, 'listas_usuario', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (61, 'quiero este momento el listado de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (62, 'quiero nuevamente el listado de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (63, 'cuando digo usuario es usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (64, 'listado de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (65, 'menu', 'menu', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (66, 'reportes', 'reportes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (67, 'ayuda', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (68, 'lista_usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (69, 'lista_stock', 'lista_existencias', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (70, 'lista_productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (71, 'buenos dias', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (72, 'buenas tardes', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (73, 'hello', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (74, 'hols', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (75, 'como estas', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (76, 'hola', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (77, 'hola como estas', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (78, 'necesito ayuda', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (79, 'help', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (80, 'listado de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (81, 'listado de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (82, 'lista de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (83, 'saludo', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (84, 'como esta hoy te envio un saludo', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (85, 'usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (86, 'saludo como estas', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (87, 'hi', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (88, 'saludos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (89, 'saludos cordiales', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (90, 'quisiera saber la lista de productos que tiene disponible', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (91, 'lista de stockl', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (92, 'hey que tal', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (93, 'hey como estas', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (94, 'saludos como estas', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (95, 'menu', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (96, 'reportes de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (97, 'reporte de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (98, 'listado productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (99, 'gracias', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (100, 'muy gentil', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (101, 'chao', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (102, 'me despido', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (103, 'lista de usuarios', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (104, 'listado de productows', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (105, 'listado de producto', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (106, 'listado de productos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (107, 'lista de proditos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (108, 'productos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (109, 'lista_productos afrecho', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (110, 'me gustaria tener reportes de preductos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (111, 'reporte de productos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (112, 'dame ayuda', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (113, 'necesito una ayuda pro favor', 'ayuda', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (114, 'productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (115, 'quiero este momento el listado de usuarios', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (116, 'quiero nuevamente el listado de usuarios', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (117, 'cuando digo usuario es usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (118, 'como nos encontramos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (119, 'dame tus productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (120, 'necesito las existencias de los productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (121, 'alguna cosa mas', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (122, 'necesito productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (123, 'hola necesito saber de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (124, 'necesito informe de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (125, 'quiero saber la lista de usuarios', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (126, 'reporte de clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (127, 'quiero la lista de clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (128, 'una lista de clientes por favor', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (129, 'listado de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (130, 'clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (131, 'lista_clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (132, 'listado de clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (133, 'lista de clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (134, 'hola saludos', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (135, 'hola buenos dias', 'saludo', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (136, 'entregame el listado de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (137, 'se gentil y proporciname la lista de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (138, 'se gentil y proporciname la lista de clientes', 'lista_clientes', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (139, 'se gentil y proporcioname la lista de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (140, 'movimientos', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (141, 'lista de movimientos', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (142, 'reporte de movimientos', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (143, 'lista de movimientos', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (144, 'mov', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (145, 'listado de movimientos', 'movimientos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (146, 'listado de usuarios', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (147, 'dame el resumen de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (148, 'dame alguna cosa de productos', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (149, 'quiero algo de stock', 'stock', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (154, 'al susto', 'despedida', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (155, 'necesito un listado de productos ahora', 'lista_productos', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (157, 'lista e usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (158, 'lista de users', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 19:53:05', NULL);
+INSERT INTO `bot_spelling` VALUES (159, 'quiero el reporte de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-27 01:21:25', NULL);
+INSERT INTO `bot_spelling` VALUES (160, 'informe de usuarios', 'lista_usuarios', 1, '2024-08-26 19:53:05', '2024-08-26 23:01:22', NULL);
+INSERT INTO `bot_spelling` VALUES (161, 'casasasd asd asd', 'saludo', 0, '2024-08-26 20:53:30', '2024-08-27 01:19:22', '2024-08-27 01:19:22');
 
 -- ----------------------------
 -- Table structure for city
@@ -1969,12 +2010,12 @@ CREATE TABLE `config`  (
 -- ----------------------------
 INSERT INTO `config` VALUES (5, 88, 'switch_ia_bot', 'Bot Switch', 'redneuronal');
 INSERT INTO `config` VALUES (8, 0, 'empresa_nombre', 'Nombre Empresa', 'DIPROAVILM Cia. Ltda.');
-INSERT INTO `config` VALUES (9, 1, 'empresa_ruc', 'RUC', '1700000000001');
+INSERT INTO `config` VALUES (9, 1, 'empresa_ruc', 'RUC', '1792677610001');
 INSERT INTO `config` VALUES (10, 2, 'empresa_direccion', 'Dirección', 'Quito');
-INSERT INTO `config` VALUES (11, 3, 'empresa_telefono', 'Teléfono', '0990000000');
+INSERT INTO `config` VALUES (11, 3, 'empresa_telefono', 'Teléfono', '0990000001');
 INSERT INTO `config` VALUES (12, 4, 'empresa_establecimiento', 'No. Establecimiento', '001');
 INSERT INTO `config` VALUES (13, 5, 'empresa_pto_venta', 'No. Punto de Venta', '003');
-INSERT INTO `config` VALUES (15, 89, 'rol_bot', 'Rol defaul de BOT', '5');
+INSERT INTO `config` VALUES (15, 89, 'rol_bot', 'Rol default de BOT', '5');
 
 -- ----------------------------
 -- Table structure for country
@@ -2246,7 +2287,7 @@ INSERT INTO `menu` VALUES (13, '04.03', 'Listado de Beneficiarios', 'far fa-file
 INSERT INTO `menu` VALUES (14, '04.04', 'Kardex por producto', 'far fa-file-archive', 'lst_kardex', 0, 1, '2024-06-21 15:49:40', '2024-08-09 10:28:15', NULL);
 INSERT INTO `menu` VALUES (15, '01.01', 'Ventas', 'fas fa-chart-bar', 'dashventas', 0, 1, '2024-07-25 21:23:01', '2024-08-09 10:27:25', NULL);
 INSERT INTO `menu` VALUES (16, '05', 'Integración Bot', 'fas fa-robot', '', 1, 1, '2024-07-25 21:49:52', '2024-08-09 10:28:22', NULL);
-INSERT INTO `menu` VALUES (17, '05.01', 'Configuración', 'fa fa-cog', 'bot_config', 0, 1, '2024-07-25 21:50:16', '2024-08-09 10:28:25', NULL);
+INSERT INTO `menu` VALUES (17, '05.01', 'Configuración', 'fa fa-cog', 'bot_config', 0, 1, '2024-07-25 21:50:16', '2024-08-26 19:16:47', '2024-08-26 19:16:47');
 INSERT INTO `menu` VALUES (18, '05.02', 'Capas Entrada y Salida', 'fas fa-layer-group', 'bot_capas', 0, 1, '2024-07-25 21:50:58', '2024-08-09 10:28:28', NULL);
 INSERT INTO `menu` VALUES (19, '05.03', 'Diccionario de Acciones', 'fas fa-shoe-prints', 'bot_dict', 0, 1, '2024-07-25 21:51:08', '2024-08-09 10:28:31', NULL);
 INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot_audit', 0, 1, '2024-07-25 21:51:17', '2024-08-09 10:28:39', NULL);
@@ -2351,7 +2392,7 @@ CREATE TABLE `product`  (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, -27.0000, 7.50, 1.0000, 45.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-23 18:22:33', NULL);
+INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, 173.0000, 7.50, 1.0000, 45.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-26 19:14:58', NULL);
 INSERT INTO `product` VALUES (2, 1, 2, 2, 'BC001', '2201909185029', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 2.0000, 39.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-23 18:19:20', NULL);
 INSERT INTO `product` VALUES (3, 1, 2, 2, 'BC002', '2201909186637', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 2.0000, 69.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-23 18:19:20', NULL);
 INSERT INTO `product` VALUES (4, 1, 2, 2, 'BC003', '2201909186712', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 2.0000, 79.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-23 18:19:20', NULL);
@@ -4303,8 +4344,8 @@ CREATE TABLE `role`  (
 -- ----------------------------
 -- Records of role
 -- ----------------------------
-INSERT INTO `role` VALUES (1, 'Reporteador', 'R', 1, '2024-06-21 15:17:20', '2024-06-21 15:17:48', NULL);
-INSERT INTO `role` VALUES (2, 'Administrador', 'RWD', 1, '2024-06-21 15:17:44', '2024-08-06 18:35:25', NULL);
+INSERT INTO `role` VALUES (1, 'Reporteador', 'R', 1, '2024-06-21 15:17:20', '2024-08-26 00:55:07', NULL);
+INSERT INTO `role` VALUES (2, 'Administrador', 'RWD', 1, '2024-06-21 15:17:44', '2024-08-26 01:19:31', NULL);
 INSERT INTO `role` VALUES (3, 'Usuario', 'R', 1, '2024-06-21 15:18:01', '2024-08-23 01:45:59', NULL);
 INSERT INTO `role` VALUES (4, 'Super', 'RWD', 1, '2024-06-21 15:18:44', '2024-08-16 23:55:25', '2024-08-16 23:55:25');
 INSERT INTO `role` VALUES (5, 'UserBot', '', 0, '2024-07-04 12:49:39', '2024-07-04 12:49:44', NULL);
@@ -4546,7 +4587,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_clients` AS select 
 -- View structure for view_get_menu
 -- ----------------------------
 DROP VIEW IF EXISTS `view_get_menu`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_get_menu` AS select `role`.`idrole` AS `idrole`,`menu`.`idmenu` AS `idmenu`,`menu`.`order` AS `order`,`menu`.`name` AS `name`,`menu`.`icon` AS `icon`,`menu`.`route` AS `route`,`menu`.`submenu` AS `submenu` from ((`role` join `rolemenu` on((`role`.`idrole` = `rolemenu`.`idrole`))) join `menu` on((`rolemenu`.`idmenu` = `menu`.`idmenu`))) where (`menu`.`status` = 1) order by `menu`.`order`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_get_menu` AS select `role`.`idrole` AS `idrole`,`menu`.`idmenu` AS `idmenu`,`menu`.`order` AS `order`,`menu`.`name` AS `name`,`menu`.`icon` AS `icon`,`menu`.`route` AS `route`,`menu`.`submenu` AS `submenu`,`menu`.`deleted_at` AS `deleted_at` from ((`role` join `rolemenu` on((`role`.`idrole` = `rolemenu`.`idrole`))) join `menu` on((`rolemenu`.`idmenu` = `menu`.`idmenu`))) where (`menu`.`status` = 1) order by `menu`.`order`;
 
 -- ----------------------------
 -- View structure for view_get_users
