@@ -14,7 +14,7 @@ class BotDiccionarioController extends Controller{
     }
 
     
-    static public function saveMenu(){
+    static public function save(){
         
         Middleware::auditSecurity();
         
@@ -38,7 +38,7 @@ class BotDiccionarioController extends Controller{
     }
 
 
-    static public function updateMenu(){
+    static public function update(){
         
         Middleware::auditSecurity();
 
@@ -58,14 +58,14 @@ class BotDiccionarioController extends Controller{
             $message = $id;
         } else{
             $status = "error";
-            $message = "La ruta del menu que desea modificar no existe";
+            $message = "La diccionario que desea modificar no existe";
         }
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
 
 
-    static public function deleteMenu(){
+    static public function delete(){
         
         Middleware::auditSecurity();
 
@@ -84,7 +84,7 @@ class BotDiccionarioController extends Controller{
             $message = $id;
         } else{
             $status = "error";
-            $message = "La ruta del menu que desea eliminar no existe";
+            $message = "La diccionario que desea eliminar no existe";
         }
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);

@@ -86,7 +86,10 @@
     "GET|botaudit":  "BotController::getAudit()",
 
 
-    "GET|botdics":  "BotDiccionarioController::getAll()"
+    "GET|botdics":  "BotDiccionarioController::getAll()",
+    "POST|botdicSave":  "BotDiccionarioController::save()",
+    "PUT|botdicSave":  "BotDiccionarioController::update()",
+    "DELETE|botdicsDelete":  "BotDiccionarioController::delete()"
 
     
 }
