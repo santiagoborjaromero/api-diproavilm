@@ -136,7 +136,7 @@ class AuthController extends Controller{
         }else{
             $auth = "Token no valido, se guardara su IP para auditoria";
             //TODO: Guardar auditoria posible ataque
-            $model = new Model();
+            $model = new Audit();
             $model->saveAudit(json_encode([]), true);
         }
         return $auth;
