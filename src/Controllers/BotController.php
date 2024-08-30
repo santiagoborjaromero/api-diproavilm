@@ -3,8 +3,6 @@
 require_once(__DIR__."/../Models/Model.php");
 require_once(__DIR__."/../Models/Bot.php");
 
-
-
 class BotController extends Controller{
 
     static public function capasGetAll(){

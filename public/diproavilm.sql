@@ -11,27 +11,36 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 29/08/2024 01:35:05
+ Date: 29/08/2024 02:17:30
 */
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP DATABASE IF EXISTS `diproavilm`;
+CREATE DATABASE IF NOT EXISTS `diproavilm`
+  DEFAULT CHARACTER SET = 'utf8mb4' 
+  DEFAULT COLLATE 'utf8mb4_spanish_ci'
+  CHARACTER SET `utf8mb4`
+  COLLATE `utf8mb4_spanish_ci`;
+
+
+use `diproavilm`;
 -- ----------------------------
 -- Table structure for atak
 -- ----------------------------
 DROP TABLE IF EXISTS `atak`;
 CREATE TABLE `atak`  (
   `idatak` int NOT NULL AUTO_INCREMENT,
-  `ipaddr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
-  `useragent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `ipaddr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
+  `useragent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idatak`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of atak
 -- ----------------------------
+INSERT INTO `atak` VALUES (1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', '2024-08-29 02:09:15');
 
 -- ----------------------------
 -- Table structure for audit
@@ -50,7 +59,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 297 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 298 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of audit
@@ -351,6 +360,7 @@ INSERT INTO `audit` VALUES (293, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 INSERT INTO `audit` VALUES (294, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botdicsDelete&id=26', '{\"idbotdic\":\"26\"}', '2024-08-29 00:53:27', '2024-08-29 00:53:27', NULL);
 INSERT INTO `audit` VALUES (295, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=botdicSave&id=-1', '{\"menu\":\"Calro\",\"description\":\"askdjlaskjda\",\"ismenu\":\"0\",\"action\":\"T\",\"txt\":\"<nombre><tiempo><fecha>\"}', '2024-08-29 01:15:30', '2024-08-29 01:15:30', NULL);
 INSERT INTO `audit` VALUES (296, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=botdicsDelete&id=27', '{\"idbotdic\":\"27\"}', '2024-08-29 01:15:36', '2024-08-29 01:15:36', NULL);
+INSERT INTO `audit` VALUES (297, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=botdicSave&id=1', '{\"menu\":\"menu\",\"description\":\"Men\\u00fa de Opciones\",\"ismenu\":\"1\",\"action\":\"M\",\"txt\":\"SELECT \\n    CONCAT(\\\"\\/\\\", menu) as `menu`,\\n    `description`\\nFROM \\n    bot_dictionary \\nWHERE \\n    ismenu = 1 \\n    AND deleted_at IS NULL \\nORDER BY \\n    menu\",\"idbotdic\":\"1\"}', '2024-08-29 02:10:31', '2024-08-29 02:10:31', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -1258,7 +1268,7 @@ CREATE TABLE `bot_audit`  (
   PRIMARY KEY (`idbotaudit`) USING BTREE,
   INDEX `FkUser`(`iduser` ASC) USING BTREE,
   CONSTRAINT `FkUser` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 398 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 402 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bot_audit
@@ -1585,7 +1595,7 @@ CREATE TABLE `bot_dictionary`  (
 -- ----------------------------
 -- Records of bot_dictionary
 -- ----------------------------
-INSERT INTO `bot_dictionary` VALUES (1, 'menu', 'Menú de Opciones', 1, 'M', 'SELECT \r\n    CONCAT(\"/\", menu) as `menu`,\r\n    `description`\r\nFROM \r\n    bot_dictionary \r\nWHERE \r\n    ismenu = 1\r\nORDER BY \r\n    menu', '', '2024-08-28 20:51:48', '2024-08-28 23:38:18', NULL);
+INSERT INTO `bot_dictionary` VALUES (1, 'menu', 'Menú de Opciones', 1, 'M', 'SELECT \n    CONCAT(\"/\", menu) as `menu`,\n    `description`\nFROM \n    bot_dictionary \nWHERE \n    ismenu = 1 \n    AND deleted_at IS NULL \nORDER BY \n    menu', '', '2024-08-28 20:51:48', '2024-08-29 02:10:31', NULL);
 INSERT INTO `bot_dictionary` VALUES (2, 'reportes', 'Listado de reportes', 0, 'T', 'Menu de Reportes\r\n\r\n/lista_productos - Listado de productos.\r\n/lista_usuarios - Listado de usuarios.\r\n/lista_stock - Listado de stock por producto.\r\n/movimientos - Movimientos de productos\r\n\r\n/menu - Puedes regresar al menu principal.\r\n\r\n', '', '2024-08-28 20:51:48', '2024-08-28 23:29:53', NULL);
 INSERT INTO `bot_dictionary` VALUES (3, 'lista_usuarios', 'Lista los usuarios del sistema', 1, 'Q', 'SELECT \r\n    CAST(iduser as CHAR) as id, \r\n    fullname as nombre, \r\n    rolename as rol \r\nFROM \r\n    view_get_users \r\nWHERE \r\n    status = 1 AND deleted_at IS NULL', 'fullname', '2024-08-28 20:51:48', '2024-08-28 23:29:56', NULL);
 INSERT INTO `bot_dictionary` VALUES (4, 'lista_productos', 'Lista los productos', 1, 'Q', 'SELECT \r\n  presentation as presentacion,\r\n  line as linea,\r\n  category as categoria,\r\n  productcode as codigo,\r\n  name as nombre,\r\n  CAST(cost AS CHAR) AS costo, \r\n  CAST(stock as CHAR) AS stock,\r\n  CAST(price as CHAR) AS precio,\r\n  CAST(stock_min as CHAR) AS stock_min,\r\n  CAST(stock_max as CHAR) AS stock_max\r\nFROM \r\n  view_products\r\nWHERE \r\n   status = 1', 'name', '2024-08-28 20:51:48', '2024-08-28 23:29:57', NULL);
@@ -2232,9 +2242,9 @@ INSERT INTO `country` VALUES (194, 'Zimbabwe', 'ZW');
 DROP TABLE IF EXISTS `identificationtype`;
 CREATE TABLE `identificationtype`  (
   `ididentificationtype` int NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) CHARACTER SET utf16 COLLATE utf16_general_ci NULL DEFAULT '',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL DEFAULT '',
   PRIMARY KEY (`ididentificationtype`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf16 COLLATE = utf16_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of identificationtype
