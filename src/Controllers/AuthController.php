@@ -33,9 +33,9 @@ class AuthController extends Controller{
             $operations = 0;
             foreach ($rs as $key => $value) {
                 $pass = $value["password"];
-                $operations = $value["operations"] + 1 ;
+                $operations = intval($value["operations"]) + 1 ;
             }
-    
+
             if ($pass == "" || $pass == "cambiar"){
                 $message = "establecer clave";
                 $status = "error";
@@ -69,8 +69,8 @@ class AuthController extends Controller{
                         
                         $message[0]["menu"] = $recRolMenu;
                         $message[0]["role"] = $recRol;
+                        $message[0]["operations"] = $operations;
                         
-                
                         if ($message[0]["token"]===null){
                             $token = AuthController::setToken( $message[0] );
                             $message[0]["token"] = $token;
@@ -82,20 +82,19 @@ class AuthController extends Controller{
                         if($verificacion != 'ok'){
                             $token = AuthController::setToken( $message[0] );
                             $message[0]["token"] = $token;
-                        } else {
-                            $rs_up = new Model("user");
-                            $rs_up->set("token", $token);
-                            $rs_up->set("operations", $operations);
-                            $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
-                            $rs_up->where("iduser", "=", $iduser);
-                            $mensaje = $rs_up->update();
-                            
-                            // TODO: Antes SQL UPDATE
-                            // $sql = "UPDATE user 
-                            //         SET token = :token, lastlogged = :lastlogged
-                            //         WHERE iduser= :iduser";
-                            // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
                         }
+
+                        $rs_up = new Model("user");
+                        $rs_up->set("token", $token);
+                        $rs_up->set("operations", $operations);
+                        $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
+                        $rs_up->where("iduser", "=", $iduser);
+                        $mensaje = $rs_up->update();
+                        // TODO: Antes SQL UPDATE
+                        // $sql = "UPDATE user 
+                        //         SET token = :token, lastlogged = :lastlogged
+                        //         WHERE iduser= :iduser";
+                        // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
 
                     }
 
