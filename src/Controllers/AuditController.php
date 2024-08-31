@@ -17,4 +17,16 @@ class AuditController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    static public function getAuditBot(){
+        Middleware::auditSecurity();
+
+        $requestBody = $_GET;
+
+        $au = new Audit();
+        $rs = $au->getDataBot($requestBody);
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+
 }

@@ -12,6 +12,15 @@ class Audit{
         return $dataresult;
     }
 
+
+    public  function getDataBot($requestBody){
+        $sql = "SELECT * FROM view_audit_bot WHERE DATE(`created_at`) BETWEEN '" . $requestBody["fecha_ini"] . " ' AND '" . $requestBody["fecha_fin"] . "' ORDER BY created_at desc";
+        $conn = new ConnController();
+        $conn->Connect($this->drive);
+        $dataresult = $conn->Execute($sql);
+        return $dataresult;
+    }
+
     public function saveAudit($json = [], $atake = false){
 
         if (!$atake){
