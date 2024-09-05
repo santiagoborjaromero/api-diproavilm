@@ -94,7 +94,8 @@
     "GET|botusers":  "BotUsersController::getAll()",
     "POST|botuserSave":  "BotUsersController::save()",
     "PUT|botuserSave":  "BotUsersController::update()",
-    "DELETE|botuserDelete":  "BotUsersController::delete()"
+    "DELETE|botuserDelete":  "BotUsersController::delete()",
     
-    
+    "GET|lstanalisisrotacion":  "ReportController::analisisRotacion()",
+    "GET|lstmovproductos":  "ReportController::movimientoProductos()"
 }
