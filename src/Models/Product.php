@@ -11,4 +11,12 @@ class Product{
         $dataresult = $conn->Execute($sql);
         return $dataresult;
     }
+
+    public  function recalcularSaldos(){
+        $sql = "CALL sp_recalculo()";
+        $conn = new ConnController();
+        $conn->Connect($this->drive);
+        $dataresult = $conn->Execute($sql);
+        return $dataresult;
+    }
 }

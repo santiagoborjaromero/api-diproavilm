@@ -69,9 +69,12 @@
     "POST|kardex":  "ProductosController::kardex()",
 
     "GET|transacciones":  "MovimientosController::getAll()",
+    "GET|transaccionOne":  "MovimientosController::getOne()",
     "GET|transaccionesFiltro":  "MovimientosController::getByFilter()",
     "POST|saveTransaction":  "MovimientosController::save()",
     "PUT|saveTransaction":  "MovimientosController::update()",
+    "POST|anularTransaction":  "MovimientosController::anular()",
+    "POST|recuperarTransaccion":  "MovimientosController::recuperar()",
     
     "GET|movtipos":  "MovimientoTiposController::getAll()",
     "GET|movtiposSinFiltro":  "MovimientoTiposController::getAllWF()",
