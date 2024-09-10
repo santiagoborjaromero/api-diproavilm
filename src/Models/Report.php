@@ -8,8 +8,9 @@ class Report{
 
         $fecha_ini = $requestBody["fecha_ini"];
         $fecha_fin = $requestBody["fecha_fin"];
-
-        $sql = "CALL sp_analisis_rotacion('{$fecha_ini}','{$fecha_fin}',1)";
+        // $diff = date_diff($fecha_ini, $fecha_fin);
+        
+        $sql = "CALL sp_analisis_rotacion('$fecha_ini','$fecha_fin')";
         $conn = new ConnController();
         $conn->Connect($this->drive);
         $dataresult = $conn->Execute($sql);

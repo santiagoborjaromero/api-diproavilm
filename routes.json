@@ -36,23 +36,28 @@
     "PUT|saveBene":  "BeneficiarioController::updateBeneficiario()",
     "DELETE|deleteBene":  "BeneficiarioController::deleteBeneficiario()",
 
-
     "GET|pais":  "PaisController::getAll()",
     "GET|provincia":  "ProvinciaController::getAll()",
     "GET|ciudad":  "CiudadController::getAll()",
-
     
     "GET|audit":  "AuditController::getAll()",
     
     "GET|menubyrol":  "RoleMenuController::getByRol()",
     "POST|saveRolMenu":  "RoleMenuController::saveRolMenu()",
-
     
     "GET|tipoIdentificacion":  "TipoIdentificacionController::getAll()",
     
-    "GET|productoLineas":  "ProductLineController::getAll()",
-
     "GET|productoCategorias":  "ProductCategoryController::getAll()",
+    "POST|saveProductoCategorias":  "ProductCategoryController::save()",
+    "PUT|saveProductoCategorias":  "ProductCategoryController::update()",
+    "POST|recuperarProductoCategorias":  "ProductCategoryController::recuperar()",
+    "DELETE|deleteProductoCategorias":  "ProductCategoryController::delete()",
+    
+    "GET|productoLineas":  "ProductLineController::getAll()",
+    "POST|saveProductoLineas":  "ProductLineController::save()",
+    "PUT|saveProductoLineas":  "ProductLineController::update()",
+    "POST|recuperarProductoLineas":  "ProductLineController::recuperar()",
+    "DELETE|deleteProductoLineas":  "ProductLineController::delete()",
 
     "GET|presentacion":  "PresentacionController::getAll()",
 
