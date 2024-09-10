@@ -4,6 +4,7 @@
     "GET|config":  "ConfigController::getAll()",
     "PUT|saveconfig":  "ConfigController::update()",
     "POST|saveconfig":  "ConfigController::save()",
+    "GET|alertas":  "NotificationController::getAlertas()",
 
     "POST|login":  "AuthController::login()",
 
@@ -64,6 +65,7 @@
     "GET|productos":  "ProductosController::getAll()",
     "POST|saveProducto":  "ProductosController::save()",
     "PUT|saveProducto":  "ProductosController::update()",
+    "POST|saveStockMinMax":  "ProductosController::saveStockMinMax()",
     "DELETE|deleteProducto":  "ProductosController::delete()",
     "POST|recuperarProducto":  "ProductosController::recuperar()",
     "POST|kardex":  "ProductosController::kardex()",

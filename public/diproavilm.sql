@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 09/09/2024 22:23:07
+ Date: 09/09/2024 23:35:27
 */
 
 SET NAMES utf8mb4;
@@ -5427,6 +5427,7 @@ DECLARE faux CURSOR FOR
     p.deleted_at IS NULL
     AND pm.deleted_at IS NULL
     AND (t.date BETWEEN toDESDE AND toHASTA)
+    AND t.status = 1
   GROUP BY
     p.idproduct,
     year(t.date),

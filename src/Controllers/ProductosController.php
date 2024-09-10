@@ -75,6 +75,23 @@ class ProductosController extends Controller{
         echo Controller::formatoSalida($status,$message);
     }
 
+    static public function saveStockMinMax(){
+        
+        Middleware::auditSecurity();
+
+        $requestBody = Middleware::request();
+
+        foreach ($requestBody["data"] as $key => $value) {
+            $user = new Model("product");
+            $user->set("stock_min",$value["stock_min"]);
+            $user->set("stock_max",$value["stock_max"]);
+            $user->where("idproduct", "=", $value["idproduct"]);
+            $user->update();
+        }
+        http_response_code(200);
+        echo Controller::formatoSalida("ok","Los stocks mínimo y máximo se encuentran actualizados.");
+    }
+
     static public function recuperar(){
         
         Middleware::auditSecurity();
