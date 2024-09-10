@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 06/09/2024 20:07:18
+ Date: 09/09/2024 22:23:07
 */
 
 SET NAMES utf8mb4;
@@ -69,7 +69,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 334 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 398 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of audit
@@ -407,6 +407,70 @@ INSERT INTO `audit` VALUES (330, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64
 INSERT INTO `audit` VALUES (331, NULL, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4REE1K2E4MENMczlnb2tocE81bVllc3QxMGhxUFVmeHBFdmpoQ3VIVzYxNUE9PQ==\",\"operations\":60,\"lastlogged\":\"2024-09-04 22:57:37\",\"iduser\":2}', '2024-09-04 22:57:37', '2024-09-04 22:57:37', NULL);
 INSERT INTO `audit` VALUES (332, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RHlVeXlERDZqTW1WbXcwMmdMUVB0Wk1sNHUyVHMzdy9KZFhzOWhTck51N3c9PQ==\",\"operations\":61,\"lastlogged\":\"2024-09-06 09:51:51\",\"iduser\":2}', '2024-09-06 09:51:51', '2024-09-06 09:51:51', NULL);
 INSERT INTO `audit` VALUES (333, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RHlVeXlERDZqTW1WbXcwMmdMUVB0Wk1sNHUyVHMzdy9KZFhzOWhTck51N3c9PQ==\",\"operations\":62,\"lastlogged\":\"2024-09-06 18:35:56\",\"iduser\":2}', '2024-09-06 18:35:56', '2024-09-06 18:35:56', NULL);
+INSERT INTO `audit` VALUES (334, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":63,\"lastlogged\":\"2024-09-09 10:28:26\",\"iduser\":2}', '2024-09-09 10:28:26', '2024-09-09 10:28:26', NULL);
+INSERT INTO `audit` VALUES (335, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":64,\"lastlogged\":\"2024-09-09 11:33:03\",\"iduser\":2}', '2024-09-09 11:33:03', '2024-09-09 11:33:03', NULL);
+INSERT INTO `audit` VALUES (336, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"03.06\",\"name\":\"Categoria\",\"icon\":\"far fa-file-archive\",\"route\":\"categoria\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-09-09 16:10:54', '2024-09-09 16:10:54', NULL);
+INSERT INTO `audit` VALUES (337, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"03.07\",\"name\":\"Linea de Productos\",\"icon\":\"far fa-file-archive\",\"route\":\"linea\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-09-09 16:11:26', '2024-09-09 16:11:26', NULL);
+INSERT INTO `audit` VALUES (338, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-09-09 16:11:41', '2024-09-09 16:11:41', NULL);
+INSERT INTO `audit` VALUES (339, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveRolMenu&id=2', '{\"0\":{\"idmenu\":\"9\"},\"1\":{\"idmenu\":\"15\"},\"2\":{\"idmenu\":\"35\"},\"3\":{\"idmenu\":\"1\"},\"4\":{\"idmenu\":\"2\"},\"5\":{\"idmenu\":\"4\"},\"6\":{\"idmenu\":\"3\"},\"7\":{\"idmenu\":\"21\"},\"8\":{\"idmenu\":\"37\"},\"9\":{\"idmenu\":\"6\"},\"10\":{\"idmenu\":\"5\"},\"11\":{\"idmenu\":\"8\"},\"12\":{\"idmenu\":\"7\"},\"13\":{\"idmenu\":\"28\"},\"14\":{\"idmenu\":\"36\"},\"15\":{\"idmenu\":\"39\"},\"16\":{\"idmenu\":\"40\"},\"17\":{\"idmenu\":\"10\"},\"18\":{\"idmenu\":\"11\"},\"19\":{\"idmenu\":\"12\"},\"20\":{\"idmenu\":\"13\"},\"21\":{\"idmenu\":\"14\"},\"22\":{\"idmenu\":\"29\"},\"23\":{\"idmenu\":\"30\"},\"24\":{\"idmenu\":\"38\"},\"25\":{\"idmenu\":\"16\"},\"26\":{\"idmenu\":\"17\"},\"27\":{\"idmenu\":\"18\"},\"28\":{\"idmenu\":\"19\"},\"29\":{\"idmenu\":\"22\"},\"30\":{\"idmenu\":\"20\"},\"idrole\":\"2\"}', '2024-09-09 16:11:41', '2024-09-09 16:11:41', NULL);
+INSERT INTO `audit` VALUES (340, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":65,\"lastlogged\":\"2024-09-09 16:11:50\",\"iduser\":2}', '2024-09-09 16:11:50', '2024-09-09 16:11:50', NULL);
+INSERT INTO `audit` VALUES (341, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":66,\"lastlogged\":\"2024-09-09 16:22:49\",\"iduser\":2}', '2024-09-09 16:22:49', '2024-09-09 16:22:49', NULL);
+INSERT INTO `audit` VALUES (342, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveProductoCategorias&id=-1', '{\"description\":\"CUERVOS\"}', '2024-09-09 16:55:21', '2024-09-09 16:55:21', NULL);
+INSERT INTO `audit` VALUES (343, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProductoCategorias&id=6', '{\"idproductcategory\":\"6\"}', '2024-09-09 16:55:28', '2024-09-09 16:55:28', NULL);
+INSERT INTO `audit` VALUES (344, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=6', '{\"deleted_at\":null,\"idproduct\":\"6\"}', '2024-09-09 16:55:37', '2024-09-09 16:55:37', NULL);
+INSERT INTO `audit` VALUES (345, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=6', '{\"deleted_at\":null,\"idproduct\":\"6\"}', '2024-09-09 16:57:30', '2024-09-09 16:57:30', NULL);
+INSERT INTO `audit` VALUES (346, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 16:57:52', '2024-09-09 16:57:52', NULL);
+INSERT INTO `audit` VALUES (347, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 16:58:07', '2024-09-09 16:58:07', NULL);
+INSERT INTO `audit` VALUES (348, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 16:58:42', '2024-09-09 16:58:42', NULL);
+INSERT INTO `audit` VALUES (349, NULL, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":67,\"lastlogged\":\"2024-09-09 17:00:19\",\"iduser\":2}', '2024-09-09 17:00:19', '2024-09-09 17:00:19', NULL);
+INSERT INTO `audit` VALUES (350, 2, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 17:00:42', '2024-09-09 17:00:42', NULL);
+INSERT INTO `audit` VALUES (351, 2, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 17:01:04', '2024-09-09 17:01:04', NULL);
+INSERT INTO `audit` VALUES (352, 2, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproduct\":\"2\"}', '2024-09-09 17:01:06', '2024-09-09 17:01:06', NULL);
+INSERT INTO `audit` VALUES (353, 2, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=2', '{\"deleted_at\":null,\"idproductcategory\":\"2\"}', '2024-09-09 17:01:22', '2024-09-09 17:01:22', NULL);
+INSERT INTO `audit` VALUES (354, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoCategorias&id=6', '{\"deleted_at\":null,\"idproductcategory\":\"6\"}', '2024-09-09 17:01:30', '2024-09-09 17:01:30', NULL);
+INSERT INTO `audit` VALUES (355, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProductoCategorias&id=6', '{\"idproductcategory\":\"6\"}', '2024-09-09 17:01:36', '2024-09-09 17:01:36', NULL);
+INSERT INTO `audit` VALUES (356, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveProductoCategorias&id=5', '{\"description\":\"Tracto Cami\\u00f3n Shacman\",\"idproductcategory\":\"5\"}', '2024-09-09 17:05:28', '2024-09-09 17:05:28', NULL);
+INSERT INTO `audit` VALUES (357, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveProductoCategorias&id=5', '{\"description\":\"TRACTO CAMI\\u00d3N SHACMAN\",\"idproductcategory\":\"5\"}', '2024-09-09 17:05:58', '2024-09-09 17:05:58', NULL);
+INSERT INTO `audit` VALUES (358, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveProductoLineas&id=-1', '{\"description\":\"NUEVA LINEA\"}', '2024-09-09 17:11:33', '2024-09-09 17:11:33', NULL);
+INSERT INTO `audit` VALUES (359, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProductoLineas&id=6', '{\"idproductline\":\"6\"}', '2024-09-09 17:11:38', '2024-09-09 17:11:38', NULL);
+INSERT INTO `audit` VALUES (360, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarProductoLineas&id=6', '{\"deleted_at\":null,\"idproductline\":\"6\"}', '2024-09-09 17:11:48', '2024-09-09 17:11:48', NULL);
+INSERT INTO `audit` VALUES (361, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveProductoLineas&id=6', '{\"description\":\"NUEVA LINEAS\",\"idproductline\":\"6\"}', '2024-09-09 17:11:53', '2024-09-09 17:11:53', NULL);
+INSERT INTO `audit` VALUES (362, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteProductoLineas&id=6', '{\"idproductline\":\"6\"}', '2024-09-09 17:12:02', '2024-09-09 17:12:02', NULL);
+INSERT INTO `audit` VALUES (363, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":68,\"lastlogged\":\"2024-09-09 19:11:52\",\"iduser\":2}', '2024-09-09 19:11:52', '2024-09-09 19:11:52', NULL);
+INSERT INTO `audit` VALUES (364, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 19:12:36\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"128\",\"discount\":\"0\",\"total\":\"128\",\"reference\":\"\"}', '2024-09-09 19:12:36', '2024-09-09 19:12:36', NULL);
+INSERT INTO `audit` VALUES (365, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":94,\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"100\",\"price\":\"1.28\",\"total\":\"128\"}', '2024-09-09 19:12:36', '2024-09-09 19:12:36', NULL);
+INSERT INTO `audit` VALUES (366, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"iduser\":2,\"idbeneficiary\":\"735\",\"idmovementtype\":\"2\",\"date\":\"2024-09-09 19:44:24\",\"numberdocument\":\"153-220-0123457\",\"subtotal\":\"114.96\",\"discount\":\"0\",\"total\":\"114.96\",\"reference\":\"\"}', '2024-09-09 19:44:24', '2024-09-09 19:44:24', NULL);
+INSERT INTO `audit` VALUES (367, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":95,\"idproduct\":\"30\",\"entry\":\"I\",\"qty\":\"300\",\"price\":\"0.3832\",\"total\":\"114.96\"}', '2024-09-09 19:44:24', '2024-09-09 19:44:24', NULL);
+INSERT INTO `audit` VALUES (368, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 19:55:37', '2024-09-09 19:55:37', NULL);
+INSERT INTO `audit` VALUES (369, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=94', '{\"status\":0,\"idtransaction\":\"94\"}', '2024-09-09 19:55:45', '2024-09-09 19:55:45', NULL);
+INSERT INTO `audit` VALUES (370, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=95', '{\"status\":1,\"idtransaction\":\"95\"}', '2024-09-09 19:57:08', '2024-09-09 19:57:08', NULL);
+INSERT INTO `audit` VALUES (371, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=94', '{\"status\":1,\"idtransaction\":\"94\"}', '2024-09-09 19:57:15', '2024-09-09 19:57:15', NULL);
+INSERT INTO `audit` VALUES (372, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 19:57:49', '2024-09-09 19:57:49', NULL);
+INSERT INTO `audit` VALUES (373, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=95', '{\"status\":1,\"idtransaction\":\"95\"}', '2024-09-09 19:58:11', '2024-09-09 19:58:11', NULL);
+INSERT INTO `audit` VALUES (374, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=94', '{\"status\":0,\"idtransaction\":\"94\"}', '2024-09-09 19:58:20', '2024-09-09 19:58:20', NULL);
+INSERT INTO `audit` VALUES (375, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=94', '{\"status\":1,\"idtransaction\":\"94\"}', '2024-09-09 19:58:28', '2024-09-09 19:58:28', NULL);
+INSERT INTO `audit` VALUES (376, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":69,\"lastlogged\":\"2024-09-09 20:09:23\",\"iduser\":2}', '2024-09-09 20:09:23', '2024-09-09 20:09:23', NULL);
+INSERT INTO `audit` VALUES (377, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 20:18:00', '2024-09-09 20:18:00', NULL);
+INSERT INTO `audit` VALUES (378, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=95', '{\"status\":1,\"idtransaction\":\"95\"}', '2024-09-09 20:18:40', '2024-09-09 20:18:40', NULL);
+INSERT INTO `audit` VALUES (379, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 20:19:48', '2024-09-09 20:19:48', NULL);
+INSERT INTO `audit` VALUES (380, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarTransaccion&id=95', '{\"status\":1,\"idtransaction\":\"95\"}', '2024-09-09 20:19:58', '2024-09-09 20:19:58', NULL);
+INSERT INTO `audit` VALUES (381, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:02:02\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"240.5\",\"discount\":\"0\",\"total\":\"240.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtrasaction\":\"94\"}', '2024-09-09 21:02:02', '2024-09-09 21:02:02', NULL);
+INSERT INTO `audit` VALUES (382, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:02:19\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"240.5\",\"discount\":\"0\",\"total\":\"240.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtrasaction\":\"94\"}', '2024-09-09 21:02:19', '2024-09-09 21:02:19', NULL);
+INSERT INTO `audit` VALUES (383, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:02:34\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"240.5\",\"discount\":\"0\",\"total\":\"240.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtransaction\":\"94\"}', '2024-09-09 21:02:34', '2024-09-09 21:02:34', NULL);
+INSERT INTO `audit` VALUES (384, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\"}', '2024-09-09 21:02:34', '2024-09-09 21:02:34', NULL);
+INSERT INTO `audit` VALUES (385, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"Actualizaci\\u00f3n realizada con \\u00e9xito\",\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"100\",\"price\":\"1.28\",\"total\":\"128\"}', '2024-09-09 21:02:34', '2024-09-09 21:02:34', NULL);
+INSERT INTO `audit` VALUES (386, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:03:07\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"240.5\",\"discount\":\"0\",\"total\":\"240.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtransaction\":\"94\"}', '2024-09-09 21:03:07', '2024-09-09 21:03:07', NULL);
+INSERT INTO `audit` VALUES (387, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\"}', '2024-09-09 21:03:07', '2024-09-09 21:03:07', NULL);
+INSERT INTO `audit` VALUES (388, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"100\",\"price\":\"1.28\",\"total\":\"128\"}', '2024-09-09 21:03:07', '2024-09-09 21:03:07', NULL);
+INSERT INTO `audit` VALUES (389, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"35\",\"entry\":\"E\",\"qty\":\"25\",\"price\":\"4.5\",\"total\":\"112.5\"}', '2024-09-09 21:03:07', '2024-09-09 21:03:07', NULL);
+INSERT INTO `audit` VALUES (390, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:05:00\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"112.5\",\"discount\":\"0\",\"total\":\"112.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtransaction\":\"94\"}', '2024-09-09 21:05:00', '2024-09-09 21:05:00', NULL);
+INSERT INTO `audit` VALUES (391, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\"}', '2024-09-09 21:05:00', '2024-09-09 21:05:00', NULL);
+INSERT INTO `audit` VALUES (392, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"35\",\"entry\":\"E\",\"qty\":\"25\",\"price\":\"4.5\",\"total\":\"112.5\"}', '2024-09-09 21:05:00', '2024-09-09 21:05:00', NULL);
+INSERT INTO `audit` VALUES (393, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-09 21:10:09\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"496.5\",\"discount\":\"0\",\"total\":\"496.5\",\"reference\":\"ninguna referencia modificado para prueba\",\"idtransaction\":\"94\"}', '2024-09-09 21:10:09', '2024-09-09 21:10:09', NULL);
+INSERT INTO `audit` VALUES (394, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\"}', '2024-09-09 21:10:09', '2024-09-09 21:10:09', NULL);
+INSERT INTO `audit` VALUES (395, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"35\",\"entry\":\"E\",\"qty\":\"25\",\"price\":\"4.5\",\"total\":\"112.5\"}', '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
+INSERT INTO `audit` VALUES (396, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"300\",\"price\":\"1.28\",\"total\":\"384\"}', '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
+INSERT INTO `audit` VALUES (397, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 21:46:51', '2024-09-09 21:46:51', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -1299,898 +1363,6 @@ INSERT INTO `beneficiary` VALUES (849, 'C', 1, '1712030368001', 50, 5, 35, 'SANT
 INSERT INTO `beneficiary` VALUES (850, 'A', 2, '1712030368', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:26:31', '2024-08-23 21:02:44', NULL);
 INSERT INTO `beneficiary` VALUES (851, 'P', 1, '1712030368S', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:31:16', '2024-09-02 22:01:19', '2024-09-02 22:01:19');
 INSERT INTO `beneficiary` VALUES (852, 'E', 1, '1792677610001', 50, 19, 177, 'DIPROAVILM', 'DIPROAVILM', '', '', '', '', '', 0.00, 0, '', '2024-08-19 15:29:13', '2024-08-24 00:33:11', NULL);
-
--- ----------------------------
--- Table structure for beneficiary_copy1
--- ----------------------------
-DROP TABLE IF EXISTS `beneficiary_copy1`;
-CREATE TABLE `beneficiary_copy1`  (
-  `idbeneficiary` int NOT NULL AUTO_INCREMENT,
-  `type` enum('C','P','A','E') CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'C' COMMENT 'C-Cliente P-Proveedor A-Ambos',
-  `ididentificationtype` int NOT NULL DEFAULT 1 COMMENT 'Tipo de identificacion Cedula, Ruc, Pasaporte',
-  `identificationnumber` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '' COMMENT 'Numero de cedula, ruc, pasaporte, o tax number en caso de ser internacionales',
-  `idcountry` int NOT NULL DEFAULT 0,
-  `idprovince` int NOT NULL DEFAULT 0,
-  `idcity` int NOT NULL DEFAULT 0,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `comercialname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NULL DEFAULT '',
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `web` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `parish` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '' COMMENT 'Parroquia',
-  `creditquota` double(20, 2) NOT NULL DEFAULT 0.00 COMMENT 'Cupo credito',
-  `creditdays` int NULL DEFAULT 0 COMMENT 'Dias de credito',
-  `account` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '' COMMENT 'Cuenta contable',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`idbeneficiary`) USING BTREE,
-  INDEX `IDXCity`(`idcity` ASC) USING BTREE,
-  INDEX `IDXCountry`(`idcountry` ASC) USING BTREE,
-  INDEX `IDXProvince`(`idprovince` ASC) USING BTREE,
-  INDEX `ididentificationtype`(`ididentificationtype` ASC) USING BTREE,
-  CONSTRAINT `beneficiary_copy1_ibfk_1` FOREIGN KEY (`ididentificationtype`) REFERENCES `identificationtype` (`ididentificationtype`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `beneficiary_copy1_ibfk_2` FOREIGN KEY (`idcity`) REFERENCES `city` (`idcity`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `beneficiary_copy1_ibfk_3` FOREIGN KEY (`idcountry`) REFERENCES `country` (`idcountry`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `beneficiary_copy1_ibfk_4` FOREIGN KEY (`idprovince`) REFERENCES `province` (`idprovince`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 853 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of beneficiary_copy1
--- ----------------------------
-INSERT INTO `beneficiary_copy1` VALUES (1, 'C', 4, '9999999999', 50, 19, 177, 'CONSUMIDOR FINAL', 'CONSUMIDOR FINAL', 'CONSUMIDOR FINAL', ' ', '', '', '10 DE AGOSTO', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:04:29', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (2, 'C', 2, '1205448580', 50, 19, 177, 'DIAZ BAQUE RUDDY ELIANA', 'R.D. SERVICES', 'ROCA E6-09 y JUAN LEON MERA', ' ', '', '', 'MARISCAL SUCRE', 1000.00, 30, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (3, 'C', 1, '1713163622001', 50, 19, 177, 'PABON ALBUJA ALEXIS MAURICIO', 'A.P. CONSULTOR', 'JUAN MARQUEZ 0E1-115 y PEDRO DE ALFARO', '0998531307 0', 'mpabonni@gmail.com', '', 'CALDERÓN (CARAPUNGO) ', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (4, 'C', 1, '1792677610001', 50, 19, 177, 'DISTRIBUIDORA DE PRODUCTOS AVICOLAS LOPEZ MARTINEZ DIPROAVILM CIA.LTDA.', '', 'VIRGEN DE MONSERRATE 23 Y RAFAEL CALVACHE', '0996213701 ', 'jlopez@diporavilm.com', '', 'QUITO DISTRITO METROPOLITANO', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (5, 'C', 1, '1792133203001', 50, 19, 177, 'ALIMENTOS BALANCEADOS AVIFORTE CIA. LTDA.', 'AVIFORTE CIA. LTDA.', 'San Jose Oe 8252 y San Camilo', '025005511 0', 'lizardo.andrade@aliforte.com.ec', '', 'QUITO DISTRITO METROPOLITANO', 200000.00, 30, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (6, 'C', 1, '0791790700001', 50, 7, 54, 'COORPORACION AVICOLA EL GUAYACAN AVIGUAY S A', '', 'Pichincha S/N', ' ', 'corpoguayacan@gmail.com', '', 'BALSAS', 100000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (7, 'C', 1, '0992418664001', 50, 10, 75, 'OBRECONSTRU S A', 'OBRECONSTRU S A', 'AV MARCEL LANIADO Y CIRCUNVALACION NORTE', ' ', 'departamentocontable_2017@hotmail.com obreconstru@hotmail.com', '', 'CALDERÓN (CARAPUNGO) ', 5000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (8, 'C', 1, '1791306961001', 50, 19, 177, 'AVICOLA VITALOA S.A. AVITALSA', '', 'OSWALDO GUAYASAMIN OE4-100 y RODRIGO NUÑEZ', '2372-740 022372736', 'gmiranda@avitalsa.com secretaria_presidencia@avitalsa.com', '', 'QUITO DISTRITO METROPOLITANO', 240000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (9, 'C', 1, '1790319857001', 50, 21, 188, 'PROCESADORA NACIONAL DE ALIMENTOS C.A.PRONACA', 'PRONACA', 'LOS NARANJOS 44-15 LOS GRANADOS', '099822714 095651212', 'facturacionelectronica@pronaca.com; wgguillenn@pronaca.com;conselec@yahoo.es; facturacionelectronica@pronaca.com; wgguillenn@pronaca.com; controltributario@avesca.com.ec', '', 'SANTO DOMINGO DE LOS COLORADOS', 40000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (10, 'C', 1, '1313006957001', 50, 19, 177, 'MACIAS LOOR MELANY XIOMARA', '', 'MANABI / PORTOVIEJO / ANDRÉS DE VERA', ' ', 'danilo0923@hotmail.com', '', 'CALDERÓN (CARAPUNGO) ', 50000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (11, 'C', 1, '1791294505001', 50, 21, 188, 'REPROIMAV S.A. REPRESENTACION DE PRODUCTOS E IMPLEMENTOS AVICOLAS', 'REPROIMAV S.A.', 'LOTIZACION BUENOS AIRES', '0999838896 ', 'ventasreproimavmaster@gmail.com', '', 'SANTO DOMINGO DE LOS COLORADOS', 20000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (12, 'C', 1, '0591761161001', 50, 6, 48, 'ECUAPOLLO', 'ECUAPOLLO SALCEDO', 'SALCEDO/ SAN MIGUEL', ' ', 'ecuapollosalcedo21@gmail.com', '', 'SAN MIGUEL', 10000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (13, 'C', 1, '1792003571001', 50, 19, 177, 'L.P. MARCELO PACHECO CIA. LTDA.', 'POLLOS LA PRADERA', 'VIA INTEROCEANICA S/N', '2380388 ', 'lpacheco@avicolalapradera.com.ec', '', 'QUITO DISTRITO METROPOLITANO', 100000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (14, 'C', 1, '0401312707001', 50, 4, 30, 'GUERRA GUERRA OSCAR SANTIAGO', 'GRANJITA MARKET', 'PANM NORTE PUNTALES BAJO S/N y SN', ' ', '', '', 'BOLÍVAR', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (15, 'C', 1, '0705368934001', 50, 7, 54, 'FLORES ESPINOZA DIEGO VICENTE', '', ' S/N', ' ', '', '', 'BALSAS', 10000.00, 14, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (16, 'C', 2, '0503909012', 50, 19, 177, 'CASTRO ALOMOTO ERNESTO', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (17, 'C', 1, '0591755366001', 50, 6, 48, 'SIERRAFERTTIL CIA LTDA', 'SIERRAFERTIL', 'SALCEDO SALACHE RUMIPAMBA S/N Y PANAMERICANA E35', ' 0997627018', 'recepcion@sierrafertil.com.ec', '', 'SALANGO', 100000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (18, 'C', 1, '0601680317001', 50, 5, 35, 'CURILLO SAIGUA ROSA MARIA', 'EL CAMPO DISTRIBUIDOR', 'ESPEJO 31-27 y NUEVA YORK', ' ', '', '', 'VELASCO', 10000.00, 1, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (19, 'C', 2, '0503598385', 50, 6, 47, 'ACHOTE CHICAIZA SONIA ABIGAIL', '', 'PUJILÍ', ' ', '', '', 'PUJILÍ', 10000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (20, 'C', 2, '0200678225', 50, 19, 177, 'VASCONEZ CAICEDO MARTHA SUSANA', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 8, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (21, 'C', 2, '1721159414', 50, 19, 177, 'GUANOTAXI GREFA HENRY BOLIVAR', '', 'Quito/ Barrio Atucucho /calle Carlota Jaramillo y transversal H', '0987391391 ', '', '', 'QUITO DISTRITO METROPOLITANO', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (22, 'C', 2, '0503323495', 50, 6, 44, 'TOAPANTA TOAPANTA LUIS ALEXIS', '', 'CARIGUAYRAZO S/N y AV ATAHUALPA', ' ', '', '', 'IGNACIO FLORES (PARQUE FLORES) ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (23, 'C', 2, '0704568716', 50, 7, 62, 'AYALA CHOCANO VERONICA JAKELINE', '', 'VOLTAIRE PALADINES S/N y CUENCA', ' ', '', '', 'SANTA ROSA', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (24, 'C', 2, '1717092520', 50, 19, 177, 'GOMEZ HUILCA GABRIELA', '', 'N48B OE8-50', ' ', '', '', 'COCHAPAMBA', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (25, 'C', 2, '0604993840', 50, 5, 41, 'LEMA CUSQUILLO GEOVANNY EFRAIN', '', 'Barrio Libertad la Doloroza', ' ', 'Geobanylema@gmail.com', '', 'LA MATRIZ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (26, 'C', 1, '0703524983001', 50, 13, 121, 'MORAN AGUILAR TELMO DAVID', '', 'EL ORO', ' ', '', '', 'PATRICIA PILAR', 10000.00, 30, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (27, 'C', 2, '1726370198', 50, 19, 177, 'OBANDO GUAJAN FAUSTO MARTIN', '', 'QUITO', ' ', '', '', 'QUITO DISTRITO METROPOLITANO', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (28, 'C', 2, '1500015472', 50, 19, 177, 'GORDILLO SALCEDO VICTOR HUGO', '', ' ', ' ', '', '', 'KENNEDY', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (29, 'C', 2, '0503802951', 50, 19, 177, 'TOAPANTA LOGRO JORGE ANIBAL', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (30, 'C', 2, '1104015217', 50, 12, 106, 'VINTIMILLA GUALAN ANDREA KATHERINE', '', 'CATACOCHA 14-45 y BOLIVAR', ' ', '', '', 'SAN SEBASTIÁN', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (31, 'C', 2, '0104362264', 50, 3, 22, 'ANGAMARCA MEDINA ANDREA PAOLA', 'CIRCULO AMERICANO DEL LIBRO', 'BOLIVAR 12-06 y GENERAL ENRIQUEZ', ' ', '', '', 'AZOGUES', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (32, 'C', 2, '1102698337', 50, 12, 106, 'CAÑAR PACHAR EDUARDO BLADIMIRO', '', 'MANZANOS A-11 y ROMERILLOS', ' ', '', '', 'SAN SEBASTIÁN', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (33, 'C', 2, '1715001234', 50, 19, 177, 'CASTRO URQUIZO VERONICA JACQUELINE', '', 'Quito', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (34, 'C', 2, '2100882402', 50, 22, 191, 'GAVILANES CHOCON JIMENA ELIZABETH', '', 'VIA QUITO S/N', ' ', '', '', 'SANTA ROSA DE SUCUMBÍOS', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (35, 'C', 2, '0603297698', 50, 5, 35, 'URQUIZO CHAVEZ NELSON OSWALDO', 'AVICOLA CHIMBORAZO', 'PANAMERICANA SUR ', ' ', '', '', 'LICÁN', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (36, 'C', 2, '1101638680', 50, 19, 177, 'CASTILLO MILTON LEONARDO', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (37, 'C', 2, '0704907864', 50, 19, 177, 'QUEVEDO ORDO?EZ VALERIA CECIBEL', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (38, 'C', 2, '1711259794', 50, 6, 45, 'MUZO CONCHAMBAY GERMAN RIGOBERTO', '', 'QUITO', ' ', '', '', 'EL TRIUNFO', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (39, 'C', 2, '1600347585', 50, 18, 164, 'AGUIRRE MONTERO PATRICIA ELIZABETH', '', 'PRINCIPAL ', ' ', '', '', 'PUYO', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (40, 'C', 1, '1793192220001', 50, 19, 177, 'CENTRO AGROPECUARIO Y SALUD ANIMAL CRUZ CASA CRUZ S C C', '', 'LA ELOISA N69J E11-190', '022425203 0999415227', 'compras@casacruz.com.ec', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-19 15:31:12', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (41, 'C', 1, '0992787503001', 50, 19, 177, 'TRANSPORTES CASTRO  HIJOS  S A', '', 'GUAYAQUIL', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (42, 'C', 2, '1714483730', 50, 19, 177, 'SIMBAÑA CASAS WILMER ARTURO', '', 'ANTONIO GROSS 3-B y AV. GEOVANNY CALLES', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (43, 'C', 2, '1709264822', 50, 19, 177, 'PINTO TAXIGUANO EDGAR RODRIGO', 'PINTO TAXIGUANO EDGAR RODRIGO', 'QUITO', ' 0998104606', 'edgar.rodrigo1966@hotmail.com', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (44, 'C', 2, '0400949756', 50, 19, 177, 'TALABERA ZULETA JACQUELINE ELIZABETH', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (45, 'C', 2, '1308015161', 50, 14, 141, 'PACHAY GARCIA MARIA ESTHER', '', 'CHIMBORAZO S/N y CALLE 23 DE OCTUBRE', ' ', '', '', 'MONTECRISTI', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (46, 'C', 2, '0401013222', 50, 4, 31, 'CUAICAL MORILLO SEGUNDO GERMANICO', '', 'BOLIVAR 5-60 y QUIROGA', ' ', '', '', 'EL ÁNGEL', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (47, 'C', 1, '1716944614001', 50, 19, 177, 'SOLIS TAPIA CRISTINA ELIZABETH', 'IMPSERVIC ASESORIA TRIBUTARIA', 'EL MANANTIAL N65-73 y AGUA CLARA', ' ', '', '', 'CARCELÉN', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (48, 'C', 2, '1711013720', 50, 19, 179, 'GUANO CHIGUANO MANUEL MARIA', '', 'ATAHUALPA SN y CRISTOBAL COLON', ' ', '', '', 'MACHACHI ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (49, 'C', 2, '0503902785', 50, 6, 44, 'CHICAIZA CAIZA CARMEN ALEXANDRA', '', 'PRINCIPAL S/N', ' ', '', '', 'TANICUCHÍ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (50, 'C', 2, '0701912750', 50, 19, 177, 'SAMANIEGO CORREA DALILA DE LOURDES', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (51, 'C', 2, '0301322780', 50, 19, 177, 'CUESTA REINOSO BLANCA INES', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (52, 'C', 2, '0201306305', 50, 19, 177, 'SAGNAI CABEZAS BETY ELVIRA', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (53, 'C', 2, '0703196287', 50, 19, 177, 'LOPEZ NARANJO MIGUEL ALEXANDER', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (54, 'C', 2, '0101162048', 50, 1, 1, 'PADILLA VASQUEZ CARLOS MIGUEL', '', 'DEL RETORNO S-N y BENJAMIN FRANKLYN', ' ', '', '', 'BELLAVISTA', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (55, 'C', 2, '1707912851', 50, 19, 177, 'ULCUANGO ALCOSER RINA MERCEDES', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (56, 'C', 2, '1500459423', 50, 19, 177, 'ANDY LOPEZ LEONARDO MESIAS AGROS', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (57, 'C', 1, '0602576407001', 50, 5, 41, 'PADILLA SAMANIEGO WILTER KLEVER', '', 'GUANO.LANGOS CHICO', ' ', '', '', 'EL ROSARIO', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (58, 'C', 2, '0602923856', 50, 5, 35, 'ALCOCER VENLASAGA ANGEL BOLIVAR', '', 'COLOMBIA 2021 y TARQUI', ' ', '', '', 'VELOZ', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (59, 'C', 2, '0401016704', 50, 19, 177, 'MARTINEZ MOLINA WILLAM ORLANDO', '', 'QUITO', ' ', '', '', 'QUITO DISTRITO METROPOLITANO', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (60, 'C', 2, '0501891006', 50, 6, 44, 'QUINGATUNA UNAPANTA JAKELINE DEL PILAR', '', '10 DE AGOSTO SN y PASAJE COLOMBIA', ' ', '', '', 'ELOY ALFARO (SAN FELIPE) ', 3000000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (61, 'C', 2, '1101160032', 50, 19, 177, 'BETANCOURT JIMENEZ CONSTANTE FLORENTINO', '', 'T 54 y PASAJE SIN NOMBRE', ' ', '', '', 'CONOCOTO', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (62, 'C', 2, '0401068010', 50, 22, 194, 'QUILUMBA PASTAZ MARCO ANTONIO', '', 'LIBERTAD S/N', ' ', '', '', 'NUEVA LOJA', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (63, 'C', 2, '1718875840', 50, 19, 177, 'CATOTA YEPEZ CESAR AUGUSTO', '', 'QUITO', ' ', '', '', 'QUITO DISTRITO METROPOLITANO', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (64, 'C', 2, '1704468014', 50, 19, 177, 'PILLAJO MUZO LUIS ALFREDO', '', 'PASAJE N52M E16-25 y LOS ALCES', ' ', '', '', 'KENNEDY', 10000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (65, 'C', 1, '0502306566001', 50, 6, 44, 'QUINGATUÑA UNAPANTA MAYRA ELIZABETH', '', 'LATACUNGA', ' ', '', '', 'LATACUNGA', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (66, 'C', 2, '0101218089', 50, 15, 156, 'SAMANIEGO AVILA LAURO MIGUEL', '', '24 DE MAYO S/N y GABINO RIVADENEIRA', ' ', '', '', 'MACAS', 200000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (67, 'C', 2, '1708802804', 50, 19, 181, 'ANASI CAJAMARCA LUIS BLADIMIR', 'AUTO SPA EXPRESS', 'AV MARIANA DE JESUS 300 y ROSA ZARATAE', ' ', '', '', 'SANGOLQUÍ', 200000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (68, 'C', 2, '0301322921', 50, 19, 177, 'LUNA LUCERO PABLO MAURICIO', '', 'QUITO', ' ', '', '', 'QUITO DISTRITO METROPOLITANO', 200000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (69, 'C', 2, '0401080767', 50, 19, 177, 'MARTINEZ BRACHO LENIN OMAR', '', 'QUITO', ' ', '', '', 'CALDERÓN (CARAPUNGO) ', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (70, 'C', 1, '0502060957001', 50, 6, 44, 'VELOZ MALAVE HUGO VINICIO', '', 'SAN ISIDRO LABRADOR S/N y COLONDRIZ', ' ', '', '', 'JUAN MONTALVO (SAN SEBASTIÁN)', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (71, 'C', 2, '0401158894', 50, 19, 177, 'LOPEZ ROMO JORGE LUIS', '', 'PASAJE SIETE S26-98 y AV. PRINCIPAL', ' ', '', '', 'LA MAGDALENA', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (72, 'C', 2, '0103927497', 50, 1, 1, 'ZUÑIGA PACHECO DANNY ROBERTO', '', 'BROMELIAS S/N y AV ORDOÑEZ LASSO', ' ', '', '', 'SAN SEBASTIÁN', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (73, 'C', 1, '0992849010001', 50, 10, 75, 'TRANSPORTE LOGISTICO PESADO TRANSFREMEC S.A.', '', '19C SOLAR 2', '0969250112 045065387', 'vicentemendoza198101@gmail.com', '', 'TARQUI', 100000.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (74, 'C', 1, '0491529466001', 50, 19, 177, 'RECFRONTRUKS S.A', '', 'MOJANDA N49 Y ATACAZO', '062224467 0', 'byron-r@hotmail.com', '', 'CALDERÓN (CARAPUNGO) ', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (75, 'C', 1, '0993374568001', 50, 10, 75, 'TRANSPORTE LOGISTICO PESADO TRANSGUAYAQUIL SA', 'TRANSGUAYAQUIL SA', 'Coop Pajaro Azul, Mz 1652 SL 22, Tarqui', '0969250112 ', 'transfremec@outlook.es', '', 'TARQUI', 0.00, 0, '1.1.02.05.01', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (76, 'P', 1, '0602898942001', 50, 19, 177, 'ABARCA VINTIMILLA FERNANDO SANTIAGO', 'SANTIAGO DOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (77, 'P', 1, '0603480344001', 50, 19, 177, 'ABARCA VINTIMILLA SUSANA BELEN', 'FLASH MARKET RIO', '', '2510689', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (78, 'P', 1, '1792458935001', 50, 19, 177, 'ADECAMOR CIA LTDA.', 'ADECAMOR CIA LTDA.', '', '032620262', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (79, 'P', 1, '0992797193001', 50, 19, 177, 'ADMINISTRACION Y NEGOCIOS ADNE C. LTDA.', 'ADMINISTRACION Y NEGOCIOS ADNE C. LTDA.', '', '042396479', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (80, 'P', 1, '1790601501001', 50, 19, 177, 'AFABA', 'AFABA', '', '255459/2566662', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (81, 'P', 1, '0190401782001', 50, 19, 177, 'AFERGRAN CIA. LTDA.', 'AFERGRAN CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (82, 'P', 1, '0990006687001', 50, 19, 177, 'AGRIPAC S.A.', 'AGRIIPAC S.A.', '', '(04) 281 1616', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (83, 'P', 1, '0703685560001', 50, 19, 177, 'AGUILAR MONCADA ERIK ALBERTO', 'AGUILAR MONCADA ERIK ALBERTO', '', '0987239847', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (84, 'P', 1, '0705105021001', 50, 19, 177, 'AGUILAR SANCHEZ JEFFERSON ANDRES', '', '', '0992645061', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (85, 'P', 1, '2100656608001', 50, 19, 177, 'AGUILAR VIVANCO QUELI MARCELA', 'AGUILAR VIVANCO QUELI MARCELA', '', '0990673107', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (86, 'P', 1, '1104332893001', 50, 19, 177, 'AGUIRRE ENCARNACION  ALEXANDER ERNESTO', '', '', '0979120486', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (87, 'P', 1, '0791818931001', 50, 19, 177, 'AICRUX C.L.', 'AICRUX C.L.', '', '0993656613', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (88, 'P', 1, '1790475247001', 50, 19, 177, 'AIG METROPOLITANA CIA. DE SEGUROS Y REASEGUROS S.A.', 'AIG METROPOLITANA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (89, 'P', 1, '0190403807001', 50, 19, 177, 'ALIMENTOS ALIBALGRAN CIA. LTDA.', '', '', '2853845', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (90, 'P', 1, '1792133203001', 50, 19, 177, 'ALIMENTOS BALANCEADOS AVIFORTE CIA. LTDA.', 'AVIFORTE CIA. LTDA.', '', '2447553', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (91, 'P', 1, '1890141508001', 50, 19, 177, 'ALOBAMBA CIA. LTDA. FACTURAELECTRONICAECUADOR.COM', 'ALOBAMBA CIA. LTDA. FACTURAELECTRONICAECUADOR.COM', '', '032456156', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (92, 'P', 1, '1708453954001', 50, 19, 177, 'ALVARADO SEVILLA MARCOS BENITO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (93, 'P', 1, '0601315229001', 50, 19, 177, 'ALVEAR HARO NICOLAS MANUEL', 'GASOLINERA EL DORADO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (94, 'P', 1, '1791830679001', 50, 19, 177, 'AMERICANTRUCK S.C.C.', 'AMERICANTRUCK', '', '022908540', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (95, 'P', 1, '0701398695001', 50, 19, 177, 'APOLO ROMERO MIGUEL ANTONIO', 'APOLO ROMERO MIGUEL ANTONIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (96, 'P', 1, '1150276499001', 50, 19, 177, 'ARMIJOS ENCARNACION JORGE EMMANUEL', '', '', '0994619930', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (97, 'P', 1, '1104968852001', 50, 19, 177, 'ARMIJOS MOROCHO JOE ESTALIN', 'ALIMENTOS BALANCEADOS JOE', '', '0968734113', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (98, 'P', 1, '1101818423001', 50, 19, 177, 'ARMIJOS RAMON JAIME WILFRIDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (99, 'P', 1, '0704208867001', 50, 19, 177, 'ASANZA RAMIREZ JOSE LUIS', 'ASANZA RAMIREZ JOSE LUIS', '', '25176661', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (100, 'P', 1, '0190123626001', 50, 19, 177, 'ASEGURADORA DEL SUR', 'ASEGURADORA DEL SUR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (101, 'P', 1, '0791748631001', 50, 19, 177, 'ASOCIACION DE PRODUCTORES PECUARIOS EL ORO', 'ASOCIACION DE PRODUCTORES PECUARIOS EL ORO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (102, 'P', 1, '0991331859001', 50, 19, 177, 'ATIMASA S.A.', 'ATIMASA S.A.', '', '222222222', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (103, 'P', 1, '1891710808001', 50, 19, 177, 'AVIPAZ CIA. LTDA.', 'AVIPAZ CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (104, 'P', 1, '1707273189001', 50, 19, 177, 'AYORA PALACIO JOSE CARLOS', 'AYORA PALACIO JOSE CARLOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (105, 'P', 1, '0791792967001', 50, 19, 177, 'BA&Q  CIA.LTDA.', '', '', '999999999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (106, 'P', 1, '0790002350001', 50, 19, 177, 'BANCO DE MACHALA S. A.', 'BANCO DE MACHALA S. A.', '', '2583129 583130', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (107, 'P', 1, '0990005737001', 50, 19, 177, 'BANCO DEL PACIFICO S. A.', 'BANCO DEL PACIFICO S. A.', '', '04373 1500 : 4', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (108, 'P', 1, '0990049459001', 50, 19, 177, 'BANCO GUAYAQUIL S.A.', 'BANCO DE GUAYAQUIL', '', '043730100', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (109, 'P', 1, '1703791093001', 50, 19, 177, 'BARBA DELGADO JOSE EDUARDO', 'ESTACION DE SERVICIOS VIRGEN DEL CISNE 2', '', '0999388362', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (110, 'P', 1, '0400878468001', 50, 19, 177, 'BASTIDAS HERNANDEZ FAUSTO GERMAN', 'VIVERES BASTIDAS', '', '07245781', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (111, 'P', 1, '0700004195001', 50, 19, 177, 'BELTRAN COBOS CARLOS ALEJANDRO', 'BELTRAN COBOS CARLOS ALEJANDRO', '', '0989505835', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (112, 'P', 1, '0992275960001', 50, 19, 177, 'BELUMA S.A.', 'DULCERIA DOLUPA', '', '042100373', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (113, 'P', 1, '0993243558001', 50, 19, 177, 'BIMIVET SA', '', '', '042103725', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (114, 'P', 1, '0704172188001', 50, 19, 177, 'BLACIO MORENO YUDI LIZETH', 'BLACIO MORENO YUDI LIZETH', '', '072968300', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (115, 'P', 1, '0706759735001', 50, 19, 177, 'BLACIO SUAREZ BETSY ALEJANDRA', 'BLACIO SUAREZ BETSY ALEJANDRA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (116, 'P', 1, '1714219407001', 50, 19, 177, 'BLACIO TITUANA ERASMO HERNAN', 'BLACIO TITUANA ERASMO HERNAN', '', '0986064157', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (117, 'P', 1, '0601802325001', 50, 19, 177, 'BONIFAZ BALLAGAN LILIAN GRACIELA', 'ESTACION DE SERVICIOS LA VICTORIA', '', '0998202228', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (118, 'P', 1, '1800384826001', 50, 19, 177, 'BONILLA ORTIZ VICTORIA EVELINA', 'GASOLINERA VALLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (119, 'P', 1, '0705177251001', 50, 19, 177, 'BRAVO PALMA  GISELLE LISBETH', '', '', '072517711', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (120, 'P', 1, '0991322833001', 50, 19, 177, 'BRUCOSA S.A.', 'GREEN HOUSE', '', '0993473812', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (121, 'P', 1, '0702371402001', 50, 19, 177, 'BURNEO JIMENEZ RICHARD EDUARDO', 'R B J TRUCK PARTS', '', '2922268-0987967', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (122, 'P', 1, '0600583652001', 50, 19, 177, 'CABRERA BRITO VIOLETA GERMANIA', 'ESTACION DE SERVICIO LA GIRALDA', '', '032916277', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (123, 'P', 1, '0910397090001', 50, 19, 177, 'CALLE ANGUMBA NELSON EDUARDO', 'EQUIPESAS', '', '042754608', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (124, 'P', 1, '0706335817001', 50, 19, 177, 'CAMPOVERDE SALAZAR EVELYN YESENIA', '', '', '0997627166', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (125, 'P', 1, '1791711564001', 50, 19, 177, 'CARINTERNATIONAL S.A.', 'CARINTERNATIONAL S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (126, 'P', 1, '0992447508001', 50, 19, 177, 'CARLOS ESPINOZA APOLO', 'BODEGA CENTRAL COMDERE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (127, 'P', 1, '1756512768001', 50, 19, 177, 'CARTAGENA POSSO CAMEN DELIA', 'CARTAGENA POSSO CAMEN DELIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (128, 'P', 1, '1803931946001', 50, 19, 177, 'CARVAJAL MONCAYO ANGEL FERNANDO', 'CARVAJAL MONCAYO ANGEL FERNANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (129, 'P', 1, '0300439627001', 50, 19, 177, 'CASTANIER GONZALEZ DIEGO GASTON', 'CASTANIER GONZALEZ DIEGO GASTON', '', '099999999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (130, 'P', 1, '1203464340001', 50, 19, 177, 'CASTILLO CASTILLO  CARLOS ROBERTO', 'ESTACION DE SERVICIOS VENTANAS', '', '0997163972', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (131, 'P', 1, '0993093866001', 50, 19, 177, 'CASTILLO GONZALES PETER ANDRES', 'CASTILLO GONZALES PETER ANDRES', '', '042436487', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (132, 'P', 1, '1102285556001', 50, 19, 177, 'CASTILLO JIMENEZ JOSE FAUSTO', 'GASOLINERA EL CASTILLO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (133, 'P', 1, '1206421339001', 50, 19, 177, 'CASTILLO LOPEZ MELANIE GEORDANA', 'CASTILLO LOPEZ MELANIE GEORDANA', '', 'N', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (134, 'P', 1, '1708596364001', 50, 19, 177, 'CASTILLO PEREZ JOHN WILLIAM', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (135, 'P', 1, '0702519018001', 50, 19, 177, 'CASTILLO ROMERO DORIS DEL CARMEN', 'CASTILLO ROMERO DORIS DEL CARMEN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (136, 'P', 1, '1900105188001', 50, 19, 177, 'CASTRO AMAYA WILMAN ENRIQUE', 'CASTRO AMAYA WILMAN ENRIQUE ESTACION DE SERVICIOS CASTRO', '', '0994138822', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (137, 'P', 1, '1308393634001', 50, 19, 177, 'CATUTO PINOARGOTE EDDY FERNANDO', 'CATUTO PINOARGOTE EDDY FERNANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (138, 'P', 1, '0703362277001', 50, 19, 177, 'CHAMBA HIDALGO ELSA YOLANDA', 'CHAMBA HIDALGO ELSA YOLANDA', '', '072975940', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (139, 'P', 1, '1751125871001', 50, 19, 177, 'CHAVEZ CALVACHE LUIS CARLOS', 'AIR FRENOS CHAVEZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (140, 'P', 1, '0703221127001', 50, 19, 177, 'CHAVEZ SOLIS CARLOS ALBERTO', 'CARLOS ALBERTO CHAVEZ SOLIS', '', '0992762034', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (141, 'P', 1, '1801798990001', 50, 19, 177, 'CHAVEZ ZUÑIGA SALOMON IVAN', 'CHAVEZ ZUÑIGA SALOMON IVAN', '', '032855600', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (142, 'P', 1, '1722736996001', 50, 19, 177, 'CHICAIZA PILLAJO LUIS ERNESTO', 'CHICAIZA PILLAJO LUIS ERNESTO', '', '0984569186', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (143, 'P', 1, '1703126894001', 50, 19, 177, 'COBA CHAMORRO GRETA MARIA DEL PILAR', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (144, 'P', 1, '1708765183001', 50, 19, 177, 'COBO BERNAL JOSELITO AGUSTIN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (145, 'P', 1, '1791290933001', 50, 19, 177, 'COMBUSTIBLES DEL ECUADOR S.A. COMDECSA', 'ESTACION DE SERVICIO PETROLMAX30/04/20047', '', '02-2986873', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (146, 'P', 1, '1790041220001', 50, 19, 177, 'COMERCIAL KYWI S.A.', 'COMERCIAL KYWI S.A.', '', '2907014', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (147, 'P', 1, '1191741907001', 50, 19, 177, 'COMERCIALIZADORA AVICOLA DEL SUR COMAVISUR CIA. LTDA.', 'COMERCIALIZADORA AVICOLA DEL SUR COMAVISUR CIA. LTDA.', '', '072517567', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (148, 'P', 1, '0993105937001', 50, 19, 177, 'COMERCOPRE S.A.', 'FLORI CACAO LIDIA KATERINE', '', '045100398', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (149, 'P', 1, '1791280792001', 50, 19, 177, 'COMPAÑIA DE COMERCIO INDUSTRIAS Y SERVICIOS PETROLEROS PETROWORLD S.A.', 'ESTACION DE SERVICIO EL CARMEN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (150, 'P', 1, '1792297699001', 50, 19, 177, 'COMPAÑIA DE TRANSPORTE PANTOJA GUZMAN ELOHIM S.A.', 'ELOHIM S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (151, 'P', 1, '0991503102001', 50, 19, 177, 'CONCESIONARIA DEL GUAYAS CONCEGUA S.A.', 'CONCESIONARIA DEL GUAYAS CONCEGUA S.A.', '', '0422390778', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (152, 'P', 1, '0991503331001', 50, 19, 177, 'CONCESIONARIA NORTE CONORTE S.A.', 'CONCESIONARIA NORTE CONORTE S.A.', '', '042158282', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (153, 'P', 1, '1793040012001', 50, 19, 177, 'CONCESIONARIA SANTO DOMINGO CRSD SA', '', '', '999999999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (154, 'P', 1, '1792690781001', 50, 19, 177, 'CONSUR R7H S.A.', 'CONSUR R7H S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (155, 'P', 1, '0991419799001', 50, 19, 177, 'CONVET S.A.', 'E/S VIRGEN DEL CISNE 1', '', '042751384', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (156, 'P', 1, '0790082001001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE DE PASAJEROS PIÑAS INTERPROVINCIAL', 'COOPERATIVA DE TRANSPORTE DE PASAJEROS PIÑAS INTERPROVINCIAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (157, 'P', 1, '1790106063001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE ECUADOR', 'COOPERATIVA DE TRANSPORTE ECUADOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (158, 'P', 1, '0991435972001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE URBANO DE PASAJEROS EN BUSES CIUDAD DE MILAGRO', 'COOPERATIVA DE TRANSPORTE URBANO CIUDAD DE MILAGRO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (159, 'P', 1, '1190006820001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTES  LOJA', 'COOPERATIVA DE TRANSPORTES LOJA INTERNACIONAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (160, 'P', 1, '1790167720001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTES OCCIDENTALES', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (161, 'P', 1, '0990004196001', 50, 19, 177, 'CORPORACION EL ROSADO MONTOYA CARVAJAL NELSON ANTONIO', 'CORPORACION EL ROSADO MONTOYA CARVAJAL NELSON ANTONIO', '', '043702400215', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (162, 'P', 1, '1790016919001', 50, 19, 177, 'CORPORACION FAVORITA C.A.            .', 'CORPORACION FAVORITA C.A.           .', '', '99999999999999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (163, 'P', 1, '1768152560001', 50, 19, 177, 'CORPORACION NACIONAL DE TELECOMUNICACIONES CNT EP', 'CORPORACION NACIONAL DE TELECOMUNICACIONES CNT EP', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (164, 'P', 1, '0101041309001', 50, 19, 177, 'CORREA ANDRADE VICTOR HUGO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (165, 'P', 1, '2490031882001', 50, 19, 177, 'CORREDOR VIAL DE LA COSTA CVIALCO S.A.', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (166, 'P', 1, '1707552624001', 50, 19, 177, 'CRESPO JARAMILLO DUNIA SORAYA', 'CREDI CRESPO', '', '0', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (167, 'P', 1, '0914802723001', 50, 19, 177, 'CUMBA GAVIDIA MARIA LOURDES', 'CUMBA GAVIDIA MARIA LOURDES', '', '071913883', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (168, 'P', 1, '0791781671001', 50, 19, 177, 'DCOM CIA. LTDA', 'DCOM CIA. LTDA', '', '0999491930', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (169, 'P', 1, '0902050707001', 50, 19, 177, 'DIAZ GRANADOS CABEZAS JOSE LUIS', 'JOSE LUIS DIAZ GRANADOS CABEZAS', '', '0999607250', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (170, 'P', 1, '0591723448001', 50, 19, 177, 'DISTRIBUIDORA DE COMBUSTIBLE DISGASCOTOPAXI CIA.LTDA.', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (171, 'P', 1, '1890152658001', 50, 19, 177, 'DISTRIBUIDORA DE COMBUSTIBLES VIGUESAM CIA. LTDA.', 'DISTRIBUIDORA DE COMBUSTIBLES VIGUESAM CIA. LTDA.', '', '032434441', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (172, 'P', 1, '0791829631001', 50, 19, 177, 'DISTRIBUIDORA ESPINOZA LARGO DISTESLA CL', '', '', '0998429371', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (173, 'P', 1, '1091707752001', 50, 19, 177, 'DISTRIBUIDORA MERCANTIL ESPINOZA DISME CIA. LTDA.', 'DISME CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (174, 'P', 1, '0791761042001', 50, 19, 177, 'DISTRIBUIDORA MINERDIESEL S A', 'DISTRIBUIDORA MINERDIESEL S A', '', '075003-970', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (175, 'P', 1, '0190348016001', 50, 19, 177, 'DISTRIBUIDORA VASQUEZ ORDOÑEZ DISTRIVASOR CIA. LTDA.', 'DISTRIBUIDORA VASQUEZ ORDONEZ  DISTRIVASOR CIA LTDA', '', '2271100', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (176, 'P', 1, '0401385679001', 50, 19, 177, 'MARTINEZ BRACHO JULIA TAMARA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (177, 'P', 1, '0102810264001', 50, 19, 177, 'DR  ADRIAN EDUARDO TENORIO ALTAMIRANO', 'DR. ADRIAN EDUARDO TENORIO ALTAMIRANO', '', '2967165', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (178, 'P', 1, '0400985149001', 50, 19, 177, 'DRA ANA JULIA SOLIS NOTARIA 11', 'DRA ANA JULIA SOLIS NOTARIA 11', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (179, 'P', 1, '0992167785001', 50, 19, 177, 'DUNLEA S.A.', 'GASOLINERA PUERTO INCA', '', '043130045', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (180, 'P', 1, '1792476615001', 50, 19, 177, 'E/S GRUPO LLANO GRANDE', 'EP PETROECUADOR LLANO GRANDE', '', '022422646', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (181, 'P', 1, '1791715772001', 50, 19, 177, 'ECONOFARM S.A.', 'SANASANA PIÑAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (182, 'P', 1, '1791291468001', 50, 19, 177, 'ECUASISTENCIA COMPANIA DE ASISTENCIA DEL ECUADOR', 'ECUASISTENCIA S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (183, 'P', 1, '1757550908001', 50, 19, 177, 'EDITH CARVAJAL GARCIA', 'AUTO REPUESTOS CARVAJAL', '', '11', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (184, 'P', 1, '0703372243001', 50, 19, 177, 'ELIZALDE MENDOZA AGUSTIN JOSE', 'VULCANIZADORA DIVINO NIÑO', '', '0990253526', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (185, 'P', 1, '1792813328001', 50, 19, 177, 'ELPALAFRI CIA.LTDA.', 'ELPALAFRI CIA.LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (186, 'P', 1, '1790053881001', 50, 19, 177, 'EMPRESA ELÉCTRICA QUITO S.A.E.E.Q.', 'EMPRESA ELÉCTRICA QUITO S.A.E.E.Q.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (187, 'P', 1, '1768154260001', 50, 19, 177, 'EMPRESA METROPOLITANA DE AGUA POTABLE Y SANEAMIENTO', 'EPMAPS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (188, 'P', 1, '1768153530001', 50, 19, 177, 'EMPRESA PUBLICA DE  HIDROCARBUROS DEL ECUADOREL EP PETROECUADOR', 'EMPRESA PUBLICA DE  HIDROCARBUROS DEL ECUADOREL EP PETROECUADOR', '', '073803000', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (189, 'P', 1, '0702269812001', 50, 19, 177, 'ENCALADA SALINAS JACINTA VICTORIA', 'ENCALADA SALINAS VICTORIA JACINTA', '', '072961468', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (190, 'P', 1, '1791997891001', 50, 19, 177, 'ENMARSI CIA. LTDA.', 'ENMARSI CIA. LTDA.', '', '023932999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (191, 'P', 1, '1792842379001', 50, 19, 177, 'ESLASUIZA CIA. LTDA.', 'LA SUIZA CIA. LTDA', '', 'SN', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (192, 'P', 1, '0701570624001', 50, 19, 177, 'ESPINOSA AGUILAR GUILBRON MANUEL', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (193, 'P', 1, '1791818008001', 50, 19, 177, 'ESTACION DE SERVICIO ALOAG CIA. LTDA.', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (194, 'P', 1, '0190331342001', 50, 19, 177, 'ESTACION DE SERVICIO CATAVIÑA CIA. LTDA.', 'ESTACION DE SERVICIO CATAVIÑA CIA LTDA', '', '072262216', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (195, 'P', 1, '1191720993001', 50, 19, 177, 'ESTACION DE SERVICIO GASOSILVA CATAMAYO', 'ESTACION DE SERVICIO GASOSILVA CATAMAYO', '', '0997528383', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (196, 'P', 1, '0790067223001', 50, 19, 177, 'ESTACION DE SERVICIO MAROD CIA. LTDA.', 'ESTACION DE SERVICIO MAROD CIA. LTDA.', '', '0993775599', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (197, 'P', 1, '0190168107001', 50, 19, 177, 'ESTACION DE SERVICIO NARANCAY C. LTDA.', 'ESTACION DE SERVICIO NARANCAY C. LTDA.', '', '072386038', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (198, 'P', 1, '0992739401001', 50, 19, 177, 'ESTACION DE SERVICIOS ALPASO S.A.', 'ESTACION DE SERVICIOS ALPASO', '', '3712360', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (199, 'P', 1, '1101980082001', 50, 19, 177, 'ESTACION DE SERVICIOS CHURUTE', 'ESTACION DE SERVICIOS CHURUTE', '', '2838 - 645', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (200, 'P', 1, '0992205547001', 50, 19, 177, 'ESTACION DE SERVICIOS EL PIBE S A EL PIBE', 'ESTACION DE SERVICIOS EL PIBE S A EL PIBE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (201, 'P', 1, '0902219484001', 50, 19, 177, 'ESTACION DE SERVICIOS SAN JOSE', 'ESTACION DE SERVICIOS SAN JOSE', '', '046039622', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (202, 'P', 1, '0190326071001', 50, 19, 177, 'ESTACION DE SERVICIOS VISTA LINDA', 'ESTACION DE SERVICIO VISTA LINDA', '', '072813003', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (203, 'P', 1, '1103584981001', 50, 19, 177, 'ESTRELLA MOGROVEJO PAUL EDUARDO', '', '', '0985080968', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (204, 'P', 1, '0993243655001', 50, 19, 177, 'EXPROVET CIA.LTDA.', 'EXPROVET CIA.LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (205, 'P', 1, '1191751422001', 50, 19, 177, 'FARMACIAS CUXIBAMBA FARMACUX CIA LTDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (206, 'P', 1, '1790710319001', 50, 19, 177, 'FARMACIAS Y COMISARIATOS DE MEDICINAS S.A. FARCOMED', 'FARMACIAS Y COMISARIATOS DE MEDICINAS S.A. FARCOMED      FYBECA PIAZZA MACHALA', '', '1700392322', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (207, 'P', 1, '1791984722001', 50, 19, 177, 'FARMAENLAFARMAENLACE CIA. LTDA', 'FARMAENLACE CIA LTDA.  ROOSEVELTH SMITH SALCEDO ERAZO', '', '0222993100', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (208, 'P', 1, '0791740150001', 50, 19, 177, 'FARMAM IA CIA. LTDA.', 'FARMAMIA CIA. LTDA.', '', '2 983477-299604', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (209, 'P', 1, '0991063269001', 50, 19, 177, 'FARMAVET FARMACOS VETERINARIOS SA', 'FARMAVET FARMACOS VETERINARIOS SA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (210, 'P', 1, '0992241438001', 50, 19, 177, 'FARMAYAH CIA LTDA', 'FARMAYAH CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (211, 'P', 1, '1101995130001', 50, 19, 177, 'FEIJOO FAJARDO CARLOS MIGUEL', 'FEIJOO FAJARDO CARLOS MIGUEL', '', '297 6032', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (212, 'P', 1, '0704726165001', 50, 19, 177, 'FEIJOO LEON BYRON VINICIO', 'FEIJOO LEON BYRON VINICIO', '', '072517764', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (213, 'P', 1, '0702634668001', 50, 19, 177, 'FEIJOO OLLAGUE WELLINGTON ALEX', 'FEIJOO PORRAS WELLINTONG ALEX', '', '0993236694-0991', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (214, 'P', 1, '1791275101001', 50, 19, 177, 'FIDEVAL ADMINISTRADORA DE FONDOS Y FIDEICOMISOS SA', 'FIDEVAL SA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (215, 'P', 1, '0702872789001', 50, 19, 177, 'GANAZHAPA JIMENEZ DENNIS BYRON', 'GANAZHAPA JIMENEZ DENNIS BYRON', '', '0968306435', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (216, 'P', 1, '1207516541001', 50, 19, 177, 'GARCIA PEÑA JEFFERSON GUILLERMO', 'GARCIA PEÑA JEFFERSON GUILLERMO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (217, 'P', 1, '1304104621001', 50, 19, 177, 'GARCIA VERA ANGEL RAFAEL', 'FUMIGACIONES DEL PACIFICO', '', '292003', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (218, 'P', 1, '0928784966001', 50, 19, 177, 'GARCIA YEPEZ LINDA IVETTE', 'BAZAR Y FERRETERIA MECHITA', '', '043131003', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (219, 'P', 1, '1705987244001', 50, 19, 177, 'GARZON MOLINA JOSE MARIA', 'ESTACION DE SERVICIO CUMANDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (220, 'P', 1, '1790783278001', 50, 19, 177, 'GASOLINERA SINDICATO DE CHOFERES CAYAMBE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (221, 'P', 1, '0190330389001', 50, 19, 177, 'GASOPOSTO  CIA LTDA', 'ESTACION DE SERVICIO EL VALLE', '', '074098433', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (222, 'P', 1, '1700584384001', 50, 19, 177, 'GAYBOR SECAIRA RAUL ARMANDO FACTURAELECTRONICAECUADOR.COM', 'ESTACION DE SERVICIO RANCHO ILA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (223, 'P', 1, '0702277153001', 50, 19, 177, 'GOBER UFREDO TORRES ROMAN', 'GOBER UFREDO TORRES ROMAN', '', '0984 976 162', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (224, 'P', 1, '1760003330001', 50, 19, 177, 'GOBIERNO AUTONOMO DESCENTRALIZADO DE LA PROVINCIA DE PICHINCHA', 'GOBIERNO AUTONOMO DESCENTRALIZADO DE LA PROVINCIA DE PICHINCHA', '', '0', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (225, 'P', 1, '0760001310001', 50, 19, 177, 'GOBIERNO AUTONOMO DESCENTRALIZADO MUNICIPAL DE BALSAS', 'GAD MUNICIPAL DE BALSAS', '', '0702517092', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (226, 'P', 1, '1768139620001', 50, 19, 177, 'GOBIERNO AUTONOMO DESCENTRALIZADO PROVINCIAL DE SANTO DOMINGO DE LOS TSACHILAS', 'GOBIERNO AUTONOMO DESCENTRALIZADO PROVINCIAL DE SANTO DOMINGO DE LOS TSACHILAS', '', '.0993469458', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (227, 'P', 1, '0704033638001', 50, 19, 177, 'GONZAGA TOLEDO NELSON MANUEL', 'GONZAGA TOLEDO NELSON MANUEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (228, 'P', 1, '0992311762001', 50, 19, 177, 'GONZAL S.A.', 'ESTACION DE SERVICIO J.D. JHONSON GONZAL S.A.', '', '0994745022', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (229, 'P', 1, '0791751543001', 50, 19, 177, 'GRAN HOGAR S A GRAHOGSA', 'GRAN HOGAR S.A.', '', '0989911139', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (230, 'P', 1, '0703273177001', 50, 19, 177, 'GRANDA CORDOVA OCALIO WUALTER', 'FERRE CONST MARIA DEL CISNE', '', '072941281', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (231, 'P', 1, '0992734973001', 50, 19, 177, 'GUERRERO INCUBADORA S.A.', 'GUERINSA', '', '072420919', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (232, 'P', 1, '0704856673001', 50, 19, 177, 'HERRERA ESPINOZA YADIRA LESMERI', 'HERRERA ESPINOZA YADIRA LESMERI', '', '0997394905', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (233, 'P', 1, '0501355531001', 50, 19, 177, 'HERRERA MOLINA REINALDO MANUEL', 'HERRERA MOLINA REINALDO MANUEL', '', '2675561', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (234, 'P', 1, '0500949888001', 50, 19, 177, 'HERRERA MOLINA SEGUNDO ERNESTO', 'AUTOREPUESTOS HERRERA', '', '2672752', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (235, 'P', 1, '1713366399001', 50, 19, 177, 'HIDALGO CHAMBA ROBERT ANTONIO', 'MANI PAMELITA', '', '072517686', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (236, 'P', 1, '1792758270001', 50, 19, 177, 'HOSPITAL VOZ ANDES', 'HOSPITAL VOZ ANDES', '', '3971000', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (237, 'P', 1, '0791758831001', 50, 19, 177, 'INCUBADORA DEL SUR CIA LTDA', 'INCUBASUR CIA LTDA', '', '0993191964', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (238, 'P', 1, '1391834713001', 50, 19, 177, 'INCUBADORA EL DORADO', 'INCUGEND S.A', '', '0995167529', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (239, 'P', 1, '1792129745001', 50, 19, 177, 'INDUSTRIA PROCESADORA DE ALIMENTOS NACIONALES MONTENEGRO MENA S.A.', 'IPANMM S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (240, 'P', 1, '0190335275001', 50, 19, 177, 'INDUSTRIAS DE MINERALES LA COLINA INDUCOLINA CIA. LTDA.', 'INDUCOLINA CIA  LTDA', '', '072889069', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (241, 'P', 1, '0702417940001', 50, 19, 177, 'INFANTE SARANGO EMMA MARINA', '', '', '072913964', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (242, 'P', 1, '0791745713001', 50, 19, 177, 'INSUMOS AGRICOLAS Y PECUARIOS INSPA CIA. LTDA.', 'INSUMOS AGRICOLAS Y PECUARIOS INSPA CIA LTDA', '', '2921714-2968730', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (243, 'P', 1, '1716673155001', 50, 19, 177, 'INTRIAGO VELEZ FERNANDO VINICIO', 'AGRO VETERINARIA SAN FERNANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (244, 'P', 1, '1709337255001', 50, 19, 177, 'IZA SALAZAR NELLY PATRICIA', 'EL MUNDO DEL CAUCHO', '', '2684897', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (245, 'P', 1, '0105382188001', 50, 19, 177, 'JACHERO ROLDAN PAOLA MARISELA', 'JACHERO ROLDAN PAOLA MARISELA', '', '4177426', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (246, 'P', 1, '0925256570001', 50, 19, 177, 'JAIRON RONALD PLAZA LEON', '', '', '0967255572', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (247, 'P', 1, '1203539661001', 50, 19, 177, 'JIMENEZ CARRERA EDWIN GERMAN', 'JIMENEZ CARRERA EDWIN GERMAN', '', '0967934975', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (248, 'P', 1, '0701504953001', 50, 19, 177, 'JIMENEZ CASTILLO VICTOR ANTONIO', 'JIMENEZ CASTILLO VICTOR ANTONIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (249, 'P', 1, '0601019532001', 50, 19, 177, 'JOSE LUCAS PAUCAR CASTILLO', 'NOMBRE COMERCIAL COMPANIA O MENSAJE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (250, 'P', 1, '0705240448001', 50, 19, 177, 'JUMBO SANCHEZ JAHNETH PRISCILA', 'JUMBO SANCHEZ JAHNETH PRISCILA', '', '0714253625', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (251, 'P', 1, '1792190851001', 50, 19, 177, 'KINDRED ASOCIADOS OVERSEA S.A.', 'KINDRED ASOCIADOS OVERSEA S.A.', '', '2252-505', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (252, 'P', 1, '1791847148001', 50, 19, 177, 'LABORATORIO CLINICO ECUA AMERICAN LAB.E.A. CIA. LTDA.', 'LABORATORIO CLINICO ECUA AMERICAN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (253, 'P', 1, '0100103654001', 50, 19, 177, 'LARRIVA ALVARADO VICENTE KLEBER', 'LARRIVA ALVARADO VICENTE KLEVER', '', '2853374', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (254, 'P', 1, '0791749069001', 50, 19, 177, 'LAVAPALM S.A', 'LAVAPALM S.A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (255, 'P', 1, '0703708990001', 50, 19, 177, 'LEON FEIJOO NELVIO FERNANDO', 'LEON FEIJOO NELVIO FERNANDO', '', '072-515052', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (256, 'P', 1, '1790027864001', 50, 19, 177, 'LEVAPAN DEL ECUADOR S.A.', 'LEVAPAN DEL ECUADOR S.A.', '', '022677010', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (257, 'P', 1, '0700415599001', 50, 19, 177, 'LOAYZA CARRION ZOILA MARINA', 'AUTOMOTRIZ EL ORO', '', '072634810', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (258, 'P', 1, '0704034032001', 50, 19, 177, 'LOAYZA HIDALGO HERMAN PATRICIO', 'SERMAMAQ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (259, 'P', 1, '0700766926001', 50, 19, 177, 'LOAYZA ROMERO LUCIO BOLIVAR', 'AVICOLA LAS ORQUIDEAS', '', '2976881-2977072', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (260, 'P', 1, '1001732344001', 50, 19, 177, 'LOPEZ MORAN FRAYBER TARQUINO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (261, 'P', 1, '0401177878001', 50, 19, 177, 'LOPEZ ROMO JUAN CARLOS', 'LOPEZ ROMO JUAN CARLOS', '', '0984977850', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (262, 'P', 1, '1103053292001', 50, 19, 177, 'LUDEÑA GAONA OSCAR EFREN', 'LUDEÑA GAONA OSCAR EFREN', '', '(07) 2797 018', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (263, 'P', 1, '1105035347001', 50, 19, 177, 'LUDEÑA IÑIGUEZ NOHELIA ALEJANDRA', 'LUDEÑA IÑIGUEZ NOHELIA ALEJANDRA', '', '2967242', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (264, 'P', 1, '0791708192001', 50, 19, 177, 'M Y E MORENO Y ESPINOZA CIA. LTDA.', 'M Y E MORENO Y ESPINOZA CIA. LTDA.', '', '072-928255', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (265, 'P', 1, '0700989841001', 50, 19, 177, 'MALDONADO GALARZA MELVA MARIA', 'MALDONADO GALARZA MELVA MARIA', '', '0993594256', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (266, 'P', 1, '0705110427001', 50, 19, 177, 'MALDONADO QUEZADA OSWALDO XAVIER', 'AUTOMOTRIZ XAVIER', '', '0981950389', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (267, 'P', 1, '0919768903001', 50, 19, 177, 'MALDONADO TORRES JOSE RODRIGO', '', '', '0997395097', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (268, 'P', 1, '0703057661001', 50, 19, 177, 'MALLA TORRES DALI JOSE', 'MALLA TORRES DALI JOSE', '', '072517355', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (269, 'P', 1, '0705898443001', 50, 19, 177, 'MATUTE GALVEZ ANDRES ROBERTO', 'MATUTE GALVEZ ANDRES ROBERTO', '', '0987830042', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (270, 'P', 1, '1792060346001', 50, 19, 177, 'MEGA SANTAMARIA S.A.', 'SUPERMERCADO SANTA MARIA', '', '022-260045', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (271, 'P', 1, '0691733009001', 50, 19, 177, 'MERINO MONTOYA E HIJOS CIA LTDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (272, 'P', 1, '0102831575001', 50, 19, 177, 'MOGROVEJO MAXI CARLOS PATRICIO', 'TALLER ELECTROMECANICO INSTELE', '', '2888880', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (273, 'P', 1, '1791869559001', 50, 19, 177, 'MOLDECUA S.A', 'MOLDECUA S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (274, 'P', 1, '0990026408001', 50, 19, 177, 'MOLINOS CHAMPION S.A. MOCHASA', 'MOLINOS CHAMPION S.A.', '', '046002840', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (275, 'P', 1, '1714119110001', 50, 19, 177, 'MONCAYO SANCHEZ BERONICA', 'VIDA NATURAL', '', '0991461798', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (276, 'P', 1, '1203033582001', 50, 19, 177, 'MONTENEGRO PALIZ VICTOR EMILIO', 'MONTENEGRO PALIZ VICTOR EMILIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (277, 'P', 1, '0201413770001', 50, 19, 177, 'MORA VACA WASHINGTON FERNANDO', 'ESTACION DE SERVICIO DE COMBUSTIBLES \"LOS ARRAYANES\"', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (278, 'P', 1, '0703524983001', 50, 19, 177, 'MORAN AGUILAR TELMO DAVID', 'MORAN AGUILAR TELMO DAVID', '', '0993734083', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (279, 'P', 1, '0702527607001', 50, 19, 177, 'MORAN PIEDRA MERCEDES PILAR', 'NEGOCIO MORRIS', '', '0989493732', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (280, 'P', 1, '1791405501001', 50, 19, 177, 'MOTORCLASS IMPORTADORES S.A.', 'MOTORCLASS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (281, 'P', 1, '0201598398001', 50, 19, 177, 'NARANJO NARANJO JENNY CARMITA', '', '', '0958873315', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (282, 'P', 1, '0350198925001', 50, 19, 177, 'NARDO NIVELO CORONEL JOSUE', 'NARDO NIVELO CORONEL JOSUE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (283, 'P', 1, '0705115293001', 50, 19, 177, 'NARRAVO RAMIREZ ROYER MILLER', 'NARRAVO RAMIREZ ROYER', '', '0969580744', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (284, 'P', 1, '1711518496001', 50, 19, 177, 'NARVAEZ MEJIA MYRIAM MARLENE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (285, 'P', 1, '1705797676001', 50, 19, 177, 'NAVIA MURGUEITIO CLARA MARIA', 'MARKET', '', '0997234690', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (286, 'P', 1, '1710907237001', 50, 19, 177, 'NOGALES GUILLEN LISANDRO ESTEBAN', 'ESTACION DE SERVICIOS LA ESPAÑOLA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (287, 'P', 1, '1705333647001', 50, 19, 177, 'NOROÑA CALVACHI CARLOS ENRIQUE', 'TALLERES NOROÑA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (288, 'P', 1, '0991306498001', 50, 19, 177, 'NUEVAS OPERACIONES COMERCIALES  NUCOPSA S.A.', 'NUEVAS OPERACIONES COMERCIALES NUCOPSA S.A.', '', '042 634220', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (289, 'P', 1, '1890148537001', 50, 19, 177, 'NUTRICION, SALES Y MINERALES NUTRISALMIN S.A.', 'NUTRISALMINSA S.A.', '', '032434095', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (290, 'P', 1, '0990270988001', 50, 19, 177, 'NUTRIL SA', 'NUTRIL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (291, 'P', 1, '0700497480001', 50, 19, 177, 'OCAMPO ALVAREZ DULIA MARIELA', 'OCAMPO ALVAREZ DULIA MARIELA', '', '072-932-253', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (292, 'P', 1, '0702531385001', 50, 19, 177, 'ORDOÑEZ CRESPO ANGEL EDISON', 'ORDOÑEZ CRESPO ANGEL EDISON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (293, 'P', 1, '0603625906001', 50, 19, 177, 'ORELLANA ROSERO FERNANDO PATRICIO', 'MODERMUEBLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (294, 'P', 1, '0106031156001', 50, 19, 177, 'ORTEGA SANMARTIN FLOR MARIA', 'ORTEGA SANMARTIN FLOR MARIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (295, 'P', 1, '0702206871001', 50, 19, 177, 'ORTIZ GONZALEZ ROSA MARBELLA', 'ORTIZ GONZALEZ ROSA MARBELLA', '', '0999279699', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (296, 'P', 1, '0991401512001', 50, 19, 177, 'OSAKACORP S.A.', 'GASOLINERA LA AURORA', '', '042894196', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (297, 'P', 1, '0705062933001', 50, 19, 177, 'OVIEDO GONZALEZ STALIN RIGOBERTO', '', '', '0968133531', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (298, 'P', 1, '0500446083001', 50, 19, 177, 'PALACIOS PUCO ABEL FAUSTO', 'FERRETERIA PALACIOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (299, 'P', 1, '1791317025001', 50, 19, 177, 'PANAMERICANA VIAL S.A. PANAVIAL', 'PANAMERICANA VIAL S.A. PANAVIAL', '', '023982500', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (300, 'P', 1, '0400357695001', 50, 19, 177, 'PANTOJA MUÑOZ NELSON GUSTAVO', '', '', '0983362053', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (301, 'P', 1, '0908141831001', 50, 19, 177, 'PARRAGA JESUS ANTONIO', 'PARRAGA JESUS ANTONIO, ESTACION DE SERVICIOS LA UNIVERSAL # 4', '', '2709319', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (302, 'P', 1, '0701838203001', 50, 19, 177, 'PEÑARRETA APOLO GOBERTH RAMIRO', 'GOBERTH RAMIRO PEÑARRETA APOLO', '', '072517152', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (303, 'P', 1, '0702281957001', 50, 19, 177, 'PEÑARRETA GALLARDO RUPTY MARIA', '', '', '0968769856', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (304, 'P', 1, '0705035988001', 50, 19, 177, 'PEREIRA GONZAGA LUIS ANGEL', 'COMPAÑIA DE TRANSPORTE PESADO BACIVER S. A.', '', '0991873890', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (305, 'P', 1, '0702874744001', 50, 19, 177, 'PEREIRA UCHUARI EDGAR MANUEL', 'PEREIRA UCHUARI EDGAR MANUEL', '', '099 932 7257', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (306, 'P', 1, '0101518660001', 50, 19, 177, 'PESANTEZ CORDERO PEDRITO RAFAEL', 'ESTACION DE SERVICIO SAMBORONDON', '', 'SN', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (307, 'P', 1, '0991372784001', 50, 19, 177, 'PHARMACY & NUTRITION PHARNUTRI S.A.', 'PHARMACY & NUTRITION PHARNUTRI S.A.', '', '0980731536', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (308, 'P', 1, '1790753913001', 50, 19, 177, 'PICHINCHA SISTEMAS ACOVI C.A.', 'PICHINCHA SISTEMAS ACOVI C.A.', '', '042980980', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (309, 'P', 1, '0703267294001', 50, 19, 177, 'PINTO RAMIREZ CLEBER FRANCO', 'PINTO RAMIREZ CLEBER FRANCO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (310, 'P', 1, '0992301759001', 50, 19, 177, 'PISONI S.A.', 'PISONI', '', '0991920173', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (311, 'P', 1, '1705921078001', 50, 19, 177, 'POZO GUERRERO ANGEL RODRIGO', 'DIAF/REPRESENTACIONES', '', '3076374', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (312, 'P', 1, '1791282523001', 50, 19, 177, 'PROCESOS INDUSTRIALES DEL ECUADOR PROINDE CIA. LTDA.', 'PROINDE POINT COMPUTER', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (313, 'P', 1, '0703789149001', 50, 19, 177, 'RAMIREZ ASANZA CARLOS JULIO', 'RAMIREZ ASANZA CARLOS JULIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (314, 'P', 1, '0703779637001', 50, 19, 177, 'RAMIREZ PALMA FRANKLIN VICENTE', 'RAMIREZ PALMA FRANKLIN VICENTE', '', '0993009993', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (315, 'P', 1, '1768160580001', 50, 19, 177, 'REGISTRO MERCANTIL DEL CANTÓN QUITO', 'REGISTRO MERCANTIL DEL CANTÓN QUITO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (316, 'P', 1, '1791294505001', 50, 19, 177, 'REPROIMAV S.A', 'REPROIMAV S.A', '', '0997405669', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (317, 'P', 1, '1713008884001', 50, 19, 177, 'ROBLES ERAZO BOLIVAR ARMANDO', 'MICROMERCADO ROBLES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (318, 'P', 1, '1307590016001', 50, 19, 177, 'RODRIGUEZ VERA LUIS ALFONSO', 'RODRIGUEZ VERA LUIS ALFONSO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (319, 'P', 1, '0704236348001', 50, 19, 177, 'ROJAS ATIENCIE JULIANA LILIBETH', 'ROJAS ATIENCIE JULIANA LILIBETH', '', '0725717824', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (320, 'P', 1, '0190097781001', 50, 19, 177, 'ROLANDO RIOS COMPAÑIA LIMITADA', 'ROLANDO RIOS COMPAÑIA LIMITADA', '', '020320180', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (321, 'P', 1, '0701005514001', 50, 19, 177, 'ROMERO APOLO LUIS HILDER', 'AVICOLA LUISIN', '', '072-517103', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (322, 'P', 1, '0703174417001', 50, 19, 177, 'ROMERO CHAMBA SARA DEL CARMEN', 'TIENDA', '', '0989468485', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (323, 'P', 1, '0101275329001', 50, 19, 177, 'ROMERO CRESPO ROMULO RENE', 'MECANICA INDUSTRIAL ROMERO', '', '2920009', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (324, 'P', 1, '0705774990001', 50, 19, 177, 'ROMERO FEIJOO LUIS STEFANO', 'ROMERO FEIJOO LUIS STEFANO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (325, 'P', 1, '1711255206001', 50, 19, 177, 'ROMULO JOSELITO PALLO QUISILEMA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (326, 'P', 1, '0931921670001', 50, 19, 177, 'SACTA ANDRADE KLEBER ALEXIS', 'SACTA ANDRADE KLEBER ALEXIS', '', '042-744231', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (327, 'P', 1, '0704197755001', 50, 19, 177, 'SANCHEZ MURILLO IRENE KAROLINA', 'SANCHEZ MURILLO IRENE KAROLINA', '', '072 517 615', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (328, 'P', 1, '1704038155001', 50, 19, 177, 'SANCHEZ OCHOA ANDRES EDUARDO', 'ANDRES EDUARDO SANCHEZ OCHOA', '', '032904159', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (329, 'P', 1, '0200270478001', 50, 19, 177, 'SANCHEZ VASCONEZ SALOMON GENARO', 'AGRICOSA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (330, 'P', 1, '0791805902001', 50, 19, 177, 'SANDIEGO NEUMATICOS Y SERVICIOS CIA LTDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (331, 'P', 1, '0702830589001', 50, 19, 177, 'SARAGURO RAMIREZ WILSON BOLIVAR', 'SARAGURO RAMIREZ WILSON BOLIVAR', '', '072924-930', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (332, 'P', 1, '1101662094001', 50, 19, 177, 'SARANGO JUMBO LUIS ROMAN', '', '', '0980932807', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (333, 'P', 1, '1002175121001', 50, 19, 177, 'SARMIENTO ORTIZ EDISON FABRICIO', 'CENTRO FERRETERO SAN JOSE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (334, 'P', 1, '1792261848001', 50, 19, 177, 'SECURITY DATA SEGURIDAD EN DATOS Y FIRMA DIGITAL S.A.', 'SECURITY DATA', '', '1800347627', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (335, 'P', 1, '1791289927001', 50, 19, 177, 'SEGUROS DEL PICHINCHA S.A. COMPAÑIA DE SEGUROS Y REASEGUROS', 'SEGUROS DEL PICHINCHA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (336, 'P', 1, '0991285679001', 50, 19, 177, 'SERVIENTREGA DEL ECUADOR S.A.', 'SERVIENTREGA DEL ECUADOR S.A.', '', '3732000 7309', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (337, 'P', 1, '0702054594001', 50, 19, 177, 'SILVA APOLO HERMEL MANRIQUE', 'COOPERATIVA DE TRANSPORTES RUTAS BALSEÑAS', '', '2517274', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (338, 'P', 1, '1792110491001', 50, 19, 177, 'SIMEUSFQ SISTEMAS MEDICOS DE LA UNIVERSIDAD SAN FRANCISCO DE QUITO S.A.', 'SISTEMAS MEDICOS DE LA USFQ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (339, 'P', 1, '0790051580001', 50, 19, 177, 'SIND CANTONAL DE CHOF PROFESIONAL DE PINAS', 'EDS SIND. CHOF.  DE PINAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (340, 'P', 1, '0790046439001', 50, 19, 177, 'SINDICATO CANTONAL DE CHOFERES PROFESIONALES DEL CANTON PASAJE', 'ESTACION DE SERVICIO DEL SINDICATO CANTONAL DE CHOFERES PROFESIONALES DE PASAJE', '', '0989655011', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (341, 'P', 1, '1490000700001', 50, 19, 177, 'SINDICATO DE CHOFERES PROFESIONALES DEL CANTON SUCUA', 'ESTACION DE SERVICIOS DEL SINDICATO CHOFERES DE SUCUA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (342, 'P', 1, '0791717671001', 50, 19, 177, 'SOCIEDAD INMOBILIARIA HERMANOS CHAVEZ VALAREZO Y COMPAÑIA', 'ESTACION DE SERVICIO LA VICTORIA', '', '073092108', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (343, 'P', 1, '0400646584001', 50, 19, 177, 'SUAREZ POZO ALBA LUCIA', 'LUBRICADORA SAN GABRIEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (344, 'P', 1, '2390031575001', 50, 19, 177, 'SUCESION INDIVISA GUEVARA SANCHEZ MARIA REGINA FACTURAELECTRONICAECUADOR.COM', 'SUCESION INDIVISA GUEVARA SANCHEZ MARIA REGINA FACTURAELECTRONICAECUADOR.COM', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (345, 'P', 1, '0705494128001', 50, 19, 177, 'SUIN LASCANO VILMA ELIZABETH', 'SUIN LASCANO VILMA ELIZABETH', '', '2918000', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (346, 'P', 1, '0991517723001', 50, 19, 177, 'SUPERCINES S.A.', 'SUPERCINES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (347, 'P', 1, '1791413237001', 50, 19, 177, 'SUPERDEPORTE S.A.', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (348, 'P', 1, '0190365239001', 50, 19, 177, 'T A R Q U I G A S    CIA LTDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (349, 'P', 1, '1890087252001', 50, 19, 177, 'TADEC TECNICOS AGROPECUARIOS DEL ECUADOR CIA  LTDA', 'TADEC TECNICOS AGROPECUARIOS DEL ECUADOR CIA  LTDA', '', '0994870016', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (350, 'P', 1, '1203020092001', 50, 19, 177, 'TAMAYO JIMENEZ LAUTARO MANUEL', '', '', '0997767160', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (351, 'P', 1, '1891792014001', 50, 19, 177, 'TEJABCOMGAS CIA.LTDA.', 'ESTACION DE SERVICIO TEJABCOM', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (352, 'P', 1, '0990017514001', 50, 19, 177, 'TIENDAS INDUSTRIALES ASOCIADOS  (TIA )S.A.', 'TIENDAS INDUSTRIALES ASOCIADOS  (TIA )S.A.', '', '(4) 2322000', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (353, 'P', 1, '1714305263001', 50, 19, 177, 'TINAJERO CISNEROS MARIO ENRIQUE', 'ESTACIÓN DE SERVICIO EL RIFLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (354, 'P', 1, '0701297079001', 50, 19, 177, 'TINOCO LUZURIAGA JUAN ENRIQUE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (355, 'P', 1, '0904813664001', 50, 19, 177, 'TORAL FEIJOO EDILMA ELIZA', 'ESTACION DE SERVICIO DELPACIFICO TORAL FEIJOO EDILMA', '', '2724322', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (356, 'P', 1, '0701062572001', 50, 19, 177, 'TORO CELI SERVIO AUGUSTO', 'VULCANIZADORA ORQUIDEA DE LOS ANDES', '', '2977347', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (357, 'P', 1, '0991388419001', 50, 19, 177, 'TRISACORP S.A.', 'ESTACION DE SERVICIO SAN AGUSTIN', '', '042748105', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (358, 'P', 1, '0903840817001', 50, 19, 177, 'TRIVIÑO GILBERTO ERNESTO', 'LA CASA DEL FILTRO', '', '0981610798', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (359, 'P', 1, '0704611136001', 50, 19, 177, 'TROYA CHUNGATA BRYAN FERNANDO', 'TROYA CHUNGATA BRYAN FERNANDO', '', '2936689 - 29349', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (360, 'P', 1, '0101903177001', 50, 19, 177, 'ULLAGUARI DOTA SEGUNDO GERMAN', 'ULLAGUARI DOTA SEGUNDO GERMAN', '', '1234567890', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (361, 'P', 1, '0702599150001', 50, 19, 177, 'ULLAURI NOBLECILLA ANA PRISCILA', 'ULLAURI NOBLECILLA ANA PRISCILA', '', '9999999999', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (362, 'P', 1, '1792730635001', 50, 19, 177, 'URDESMAR RESTAURANTES CIA. LTDA.', 'URDESMAR RESTAURANTES CIA. LTDA.', '', '022480445', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (363, 'P', 1, '0602118499001', 50, 19, 177, 'UVIDIA VILLA MANUEL CRISTOBAL', 'ESTACION DE SERVICIO EL TABLON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (364, 'P', 1, '0601389992001', 50, 19, 177, 'VACA GAVILANEZ MANUEL ARZUBE', 'COMPANIA DE TRAILEROS CHIMBORAZO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (365, 'P', 1, '1102654967001', 50, 19, 177, 'VALAREZO GUERRERO OSCAR VINICIO', 'NUTRE 3A', '', '072546319', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (366, 'P', 1, '0400635561001', 50, 19, 177, 'VALENZUELA PUETATE LUIS ORLANDO', 'VALENZUELA PUETATE LUIS ORLANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (367, 'P', 1, '1205803305001', 50, 19, 177, 'VALERO PULUA ANDY PATRICIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (368, 'P', 1, '1202620777001', 50, 19, 177, 'VALERO SANCHEZ MARIO PATRICIO', 'COMERCIAL AGRIVALPUL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (369, 'P', 1, '0990023859001', 50, 19, 177, 'VALLEJO ARAUJO S. A.', 'VALLEJO ARAUJO S. A.', '', '023 959059', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (370, 'P', 1, '0701012668001', 50, 19, 177, 'VEINTEMILLA LOZANO RICARDO ALFONSO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (371, 'P', 1, '1800112227001', 50, 19, 177, 'VELARDE NARANJO MARCO EDUARDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (372, 'P', 1, '0961690591001', 50, 19, 177, 'VELASQUEZ QUESADA MOISES ALBERTO', '', '', '0987550314', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (373, 'P', 1, '1706574421001', 50, 19, 177, 'VILLACRES ZAPATA LUIS FERNANDO', 'VILLACRES ZAPATA LUIS FERNANDO', '', '052971409', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (374, 'P', 1, '1190051435001', 50, 19, 177, 'ABENDAÑO BRICEÑO CIA. LTDA', 'ESTACION DE SERVICIOS SUR ORIENTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (375, 'P', 1, '1103453294001', 50, 19, 177, 'ABENDAÑO OCAMPO AURITA ROCIO', 'RESTAURANTE ESQUINA DEL SABOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (376, 'P', 1, '0704965250001', 50, 19, 177, 'ACARO QUEZADA DORIS PATRICIA', 'PARRILLADAS DE JOHAN', '', '072164102', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (377, 'P', 1, '1900455336001', 50, 19, 177, 'AGREDA GAONA MARCO ENRIQUE', 'CASA GRILL ASADEROS RESTAURANTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (378, 'P', 1, '1792017610001', 50, 19, 177, 'AGROAL CIA. LTDA.', 'AGROAL', '', '2044780', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (379, 'P', 1, '1768105720001', 50, 19, 177, 'AGROCALIDAD', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (380, 'P', 1, '1792898420001', 50, 19, 177, 'AGROEDITORIAL SCC,', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (381, 'P', 1, '1900285360001', 50, 19, 177, 'AGUILAR ESPINOZA CARLOS AUGUSTO', 'AGUILAR ESPINOZA CARLOS AUGUSTO', '', '2607822', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (382, 'P', 1, '0704336536001', 50, 19, 177, 'AGUILAR SANCHEZ YULIZA PILAR', 'AGUILAR SANCHEZ YULIZA PILAR', '', '0989-601-143', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (383, 'P', 1, '0706336427001', 50, 19, 177, 'AGUILAR SUIN CELINDA GABRIELA', 'PREVENT FIRE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (384, 'P', 1, '0703757351001', 50, 19, 177, 'AGUIRRE VEINTIMILLA KARLO WILLMAR', 'SISTEMAS HIDRAULICOS VEINTEMILLA', '', '072961548', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (385, 'P', 1, '0702920448001', 50, 19, 177, 'ALBA LORENA ZAMBRANO VELEZ', 'ALBA LORENA ZAMBRANO VELEZ', '', '0998309674', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (386, 'P', 1, '0700261209001', 50, 19, 177, 'ALBERCA VACA MARIA ZOBEIDA', 'HOTEL BAR RESTAURATE MINI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (387, 'P', 1, '0991363262001', 50, 19, 177, 'ALLTECH CIA. LTDA.', 'ALLTECH ECUADOR CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (388, 'P', 1, '1792703387001', 50, 19, 177, 'ALTVET ALTERNATIVAS VETERINARIAS S  A', 'ALTVET', '', '224-1622', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (389, 'P', 1, '0703529040001', 50, 19, 177, 'ALVARADO MEDINA YADIRA DEL CARMEN', 'RESTAURANT LA CARPA', '', '072943136', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (390, 'P', 1, '2100421375001', 50, 19, 177, 'ALVAREZ CORDERO KERLY DAYANI', 'GASOLINERA SIGLO XXI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (391, 'P', 1, '1101100913001', 50, 19, 177, 'AMBULUDI REINERIO ESTEBAN', 'AMBULUDI REINERIO ESTEBAN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (392, 'P', 1, '1791287010001', 50, 19, 177, 'AMEVEA', 'STUPENDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (393, 'P', 1, '1791878868001', 50, 19, 177, 'AMMR VETERINARIAS', '', '', '2829069', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (394, 'P', 1, '1792570956001', 50, 19, 177, 'ANDINA EMPRESARIAL CIA LTDA', 'ANDINAEMPRESARIAL CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (395, 'P', 1, '1104561996001', 50, 19, 177, 'ANGAMARCA PUCHAICELA SOLEDAD DEL ROCIO', 'ANGAMARCA PUCHAICELA SOLEDAD DEL ROCIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (396, 'P', 1, '1201365010001', 50, 19, 177, 'AÑI OLVERA LUIS FERNANDO', 'AÑI OLVERA LUIS FERNANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (397, 'P', 1, '0701473381001', 50, 19, 177, 'APOLO LOAYZA MARIA KENMITA', 'APOLO LOAYZA MARIA KENMITA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (398, 'P', 1, '0700505100001', 50, 19, 177, 'APOLO RAMIREZ FELIX MANUEL', 'APOLO RAMIREZ FELIX MANUEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (399, 'P', 1, '0703439612001', 50, 19, 177, 'APONTE GONZALEZ YESENIA ERCILIA', 'APONTE GONZALEZ YESENIA ERCILIA', '', '0994689631', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (400, 'P', 1, '1900203991001', 50, 19, 177, 'ARANDA ANGULO LILIA CARMITA', 'RESIDENCIAL SAN LUIS', '', '2308017', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (401, 'P', 1, '0300720752001', 50, 19, 177, 'ARCENTALES FAJARDO JORGE RAUL', 'ARCENTALES FAJARDO JORGE RAUL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (402, 'P', 1, '1102924410001', 50, 19, 177, 'ARIAS ARIAS FANNY AUXILIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (403, 'P', 1, '0704969153001', 50, 19, 177, 'ARMADO JAVIER MATEO ALONSO', 'CENTRO DE LUBRICACION JOSAMI', '', '2962670', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (404, 'P', 1, '0703031633001', 50, 19, 177, 'ARMIJOS CEDILLO MARIA ELENA', 'CEVICHERIA MARY', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (405, 'P', 2, '1104645328', 50, 19, 177, 'ARMIJOS JOSE VINICIO', 'ARMIJOS JOSE VINICIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (406, 'P', 1, '1900381672001', 50, 19, 177, 'ARMIJOS VEINTIMILLA MARIA MARISOL', 'COMEDOR MAJITO', '', '2606864', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (407, 'P', 1, '0703788109001', 50, 19, 177, 'ASANZA PINTO VICENTE BENITO', 'ALUBAL', '', '2517945', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (408, 'P', 1, '1191756599001', 50, 19, 177, 'ASOCIACION DE PROFECIONALES AGROPECUARIOS DE LOJA ASOPAL', 'ASOCIACION DE PROFECIONALES AGROPECUARIOS DE LOJA ASOPAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (409, 'P', 1, '1712970340001', 50, 19, 177, 'ASTUDILLO ANDRADE CARLOS MANUEL', 'MAYA PIONEER', '', '2977209', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (410, 'P', 1, '0791790077001', 50, 19, 177, 'ATECELECTRIC CIA LTDA', '', '', '2985004', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (411, 'P', 1, '1104861545001', 50, 19, 177, 'AYALA LUNA DIEGO FERNANDO', 'AHITANAS', '', '2664709', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (412, 'P', 1, '1103220420001', 50, 19, 177, 'AZANZA ORTIZ PAILINA DEL CARMEN', 'POLLOS SANDI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (413, 'P', 1, '0703026682001', 50, 19, 177, 'AZOGUE NUGSHI MANUEL DE LA CRUZ', 'AZOGUE NUGSHI MANUEL DE LA CRUZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (414, 'P', 1, '1002336814001', 50, 19, 177, 'BALDEON PROAÑO FERNANDA ELIZABETH', 'BALDEON PROAÑO FERNANDA ELIZABETH', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (415, 'P', 1, '1801791086001', 50, 19, 177, 'BALLADARES JACOME NESTOR  RAMIRO', 'VERSAILLES HOTEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (416, 'P', 1, '1750331371001', 50, 19, 177, 'BARBATO HINESTROSA NORBERTO JOSE', 'BARBATO HINESTROSA NORBERTO JOSE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (417, 'P', 1, '1800033068001', 50, 19, 177, 'BENALCAZARI NSUASTI MARIA LEONOR', 'GASOLINERA GRANJA PALLATANGA', '', '2324033', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (418, 'P', 1, '1104076193001', 50, 19, 177, 'BENITEZ IÑIGUEZ JOHANA CECIBEL', 'AGACHADITOS DON ROJITAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (419, 'P', 1, '1305903864001', 50, 19, 177, 'BERMUDEZ GARCIA ROXANA JACQUELINE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (420, 'P', 1, '1803167582001', 50, 19, 177, 'BERMUDEZ MIRANDA ESTHELA ELIZABETH', 'BERMUDEZ MIRANDA ESTHELA ELIZABETH', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (421, 'P', 1, '1104241433001', 50, 19, 177, 'BETANCUR CORDOVA FERNANDA MARIBEL', 'BETANCUR CORDOVA FERNANDA MARIBEL', '', '072582021', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (422, 'P', 1, '0702425919001', 50, 19, 177, 'BETTY JANINA HEREDIA CARRANZA', 'PICANTERIA PIGUARI', '', '2921753', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (423, 'P', 1, '0991417575001', 50, 19, 177, 'BLUECORP S.A.', 'ESTACION DE SERVICIO MELISSA', '', '0988507731', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (424, 'P', 1, '0704957463001', 50, 19, 177, 'BONETE RIVERA RAUL HIDALGO', 'ELABORACION DE OTROS PRODUCTOS ALIMENTICIOS', '', '0989896756', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (425, 'P', 1, '0704757194001', 50, 19, 177, 'BRAVO BRAVO JACQUELIN ALEXANDRA', 'BRAVO BRAVO JACQUELIN ALEXANDRA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (426, 'P', 1, '0702109679001', 50, 19, 177, 'BRAVO CAMPOVERDE HERMAN FULVIO', 'BRAVO CAMPOVERDE HERMAN FULVIO', '', '0991290566', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (427, 'P', 1, '1100546470001', 50, 19, 177, 'BRAVO CUCHIMARCA ALBA VIOLETA', 'BRAVO CUCHIMARCA ALBA VIOLETA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (428, 'P', 1, '0925757866001', 50, 19, 177, 'BRAVO PALMA YANDRY MAURICIO', '', '', '0982516613', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (429, 'P', 1, '1104051758001', 50, 19, 177, 'BRAVO VEGA DIANA MARISOL', 'PICANTERIA SABOR LATINO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (430, 'P', 1, '0992524200001', 50, 19, 177, 'BRAYMING S A', 'SOLULEGAL', '', '042515047', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (431, 'P', 1, '0700719784001', 50, 19, 177, 'BUELE CAMPOS FRANCISCO', 'LIBRERIA Y PAPELERIA DON PANCHO', '', '297 6904', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (432, 'P', 1, '0704918770001', 50, 19, 177, 'BUENO CARDENAS JORGE ARMANDO', 'BAR RESTAURATE SHAINA', '', '2975789', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (433, 'P', 1, '1900218999001', 50, 19, 177, 'BUITRON SANCHEZ SERGIO RENE', 'BUITRON SANCHEZ SERGIO RENE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (434, 'P', 1, '1716142045001', 50, 19, 177, 'BUSTE RIVAS FRANCISCO JAVIER', 'SERVICIOS TECNICOS DE PINTURA', '', '2966318', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (435, 'P', 1, '0704925122001', 50, 19, 177, 'CABRERA TINOCO VANESSA CAROLINA', 'ACTIVIDADES RELACIONADAS CON LA CONTABILIDAD', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (436, 'P', 1, '1102429055001', 50, 19, 177, 'CAMBIZACA CUEVA ALMITA PIEDAD', 'PICANTERIA T RADICIONAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (437, 'P', 1, '0703683565001', 50, 19, 177, 'CAÑAR ROMERO TANIA DEL ROCIO', 'ASADERO LA ESQUINA DE ALES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (438, 'P', 1, '1792101425001', 50, 19, 177, 'CARAPUNGO SANDRY', 'CARPUNTO CIA. LTDA', '', '0224223260', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (439, 'P', 1, '0701874505001', 50, 19, 177, 'CARCHIPULLA GRANDA WILLIAM ALFREDO', 'CARCHIPULLA GRANDA WILLIAM ALFREDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (440, 'P', 1, '1103230965001', 50, 19, 177, 'CARPIO LEON SANDRA LORENA', 'RESTAURANTE CARIBE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (441, 'P', 1, '0502241409001', 50, 19, 177, 'CARRERA CEPEDA DORIS MARLENE', 'CARRERA CEPEDA DORIS MARLENE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (442, 'P', 1, '1103305825001', 50, 19, 177, 'CARRERA ENCALADA EDUARDO DANILO', 'CARRERA ENCALADA EDUARDO DANILO', '', '2600113', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (443, 'P', 1, '1103075436001', 50, 19, 177, 'CARRION ARMIJOS EDITA YOLANDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (444, 'P', 1, '1102875117001', 50, 19, 177, 'CARRION JIMENEZ LEONARDO VICENTE', 'D.EVENTOS RWSTUARANT Y CAFETERIA', '', '2688412', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (445, 'P', 1, '0991259546001', 50, 19, 177, 'CARRO SEGURO CARSEG S A', 'CARRO SEGURO CARSEG S.A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (446, 'P', 1, '0991400427001', 50, 19, 177, 'CARTIMEX', 'CARTIMEX', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (447, 'P', 1, '0703466938001', 50, 19, 177, 'CASTILLO PEÑA JOSE EDILBERTO', 'ASADERO  D JOSE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (448, 'P', 1, '0703148270001', 50, 19, 177, 'CASTILLO TACURI MARCIA ZORAIDA', 'COMEDOR NAYMAR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (449, 'P', 1, '1705471033001', 50, 19, 177, 'CEDILLO GONZALEZ EMILIA ALBERTINA', 'ESTACION DE SERVICIOS VIRGEN DEL CISNE II', '', '042386514', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (450, 'P', 1, '1791804902001', 50, 19, 177, 'CENTRO COMERCIAL LA MANZANA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (451, 'P', 1, '0703215079001', 50, 19, 177, 'CEVALLOS ROMERO PATRICIA MARGOTH', 'RESTAURANTE DON PEPE PRIMERO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (452, 'P', 1, '1716750789001', 50, 19, 177, 'CHACON PAEZ VALERIA PATRICIA', 'CHACON PAEZ VALERIA PATRICIA', '', '2508112', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (453, 'P', 1, '1102487699001', 50, 19, 177, 'CHALAN MALDONADO SEGUNDO ALBERTO', 'CHALAN MALDONADO SEGUNDO ALBERTO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (454, 'P', 1, '0702051921001', 50, 19, 177, 'CHAMBA GALLARDO HELMER MARIA', 'CHAMBA GALLARDO HELMER MARIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (455, 'P', 1, '1900398908001', 50, 19, 177, 'CHAMBA GUAMAN MARIANA ELENA', 'RESTAURANT MARIANITA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (456, 'P', 1, '0991244085001', 50, 19, 177, 'CHEM - TECH S.A.', 'CHEM - TECH S.A.', '', '042925659', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (457, 'P', 1, '0991291040001', 50, 19, 177, 'CHEMICAL PHARM DEL ECUADOR C. LTDA', 'CHEMICAL PHARM DEL ECUADOR C. LTDA', '', '09918691765', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (458, 'P', 1, '0930485206001', 50, 19, 177, 'CHEN RONGRUI', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (459, 'P', 1, '1712893856001', 50, 19, 177, 'CHICAIZA PACA LAURA MARIA', 'PICANTERIA REINA DEL CISNE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (460, 'P', 1, '1103458848001', 50, 19, 177, 'CHIMBO ORTEGA CARMEN ALEXANDRA', 'RESTAURANT BRACAMOROS', '', '073105623', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (461, 'P', 1, '1105605503001', 50, 19, 177, 'CHIMBO ORTEGA CRISTOPHER JOEL', 'BRACAMOROS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (462, 'P', 1, '0401572219001', 50, 19, 177, 'CHIRAN TARAPUEZ  WILSON EMILIO', 'MI DULCE CAPULI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (463, 'P', 1, '1790516008001', 50, 19, 177, 'CHUBB SEGUROS ECUADOR', 'CHUBB SEGUROS ECUADOR', '', '59343731810', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (464, 'P', 1, '0705627321001', 50, 19, 177, 'CHUNI ZAPATA MARIA DEL CISNE', 'RESTAURANTE MARIA DEL CISNE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (465, 'P', 1, '1103361315001', 50, 19, 177, 'COLLAGUAZO LOPEZ YENNY OLIVIA', 'SAFARI BURGUER', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (466, 'P', 1, '0702409822001', 50, 19, 177, 'COLLAGUAZO UNUZUNGO MELANIA ISABEL', 'VENTA EN COMIDAS Y BEBIDAS EN PICANTERIAS PARA SU CONSUMO INMEDIATO', '', '0980211537', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (467, 'P', 1, '1091747819001', 50, 19, 177, 'COMBUSOLIVOS CIA. LTDA.', 'COMBUSOLIVOS CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (468, 'P', 1, '1792901014001', 50, 19, 177, 'COMBUSTIBLES Y SERVICIOS TOBAR SERCOMTOBAR S.A.', 'COMBUSTIBLES Y SERVICIOS TOBAR SERCOMTOBAR S.A.', '', 'SN', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (469, 'P', 1, '1792627753001', 50, 19, 177, 'COMERCIALIZADORA SNAPSI CIA.LTDA', 'COMERCIALIZADORA SNAPSI CIA.LTDA', '', '023483532', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (470, 'P', 1, '1391723563001', 50, 19, 177, 'COMPANIA DE RESPONSABILIDAD LIMITADA LOS BIZARROS', 'COMPANIA DE RESPONSABILIDAD LIMITADA LOS BIZARROS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (471, 'P', 1, '0990022453001', 50, 19, 177, 'COMPAÑIA DE SEGUROS ECUATORIANOS SUIZA S A', 'COMPAÑIA DE SEGUROS ECUATORIANOS SUIZA S.A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (472, 'P', 1, '0992636955001', 50, 19, 177, 'COMPAÑIA DE TRANSPORTE DE CARGA C A R  UNION PALTENSE C A  TRANSUPALTENSE', 'COMPAÑIA DE TRANSPORTE DE CARGA C.A.R. UNION PALTENSE C.A. TRANSUPALTENSE', '', '2262507', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (473, 'P', 1, '0791790743001', 50, 19, 177, 'COMPAÑIA DE TRANSPORTE PESADO Y RESCATE SOBRE RUEDAS GRUAS SR', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (474, 'P', 1, '1791251237001', 50, 19, 177, 'CONSORCIO ECUATORIANO DE TELECOMUNICACIONES S. A. CONECEL', 'CONSORCIO ECUATORIANO DE TELECOMUNICACIONES S. A. CONECEL', '', '59345004040', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (475, 'P', 1, '0791735491001', 50, 19, 177, 'CONSTRUSUR DEL ECUADOR S A', 'TERPEL MACHALA 1', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (476, 'P', 1, '0790042557001', 50, 19, 177, 'COOP. DE TRANSP  T.A.C.', 'COOP. INTERPROVINCIAL DE TRANSPORTES ASOCIADOS CANTONALES T.A.C.', '', '72724984', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (477, 'P', 1, '0490008578001', 50, 19, 177, 'COOPERAATIVA DE TRASNPORTES SAN CRISTOBAL', 'COOPERAATIVA DE TRASNPORTES SAN CRISTOBAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (478, 'P', 1, '0990568022001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE DE PASAJEROS EN BUSES SANTA LUCIA LTDA', 'COOPERATIVA DE TRANSPORTE DE PASAJEROS EN BUSES SANTA LUCIA LTDA.', '', '3013541', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (479, 'P', 1, '0990296820001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE DE PASAJEROS VILLAMIL', 'ESTACION DE SERVICIOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (480, 'P', 1, '1790414973001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE FLOR DEL VALLE CAYAMBE', 'COOPERATIVA DE TRANSPORTE FLOR DEL VALLE CAYAMBE', '', '2111024', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (481, 'P', 1, '0790053419001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE INTERNACINAL RUTAS ORENSES', 'COOPERATIVA DE TRANSPORTE INTERNACINAL RUTAS ORENSES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (482, 'P', 1, '1190024365001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE SUR ORIENTE', 'COOPERATIVA DE TRANSPORTE SUR ORIENTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (483, 'P', 1, '1190081474001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE UNION CARIAMANGA', 'COOPERATIVA DE TRANSPORTE \"UNION CARIAMANGA\"', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (484, 'P', 1, '1990010427001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTE UNION YANZATZA', 'COOPERATIVA DE TRANSPORTE UNION YANZATZA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (485, 'P', 1, '1090008273001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTES 28 DE SEPTIEMBRE', 'ESTACION DE SERVICIO 28 DE SEPTIEMBRE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (486, 'P', 1, '1790042944001', 50, 19, 177, 'COOPERATIVA DE TRANSPORTES PANAMERICANA INTERNACIONAL', 'COOPERATIVA DE TRASNPORTES PANAMERICANA INTERNACIONAL', '', '022501585', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (487, 'P', 1, '1102593207001', 50, 19, 177, 'CORDOVA AGUIRRE DIEGO GUILLERMO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (488, 'P', 1, '1104175300001', 50, 19, 177, 'CORDOVA CUEVA ROBER ANTONIO', 'CORDOVA CUEVA ROBER ANTONIO', '', '072542388', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (489, 'P', 1, '1103452015001', 50, 19, 177, 'CORONEL VILLAVICENCIO AYDA JANETH', 'LA CASANA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (490, 'P', 1, '0501233498001', 50, 19, 177, 'CORRALES CARRERA MILTON HERNAN', 'REPUESTOS Y LUBRICANTES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (491, 'P', 1, '0701181166001', 50, 19, 177, 'CORTEZ ORELLANA JIMMY FORTUNATO', 'RESTAURANTE NUEVO EDEN', '', '0988020662', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (492, 'P', 1, '0704670892001', 50, 19, 177, 'CORTEZ VERA JIMMY FABIAN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (493, 'P', 1, '1100574688001', 50, 19, 177, 'CRIOLLO CASTILLO GRACIELA MARIA', 'CRIOLLO CASTILLO GRACIELA MARIA', '', '2546129', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (494, 'P', 1, '1725926065001', 50, 19, 177, 'CUJILEMA QUISHPI GINA ELIZABETH', 'RESTAURANT Y PARRILLADA LA SAZON DE GINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (495, 'P', 1, '1711783421001', 50, 19, 177, 'DAVIS MOREIRA STEPHEN DANIEL', 'DAVIS MOREIRA STEPHEN DANIEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (496, 'P', 1, '0702127887001', 50, 19, 177, 'DELGADO AGUAYO VIVIANA DEL PILAR', 'EL POLLO QUE ARDE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (497, 'P', 1, '1792690994001', 50, 19, 177, 'DESPEGAR ECUADOR S.A.', 'DESPEGAR ECUADOR DESPEGARECUADOR S.A.', '', '2441624', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (498, 'P', 1, '0992921404001', 50, 19, 177, 'DIDESPROPE S.A.', 'DISTRIBUIDORA DE DERIVADOS Y PRODUCTOS PETROLEROS DIDESPROPE S.A.', '', '043712360', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (499, 'P', 1, '1768049390001', 50, 19, 177, 'DIRECCION GENERAL DE REGISTRO CIVIL INDENTIFICACION Y CEDULACION', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (500, 'P', 1, '0992311134001', 50, 19, 177, 'DIRVAL S A', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (501, 'P', 1, '1792222796001', 50, 19, 177, 'DISTRIFUEL CIA  TLDA', 'DISTRIFUEL CIA. TLDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (502, 'P', 1, '1791848608001', 50, 19, 177, 'E/S LA ESPERANZA', 'EMINENS CIA. LTDA.', '', '022469556', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (503, 'P', 1, '1791972244001', 50, 19, 177, 'ECUABARE S.A.', 'ECUABARE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (504, 'P', 1, '0990018707001', 50, 19, 177, 'ECUAQUIMICA C.A.', 'ECUAQUIMICA ECUATORIANA DE PRODUCTOS QUIMICOS C.A.', '', '042807897 EXT 4', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (505, 'P', 1, '1792645352001', 50, 19, 177, 'EL PINAR SC', 'EL PINAR SC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (506, 'P', 1, '0705461697001', 50, 19, 177, 'ELIZALDE ALVARADO JOSE DOMINGO', 'REST. LOS MELLIZOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (507, 'P', 1, '1291714605001', 50, 19, 177, 'EMFLUSA EMPRESARIOS FLUMINENSES S A', 'ESTACION DE SERVICIOS GABELA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (508, 'P', 1, '1060041100001', 50, 19, 177, 'EMPRESA PUBLICA DE MOVILIDAD DEL NORTE', 'EMPRESA PUBLICA DE MOVILIDAD DEL NORTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (509, 'P', 1, '1768154690001', 50, 19, 177, 'EMPRESA PUBLICA METROPOLITANA DE MOVILIDAD Y OBRAS PUBLICAS', 'EMPRESA PUBLICA METROPOLITANA DE MOVILIDAD Y OBRAS PUBLICAS', '', '2525023', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (510, 'P', 1, '0992614420001', 50, 19, 177, 'ENCALEGA S A', 'ENCALEGA S.A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (511, 'P', 1, '1102043658001', 50, 19, 177, 'ENID DOLORES PALADINES ESPINOZA', 'KOMIDITAS RESTAURAT', '', '2944270', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (512, 'P', 1, '1715247779001', 50, 19, 177, 'ESPINOSA MALDONADO PATRICIO XAVIER', 'CAFETERIA RESTAURANT KATY', '', '2110822', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (513, 'P', 1, '1103549760001', 50, 19, 177, 'ESPINOZA ALVAREZ JUAN ANDRES', 'LA CASA DEL TAMAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (514, 'P', 1, '1001033594001', 50, 19, 177, 'ESPINOZA GOMEZ MAURA SULEMA', 'EL CALLEJON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (515, 'P', 1, '1103462402001', 50, 19, 177, 'ESPINOZA LOAIZA NIDIA LUCILA', 'ESPINOZA LOAIZA NIDIA LUCILA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (516, 'P', 1, '0702184060001', 50, 19, 177, 'ESPINOZA MACASA ZOILA MACRINA', 'ESPINOZA MACASA ZOILA MACRINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (517, 'P', 1, '0704568278001', 50, 19, 177, 'ESPINOZA QUEZADA DIANA ISABEL', 'ACCESORIOS Y REPUESTOS VEHICULARES ESPINOZA QUEZADA', '', '0991156763', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (518, 'P', 1, '0301255931001', 50, 19, 177, 'ESTACION  DE SERVICIO MALACATOS', 'ESTACION  DE SERVICIO MALACATOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (519, 'P', 1, '0992106085001', 50, 19, 177, 'ESTACION DE SERVCIO CASCOL ACTENSIVA', 'ESTACION DE SERVCIO CASCOL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (520, 'P', 1, '0791774802001', 50, 19, 177, 'ESTACION DE SERVICIO LARRIVA LARRIVA GASOLINERA GASOLACO COMPAÑIA DE RESPONSABILIDAD LIMITADA', 'ESTACION DE SERVICIO LARRIVA LARRIVA GASOLINERA GASOLACO COMPAÑIA DE RESPONSABILIDAD LIMITADA', '', '0991790420', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (521, 'P', 1, '0101900330001', 50, 19, 177, 'ESTACION DE SERVICIO MARIA UXILIADORA', 'ESTACION DE SERVICIO MARIA UXILIADORA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (522, 'P', 1, '1792124379001', 50, 19, 177, 'ESTACION DE SERVICIO PEAJE NORTE', 'ESTACION DE SERVICIO PETROCOMERCIAL PEAJE NORTE', '', '022839014', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (523, 'P', 1, '1792585694001', 50, 19, 177, 'ESTACION DE SERVICIO PUENGASI G A-MCJ CIA. LTDA.', 'ESTACION DE SERVICIO PUENGASI G A-MCJ CIA. LTDA.', '', '023194171', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (524, 'P', 1, '0992531355001', 50, 19, 177, 'ESTACION DE SERVICIO SAN NICOLAS', 'ESTACION DE SERVICIO SAN NICOLAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (525, 'P', 1, '1792449367001', 50, 19, 177, 'ESTACION DE SERVICIOS COOPTRACAL S.A.', 'ESTACION DE SERVICIOS COOPTRACAL S.A.', '', '2425059', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (526, 'P', 1, '0991443312001', 50, 19, 177, 'ESTACION DE SERVICIOS JARAMILLO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (527, 'P', 1, '1391785100001', 50, 19, 177, 'ESTACION DE SERVICIOS LA PILA', 'NEGOCIOS LA PILA CIA. LTDA. PILNEGCIA', '', '2315171', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (528, 'P', 1, '0919882001001', 50, 19, 177, 'ESTACION DE SERVICIOS LA UNIVERSAL', 'ESTACION DE SERVICIOS LA UNIVERSAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (529, 'P', 1, '1801338912001', 50, 19, 177, 'ESTACION DE SERVICIOS LOPEZ SANTANA', 'ESTACION DE SERVICIOS LOPEZ SANTANA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (530, 'P', 1, '0992327162001', 50, 19, 177, 'ESTACION DE SERVICIOS MACHALA DOS', 'ESTACION DE SERVICIOS MACHALA DOS', '', '072982-558', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (531, 'P', 1, '0993005916001', 50, 19, 177, 'ESTACION DE SERVICIOS PASCUALES', 'ESTACION DE SERVICIOS PASCUALES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (532, 'P', 1, '0993002917001', 50, 19, 177, 'ESTACION DE SERVICIOS SAN VICENTE', 'ESTACION DE SERVICIOS SAN VICENTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (533, 'P', 1, '1103606677001', 50, 19, 177, 'ESTACION DE SERVICIOS SARAGURO', 'ESTACION DE SERVICIOS SARAGURO', '', '2200005', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (534, 'P', 1, '1191735931001', 50, 19, 177, 'ESTACION DE SEVICIOS ORTEGA FRELMAC CIA LTDA', 'FRELMAC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (535, 'P', 1, '0991519246001', 50, 19, 177, 'ESTACION PEDRO CARBO ELIPOL', 'ESTACION PEDRO CARBO ELIPOL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (536, 'P', 1, '1102850433001', 50, 19, 177, 'FABIAN ERASMO ALEJANDRO MARIN', 'FABIAN ERASMO ALEJANDRO MARIN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (537, 'P', 1, '0602081549001', 50, 19, 177, 'FALCONI CARDONA ROMULO RENAN', 'NUTRION', '', '032300306', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (538, 'P', 1, '0702084153001', 50, 19, 177, 'FEIJOO ENCALADA ORFLINA DEL CARMEN', 'ALBAHACA RESTAURANT', '', '2936162', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (539, 'P', 1, '0705385201001', 50, 19, 177, 'FEIJOO LOAYZA GABRIELA FERNANDA', 'FERRETERIA SAN VICENTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (540, 'P', 1, '0925295578001', 50, 19, 177, 'FENG LIGUANG', 'CHIFA FELICIDAD', '', '2338625', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (541, 'P', 1, '0705216455001', 50, 19, 177, 'FERNANDEZ ARCE PATRICIO MIGUEL', 'FERNANDEZ ARCE PATRICIO MIGUEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (542, 'P', 1, '0705261709001', 50, 19, 177, 'FERNANDEZ ROMERO CARMEN ELIZABETH', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (543, 'P', 1, '0702759325001', 50, 19, 177, 'FRANCO CORREA MARCO DE LOS ANGELES', 'RESTAURANT REGALO DE DIOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (544, 'P', 1, '0919309005001', 50, 19, 177, 'FREIRE PAZAMIÑO ROXANA DOLORES', 'RESTAURANTE PICUN PICUN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (545, 'P', 1, '0703415463001', 50, 19, 177, 'FREIRE PONTON PATRICIO HIGINIO', 'CENTRO DE SERVICIO AUTOMOTRIZ SOBRE RUEDAS', '', '2974371', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (546, 'P', 1, '1803762069001', 50, 19, 177, 'FREIRE RENDON KLEVER HERNAN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (547, 'P', 1, '0992236574001', 50, 19, 177, 'FUNDACION TERMINAL TERRESTRE', 'FUNDACION TERMINAL TERRESTRE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (548, 'P', 1, '0702627134001', 50, 19, 177, 'GALLARDO ALVARADO KATTY SORAYA', 'NOTARIA PUBLICA DE BALSAS', '', '072517244', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (549, 'P', 1, '0701093957001', 50, 19, 177, 'GALLEGOS SUAREZ NOEMI GERARDINA', 'GALLEGOS SUAREZ NOEMI GERARDINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (550, 'P', 1, '1104149768001', 50, 19, 177, 'GALLEGOS TANDAZO JENNY YOBELI', 'ACTIVIDADES DE HOTELES Y RESTAURANTES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (551, 'P', 1, '1900173244001', 50, 19, 177, 'GAONA CUEVA ROSA GEORGINA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (552, 'P', 1, '0703278176001', 50, 19, 177, 'GAONA GARCIA JUANA ELIZABETH', 'VENTA DE COMIDA Y BEBIDAS EN RESTAURANT', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (553, 'P', 1, '1707251003001', 50, 19, 177, 'GARCIA  GARCIA FAUSTO GABRIELL', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (554, 'P', 1, '1900323351001', 50, 19, 177, 'GARCIA SAMANIEGO SOLEDAD DE FATIMA', 'EL RINCON DEL SABOR CHARAPANO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (555, 'P', 1, '0701997595001', 50, 19, 177, 'GARNICA VAZQUEZ LUIS ANCELMO', 'SELLOS GARNICA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (556, 'P', 1, '0902340108001', 50, 19, 177, 'GARZOTA INN', 'GARZOTA INN', '', '2655107', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (557, 'P', 1, '0991428577001', 50, 19, 177, 'GASGRUP S A', 'GASGRUP S.A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (558, 'P', 1, '0390029101001', 50, 19, 177, 'GASOLINERA   E L    R E C R E O', 'GASOLINERA   E L    R E C R E O', '', '072242639', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (559, 'P', 1, '0591723197001', 50, 19, 177, 'GASOLINERA SILVA DOS CIA. LTDA.', 'GASOLINERA SILVA DOS CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (560, 'P', 1, '0790100883001', 50, 19, 177, 'GASOLINERA Y LUBRICANTES DEL SUR GASUR S A', 'GASOLINERA Y LUBRICANTES DEL SUR GASUR S A', '', '072937157', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (561, 'P', 1, '0992968435001', 50, 19, 177, 'GASOVIP S A', 'GASOVIP S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (562, 'P', 1, '1708639487001', 50, 19, 177, 'GAVILANEZ LLANOS ELVIA GALUTH', 'RESTAURANTE EL BUEN SABOR JJDR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (563, 'P', 1, '1791891325001', 50, 19, 177, 'GEREST CIA  LTDA', 'GEREST CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (564, 'P', 1, '0992822252001', 50, 19, 177, 'GESURYMACA S  A', 'GESURYMACA S. A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (565, 'P', 1, '2390032180001', 50, 19, 177, 'GOLDEN VISTA', 'GOLDEN VISTA', '', '02746250', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (566, 'P', 1, '1103300669001', 50, 19, 177, 'GONZALES BENITES CARLOS MARIA', 'GONZALES BENITES CARLOS MARIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (567, 'P', 1, '0300988011001', 50, 19, 177, 'GONZALES BUSTAMANTE LEONEL PATRICIO', 'GONZALES BUSTAMANTE LEONEL PATRICIO', '', '2677286', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (568, 'P', 1, '1103642748001', 50, 19, 177, 'GONZALEZ CHUNCHO MARIA EMPERATRIZ', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (569, 'P', 1, '1105947053001', 50, 19, 177, 'GUALAN LOZANO INES SUSANA', 'LA LEÑA RESTAURANTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (570, 'P', 1, '1004288583001', 50, 19, 177, 'GUAMAN QUISPE PAMELA ESTEFANIA', 'HOTEL SUEÑO REAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (571, 'P', 1, '0101467165001', 50, 19, 177, 'GUERRA ARGUDO MARCO PATRICIO', 'AVIVETAG', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (572, 'P', 1, '1102069729001', 50, 19, 177, 'GUILLERMO SIXTO SALINAS PACHECO', 'GRAN HOSTAL SALINAS', '', '072664287', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (573, 'P', 1, '1001973070001', 50, 19, 177, 'HERNANDEZ LOPEZ JOSE ANTONIO', 'HERNANDEZ LOPEZ JOSE ANTONIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (574, 'P', 1, '1708549728001', 50, 19, 177, 'HERRERA HERRERA ROMEL ISIDRO', 'LA VIÑA', '', '2300094', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (575, 'P', 1, '1710966142001', 50, 19, 177, 'HIDALGO CUENCA EDGAR OSWALDO', 'HIDALGO CUENCA EDGAR OSWALDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (576, 'P', 1, '1102114897001', 50, 19, 177, 'HIDALGO HERRERA JOSE BELISARIO', 'NARANATHA RESTAURANT', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (577, 'P', 1, '2100356159001', 50, 19, 177, 'HUANCA VARGAS RODI PAUL', '', '', '0981997739', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (578, 'P', 1, '0925140204001', 50, 19, 177, 'HUANCA YAGUACHI DIANA DEL CARMEN', 'ASADERO ELVIAJERO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (579, 'P', 2, '0701720773', 50, 19, 177, 'HURTADO PEDRO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (580, 'P', 1, '1792054672001', 50, 19, 177, 'IGLESIAS TAPIA CIA. LTDA.', 'ESTACION DE SERVICIO ANDES GAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (581, 'P', 1, '1090003085001', 50, 19, 177, 'IMBABURA TURISTICA C.A. IMBATURIS', 'HOTEL AJAVI', '', '06 2955555', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (582, 'P', 1, '0190003701001', 50, 19, 177, 'IMPORTADORA TOMEBAMBA', 'IMPORTADORA TOMEBAMBA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (583, 'P', 1, '1890098106001', 50, 19, 177, 'IMVAB CIA. LTDA.', 'IMVAB CIA. LTDA.', '', '0992630893', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (584, 'P', 1, '1790552195001', 50, 19, 177, 'INDUFAR', 'INDUFAR', '', '2424191', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (585, 'P', 1, '0990681708001', 50, 19, 177, 'INDUSUR INDUSTRIAL DEL SUR S.A.', 'INDUSUR INDUSTRIAL DEL SUR S.A.', '', '072574111 0986419540', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (586, 'P', 1, '1900753623001', 50, 19, 177, 'IÑIGUEZ JARAMILLO ANA PATRICIA', 'RESTAURANTE LAS GEMELITAS', '', '2606275', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (587, 'P', 1, '1103583736001', 50, 19, 177, 'IÑIGUEZ VALVERDE MARIA ALEXANDRA', 'IÑIGUEZ VALVERDE MARIA ALEXANDRA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (588, 'P', 1, '1791415132001', 50, 19, 177, 'INT FOOD SERVICES CORP', 'INT FOOD SERVICES CORP', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (589, 'P', 1, '0704096940001', 50, 19, 177, 'INTRIAGO VELEZ FRANCISCA ANTONIA', 'VENTA DE COMIDAS Y BEBIDAS EN RESTAURANTES', '', '2787219', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (590, 'P', 1, '1103927537001', 50, 19, 177, 'JARAMILLO AÑASCO CARLOS PAUL', 'HOSTAL CARLOS JARAMILLO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (591, 'P', 1, '1105570558001', 50, 19, 177, 'JARAMILLO CANGO ANDREINA MARIELA', 'SUPER POLLO', '', '2301862', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (592, 'P', 1, '0701956849001', 50, 19, 177, 'JARAMILLO GUERRERO PATRICIO XAVIER', 'JARAMILLO GUERRERO PATRICIO XAVIER', '', '0999851167', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (593, 'P', 1, '1102294806001', 50, 19, 177, 'JARAMILLO HILL MARCELO', 'JARAMILLO HILL MARCELO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (594, 'P', 1, '1101982856001', 50, 19, 177, 'JARAMILLO LOZANO VICENTE RODRIGO', 'JARAMILLO LOZANO VICENTE RODRIGO', '', '0990818408', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (595, 'P', 1, '1102834445001', 50, 19, 177, 'JARAMILLO VALAREZO MARIA ENIDT', 'JARAMILLO VALAREZO MARIA ENIDT', '', '0991290788', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (596, 'P', 1, '1101973400001', 50, 19, 177, 'JARAMILLO VIVANCO WILMER STALIN', 'JARAMILLO VIVANCO WILMER STALIN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (597, 'P', 1, '0924879158001', 50, 19, 177, 'JINGMIN LIAO', 'CHIFA HUANG GUAN CHINA', '', '5036256', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (598, 'P', 1, '0700015548001', 50, 19, 177, 'JORGE GONZALO JIMENEZ SALAZAR', 'HOSTAL GALAPAGOS', '', '2301897', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (599, 'P', 1, '1002615076001', 50, 19, 177, 'JURADO GODOY JOHANNA PATRICIA', 'LOS CEBICHES DE LA RUMIÑAHUI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (600, 'P', 1, '1101063830001', 50, 19, 177, 'JUVENTINA CASTILLO CASTILLO', 'RESTAURANTE LOS PANCHOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (601, 'P', 1, '1791952359001', 50, 19, 177, 'LA TABLITA GROUP CIA. LTDA.', 'LA TABLITA GROUP CIA. LTDA.', '', '042 541-832', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (602, 'P', 1, '1791141210001', 50, 19, 177, 'LABITECH CIA. LTDA', 'LABITECH', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (603, 'P', 1, '1101079679001', 50, 19, 177, 'LEDESMA JARAMILLO ANGEL SALVADOR', 'HOTEL EL BOSQUE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (604, 'P', 1, '0703452177001', 50, 19, 177, 'LEON GONZAGA ROSA ALEXANDRA', 'RESTAURANT ROMERIA', '', '2973617', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (605, 'P', 1, '1791986997001', 50, 19, 177, 'LEXVALOR ASESORIA LEGAL SA', 'LEXVALOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (606, 'P', 1, '1757182959001', 50, 19, 177, 'LI SHIXIN', 'CHIFA CHINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (607, 'P', 1, '0907200265001', 50, 19, 177, 'LINO CORONEL CHERLY CLARA', 'RINCON DE JUANITO', '', '2502318', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (608, 'P', 1, '0700971773001', 50, 19, 177, 'LOAIZA TORO MANUEL DE JESUS', 'LOAIZA TORO MANUEL DE JESUS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (609, 'P', 1, '0703385914001', 50, 19, 177, 'LOAYZA AGUILAR  MARIA MAGDALENA', 'LOAYZA AGUILAR  MARIA MAGDALENA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (610, 'P', 1, '0702802422001', 50, 19, 177, 'LOAYZA VALAREZO JOSE ANTONIO', 'AUTOMOTRIZ LOAYZA', '', '072976382', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (611, 'P', 1, '1311000333001', 50, 19, 177, 'LOOR ZAMBRANO RAMON ANTONIO', 'POLLOS A LA BRASA LA ESKINA', '', '042438302', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (612, 'P', 1, '0700166713001', 50, 19, 177, 'LOYOLA OCHOA NILO ALBERTO', 'ESTACION DE SERVICIOS LOYOLA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (613, 'P', 1, '1104895873001', 50, 19, 177, 'LOZANO PAUCAR LILIANA DEL CARMEN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (614, 'P', 1, '1792132231001', 50, 19, 177, 'LUBRICANTES Y COMBUSTIBLES LUBRIGOD S.A.', 'ESTACION INTERNACIONAL YAHUARCOCHA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (615, 'P', 1, '0921233557001', 50, 19, 177, 'LUCERO QUITUIZACA FREDY RENE', 'BAR RESTAURANTE ALESSIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (616, 'P', 1, '1803626975001', 50, 19, 177, 'DOMINGUEZ MOYA MARLENE GIOCONDA', 'DOMINGUEZ MOYA MARLENE GIOCONDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (617, 'P', 1, '1711246817001', 50, 19, 177, 'PALACIOS BEJARANO RAUL', 'PALACIOS BEJARANO RAUL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (618, 'P', 1, '0909823262001', 50, 19, 177, 'VILLALTA VEGA MANUEL EDUARDO', 'MOTO REPUESTOS YAMAHA', '', '0988281814', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (619, 'P', 1, '1721774295001', 50, 19, 177, 'VILLAMARIN NOGALES KLEVER DARIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (620, 'P', 1, '0706460102001', 50, 19, 177, 'YANAYACO RAMIREZ JEFFERSON RICARDO', 'YANAYACO RAMIREZ JEFFERSON RICARDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (621, 'P', 1, '0992575026001', 50, 19, 177, 'Z&R CORP S.A.', '', '', '042130377', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (622, 'P', 1, '1712801883001', 50, 19, 177, 'ZAMBRANO ARAY JULIO BOLIVAR', 'CABINAS TELEFONICAS Y BAZAR ZAMUD', '', '0999445150', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (623, 'P', 1, '0703673806001', 50, 19, 177, 'ZAMBRANO HIDALGO FLOR ANGELICA', 'ZAMBRANO HIDALGO FLOR ANGELICA', '', '072-517674', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (624, 'P', 1, '0703096065001', 50, 19, 177, 'ZAMORA VALDIVIESO CESAR SILVIO', '', '', '0993698975', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (625, 'P', 2, '1713163622', 50, 19, 177, 'PABON ALBUJA ALEXIS MAURICIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (626, 'P', 1, '1191794857001', 50, 19, 177, 'ASOCIACION DE PRODUCCION AGROPECUARIA TRABAJANDO JUNTOS LA ESPERANCITA ASOPROATRAJUNES', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (627, 'P', 1, '0503394116001', 50, 19, 177, 'SINCHIGUANO CHICAIZA GUIDO MARCELO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (628, 'P', 1, '1792272807001', 50, 19, 177, 'VERIFICADORA DE CALIDAD CALIVERIF CIA LTDA', 'CALIVERIF CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (629, 'P', 1, '1790093808001', 50, 19, 177, 'LIBERTY SEGUROS S.A.', 'LIBERTY SEGUROS S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (630, 'P', 1, '0790103122001', 50, 19, 177, 'ORO DIESEL C.LTDA.', 'ORO DIESEL C.LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (631, 'P', 1, '1790010937001', 50, 19, 177, 'BANCO PICHINCHA CA', 'BANCO PICHINCHA CA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (632, 'P', 1, '1800992511001', 50, 19, 177, 'JEREZ AGUILAR LUIS JOAQUIN', 'ESTACION DE SERVICIO JENA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (633, 'P', 1, '1204386963001', 50, 19, 177, 'SUAREZ GARCIA JOFFRE HERNAN', 'SUAREZ GARCIA JOFFRE HERNAN', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (634, 'P', 1, '0704453091001', 50, 19, 177, 'CHAMBA GRANDA JOBETH GANDHI', 'PROSERSUR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (635, 'P', 1, '0100242361001', 50, 19, 177, 'MALLA ZHUNIO ANGEL SAUL', 'AVICOLA MZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (636, 'P', 1, '1722558242001', 50, 19, 177, 'HERRERA CHUMO REINALDO ANDRES', 'HERRERA CHUMO REINALDO ANDRES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (637, 'P', 1, '0992770708001', 50, 19, 177, 'SUPERBRIXEC S.A.', 'ESTACION DE SERVICIO SANTANA OIL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (638, 'P', 1, '1791755243001', 50, 19, 177, 'MILENIO SC', 'MILENIO SC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (639, 'P', 1, '1792737508001', 50, 19, 177, 'MEGABYCACE CENTROS FERRETEROS S.A.', 'MEGABYCACE CENTROS FERRETEROS S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (640, 'P', 1, '1790019454001', 50, 19, 177, 'TRANSPORTES Y LOGISTICA DEL AREA ANDINA', 'TRANDINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (641, 'P', 1, '1724545403001', 50, 19, 177, 'MICHAEL NICOLALDE', 'LA CASA DE LAS MENESTRAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (642, 'P', 1, '1792049504001', 50, 19, 177, 'SHEMLON SA', 'MENESTRAS DEL NEGRO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (643, 'P', 1, '1793066070001', 50, 19, 177, 'CASTENI CIA LTDA', 'CASTENI CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (644, 'P', 1, '1709825226001', 50, 19, 177, 'TEODORO WENCESLAO GUAYASAMIN CHAVEZ', 'LUBRISERVICIOS EL MAESTRO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (645, 'P', 1, '1391734379001', 50, 19, 177, 'PARCOR S.A.', 'PETROFLAVIO 2', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (646, 'P', 1, '1791995392001', 50, 19, 177, 'HARO GORDILLO LOPEZ CIA. LTDA.', 'ESTACIÓN DE SERVICIO GAS HARO LOPEZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (647, 'P', 1, '1790819515001', 50, 19, 177, 'DISTRIBUIDORA DE LIBROS Y PAPELERIA,DILIPA C.LTDA.', 'DILIPA CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (648, 'P', 1, '1712987054001', 50, 19, 177, 'VERONICA GABRIELA CRUZ YEPEZ', 'BALCON MARINERO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (649, 'P', 1, '1718021627001', 50, 19, 177, 'VALENZUELA IZQUIERDO CHRISTIAN ARMANDO', 'CHEESECAKE PLANET', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (650, 'P', 1, '0102593811001', 50, 19, 177, 'CHACHA DURAN GEOVANNY MAURICIO', 'CHACHA DURAN GEOVANNY MAURICIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (651, 'P', 1, '1792200296001', 50, 19, 177, 'TDM IMPORTACIONES CIA LTDA', 'TDM IMPORTACIONES CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (652, 'P', 1, '1715919070001', 50, 19, 177, 'OBACO GONZALEZ KARINA DEL PILAR', '', '', '', 'ruygonzalomoncayo@gmail.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (653, 'P', 1, '1391730780001', 50, 19, 177, 'SOCIEDAD CIVIL DE HECHO DENOMINADO GRUPO USCOCOVICH', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (654, 'P', 1, '0502203987001', 50, 19, 177, 'PALMA SALAZAR BYRON JAVIER', 'PALMA SALAZAR BYRON JAVIER', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (655, 'P', 1, '1793009247001', 50, 19, 177, 'IMPORTADORA TECNO TRAILERS SYR', 'IMPORTADORA TECNO TRAILERS SYR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (656, 'P', 1, '1706843529001', 50, 19, 177, 'VALVERDE BENAVIDES CELINDA DEL CARMEN', 'AUTOCENTRO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (657, 'P', 1, '0908232226001', 50, 19, 177, 'FREDY VIDAL JIMENEZ BONE', 'FREDY VIDAL JIMENEZ BONE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (658, 'P', 1, '0401502265001', 50, 19, 177, 'LIGIA SUSANA ARCINIEGA GARCIA', 'LA PARRILLA DEL TIO JESSY', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (659, 'P', 1, '0990022011001', 50, 19, 177, 'MAQUINARIAS Y VEHÍCULOS S.A. MAVESA', 'MAQUINARIAS Y VEHÍCULOS S.A. MAVESA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (660, 'P', 1, '1792193931001', 50, 19, 177, 'NAFTAECUADOR CIA. LTDA', 'E/S PETRONORTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (661, 'P', 1, '1791885651001', 50, 19, 177, 'MKM IMPORTACIONES', 'MKM IMPORTACIONES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (662, 'P', 1, '1792605504001', 50, 19, 177, 'ADESGAE CIA. LTDA', ' ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (663, 'P', 1, '1792689864001', 50, 19, 177, 'QUALISABOR S.A.', 'HAMBURGUESAS EL CORRAL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (664, 'P', 1, '0590031984001', 50, 19, 177, 'CALZACUERO C.A.', 'BATA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (665, 'P', 1, '0502039738001', 50, 19, 177, 'PALMA SALAZAR AMPARITO DEL ROCIO', 'PALMA SALAZAR AMPARITO DEL ROCIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (666, 'P', 1, '1768188830001', 50, 19, 177, 'AGENCIA DE REGULACIÓN Y CONTROL FITO Y ZOOSANITARIO', 'AGENCIA DE REGULACIÓN Y CONTROL FITO Y ZOOSANITARIO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (667, 'P', 1, '0601632474001', 50, 19, 177, 'ZAMORA PEÑAFIEL IVAN REMIGIO     ', 'ESTACION DE SERVICIO PARADA SANTO DOMINGO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (668, 'P', 1, '1715036206001', 50, 19, 177, 'PEREZ PILLAJO MARGARITA JANNETH', 'PEREZ PILLAJO MARGARITA JANNETH', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (669, 'P', 1, '0791827655001', 50, 19, 177, 'BA&QV CIA.LTDA.', 'BA&QV 2', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (670, 'P', 1, '1705056362001', 50, 19, 177, 'PADILLA BADILLO PABLO WASHINGTON', 'VISION 2006', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (671, 'P', 1, '0992106891001', 50, 19, 177, 'DULCAFE S A', 'SWEET & COFFEE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (672, 'P', 1, '1002503314001', 50, 19, 177, 'CADENA VASQUEZ LUIS ALBERTO', 'FRITADAS AMAZONAS ATUNTAQUI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (673, 'P', 1, '0401297916001', 50, 19, 177, 'CALAN POZO LUIS FERNANDO', 'CALAN POZO LF', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (674, 'P', 1, '1091731203001', 50, 19, 177, 'S.C.C. ESTACION DE SERVICIOS CASTRO HERMANOS', 'ESTACION DE SERVICIOS CASTRO HERMANOS SCC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (675, 'P', 1, '1793103294001', 50, 19, 177, 'CLINICA DE ESPECIALIDADES ST. THOMAS STTHOMAS S.A.', 'CLINICA ST. THOMAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (676, 'P', 1, '1391747977001', 50, 19, 177, 'GENETICA NACIONAL SA GENETSA ', 'GENETICA NACIONAL SA GENETSA ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (677, 'P', 1, '1720029295001', 50, 19, 177, 'TAMAYO ERAZO DIEGO ROLANDO', 'TAMAYO ERAZO DIEGO ROLANDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (678, 'P', 1, '1720751526001', 50, 19, 177, 'ESPINOZA ERAZO ESTEBAN RAFAEL', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (679, 'P', 2, '1722592068', 50, 19, 177, 'MOROCHO BURBANO CRISTINA GUADALUPE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (680, 'P', 1, '1792190940001', 50, 19, 177, 'SELLFER CIA. LTDA.', 'COMERCIAL FERRETERO FERREVARGAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (681, 'P', 1, '1709785446001', 50, 19, 177, 'ZOILA PIEDAD FLORES RODRIGUEZ', 'ZOILA PIEDAD FLORES RODRIGUEZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (682, 'P', 2, '0600658124', 50, 19, 177, 'VALDIVIEZO BADILLO FAUSTO ANTONINO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (683, 'P', 2, '1724581200', 50, 19, 177, 'BENAVIDES PAEZ JOSELYN MARCELA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (684, 'P', 2, '1719395111', 50, 19, 177, 'NAVARRETE IBANEZ DOLORES YADIRA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (685, 'P', 1, '1891774180001', 50, 19, 177, 'MOLPACK ECUADOR ECUAMOLPACK S.A.', 'MOLPACK ECUADOR', '', '0986388779', 'josue.carvajal@molpack.net;cristian.borja@molpack.net;facturas@diaeventos.com.ec;gladys.tenorio@molpack.net', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (686, 'P', 1, '0603136045001', 50, 19, 177, 'CARRILLO CACERES EDWIN GERMAN', 'VITAAM', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (687, 'P', 1, '1801415199001', 50, 19, 177, 'CARDENAS PARRA ELICIO ALEJANDRO   ', 'BIO-RED CONTRIBUYENTE RÉGIMEN RIMPE AGENTE DE RETENCIÓN RESOLUCIÓN NRO. NAC-DNCRASC20-00000001 ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (688, 'P', 2, '0401158894', 50, 19, 177, 'LOPEZ ROMO JORGE LUIS', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (689, 'P', 1, '1700700642001', 50, 19, 177, 'AVILES TORRES EMMA JOSEFINA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (690, 'P', 1, '1792603137001', 50, 19, 177, 'COMERCIAL PADILLA S C C', 'COMERCIAL PADILLA S C C', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (691, 'P', 1, '1500405582001', 50, 19, 177, 'SANCHEZ TORRES SILVIA ENITH', 'ESTACION DE SERVICIOS EL CHOTA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (692, 'P', 1, '1391932475001', 50, 19, 177, 'HOTEL CEIBO DORADO SAS', 'HOTEL CEIBO DORADO SAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (693, 'P', 1, '1791166914001', 50, 19, 177, 'PETROLEOS DE LOS RIOS PETROLRIOS C.A.', 'PETROLEOS DE LOS RIOS PETROLRIOS C.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (694, 'P', 1, '1708237720001', 50, 19, 177, 'ZANAFRIA CUELLER BYRON GONZALO', 'IMPORTADORA SERACON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (695, 'P', 1, '1707180137001', 50, 19, 177, 'SERRANO RODRIGUEZ ZOILA MARIA AUXILIADORA', 'SERRANO RODRIGUEZ COMERCIO EXTERIOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (696, 'P', 1, '0992943882001', 50, 19, 177, 'ESTACION DE SERVICIO BPCE S.A.', 'ESTACION DE SERVICIO SENOR DE LOS MILAGROS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (697, 'P', 1, '1791398262001', 50, 19, 177, 'FABRICA DE BATERIAS FABRIBAT CIA. LTDA.', 'BATERIAS ECUADOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (698, 'P', 1, '1791841514001', 50, 19, 177, 'AGROPECUARIA INTERANDINA CIA LTDA 2022', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (699, 'P', 1, '1791247671001', 50, 19, 177, 'TEXCOMERCIAL S A', 'TEXCOMERCIAL S A', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (700, 'P', 1, '1703540169001', 50, 19, 177, 'CHIRIBOGA MOLINA YOLANDA PIEDAD IMPLEQU', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (701, 'P', 1, '20303063413', 50, 19, 177, 'ANITA FOOD S.A.', 'ANITA', '', '+5116186565', 'ventas@anita.pe', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (702, 'P', 1, '1804458998001', 50, 19, 177, 'ONATE GARCES JUAN EDUARDO', 'ONATE GARCES JUAN EDUARDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (703, 'P', 1, '1001227808001', 50, 19, 177, 'ROSERO LOPEZ IVO JAVIER', 'ESTACION DE SERVICIOS VALLE DE LAGO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (704, 'P', 1, '0991320776001', 50, 19, 177, 'SIANO SA', 'ESTACION DE SERVICIO SIANO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (705, 'P', 1, '0992426802001', 50, 19, 177, 'COMERCIAL FON FAY S A COMERFON', 'COMERCIAL FON FAY S A COMERFON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (706, 'P', 1, '0993101141001', 50, 19, 177, 'LABORATORIOS CALIER DEL ECUADOR LABCALIER S.A.', 'LABORATORIOS CALIER DEL ECUADOR LABCALIER S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (707, 'P', 1, '1714665153001', 50, 19, 177, 'VILLALBA OÑA JEANNETH ALEXANDRA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (708, 'P', 1, '1705667804001', 50, 19, 177, 'VISCARRA ESPINOZA FERNANDO RAMIRO', 'VISCARRA ESPINOZA FERNANDO RAMIRO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (709, 'P', 1, '1311407868001', 50, 19, 177, 'MOREIRA PEREZ JANETH ELIZABETH', 'MOREIRA PEREZ JANETH ELIZABETH', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (710, 'P', 1, '1802535425001', 50, 19, 177, 'PAREDES URQUIZO MAIDA IVETH', 'MAIDA IVETH PAREDES URQUIZO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (711, 'P', 1, '1704271251001', 50, 19, 177, 'DUQUE SILVA CARLOS ARTURO', 'VENTA DE COMBUSTIBLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (712, 'P', 1, '1791762940001', 50, 19, 177, 'COMPANIA CIVIL GASOLINERAS CARRETAS', 'ESTACION DE SERVICIO SAN FRANCISCO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (713, 'P', 1, '1791287541001', 50, 19, 177, 'MEGADATOS SA', 'MEGADATOS SA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (714, 'P', 1, '0918614611001', 50, 19, 177, 'HIDALGO ALTAMIRANO CIRO EDUARDO', 'HIDALGO ALTAMIRANO CIRO EDUARDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (715, 'P', 1, '1720623022001', 50, 19, 177, 'BENAVIDES MORALES MAURICIO FERNANDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (716, 'P', 1, '1713534806001', 50, 19, 177, 'CAO SU PACO BEITAO', 'GRAN COMIDA CHINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (717, 'P', 1, '1712315074001', 50, 19, 177, 'CARRILLO CADENA MARCO ANTONIO', 'ESTACION DE SERVICIO PANTERA DOS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (718, 'P', 1, '1713271631001', 50, 19, 177, 'AGUILAR CHIRIBOGA JORGE EDUARDO', 'AGUILAR CHIRIBOGA JORGE EDUARDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (719, 'P', 1, '1792540917001', 50, 19, 177, 'AUTOSERVICIO LA PAMPA AUTOSERVIPAMPA CIA. LTDA.', 'AUTOSERVIPAMPA CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (720, 'P', 1, '0992594675001', 50, 19, 177, 'JARABA S.A.', 'HOTEL PUERTO PACIFICO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (721, 'P', 1, '0300564044001', 50, 19, 177, 'FERNANDEZ BARAHONA INES MARINA', 'ESTACION DE SERVICIO ISIDRO AYORA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (722, 'P', 1, '1801681089001', 50, 19, 177, 'GRANJA BENALCAZAR FAUSTO BENIGNO FACTURAELECTRONICAECUADOR.COM', 'GASOLINERA GRANJA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (723, 'P', 1, '1706985957001', 50, 19, 177, 'ZAMORA BALLADARES TERESA DE JESUS', 'VENTA DE COMBUSTIBLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (724, 'P', 1, '1791769732001', 50, 19, 177, 'PANIFICADORA AMBATO PANAMBATO CIA. LTDA.', 'PANIFICADORA AMBATO PANAMBATO CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (725, 'P', 1, '1790945545001', 50, 19, 177, 'DIPO AUTO CIA. LTDA.', 'DIPO AUTO CIA. LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (726, 'P', 1, '0791817870001', 50, 19, 177, 'SIVISAPA ROMERO SIVI&ROME CIA LTDA', 'ESTACION DE SERVICIO \"EL TREBOL\"', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (727, 'P', 2, '0401080767', 50, 19, 177, 'MARTINEZ BRACHO LENIN OMAR', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (728, 'P', 2, '0401016704', 50, 19, 177, 'MARTINEZ MOLINA WILLAM ORLANDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (729, 'P', 1, '0993256560001', 50, 19, 177, 'GASOCORP S.A', 'ESTACION DE SERVICIO LEDERLUZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (730, 'P', 1, '1791821033001', 50, 19, 177, 'ASOCIACIÓN DE EMPRESAS DE NUTRICIÓN Y SALUD ANIMAL - AENSA', 'ASOCIACIÓN DE EMPRESAS DE NUTRICIÓN Y SALUD ANIMAL - AENSA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (731, 'P', 1, '1790040275001', 50, 19, 177, 'PA-CO COMERCIAL E INDUSTRIAL S.A.', 'PA-CO COMERCIAL E INDUSTRIAL S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (732, 'P', 1, '0992683457001', 50, 19, 177, 'FIALLOS Y GALLEGOS IMPORTADORA S.A. FIGAIMSA', 'FIALLOS Y GALLEGOS IMPORTADORA S.A. FIGAIMSA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (733, 'P', 1, '1793086772001', 50, 19, 177, 'CONCESIONARIA INTEGRAL - INTERVIAS - S.A.', 'INTERVIAS - E/P JAIME ROLDOS AGUILERA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (734, 'P', 1, '0501054753001', 50, 19, 177, 'HUILCAMAIGUA DIAZ LUZ AURORA', 'ESTACION DE SERVICIO EL MIRADOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (735, 'P', 1, '0703492405001', 50, 19, 177, 'VERA CALDERON CARLOS IVAN', 'HOTEL VEUXOR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (736, 'P', 1, '0922875703001', 50, 19, 177, 'GONZALES PAREDES LUIS ALFONSO', 'GASOLINERA EL OSO AGENTE DE RETENCION NAC-DNCRASC20-00000001 ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (737, 'P', 1, '2390039045001', 50, 19, 177, 'ESTACION DE SERVICIO LA AMERICANA MATNOG CIA.LTDA.', 'ESTACION DE SERVICIO LA AMERICANA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (738, 'P', 1, '0500466883001', 50, 19, 177, 'PALMA HERRERA CESAR AUGUSTO', 'ESTACION DE SERVICIO PANAMERICANA CENTRO NORTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (739, 'P', 1, '0301579199001', 50, 19, 177, 'ZUNA ARGUDO EDWIN EDUARDO', 'ZUNA ARGUDO EDWIN EDUARDO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (740, 'P', 1, '1707847792001', 50, 19, 177, 'EGAS ESCOBAR PATRICIO MANUEL', '1707847792001', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (741, 'P', 2, '0705368934', 50, 19, 177, 'FLORES ESPINOZA DIEGO VICENTE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (742, 'P', 1, '1600234072001', 50, 19, 177, 'PROANO ACOSTA JORGE LUIS', 'PRIMAX PATRICIA PILAR', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (743, 'P', 1, '0791830389001', 50, 19, 177, 'CORDOES CIA. LTDA.', 'ESTACION DE SERVICIO \"RIO BONITO\"', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (744, 'P', 1, '1792757827001', 50, 19, 177, 'MONOBOLON CIA.LTDA.', 'MONOBOLON', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (745, 'P', 1, '2300137912001', 50, 19, 177, 'LOOR MUÑOZ THALIA STELA', 'VULCANIZADORA Y ENGRASADORA MATIAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (746, 'P', 1, '0603857657001', 50, 19, 177, 'AUTO ACCESORIOS JUNIOR', '', '', '0997243944 NARANJAL', 'importproa-facturacion@outlook.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (747, 'P', 2, '1002095519', 50, 19, 177, 'REVELO PUETATE MARCO JAVIER', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (748, 'P', 1, '1805009477001', 50, 19, 177, 'CHICAIZA MOSQUERA JORGE LUIS', 'LA SANTISIMA CRUZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (749, 'P', 2, '1804190385', 50, 19, 177, 'CHAVEZ MARTINEZ ANDRES PATRICIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (750, 'P', 2, '1725505406', 50, 19, 177, 'CACHIPUENDO ALBAMOCHO LUIS FERNANDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (751, 'P', 2, '1705654364', 50, 19, 177, 'LEON SERRANO GONZALO CAYETANO CAMILO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (752, 'P', 1, '0909740987001', 50, 19, 177, 'PEÑA QUINTO FRANCISCO', 'EL BIGOTE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (753, 'P', 1, '0930708177001', 50, 19, 177, 'LLANGARI CACOANGO BENJAMIN WASHINGTON', 'ESTACION DE SERVICIO DON OLE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (754, 'P', 1, '0601773864001', 50, 19, 177, 'MEDINA SANCHEZ WASHINGTON CRISTOBAL', 'AUTOLUBRICANTES DE LA SIERRA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (755, 'P', 1, '0591733095001', 50, 19, 177, 'SERVICIOS Y SOLUCIONES DE GESTION EMPRESARIAL CSGE CIA. LTDA.', 'SAGA LATAM', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (756, 'P', 2, '1700700600', 50, 19, 177, 'ROSERO ARIZZO GUILLERMO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (757, 'P', 1, '1791817680001', 50, 19, 177, 'SOCIEDAD DE  LUCHA CONTRA EL CANCER', 'SOLCA', '', '276 1828 276 0053', 'solcaqui@ec.net.ec', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (758, 'P', 1, '1722431903001', 50, 19, 177, 'CHAMORRO LARA ROBERT ALEJANDRO', '', '', '0998029921', 'robert.chamorro1996@gmail.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (759, 'P', 1, '1708759590001', 50, 19, 177, 'YUGSI GUANIN SEGUNDO OSWALDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (760, 'P', 1, '1707809909001', 50, 19, 177, 'GALARRAGA SANTAMARIA HECTOR EDUARDO', 'MULTIESTACION DE SERVICIOS LA JOYA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (761, 'P', 1, '1753983103001', 50, 19, 177, 'ENRIQUEZ PAREDES JONATHAN ERICK', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (762, 'P', 2, '1706867056', 50, 19, 177, 'SANCHEZ CALERO NELSON EDUARDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (763, 'P', 1, '0501092704001', 50, 19, 177, 'TORO VASCO GREGORIO PATRICIO', 'ESTACIÓN DE SERVICIO LA ARGENTINA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (764, 'P', 1, '1206374322001', 50, 19, 177, 'CASTILLO LOPEZ KARLA MAYTE', 'ESTACION DE SERVICIO VENTANAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (765, 'P', 1, '1704004660001', 50, 19, 177, 'GUAÑA CEVALLOS LIDA GRIMANESA', 'ESTACIÓN DE SERVICIO ASCÃZUBI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (766, 'P', 1, '1700161183001', 50, 19, 177, 'JEREZ PAREDES LUIS ANIBAL', 'JR DISTRIBUCIONES', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (767, 'P', 2, '1500956329', 50, 19, 177, 'MARTINEZ HERMIDA JOHANNA LISSBETH', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (768, 'P', 1, '1723270383001', 50, 19, 177, 'RISUEÑO ZAMBRANO LEONARDO FABIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (769, 'P', 1, '0791819091001', 50, 19, 177, 'PROSERSUR AGROMERCANTIL SA', 'PROSERSUR AGROMERCANTIL SA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (770, 'P', 2, '1701456673', 50, 19, 177, 'ALBUJA GUA?A MARIA INES', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (771, 'P', 2, '0605689892', 50, 19, 177, 'AILLON NUGSHI JOSE VIRGILIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (772, 'P', 1, '1719398040001', 50, 19, 177, 'COLLAGUAZO RODRIGUEZ ALEX JUAN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (773, 'P', 1, '1710784347001', 50, 19, 177, 'ORBEA DONOSO LIGIA XIMENA', 'ORBEA DONOSO LIGIA XIMENA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (774, 'P', 1, '0601420409001', 50, 19, 177, 'GUAINA QUISHPI MIGUEL', 'ALMACEN LA HERRAMIENTA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (775, 'P', 1, '1800312736001', 50, 19, 177, 'VALVERDE GUEVARA LUCILA ELOINA', 'GASOLINERA AVELINO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (776, 'P', 1, '0993356689001', 50, 19, 177, 'DTA - MUZAS S A S ', 'DTA - MUZAS S A S ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (777, 'P', 1, '1718117540001', 50, 19, 177, 'TENESACA CARDENAS XAVIER EDUARDO', '', '', '2837446 0984141598', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (778, 'P', 1, '1792677610001', 50, 19, 177, 'DISTRIBUIDORA DE PRODUCTOS AVICOLAS LOPEZ MARTINEZ DIPROAVILM CIA.LTDA.', '', '', '0996213701', 'jlopez@diporavilm.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (779, 'P', 2, '0400935516', 50, 19, 177, 'HERNANDEZ CUPACAN MILTON JAVIER', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (780, 'P', 1, '1713337226001', 50, 19, 177, 'EGAS GONZALES ANGELICA MARIA', 'PAPELERIA EL CONOCIMIENTO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (781, 'P', 2, '0941695082', 50, 19, 177, 'LEMACHE ZHUMI HENRY DAVID', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (782, 'P', 2, '1718304965', 50, 19, 177, 'RISUENO ZAPATA EVELYN GABRIELA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (783, 'P', 1, '0400089132001', 50, 19, 177, 'GAVILANES PADILLA LUZ MARIA', 'LUBRITYRE MATTFEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (784, 'P', 1, '0601598196001', 50, 19, 177, 'VERA VALLADARES KLEVER HERNAN', '.COMERCIAL VERA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (785, 'P', 1, '0601789407001', 50, 19, 177, 'ZABALA ARELLANO EDGAR GERMAN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (786, 'P', 2, '0400344586', 50, 19, 177, 'ROMO JIMENEZ BERTHA ALICIA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (787, 'P', 2, '0914543806', 50, 19, 177, 'NARANJO ESCOBAR MARIANA DE JESUS', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (788, 'P', 1, '1002286357001', 50, 19, 177, 'LUNA ACOSTA MIRNA MARIANNELA', 'ESTACION DE SERVICIO LA FLORIDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (789, 'P', 2, '0200678225', 50, 19, 177, 'VASCONEZ CAICEDO MARTHA SUSANA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (790, 'P', 1, '1718371097001', 50, 19, 177, 'BERTHA LUCIA TINAJERO CISNEROS', 'EDS SENSACION', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (791, 'P', 2, '0704036482', 50, 19, 177, 'LOAYZA MACAS PATRICK EFREN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (792, 'P', 1, '0991280472001', 50, 19, 177, 'COOPERATIVA TRANSPORTES BRISAS DE SANTAY PANORAMA', 'ESTACION DE SERVICIO PANORAMA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (793, 'P', 1, '1001705399001', 50, 19, 177, 'SANTIAGO FEDERICO GUERRON AYALA', 'SANTIAGO FEDERICO GUERRON AYALA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (794, 'P', 1, '1791436156001', 50, 19, 177, 'EPSTEIN CIA. LTDA.', 'EPSTEIN DIGIDOC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (795, 'P', 1, '0992663235001', 50, 19, 177, 'REPRESENTACIONES ORDONEZ Y NEGRETE S.A. REPORNE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (796, 'P', 1, '1720993060001', 50, 19, 177, 'PIZARA VACA ESTELA ROSARIO', 'INNOVALAB - SAN GABRIEL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (797, 'P', 1, '1703606002001', 50, 19, 177, 'ACOSTA RODRIGUEZ MARIO ANIBAL', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (798, 'P', 1, '1792072018001', 50, 19, 177, 'DELI INTERNACIONAL S.A.', 'TROPI BURGER                           ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (799, 'P', 1, '1713849220001', 50, 19, 177, 'QUINCHIGUANGO PEREZ SEGUNDO MESIAS', 'DISMACERO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (800, 'P', 1, '0502060957001', 50, 19, 177, 'VELOZ MALAVE HUGO VINICIO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (801, 'P', 1, '1792019761001', 50, 19, 177, 'AUTOELEVACION CIA LTDA', 'AUTOELEVACION CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (802, 'P', 1, '1792541743001', 50, 19, 177, 'AUTOPARTES Y AUTOGRUAS FCN S.A.', 'AUTOPARTES Y AUTOGRUAS FCN S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (803, 'P', 1, '1792573009001', 50, 19, 177, 'TACONAZO RESTAURANTES Y BEBIDAS VILLAGRANMOLINEROS S.A', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (804, 'P', 1, '0190381633001', 50, 19, 177, 'NOVACREDIT S.A.', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (805, 'P', 1, '1725601494001', 50, 19, 177, 'DE LA CRUZ CEDE?O GENESIS JOANA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (806, 'P', 1, '1760004650001', 50, 19, 177, 'INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL IESS', '', '', '3730800', 'patjuddpg@iess.gob.ecmaria.burgos@iess.gob.ec', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (807, 'P', 1, '1719884502001', 50, 19, 177, 'PADILLA VELEPUCHA ROSA MARIA', '', '', '0984141598', 'zonacar2022@hotmail.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (808, 'P', 1, '1723014179001', 50, 19, 177, 'MUÑOZ GARCIA BRYAN XAVIER', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (809, 'P', 2, '1724072135', 50, 19, 177, 'SABANDO MOREIRA LEONELA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (810, 'P', 1, '1091796549001', 50, 19, 177, 'FRITADASAMAZONAS S.A.S.', 'FRITADAS AMAZONAS', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (811, 'P', 1, '1792413303001', 50, 19, 177, 'AEROQUITOSERV S.A', 'ESTACION DE SERVICIO AEROPUERTO MARISCAL SUCRE', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (812, 'P', 2, '1713803870', 50, 19, 177, 'PABON SIMBAÑA MANUEL MESIAS', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (813, 'P', 1, '0501577829001', 50, 19, 177, 'CHANGOLUISA DEFAZ ANA MARIA', 'CHANGOLUISA DEFAZ ANA MARIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (814, 'P', 1, '1792221676001', 50, 19, 177, 'COMBUSTIBLES Y AFINES BARBA Y VIZCARRA SA', 'E/S PINSAQUI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (815, 'P', 1, '1310017791001', 50, 19, 177, 'ZAMBRANO VELIZ NILSON RAMON', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (816, 'P', 1, '0500920061001', 50, 19, 177, 'PORRAS GARZON FRANCISCO HUMBERTO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (817, 'P', 2, '0450209267', 50, 19, 177, 'CORAL ESCOBAR KEVIN ALBEIRO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (818, 'P', 2, '0957506876', 50, 19, 177, 'NOHELY DENNISSE ARELLANO SOLEDISPA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (819, 'P', 2, '0923997027', 50, 19, 177, 'QUIU00D1ONEZ GUAMAN GUILLERMO ANDRES', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (820, 'P', 1, '1716416910001', 50, 19, 177, 'NOROÑA CALVACHI HENRY PAUL', 'NOROÑA CALVACHI HENRY PAUL', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (821, 'P', 1, '1793170099001', 50, 19, 177, 'REMOLQUESNORONA CIA LTDA', 'REMOLQUES NOROÑA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (822, 'P', 1, '1002181202001', 50, 19, 177, 'ALDAS ILES AIDA LUCINDA', 'EL PERNO.COM FERRETERIA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (823, 'P', 1, '1792680123001', 50, 19, 177, 'SOCIEDAD ECUATORIANA DE PETREOS S.C.C ECUAPET', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (824, 'P', 1, '2300541493001', 50, 19, 177, 'AGUILAR NAJERA ANTHONY  EDUARDO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (825, 'P', 2, '1712481090', 50, 19, 177, 'CRESPO ARIAS DIEGO VINICIO', '', '', '0993450844 0', 'diegocrespoarias@psdiegocrespo.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (826, 'P', 1, '1792107423001', 50, 19, 177, 'SWEADEN COMPANIA DE SEGUROS S.A.', 'SWEADEN COMPANIA DE SEGUROS S.A.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (827, 'P', 1, '2390626854001', 50, 19, 177, 'PALZAM CIA.LTDA.', 'PALZAM CIA.LTDA.', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (828, 'P', 2, '1722200282', 50, 19, 177, 'TARAPUES GUERRERO KATTY FERNANDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (829, 'P', 2, '1720016201', 50, 19, 177, 'YUGSI ZAMBRANO BYRON FABIAN', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (830, 'P', 1, '1792118085001', 50, 19, 177, 'RUEDA GARANTIZADA RUEDAGAR CIA LTDA', 'RUEDA GARANTIZADA RUEDAGAR CIA LTDA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (831, 'P', 2, '1714537501', 50, 19, 177, 'CUSHICONDOR CASAMEN LIGIA ELENA', '', '', '0992614324', 'alannys-cc2012@hotmail.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (832, 'P', 2, '1714226840', 50, 19, 177, 'BRAVO BRAVO YANET GUADALUPE', 'MINIMARKET M&M', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (833, 'P', 2, '1707250161', 50, 19, 177, 'COM Y LUBRI', '', '', '2383-306 PINTAG', 'importproa-facturacion@outlook.com', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (834, 'P', 1, '1717387698001', 50, 19, 177, 'QUILUMBA ZAMORA LUIS EDUARDO', 'VULCANIZADORA CHIGUILPE', '', '0', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (835, 'P', 1, '1792969107001', 50, 19, 177, 'SOCIEDAD CIVIL Y MERCANTIL AUTOSERVICIO POMASQUI', 'AUTOSERVICIO POMASQUI', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (836, 'P', 1, '1717621054001', 50, 19, 177, 'BUNGACHO SANDOVAL XIMENA MARIELA', 'CT.HYDRAULIC', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (837, 'P', 2, '0400081691', 50, 19, 177, 'BRACHO GUZMAN ROSA AIDA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (838, 'P', 1, '1702832658001', 50, 19, 177, 'PAVON VINUEZA NESTOR EUCLIDES', 'IMPORFRENO', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (839, 'P', 1, '1001965019001', 50, 19, 177, 'FUELTALA POZO NELBA ESPERANZA', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (840, 'P', 1, '0591712969001', 50, 19, 177, 'TRUCKDIESEL IMPORTADORES S.A.', '', '', '032801998 0998701856', 'conta_sto@truckdiesel.com.ec;edison@truckdiesel.com.ec', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (841, 'P', 1, '1711192656001', 50, 19, 177, 'HUERTAS CADENA ADRIANA DE LAS MERCEDES', 'ADRIANITA MISHELL LUBRICADORA', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (842, 'P', 1, '1707539340001', 50, 19, 177, 'GUAMAN LOPEZ GLADYS MARLENE', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (843, 'P', 2, '1723437354', 50, 19, 177, 'SANCHEZ FIERRO MARCO VINICIO                      ', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (844, 'P', 2, '1711364826', 50, 19, 177, 'PAEZ CARRERA LUIS ANTONIO', 'AUTOMOTOREZ PAEZ', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (845, 'P', 2, '1708065097', 50, 19, 177, 'PONCE JARRIN FREDY ALBERTO', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (846, 'P', 2, '1725094591', 50, 19, 177, 'CACUANGO CATUCUAMBA LUIS DANIEL                   ', '', '', '', '', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (847, 'P', 1, '0992745762001', 50, 19, 177, 'MOTORES Y TRACTORES MOTRAC S.A.', '', '', '022427410', 'pruilova@motrac.ec', '', '', 0.00, 0, '', '2024-08-10 01:44:56', '2024-08-10 01:44:56', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (848, 'C', 2, '1712030368', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '099598412', 'san@bo.com', 'tuweb.com', 'Velazco', 1000.00, 100, '1.1.1.01.001', '2024-08-10 03:32:02', '2024-08-23 21:02:44', '2024-08-10 04:00:39');
-INSERT INTO `beneficiary_copy1` VALUES (849, 'C', 1, '1712030368001', 50, 5, 35, 'SANTIAGO BORJA', '6UG8', 'Especjo', '', '', '', 'VIll', 0.00, 0, '', '2024-08-10 03:42:33', '2024-08-10 04:00:45', '2024-08-10 04:00:45');
-INSERT INTO `beneficiary_copy1` VALUES (850, 'A', 2, '1712030368', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:26:31', '2024-08-23 21:02:44', NULL);
-INSERT INTO `beneficiary_copy1` VALUES (851, 'P', 1, '1712030368S', 50, 5, 35, 'SANTIAGO BORJA ROMERO', 'LOCO', 'Espejo y Mexico', '', '', '', 'Velazco', 0.00, 0, '', '2024-08-12 13:31:16', '2024-09-02 22:01:19', '2024-09-02 22:01:19');
-INSERT INTO `beneficiary_copy1` VALUES (852, 'E', 1, '1792677610001', 50, 19, 177, 'DIPROAVILM', 'DIPROAVILM', '', '', '', '', '', 0.00, 0, '', '2024-08-19 15:29:13', '2024-08-24 00:33:11', NULL);
 
 -- ----------------------------
 -- Table structure for bot_audit
@@ -3233,7 +2405,7 @@ CREATE TABLE `menu`  (
   INDEX `submenu`(`submenu` ASC) USING BTREE,
   INDEX `status`(`status` ASC) USING BTREE,
   INDEX `deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menu
@@ -3267,6 +2439,8 @@ INSERT INTO `menu` VALUES (35, '01.02', 'Compras', 'fas fa-chart-bar', 'dashcomp
 INSERT INTO `menu` VALUES (36, '03.05', 'Tipo de Comprobantes', 'fas fa-ticket-alt', 'movtipo', 0, 1, '2024-08-19 09:33:33', '2024-08-23 01:07:40', NULL);
 INSERT INTO `menu` VALUES (37, '02.05', 'Configuracion General', 'fa fa-cog', 'config', 0, 1, '2024-08-19 11:23:18', '2024-08-19 11:23:18', NULL);
 INSERT INTO `menu` VALUES (38, '04.07', 'Análisis de Rotacion', 'far fa-file-archive', 'lst_rotacion', 0, 1, '2024-09-04 20:05:02', '2024-09-04 20:05:14', NULL);
+INSERT INTO `menu` VALUES (39, '03.06', 'Categoria', 'fas fa-project-diagram', 'categoria', 0, 1, '2024-09-09 16:10:54', '2024-09-09 16:12:44', NULL);
+INSERT INTO `menu` VALUES (40, '03.07', 'Linea de Productos', 'fas fa-external-link-square-alt', 'linea', 0, 1, '2024-09-09 16:11:26', '2024-09-09 16:21:37', NULL);
 
 -- ----------------------------
 -- Table structure for movementtype
@@ -3290,7 +2464,7 @@ CREATE TABLE `movementtype`  (
 -- ----------------------------
 -- Records of movementtype
 -- ----------------------------
-INSERT INTO `movementtype` VALUES (1, 'FV', 'Comp. Egreso', 30, 'C', 'E', 'P', '1', '2024-08-22 23:33:21', '2024-09-02 22:24:03', NULL);
+INSERT INTO `movementtype` VALUES (1, 'FV', 'Comp. Salida', 30, 'C', 'E', 'P', '1', '2024-08-22 23:33:21', '2024-09-09 16:10:07', NULL);
 INSERT INTO `movementtype` VALUES (2, 'FC', 'Comp. Ingreso', 0, 'P', 'I', 'C', '0', '2024-08-22 23:33:21', '2024-09-02 22:24:20', NULL);
 INSERT INTO `movementtype` VALUES (4, 'AI', 'Ajuste de Inventario ', 4, 'E', 'A', 'C', '1', '2024-08-22 23:33:21', '2024-08-22 23:33:21', NULL);
 INSERT INTO `movementtype` VALUES (5, 'DE', 'Descarga de Inventario', 0, 'E', 'E', 'C', '1', '2024-08-22 23:33:21', '2024-08-22 23:33:21', NULL);
@@ -3360,42 +2534,42 @@ CREATE TABLE `product`  (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, 173.0000, 7.50, 1.0000, 45.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (2, 1, 2, 2, 'BC001', '2201909185029', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 2.0000, 39.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (3, 1, 2, 2, 'BC002', '2201909186637', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 2.0000, 69.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (4, 1, 2, 2, 'BC003', '2201909186712', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 2.0000, 79.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (5, 1, 3, 3, 'P000000048', '1311719106792', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 3.0000, 67.0000, 4.50, 1.0000, 7.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (6, 1, 2, 2, 'BP001', '2201909183148', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 2.0000, 31.0000, 3.00, 1.0000, 78.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (7, 1, 2, 2, 'BP002', '2201909183254', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 2.0000, 63.0000, 3.00, 1.0000, 47.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (8, 1, 2, 2, 'BP003', '2201909183315', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 2.0000, 82.0000, 3.00, 1.0000, 108.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (9, 1, 2, 2, 'BP004', '2201909183377', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 73.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (10, 1, 2, 2, 'BP005', '2201909184961', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 2.0000, 56.0000, 3.00, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (11, 1, 3, 3, 'P000000038', '9271759134488', 'BAL. PREINICIAL PELLET BR. 40 KG', 'BAL. PREINICIAL PELLET BR. 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 22.0000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (12, 1, 2, 2, 'BAI', '2201909186774', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 2.0000, 72.0000, 3.00, 1.0000, 6.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (13, 1, 2, 2, 'BCC', '2201909191891', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 2.0000, 33.0000, 3.00, 1.0000, 28.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (14, 1, 2, 2, 'BCE', '2201909191983', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 2.0000, 67.0000, 3.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (15, 1, 2, 2, 'BAF', '2201909186828', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 2.0000, 49.0000, 3.00, 1.0000, 38.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (16, 1, 3, 3, 'P000000031', '9132052567598', 'BANDEJA CP-100 COMEDERO (PACA)', 'BANDEJA CP-100 COMEDERO (PACA)', 2.0000, 80.0000, 3.00, 1.0000, 1.1000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 11.0675, 163.0000, 12.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (18, 1, 2, 3, 'P000000041', '1111841491823', 'CALIERMUTIN 100 PREMIX X 25 KG', 'CALIERMUTIN 100 PREMIX X 25 KG', 1.0000, 67.0000, 1.50, 1.0000, 4.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (19, 10, 1, 2, 'P000000005', '1071747301964', 'CHASQUI', 'CHASQUI', 1.0000, 71.0000, 1.50, 1.0000, 89.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (20, 1, 2, 3, 'P000000043', '9271818561866', 'DESINFECTANTE TH4 5 LT', 'DESINFECTANTE TH4 5 LT', 8.0000, 44.0000, 12.00, 1.0000, 11.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (21, 1, 2, 3, 'P000000044', '1111900267789', 'DESINFECTANTE TH4 X 1 LITRO', 'DESINFECTANTE TH4 X 1 LITRO', 1.0000, 66.0000, 1.50, 1.0000, 8.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (22, 1, 2, 3, 'P000000045', '1111901040657', 'DESINFECTANTE TH4 X 25 LITROS', 'DESINFECTANTE TH4 X 25 LITROS', 2.0000, 125.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (23, 1, 3, 3, '00022', '1300945551049', 'DESPADAC X 25 L', 'DESPADAC X 25 L', 1.0000, 11.0000, 1.50, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (24, 1, 2, 3, 'P000000046', '1111901366429', 'DETERSTORM X 25 KG', 'DETERSTORM X 25 KG', 1.0000, 55.0000, 1.50, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (25, 1, 3, 3, '00090', '1271302276465', 'HEPATOLAY 5 L', 'HEPATOLAY 5 L', 4.0000, 31.0000, 6.00, 1.0000, 30.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (26, 1, 3, 3, 'P000000034', '9132119151296', 'HIPRAGUMBORO CH/80 * 5000 DS', 'HIPRAGUMBORO CH/80 * 5000 DS', 1.0000, 55.0000, 1.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (27, 1, 3, 3, 'P000000035', '9132119151425', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 9.0000, 90.0000, 13.50, 1.0000, 29.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (28, 1, 3, 3, '00031', '1300950349907', 'INMUNAIR-17.5 X 500 CC', 'INMUNAIR-17.5 X 500 CC', 4.0000, 42.0000, 6.00, 1.0000, 3.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (29, 11, 1, 1, 'P000000003', '1061540376221', 'MAIZ AMARILLO', 'MAIZ AMARILLO', 1.0000, 75.0000, 1.50, 1.0000, 1.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (30, 1, 4, 4, 'P000000024', '8311002014981', 'POLLO BB', 'POLLO BB', 0.3832, 576.0000, 1.28, 1.0000, 15.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (31, 1, 2, 4, 'P000000025', '9080043093741', 'POLLO CRIOLLO', 'POLLO CRIOLLO', 0.2036, 54.0000, 0.50, 1.0000, 22.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:31', NULL);
-INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.7358, 31.0000, 1.32, 1.0000, 17.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:32', NULL);
-INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMOTOR L X GL', 'PROMOTOR L X GL', 5.0000, 114.0000, 7.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:32', NULL);
-INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 59.0000, 9.00, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:32', NULL);
-INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 28.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:32', NULL);
-INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 42.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-08-30 12:27:32', NULL);
+INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, 173.0000, 7.50, 1.0000, 45.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (2, 1, 2, 2, 'BC001', '2201909185029', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 2.0000, 39.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (3, 1, 2, 2, 'BC002', '2201909186637', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 2.0000, 69.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (4, 1, 2, 2, 'BC003', '2201909186712', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 2.0000, 79.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (5, 1, 3, 3, 'P000000048', '1311719106792', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 3.0000, 67.0000, 4.50, 1.0000, 7.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (6, 1, 2, 2, 'BP001', '2201909183148', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 2.0000, 31.0000, 3.00, 1.0000, 78.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (7, 1, 2, 2, 'BP002', '2201909183254', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 2.0000, 63.0000, 3.00, 1.0000, 47.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (8, 1, 2, 2, 'BP003', '2201909183315', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 2.0000, 82.0000, 3.00, 1.0000, 108.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (9, 1, 2, 2, 'BP004', '2201909183377', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 73.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (10, 1, 2, 2, 'BP005', '2201909184961', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 2.0000, 56.0000, 3.00, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (11, 1, 3, 3, 'P000000038', '9271759134488', 'BAL. PREINICIAL PELLET BR. 40 KG', 'BAL. PREINICIAL PELLET BR. 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 22.0000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (12, 1, 2, 2, 'BAI', '2201909186774', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 2.0000, 72.0000, 3.00, 1.0000, 6.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (13, 1, 2, 2, 'BCC', '2201909191891', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 2.0000, 33.0000, 3.00, 1.0000, 28.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (14, 1, 2, 2, 'BCE', '2201909191983', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 2.0000, 67.0000, 3.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (15, 1, 2, 2, 'BAF', '2201909186828', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 2.0000, 49.0000, 3.00, 1.0000, 38.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (16, 1, 3, 3, 'P000000031', '9132052567598', 'BANDEJA CP-100 COMEDERO (PACA)', 'BANDEJA CP-100 COMEDERO (PACA)', 2.0000, 80.0000, 3.00, 1.0000, 1.1000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 11.0675, 163.0000, 12.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (18, 1, 2, 3, 'P000000041', '1111841491823', 'CALIERMUTIN 100 PREMIX X 25 KG', 'CALIERMUTIN 100 PREMIX X 25 KG', 1.0000, 67.0000, 1.50, 1.0000, 4.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (19, 10, 1, 2, 'P000000005', '1071747301964', 'CHASQUI', 'CHASQUI', 1.0000, 71.0000, 1.50, 1.0000, 89.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (20, 1, 2, 3, 'P000000043', '9271818561866', 'DESINFECTANTE TH4 5 LT', 'DESINFECTANTE TH4 5 LT', 8.0000, 44.0000, 12.00, 1.0000, 11.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (21, 1, 2, 3, 'P000000044', '1111900267789', 'DESINFECTANTE TH4 X 1 LITRO', 'DESINFECTANTE TH4 X 1 LITRO', 1.0000, 66.0000, 1.50, 1.0000, 8.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (22, 1, 2, 3, 'P000000045', '1111901040657', 'DESINFECTANTE TH4 X 25 LITROS', 'DESINFECTANTE TH4 X 25 LITROS', 2.0000, 125.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (23, 1, 3, 3, '00022', '1300945551049', 'DESPADAC X 25 L', 'DESPADAC X 25 L', 1.0000, 11.0000, 1.50, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (24, 1, 2, 3, 'P000000046', '1111901366429', 'DETERSTORM X 25 KG', 'DETERSTORM X 25 KG', 1.0000, 55.0000, 1.50, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (25, 1, 3, 3, '00090', '1271302276465', 'HEPATOLAY 5 L', 'HEPATOLAY 5 L', 4.0000, 31.0000, 6.00, 1.0000, 30.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (26, 1, 3, 3, 'P000000034', '9132119151296', 'HIPRAGUMBORO CH/80 * 5000 DS', 'HIPRAGUMBORO CH/80 * 5000 DS', 1.0000, 55.0000, 1.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (27, 1, 3, 3, 'P000000035', '9132119151425', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 9.0000, 90.0000, 13.50, 1.0000, 29.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (28, 1, 3, 3, '00031', '1300950349907', 'INMUNAIR-17.5 X 500 CC', 'INMUNAIR-17.5 X 500 CC', 4.0000, 42.0000, 6.00, 1.0000, 3.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (29, 11, 1, 1, 'P000000003', '1061540376221', 'MAIZ AMARILLO', 'MAIZ AMARILLO', 1.0000, 75.0000, 1.50, 1.0000, 1.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (30, 1, 4, 4, 'P000000024', '8311002014981', 'POLLO BB', 'POLLO BB', 0.3832, 276.0000, 1.28, 1.0000, 15.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (31, 1, 2, 4, 'P000000025', '9080043093741', 'POLLO CRIOLLO', 'POLLO CRIOLLO', 0.2036, 54.0000, 0.50, 1.0000, 22.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.7358, 31.0000, 1.32, 1.0000, 17.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMOTOR L X GL', 'PROMOTOR L X GL', 5.0000, 114.0000, 7.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 59.0000, 9.00, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 3.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 42.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
 INSERT INTO `product` VALUES (41, 1, 2, 4, 'A1', 'A2', 'AAAAAA', 'Cosa aaaa', 0.0000, 0.0000, 2.00, 0.0000, 0.0000, '', 1, '', '', '', '2024-08-14 01:38:39', '2024-08-14 02:10:43', '2024-08-14 02:10:43');
 INSERT INTO `product` VALUES (42, 1, 1, 1, '21343243das', '87954612321321', 'BBBBB', 'BBBB', 0.0000, 0.0000, 15.00, 0.0000, 0.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-08-16 23:19:06', '2024-08-16 23:19:19', '2024-08-16 23:19:19');
 
@@ -3406,17 +2580,20 @@ DROP TABLE IF EXISTS `productcategory`;
 CREATE TABLE `productcategory`  (
   `idproductcategory` int NOT NULL AUTO_INCREMENT,
   `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idproductcategory`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of productcategory
 -- ----------------------------
-INSERT INTO `productcategory` VALUES (1, 'CEREALES');
-INSERT INTO `productcategory` VALUES (2, 'MATERIAL PETREO');
-INSERT INTO `productcategory` VALUES (3, 'SUMINISTROS Y MATERIALES');
-INSERT INTO `productcategory` VALUES (4, 'ANIMALES EN PIE');
-INSERT INTO `productcategory` VALUES (5, 'Tracto Camión Shacman');
+INSERT INTO `productcategory` VALUES (1, 'CEREALES', '2024-09-09 16:24:00', NULL);
+INSERT INTO `productcategory` VALUES (2, 'MATERIAL PETREO', '2024-09-09 16:24:00', NULL);
+INSERT INTO `productcategory` VALUES (3, 'SUMINISTROS Y MATERIALES', '2024-09-09 16:24:00', NULL);
+INSERT INTO `productcategory` VALUES (4, 'ANIMALES EN PIE', '2024-09-09 16:24:00', NULL);
+INSERT INTO `productcategory` VALUES (5, 'TRACTO CAMION SHACMAN', '2024-09-09 16:24:00', NULL);
+INSERT INTO `productcategory` VALUES (6, 'CUERVOS', '2024-09-09 16:55:21', '2024-09-09 17:01:36');
 
 -- ----------------------------
 -- Table structure for productline
@@ -3425,17 +2602,20 @@ DROP TABLE IF EXISTS `productline`;
 CREATE TABLE `productline`  (
   `idproductline` int NOT NULL AUTO_INCREMENT,
   `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`idproductline`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of productline
 -- ----------------------------
-INSERT INTO `productline` VALUES (1, 'PRODUCTOS ESTADO NATURAL');
-INSERT INTO `productline` VALUES (2, 'GENERAL');
-INSERT INTO `productline` VALUES (3, 'SUMINISTROS Y MATERIALES');
-INSERT INTO `productline` VALUES (4, 'ANIMALES');
-INSERT INTO `productline` VALUES (5, 'VEHICULOS PESADOS');
+INSERT INTO `productline` VALUES (1, 'PRODUCTOS ESTADO NATURAL', '2024-09-09 16:24:37', NULL);
+INSERT INTO `productline` VALUES (2, 'GENERAL', '2024-09-09 16:24:37', NULL);
+INSERT INTO `productline` VALUES (3, 'SUMINISTROS Y MATERIALES', '2024-09-09 16:24:37', NULL);
+INSERT INTO `productline` VALUES (4, 'ANIMALES', '2024-09-09 16:24:37', NULL);
+INSERT INTO `productline` VALUES (5, 'VEHICULOS PESADOS', '2024-09-09 16:24:37', NULL);
+INSERT INTO `productline` VALUES (6, 'NUEVA LINEAS', '2024-09-09 17:11:33', '2024-09-09 17:12:02');
 
 -- ----------------------------
 -- Table structure for productmovement
@@ -3457,7 +2637,7 @@ CREATE TABLE `productmovement`  (
   INDEX `IDXTRAS`(`idtransaction` ASC) USING BTREE,
   CONSTRAINT `IDXPRO` FOREIGN KEY (`idproduct`) REFERENCES `product` (`idproduct`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXTRAS` FOREIGN KEY (`idtransaction`) REFERENCES `transaction` (`idtransaction`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1794 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1801 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of productmovement
@@ -5253,6 +4433,9 @@ INSERT INTO `productmovement` VALUES (1790, 93, 22, 75.0000, 'I', 2.0000, 150.00
 INSERT INTO `productmovement` VALUES (1791, 93, 27, 20.0000, 'I', 9.0000, 180.0000, '2024-09-03 10:48:22', '2024-09-03 10:48:22', NULL);
 INSERT INTO `productmovement` VALUES (1792, 93, 30, 500.0000, 'I', 0.3832, 191.6000, '2024-09-03 10:48:22', '2024-09-03 10:48:22', NULL);
 INSERT INTO `productmovement` VALUES (1793, 93, 1, 100.0000, 'I', 5.0000, 500.0000, '2024-09-03 10:48:22', '2024-09-03 10:48:22', NULL);
+INSERT INTO `productmovement` VALUES (1795, 95, 30, 300.0000, 'I', 0.3832, 114.9600, '2024-09-09 19:44:24', '2024-09-09 19:44:24', NULL);
+INSERT INTO `productmovement` VALUES (1799, 94, 35, 25.0000, 'E', 4.5000, 112.5000, '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
+INSERT INTO `productmovement` VALUES (1800, 94, 30, 300.0000, 'E', 1.2800, 384.0000, '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
 
 -- ----------------------------
 -- Table structure for province
@@ -5334,7 +4517,7 @@ CREATE TABLE `rolemenu`  (
   INDEX `IDME`(`idmenu` ASC) USING BTREE,
   CONSTRAINT `IDME` FOREIGN KEY (`idmenu`) REFERENCES `menu` (`idmenu`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXROL` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 439 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 470 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of rolemenu
@@ -5374,35 +4557,37 @@ INSERT INTO `rolemenu` VALUES (406, 3, 18);
 INSERT INTO `rolemenu` VALUES (407, 3, 19);
 INSERT INTO `rolemenu` VALUES (408, 3, 22);
 INSERT INTO `rolemenu` VALUES (409, 3, 20);
-INSERT INTO `rolemenu` VALUES (410, 2, 9);
-INSERT INTO `rolemenu` VALUES (411, 2, 15);
-INSERT INTO `rolemenu` VALUES (412, 2, 35);
-INSERT INTO `rolemenu` VALUES (413, 2, 1);
-INSERT INTO `rolemenu` VALUES (414, 2, 2);
-INSERT INTO `rolemenu` VALUES (415, 2, 4);
-INSERT INTO `rolemenu` VALUES (416, 2, 3);
-INSERT INTO `rolemenu` VALUES (417, 2, 21);
-INSERT INTO `rolemenu` VALUES (418, 2, 37);
-INSERT INTO `rolemenu` VALUES (419, 2, 6);
-INSERT INTO `rolemenu` VALUES (420, 2, 5);
-INSERT INTO `rolemenu` VALUES (421, 2, 8);
-INSERT INTO `rolemenu` VALUES (422, 2, 7);
-INSERT INTO `rolemenu` VALUES (423, 2, 28);
-INSERT INTO `rolemenu` VALUES (424, 2, 36);
-INSERT INTO `rolemenu` VALUES (425, 2, 10);
-INSERT INTO `rolemenu` VALUES (426, 2, 11);
-INSERT INTO `rolemenu` VALUES (427, 2, 12);
-INSERT INTO `rolemenu` VALUES (428, 2, 13);
-INSERT INTO `rolemenu` VALUES (429, 2, 14);
-INSERT INTO `rolemenu` VALUES (430, 2, 29);
-INSERT INTO `rolemenu` VALUES (431, 2, 30);
-INSERT INTO `rolemenu` VALUES (432, 2, 38);
-INSERT INTO `rolemenu` VALUES (433, 2, 16);
-INSERT INTO `rolemenu` VALUES (434, 2, 17);
-INSERT INTO `rolemenu` VALUES (435, 2, 18);
-INSERT INTO `rolemenu` VALUES (436, 2, 19);
-INSERT INTO `rolemenu` VALUES (437, 2, 22);
-INSERT INTO `rolemenu` VALUES (438, 2, 20);
+INSERT INTO `rolemenu` VALUES (439, 2, 9);
+INSERT INTO `rolemenu` VALUES (440, 2, 15);
+INSERT INTO `rolemenu` VALUES (441, 2, 35);
+INSERT INTO `rolemenu` VALUES (442, 2, 1);
+INSERT INTO `rolemenu` VALUES (443, 2, 2);
+INSERT INTO `rolemenu` VALUES (444, 2, 4);
+INSERT INTO `rolemenu` VALUES (445, 2, 3);
+INSERT INTO `rolemenu` VALUES (446, 2, 21);
+INSERT INTO `rolemenu` VALUES (447, 2, 37);
+INSERT INTO `rolemenu` VALUES (448, 2, 6);
+INSERT INTO `rolemenu` VALUES (449, 2, 5);
+INSERT INTO `rolemenu` VALUES (450, 2, 8);
+INSERT INTO `rolemenu` VALUES (451, 2, 7);
+INSERT INTO `rolemenu` VALUES (452, 2, 28);
+INSERT INTO `rolemenu` VALUES (453, 2, 36);
+INSERT INTO `rolemenu` VALUES (454, 2, 39);
+INSERT INTO `rolemenu` VALUES (455, 2, 40);
+INSERT INTO `rolemenu` VALUES (456, 2, 10);
+INSERT INTO `rolemenu` VALUES (457, 2, 11);
+INSERT INTO `rolemenu` VALUES (458, 2, 12);
+INSERT INTO `rolemenu` VALUES (459, 2, 13);
+INSERT INTO `rolemenu` VALUES (460, 2, 14);
+INSERT INTO `rolemenu` VALUES (461, 2, 29);
+INSERT INTO `rolemenu` VALUES (462, 2, 30);
+INSERT INTO `rolemenu` VALUES (463, 2, 38);
+INSERT INTO `rolemenu` VALUES (464, 2, 16);
+INSERT INTO `rolemenu` VALUES (465, 2, 17);
+INSERT INTO `rolemenu` VALUES (466, 2, 18);
+INSERT INTO `rolemenu` VALUES (467, 2, 19);
+INSERT INTO `rolemenu` VALUES (468, 2, 22);
+INSERT INTO `rolemenu` VALUES (469, 2, 20);
 
 -- ----------------------------
 -- Table structure for transaction
@@ -5419,6 +4604,7 @@ CREATE TABLE `transaction`  (
   `discount` double(20, 2) NOT NULL DEFAULT 0.00,
   `total` double(20, 2) NOT NULL DEFAULT 0.00,
   `reference` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
+  `status` int NULL DEFAULT 1 COMMENT '1-Activo 0-Anulado',
   PRIMARY KEY (`idtransaction`) USING BTREE,
   INDEX `IDXM`(`idmovementtype` ASC) USING BTREE,
   INDEX `IDXB`(`idbeneficiary` ASC) USING BTREE,
@@ -5426,68 +4612,70 @@ CREATE TABLE `transaction`  (
   CONSTRAINT `IDUSS` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXB` FOREIGN KEY (`idbeneficiary`) REFERENCES `beneficiary` (`idbeneficiary`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXM` FOREIGN KEY (`idmovementtype`) REFERENCES `movementtype` (`idmovementtype`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 94 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of transaction
 -- ----------------------------
-INSERT INTO `transaction` VALUES (1, 1, 591, 4, '2024-01-01 06:05:44', '001-003-000000001', 1560.00, 0.00, 1560.00, '');
-INSERT INTO `transaction` VALUES (2, 1, 262, 4, '2024-01-01 06:06:33', '001-003-000000002', 2934.00, 0.00, 2934.00, '');
-INSERT INTO `transaction` VALUES (3, 1, 615, 2, '2024-01-22 11:17:16', '002-028-000460218', 318.48, 0.00, 318.48, '');
-INSERT INTO `transaction` VALUES (4, 1, 629, 2, '2024-01-06 17:44:28', '001-006-000383132', 273.05, 0.00, 273.05, '');
-INSERT INTO `transaction` VALUES (5, 1, 13, 1, '2024-01-28 19:36:00', '001-003-000000001', 498.74, 0.00, 498.74, '');
-INSERT INTO `transaction` VALUES (6, 1, 414, 2, '2024-01-12 20:01:17', '017-035-000421647', 237.26, 0.00, 237.26, '');
-INSERT INTO `transaction` VALUES (7, 1, 4, 1, '2024-01-25 09:46:08', '001-003-000000002', 400.94, 0.00, 400.94, '');
-INSERT INTO `transaction` VALUES (8, 1, 498, 2, '2024-01-06 12:54:47', '033-017-000421768', 313.28, 0.00, 313.28, '');
-INSERT INTO `transaction` VALUES (9, 1, 47, 1, '2024-01-29 20:54:26', '001-003-000000003', 417.06, 0.00, 417.06, '');
-INSERT INTO `transaction` VALUES (10, 1, 42, 1, '2024-01-07 10:06:49', '001-003-000000004', 321.46, 0.00, 321.46, '');
-INSERT INTO `transaction` VALUES (11, 1, 358, 2, '2024-01-24 10:56:52', '016-038-000452670', 259.96, 0.00, 259.96, '');
-INSERT INTO `transaction` VALUES (12, 1, 6, 1, '2024-01-08 18:55:23', '001-003-000000005', 436.98, 0.00, 436.98, '');
-INSERT INTO `transaction` VALUES (13, 1, 35, 1, '2024-02-24 09:31:27', '001-003-000000006', 319.14, 0.00, 319.14, '');
-INSERT INTO `transaction` VALUES (14, 1, 68, 1, '2024-02-22 09:02:38', '001-003-000000007', 317.46, 0.00, 317.46, '');
-INSERT INTO `transaction` VALUES (15, 1, 105, 2, '2024-02-17 11:12:39', '040-023-000735611', 331.45, 0.00, 331.45, '');
-INSERT INTO `transaction` VALUES (16, 1, 571, 2, '2024-02-15 15:57:01', '045-020-000249783', 283.79, 0.00, 283.79, '');
-INSERT INTO `transaction` VALUES (17, 1, 153, 2, '2024-02-03 16:59:13', '006-027-000978561', 285.97, 0.00, 285.97, '');
-INSERT INTO `transaction` VALUES (18, 1, 251, 2, '2024-02-17 12:16:54', '027-043-000024513', 250.94, 0.00, 250.94, '');
-INSERT INTO `transaction` VALUES (19, 1, 66, 1, '2024-02-12 18:41:15', '001-003-000000009', 422.10, 0.00, 422.10, '');
-INSERT INTO `transaction` VALUES (20, 1, 55, 1, '2024-02-10 16:52:40', '001-003-000000010', 439.12, 0.00, 439.12, '');
-INSERT INTO `transaction` VALUES (21, 1, 56, 1, '2024-03-19 20:03:55', '001-003-000000011', 493.12, 0.00, 493.12, '');
-INSERT INTO `transaction` VALUES (22, 1, 537, 2, '2024-03-08 09:12:24', '024-048-000499933', 269.15, 0.00, 269.15, '');
-INSERT INTO `transaction` VALUES (23, 1, 55, 1, '2024-03-12 15:12:13', '001-003-000000012', 418.72, 0.00, 418.72, '');
-INSERT INTO `transaction` VALUES (24, 1, 615, 2, '2024-03-09 10:23:31', '022-024-000721960', 247.94, 0.00, 247.94, '');
-INSERT INTO `transaction` VALUES (25, 1, 52, 1, '2024-03-27 18:42:26', '001-003-000000013', 403.90, 0.00, 403.90, '');
-INSERT INTO `transaction` VALUES (26, 1, 9, 1, '2024-03-19 16:06:38', '001-003-000000014', 359.40, 0.00, 359.40, '');
-INSERT INTO `transaction` VALUES (27, 1, 1, 1, '2024-03-23 18:07:54', '001-003-000000015', 413.28, 0.00, 413.28, '');
-INSERT INTO `transaction` VALUES (28, 1, 14, 1, '2024-04-05 10:16:55', '001-003-000000016', 430.34, 0.00, 430.34, '');
-INSERT INTO `transaction` VALUES (29, 1, 53, 1, '2024-04-01 09:20:06', '001-003-000000017', 339.06, 0.00, 339.06, '');
-INSERT INTO `transaction` VALUES (30, 1, 656, 2, '2024-04-28 18:56:18', '037-042-000974956', 239.97, 0.00, 239.97, '');
-INSERT INTO `transaction` VALUES (31, 1, 48, 1, '2024-04-13 11:25:19', '001-003-000000018', 382.10, 0.00, 382.10, '');
-INSERT INTO `transaction` VALUES (32, 1, 11, 1, '2024-04-11 08:52:38', '001-003-000000019', 440.98, 0.00, 440.98, '');
-INSERT INTO `transaction` VALUES (33, 1, 539, 2, '2024-04-05 08:13:14', '029-027-000984779', 299.87, 0.00, 299.87, '');
-INSERT INTO `transaction` VALUES (34, 1, 187, 2, '2024-04-15 09:26:08', '048-017-000647293', 262.12, 0.00, 262.12, '');
-INSERT INTO `transaction` VALUES (35, 1, 81, 2, '2024-04-03 11:01:15', '006-017-000087927', 274.93, 0.00, 274.93, '');
-INSERT INTO `transaction` VALUES (36, 1, 212, 2, '2024-04-23 17:28:38', '014-004-000457367', 313.43, 0.00, 313.43, '');
-INSERT INTO `transaction` VALUES (37, 1, 44, 1, '2024-05-19 17:37:30', '001-003-000000020', 405.88, 0.00, 405.88, '');
-INSERT INTO `transaction` VALUES (38, 1, 31, 1, '2024-05-22 19:13:53', '001-003-000000021', 369.36, 0.00, 369.36, '');
-INSERT INTO `transaction` VALUES (39, 1, 69, 1, '2024-05-04 16:33:45', '001-003-000000022', 438.84, 0.00, 438.84, '');
-INSERT INTO `transaction` VALUES (40, 1, 41, 1, '2024-05-17 19:06:43', '001-003-000000023', 445.00, 0.00, 445.00, '');
-INSERT INTO `transaction` VALUES (41, 1, 19, 1, '2024-05-29 15:08:44', '001-003-000000024', 461.40, 0.00, 461.40, '');
-INSERT INTO `transaction` VALUES (42, 1, 749, 2, '2024-05-10 09:03:21', '027-047-000218236', 270.18, 0.00, 270.18, '');
-INSERT INTO `transaction` VALUES (43, 1, 360, 2, '2024-05-30 19:34:53', '033-031-000306736', 284.82, 0.00, 284.82, '');
-INSERT INTO `transaction` VALUES (44, 1, 634, 2, '2024-05-11 12:35:00', '033-002-000800383', 256.10, 0.00, 256.10, '');
-INSERT INTO `transaction` VALUES (45, 1, 169, 2, '2024-06-14 08:19:33', '004-002-000673799', 260.03, 0.00, 260.03, '');
-INSERT INTO `transaction` VALUES (46, 1, 57, 1, '2024-06-10 08:55:25', '001-003-000000025', 343.60, 0.00, 343.60, '');
-INSERT INTO `transaction` VALUES (47, 1, 10, 1, '2024-06-01 18:58:46', '001-003-000000026', 433.30, 0.00, 433.30, '');
-INSERT INTO `transaction` VALUES (48, 1, 314, 2, '2024-06-11 17:07:11', '033-028-000916790', 349.81, 0.00, 349.81, '');
-INSERT INTO `transaction` VALUES (49, 1, 28, 1, '2024-06-11 13:54:00', '001-003-000000027', 413.40, 0.00, 413.40, '');
-INSERT INTO `transaction` VALUES (50, 1, 41, 1, '2024-06-29 08:02:57', '001-003-000000028', 341.40, 0.00, 341.40, '');
-INSERT INTO `transaction` VALUES (51, 1, 64, 1, '2024-06-12 14:43:41', '001-003-000000029', 257.06, 0.00, 257.06, '');
-INSERT INTO `transaction` VALUES (52, 1, 37, 1, '2024-06-13 19:37:51', '001-003-000000030', 307.56, 0.00, 307.56, '');
-INSERT INTO `transaction` VALUES (53, 1, 372, 2, '2024-06-11 10:29:32', '036-024-000780112', 281.72, 0.00, 281.72, '');
-INSERT INTO `transaction` VALUES (54, 1, 798, 4, '2024-01-01 06:10:10', '001-003-000000003', 573.00, 0.00, 573.00, '');
-INSERT INTO `transaction` VALUES (55, 1, 215, 4, '2024-01-01 06:32:20', '001-003-000000004', 1928.00, 0.00, 1928.00, '');
-INSERT INTO `transaction` VALUES (92, 2, 76, 2, '2024-08-20 17:46:07', '125-012-001589111', 1500.00, 0.00, 1500.00, '');
-INSERT INTO `transaction` VALUES (93, 2, 78, 2, '2024-08-23 18:22:33', '002-125-0002569', 1121.60, 0.00, 1121.60, '');
+INSERT INTO `transaction` VALUES (1, 1, 591, 4, '2024-01-01 06:05:44', '001-003-000000001', 1560.00, 0.00, 1560.00, '', 1);
+INSERT INTO `transaction` VALUES (2, 1, 262, 4, '2024-01-01 06:06:33', '001-003-000000002', 2934.00, 0.00, 2934.00, '', 1);
+INSERT INTO `transaction` VALUES (3, 1, 615, 2, '2024-01-22 11:17:16', '002-028-000460218', 318.48, 0.00, 318.48, '', 1);
+INSERT INTO `transaction` VALUES (4, 1, 629, 2, '2024-01-06 17:44:28', '001-006-000383132', 273.05, 0.00, 273.05, '', 1);
+INSERT INTO `transaction` VALUES (5, 1, 13, 1, '2024-01-28 19:36:00', '001-003-000000001', 498.74, 0.00, 498.74, '', 1);
+INSERT INTO `transaction` VALUES (6, 1, 414, 2, '2024-01-12 20:01:17', '017-035-000421647', 237.26, 0.00, 237.26, '', 1);
+INSERT INTO `transaction` VALUES (7, 1, 4, 1, '2024-01-25 09:46:08', '001-003-000000002', 400.94, 0.00, 400.94, '', 1);
+INSERT INTO `transaction` VALUES (8, 1, 498, 2, '2024-01-06 12:54:47', '033-017-000421768', 313.28, 0.00, 313.28, '', 1);
+INSERT INTO `transaction` VALUES (9, 1, 47, 1, '2024-01-29 20:54:26', '001-003-000000003', 417.06, 0.00, 417.06, '', 1);
+INSERT INTO `transaction` VALUES (10, 1, 42, 1, '2024-01-07 10:06:49', '001-003-000000004', 321.46, 0.00, 321.46, '', 1);
+INSERT INTO `transaction` VALUES (11, 1, 358, 2, '2024-01-24 10:56:52', '016-038-000452670', 259.96, 0.00, 259.96, '', 1);
+INSERT INTO `transaction` VALUES (12, 1, 6, 1, '2024-01-08 18:55:23', '001-003-000000005', 436.98, 0.00, 436.98, '', 1);
+INSERT INTO `transaction` VALUES (13, 1, 35, 1, '2024-02-24 09:31:27', '001-003-000000006', 319.14, 0.00, 319.14, '', 1);
+INSERT INTO `transaction` VALUES (14, 1, 68, 1, '2024-02-22 09:02:38', '001-003-000000007', 317.46, 0.00, 317.46, '', 1);
+INSERT INTO `transaction` VALUES (15, 1, 105, 2, '2024-02-17 11:12:39', '040-023-000735611', 331.45, 0.00, 331.45, '', 1);
+INSERT INTO `transaction` VALUES (16, 1, 571, 2, '2024-02-15 15:57:01', '045-020-000249783', 283.79, 0.00, 283.79, '', 1);
+INSERT INTO `transaction` VALUES (17, 1, 153, 2, '2024-02-03 16:59:13', '006-027-000978561', 285.97, 0.00, 285.97, '', 1);
+INSERT INTO `transaction` VALUES (18, 1, 251, 2, '2024-02-17 12:16:54', '027-043-000024513', 250.94, 0.00, 250.94, '', 1);
+INSERT INTO `transaction` VALUES (19, 1, 66, 1, '2024-02-12 18:41:15', '001-003-000000009', 422.10, 0.00, 422.10, '', 1);
+INSERT INTO `transaction` VALUES (20, 1, 55, 1, '2024-02-10 16:52:40', '001-003-000000010', 439.12, 0.00, 439.12, '', 1);
+INSERT INTO `transaction` VALUES (21, 1, 56, 1, '2024-03-19 20:03:55', '001-003-000000011', 493.12, 0.00, 493.12, '', 1);
+INSERT INTO `transaction` VALUES (22, 1, 537, 2, '2024-03-08 09:12:24', '024-048-000499933', 269.15, 0.00, 269.15, '', 1);
+INSERT INTO `transaction` VALUES (23, 1, 55, 1, '2024-03-12 15:12:13', '001-003-000000012', 418.72, 0.00, 418.72, '', 1);
+INSERT INTO `transaction` VALUES (24, 1, 615, 2, '2024-03-09 10:23:31', '022-024-000721960', 247.94, 0.00, 247.94, '', 1);
+INSERT INTO `transaction` VALUES (25, 1, 52, 1, '2024-03-27 18:42:26', '001-003-000000013', 403.90, 0.00, 403.90, '', 1);
+INSERT INTO `transaction` VALUES (26, 1, 9, 1, '2024-03-19 16:06:38', '001-003-000000014', 359.40, 0.00, 359.40, '', 1);
+INSERT INTO `transaction` VALUES (27, 1, 1, 1, '2024-03-23 18:07:54', '001-003-000000015', 413.28, 0.00, 413.28, '', 1);
+INSERT INTO `transaction` VALUES (28, 1, 14, 1, '2024-04-05 10:16:55', '001-003-000000016', 430.34, 0.00, 430.34, '', 1);
+INSERT INTO `transaction` VALUES (29, 1, 53, 1, '2024-04-01 09:20:06', '001-003-000000017', 339.06, 0.00, 339.06, '', 1);
+INSERT INTO `transaction` VALUES (30, 1, 656, 2, '2024-04-28 18:56:18', '037-042-000974956', 239.97, 0.00, 239.97, '', 1);
+INSERT INTO `transaction` VALUES (31, 1, 48, 1, '2024-04-13 11:25:19', '001-003-000000018', 382.10, 0.00, 382.10, '', 1);
+INSERT INTO `transaction` VALUES (32, 1, 11, 1, '2024-04-11 08:52:38', '001-003-000000019', 440.98, 0.00, 440.98, '', 1);
+INSERT INTO `transaction` VALUES (33, 1, 539, 2, '2024-04-05 08:13:14', '029-027-000984779', 299.87, 0.00, 299.87, '', 1);
+INSERT INTO `transaction` VALUES (34, 1, 187, 2, '2024-04-15 09:26:08', '048-017-000647293', 262.12, 0.00, 262.12, '', 1);
+INSERT INTO `transaction` VALUES (35, 1, 81, 2, '2024-04-03 11:01:15', '006-017-000087927', 274.93, 0.00, 274.93, '', 1);
+INSERT INTO `transaction` VALUES (36, 1, 212, 2, '2024-04-23 17:28:38', '014-004-000457367', 313.43, 0.00, 313.43, '', 1);
+INSERT INTO `transaction` VALUES (37, 1, 44, 1, '2024-05-19 17:37:30', '001-003-000000020', 405.88, 0.00, 405.88, '', 1);
+INSERT INTO `transaction` VALUES (38, 1, 31, 1, '2024-05-22 19:13:53', '001-003-000000021', 369.36, 0.00, 369.36, '', 1);
+INSERT INTO `transaction` VALUES (39, 1, 69, 1, '2024-05-04 16:33:45', '001-003-000000022', 438.84, 0.00, 438.84, '', 1);
+INSERT INTO `transaction` VALUES (40, 1, 41, 1, '2024-05-17 19:06:43', '001-003-000000023', 445.00, 0.00, 445.00, '', 1);
+INSERT INTO `transaction` VALUES (41, 1, 19, 1, '2024-05-29 15:08:44', '001-003-000000024', 461.40, 0.00, 461.40, '', 1);
+INSERT INTO `transaction` VALUES (42, 1, 749, 2, '2024-05-10 09:03:21', '027-047-000218236', 270.18, 0.00, 270.18, '', 1);
+INSERT INTO `transaction` VALUES (43, 1, 360, 2, '2024-05-30 19:34:53', '033-031-000306736', 284.82, 0.00, 284.82, '', 1);
+INSERT INTO `transaction` VALUES (44, 1, 634, 2, '2024-05-11 12:35:00', '033-002-000800383', 256.10, 0.00, 256.10, '', 1);
+INSERT INTO `transaction` VALUES (45, 1, 169, 2, '2024-06-14 08:19:33', '004-002-000673799', 260.03, 0.00, 260.03, '', 1);
+INSERT INTO `transaction` VALUES (46, 1, 57, 1, '2024-06-10 08:55:25', '001-003-000000025', 343.60, 0.00, 343.60, '', 1);
+INSERT INTO `transaction` VALUES (47, 1, 10, 1, '2024-06-01 18:58:46', '001-003-000000026', 433.30, 0.00, 433.30, '', 1);
+INSERT INTO `transaction` VALUES (48, 1, 314, 2, '2024-06-11 17:07:11', '033-028-000916790', 349.81, 0.00, 349.81, '', 1);
+INSERT INTO `transaction` VALUES (49, 1, 28, 1, '2024-06-11 13:54:00', '001-003-000000027', 413.40, 0.00, 413.40, '', 1);
+INSERT INTO `transaction` VALUES (50, 1, 41, 1, '2024-06-29 08:02:57', '001-003-000000028', 341.40, 0.00, 341.40, '', 1);
+INSERT INTO `transaction` VALUES (51, 1, 64, 1, '2024-06-12 14:43:41', '001-003-000000029', 257.06, 0.00, 257.06, '', 1);
+INSERT INTO `transaction` VALUES (52, 1, 37, 1, '2024-06-13 19:37:51', '001-003-000000030', 307.56, 0.00, 307.56, '', 1);
+INSERT INTO `transaction` VALUES (53, 1, 372, 2, '2024-06-11 10:29:32', '036-024-000780112', 281.72, 0.00, 281.72, '', 1);
+INSERT INTO `transaction` VALUES (54, 1, 798, 4, '2024-01-01 06:10:10', '001-003-000000003', 573.00, 0.00, 573.00, '', 1);
+INSERT INTO `transaction` VALUES (55, 1, 215, 4, '2024-01-01 06:32:20', '001-003-000000004', 1928.00, 0.00, 1928.00, '', 1);
+INSERT INTO `transaction` VALUES (92, 2, 76, 2, '2024-08-20 17:46:07', '125-012-001589111', 1500.00, 0.00, 1500.00, '', 1);
+INSERT INTO `transaction` VALUES (93, 2, 78, 2, '2024-08-23 18:22:33', '002-125-0002569', 1121.60, 0.00, 1121.60, '', 1);
+INSERT INTO `transaction` VALUES (94, 2, 850, 1, '2024-09-09 21:10:09', '001-003-0000031', 496.50, 0.00, 496.50, 'ninguna referencia modificado para prueba', 1);
+INSERT INTO `transaction` VALUES (95, 2, 735, 2, '2024-09-09 19:44:24', '153-220-0123457', 114.96, 0.00, 114.96, '', 0);
 
 -- ----------------------------
 -- Table structure for user
@@ -5517,7 +4705,7 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 2, 'jorge', '$2y$12$nKDUhRshuMdplcHvok8nVe37Hj.1EAu1vli5QPAig3nO2YuXx8AWe', 'Jorge', 1, 0, 'es', 1, '2024-08-19 09:28:05', 'Q0hlTHR3elRaeFhsSG0vbk55dlloelRYaU5UVTFFeXh3UFEyVEFOenppOHk0OTJHSkUvb2JHUVNjSkFVRkNvMm50aFM5bVBuVWtUSFpVSUhRS3AzL0E9PQ==', '2024-06-21 15:30:34', '2024-08-19 09:28:05', NULL);
-INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 62, '2024-09-06 18:35:56', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RHlVeXlERDZqTW1WbXcwMmdMUVB0Wk1sNHUyVHMzdy9KZFhzOWhTck51N3c9PQ==', '2024-06-21 15:30:47', '2024-09-06 18:35:57', NULL);
+INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 69, '2024-09-09 20:09:23', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==', '2024-06-21 15:30:47', '2024-09-09 20:09:23', NULL);
 INSERT INTO `user` VALUES (3, 2, 'hugo', '$2y$12$JfgZQaHQi/yELIpCWyhm9.70LE5A2rAIss8/9TyN7NuOWlRvz/FOC', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-23 01:47:54', NULL);
 INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 1, '2024-08-22 17:56:45', 'aE5zSGdtSlQ5Ym9vM2RadEJMSnhvUGxMbHZ0UUxwT1JCYTRTZDBtQWo4ZEVZNlh4N3R2YWRLOUJYbHo2Mm1kbDArVmFwTnpVV2YwaEViM2F5RVczWUE9PQ==', '2024-06-21 15:31:15', '2024-08-22 17:57:37', NULL);
 INSERT INTO `user` VALUES (5, 2, 'rick', 'cambiar', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-22 17:47:49', NULL);
@@ -5576,7 +4764,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_get_users` AS selec
 -- View structure for view_movements
 -- ----------------------------
 DROP VIEW IF EXISTS `view_movements`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select cast(`p`.`idproduct` as char charset utf8mb4) AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,cast(`mt`.`idmovementtype` as char charset utf8mb4) AS `idmovementtype`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,cast(year(cast(`t`.`date` as date)) as char charset utf8mb4) AS `anio`,cast(month(cast(`t`.`date` as date)) as char charset utf8mb4) AS `mes`,cast(dayofmonth(cast(`t`.`date` as date)) as char charset utf8mb4) AS `dia`,cast(quarter(cast(`t`.`date` as date)) as char charset utf8mb4) AS `trimestre`,cast(week(cast(`t`.`date` as date),0) as char charset utf8mb4) AS `semana`,`b`.`name` AS `beneficiario`,cast(`b`.`type` as char charset utf8mb4) AS `tipo`,cast(`b`.`idcountry` as char charset utf8mb4) AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,cast(`b`.`idprovince` as char charset utf8mb4) AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,cast(`b`.`idcity` as char charset utf8mb4) AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_movements` AS select `pm`.`idmovmentproduct` AS `idmovmentproduct`,`t`.`idtransaction` AS `idtransaction`,cast(`p`.`idproduct` as char charset utf8mb4) AS `idproducto`,`p`.`productcode` AS `codigo`,`p`.`barcode` AS `codigobarras`,`p`.`name` AS `nombre`,`pl`.`description` AS `linea`,`pc`.`description` AS `categoria`,cast(`pm`.`qty` as char charset utf8mb4) AS `cantidad`,cast(`pm`.`price` as char charset utf8mb4) AS `precio`,cast(`pm`.`total` as char charset utf8mb4) AS `total`,`pm`.`entry` AS `asiento`,cast(`mt`.`idmovementtype` as char charset utf8mb4) AS `idmovementtype`,`mt`.`acronym` AS `coddoc`,`mt`.`name` AS `movimiento`,cast(`t`.`numberdocument` as char charset utf8mb4) AS `numdoc`,cast(`t`.`date` as datetime) AS `fecha`,cast(year(cast(`t`.`date` as date)) as char charset utf8mb4) AS `anio`,cast(month(cast(`t`.`date` as date)) as char charset utf8mb4) AS `mes`,cast(dayofmonth(cast(`t`.`date` as date)) as char charset utf8mb4) AS `dia`,cast(quarter(cast(`t`.`date` as date)) as char charset utf8mb4) AS `trimestre`,cast(week(cast(`t`.`date` as date),0) as char charset utf8mb4) AS `semana`,`b`.`name` AS `beneficiario`,cast(`b`.`type` as char charset utf8mb4) AS `tipo`,cast(`b`.`idcountry` as char charset utf8mb4) AS `pais_id`,`co`.`name` AS `pais`,`co`.`code` AS `pais_codigo`,cast(`b`.`idprovince` as char charset utf8mb4) AS `provincia_id`,`pr`.`name` AS `provincia`,`pr`.`code` AS `provincia_codigo`,cast(`b`.`idcity` as char charset utf8mb4) AS `cod_ciudad`,`ciu`.`name` AS `ciudad` from (((((((((`productmovement` `pm` join `transaction` `t` on((`t`.`idtransaction` = `pm`.`idtransaction`))) join `product` `p` on((`p`.`idproduct` = `pm`.`idproduct`))) join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `productline` `pl` on((`pl`.`idproductline` = `p`.`idproductline`))) join `productcategory` `pc` on((`pc`.`idproductcategory` = `p`.`idproductcategory`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `country` `co` on((`co`.`idcountry` = `b`.`idcountry`))) join `province` `pr` on((`pr`.`idprovince` = `b`.`idprovince`))) join `city` `ciu` on((`ciu`.`idcity` = `b`.`idcity`))) where (`t`.`status` = 1);
 
 -- ----------------------------
 -- View structure for view_products
@@ -5594,7 +4782,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_roles_by_nusers` AS
 -- View structure for view_transaction
 -- ----------------------------
 DROP VIEW IF EXISTS `view_transaction`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_transaction` AS select `t`.`idtransaction` AS `idtransaction`,`t`.`date` AS `date`,`t`.`idbeneficiary` AS `idbeneficiary`,`b`.`name` AS `beneficiary_name`,`t`.`idmovementtype` AS `idmovementtype`,`mt`.`name` AS `type`,`t`.`numberdocument` AS `numberdocument`,`t`.`reference` AS `reference`,`t`.`subtotal` AS `subtotal`,`t`.`total` AS `total`,`t`.`iduser` AS `iduser`,`u`.`fullname` AS `fullname`,(select count(0) from `productmovement` `pm` where (`pm`.`idtransaction` = `t`.`idtransaction`)) AS `nitems` from (((`transaction` `t` join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `user` `u` on((`u`.`iduser` = `t`.`iduser`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `view_transaction` AS select `t`.`idtransaction` AS `idtransaction`,`t`.`date` AS `date`,`t`.`idbeneficiary` AS `idbeneficiary`,`b`.`name` AS `beneficiary_name`,`t`.`idmovementtype` AS `idmovementtype`,`mt`.`name` AS `type`,`t`.`numberdocument` AS `numberdocument`,`t`.`reference` AS `reference`,`t`.`subtotal` AS `subtotal`,`t`.`total` AS `total`,`t`.`iduser` AS `iduser`,`t`.`status` AS `status`,`u`.`fullname` AS `fullname`,(select count(0) from `productmovement` `pm` where (`pm`.`idtransaction` = `t`.`idtransaction`)) AS `nitems` from (((`transaction` `t` join `movementtype` `mt` on((`mt`.`idmovementtype` = `t`.`idmovementtype`))) join `beneficiary` `b` on((`b`.`idbeneficiary` = `t`.`idbeneficiary`))) join `user` `u` on((`u`.`iduser` = `t`.`iduser`)));
 
 -- ----------------------------
 -- View structure for view_users
@@ -5697,6 +4885,177 @@ BEGIN
   END IF;
 
   SELECT sndRESPONSE;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sp_analisis_rotacion
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sp_analisis_rotacion`;
+delimiter ;;
+CREATE PROCEDURE `sp_analisis_rotacion`(IN toDESDE VARCHAR(19), IN toHASTA VARCHAR(19))
+BEGIN
+
+DECLARE loERROR     INTEGER DEFAULT 0;
+DECLARE loPRODID   	BIGINT DEFAULT 0;
+DECLARE loNOMBRE		VARCHAR(500) DEFAULT '';
+DECLARE loCODEBAR		VARCHAR(500) DEFAULT '';
+DECLARE loSTOCK DOUBLE(20,4) DEFAULT 0;
+DECLARE goCOSTOVENTAS DOUBLE(20,4) DEFAULT 0;
+DECLARE goPROMEDIO DOUBLE(20,4) DEFAULT 0;
+DECLARE goROTACION DOUBLE(20,4) DEFAULT 0;
+DECLARE goROTDIAS DOUBLE(20,4) DEFAULT 0;
+DECLARE loDIAS     INTEGER DEFAULT 0;
+
+DECLARE faux CURSOR for 
+    SELECT p.idproduct, p.barcode,  p.`name`, p.stock FROM product p WHERE p.deleted_at IS NULL;
+  
+
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET loERROR = 1;
+DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET loERROR = 1;
+DECLARE CONTINUE HANDLER FOR SQLSTATE '23000' SET loERROR = 1;
+
+
+DROP TABLE IF EXISTS tmp_rotacion;
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_rotacion (
+	 id						      BIGINT(20) NOT NULL AUTO_INCREMENT,
+	 idproduct			    BIGINT(20) DEFAULT 0,
+	 codebar          	VARCHAR(500) DEFAULT '',
+	 `name`  		        VARCHAR(500) DEFAULT '',
+   stock              DOUBLE(20,4) DEFAULT 0,
+	 dias   			      INTEGER DEFAULT 0,
+   costoventa			    DOUBLE(20,4) DEFAULT 0,
+	 promedio				    DOUBLE(20,4) DEFAULT 0,
+	 rotacion				    DOUBLE(20,4) DEFAULT 0,
+	 rotaciondias				DOUBLE(20,4) DEFAULT 0,
+	 PRIMARY KEY(id),
+	 UNIQUE KEY id (id)	
+	 )ENGINE = MEMORY;
+	 
+   
+
+START TRANSACTION;
+	OPEN faux;
+		FETCH NEXT FROM faux INTO loPRODID,loCODEBAR,loNOMBRE,loSTOCK;
+		WHILE loERROR = 0 DO
+    
+        SELECT (DATEDIFF( toHASTA, toDESDE)) INTO loDIAS;
+        
+        CALL sp_analisis_rotacion_prod(loPRODID, toDESDE, toHASTA, goCOSTOVENTAS, goPROMEDIO, goROTACION, goROTDIAS);
+        
+        INSERT INTO tmp_rotacion (
+           idproduct,
+           codebar,
+           `name`,
+           stock,
+           dias,
+           costoventa,
+           promedio,
+           rotacion,
+           rotaciondias	
+        ) VALUES (
+          loPRODID,
+          loCODEBAR,
+          loNOMBRE,
+          loSTOCK,
+          loDIAS,
+          goCOSTOVENTAS,
+          goPROMEDIO,
+          goROTACION,
+          goROTDIAS
+        );
+        
+        -- SELECT goCOSTOVENTAS, goPROMEDIO, goROTACION, goROTDIAS;
+    
+        SET loERROR=0;
+    FETCH NEXT FROM faux INTO loPRODID,loCODEBAR,loNOMBRE,loSTOCK;
+  END WHILE;
+
+CLOSE faux; 
+   
+COMMIT ;
+
+
+SELECT * FROM tmp_rotacion;
+
+
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sp_analisis_rotacion_prod
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sp_analisis_rotacion_prod`;
+delimiter ;;
+CREATE PROCEDURE `sp_analisis_rotacion_prod`(IN `toPROD` BIGINT, 
+  IN toDESDE VARCHAR(19),
+  IN toHASTA VARCHAR(19),
+  OUT goCOSTOVENTAS DOUBLE,
+  OUT goPROMEDIO DOUBLE,
+  OUT goROTACION DOUBLE, 
+  OUT goROTDIAS DOUBLE)
+BEGIN
+DECLARE wid DOUBLE(20,2) default 0;
+DECLARE winicial DOUBLE(20,2) default 0;
+DECLARE wcompras DOUBLE(20,2) default 0;
+DECLARE wfinal DOUBLE(20,2) default 0;
+DECLARE wcostoventas DOUBLE(20,2) default 0;
+DECLARE wpromedio DOUBLE(20,2) default 0;
+DECLARE wrotacion DOUBLE(20,2) default 0;
+DECLARE wrotacionpordias DOUBLE(20,2) default 0;
+DECLARE loDIAS INTEGER DEFAULT 0;
+
+SET winicial = 0;
+SET wcompras = 0;
+SET wfinal = 0;
+SET wcostoventas = 0;
+SET wpromedio = 0;
+SET wrotacion = 0;
+SET wrotacionpordias = 0;
+
+
+SELECT (DATEDIFF( toHASTA , toDESDE)) INTO loDIAS;
+
+START TRANSACTION;
+
+-- Calculo costo total final
+call sp_kardex(toPROD, 0);
+
+-- Inicial
+SELECT (pm.qty  * pm.price) INTO winicial FROM productmovement pm INNER JOIN `transaction` t ON t.idtransaction = pm.idtransaction 
+WHERE 
+  pm.idproduct = toPROD AND (t.`date` BETWEEN toDESDE AND toHASTA) 
+ORDER BY t.date LIMIT 1;
+
+-- Compras
+SELECT SUM(pm.qty  * pm.price) INTO wcompras FROM productmovement pm INNER JOIN `transaction` t ON t.idtransaction = pm.idtransaction 
+WHERE pm.idproduct = toPROD AND pm.entry ='I' AND (t.`date` BETWEEN toDESDE AND toHASTA) 
+GROUP BY idproduct;
+
+-- Final
+SELECT (p.stock  * p.cost) INTO wfinal FROM product p WHERE idproduct = toPROD;
+
+-- Costo Ventas
+SET goCOSTOVENTAS = winicial + wcompras -  wfinal;
+
+
+-- Promedio
+SET goPROMEDIO = (winicial + wfinal)/2;
+
+
+-- Rotacion
+SET goROTACION = goCOSTOVENTAS / goPROMEDIO;
+
+
+SET goROTDIAS = loDIAS / goROTACION;
+
+-- SELECT wcostoventas as costoventas,wpromedio as promedio,  wrotacion as rotacion, wrotacionpordias as rotdias;
+
+COMMIT ;
+
+
 END
 ;;
 delimiter ;
@@ -6337,47 +5696,6 @@ BEGIN
   SELECT sndRESPONSE;
 
 END
-;;
-delimiter ;
-
--- ----------------------------
--- Triggers structure for table productmovement
--- ----------------------------
-DROP TRIGGER IF EXISTS `WhenInsert`;
-delimiter ;;
-CREATE TRIGGER `WhenInsert` AFTER INSERT ON `productmovement` FOR EACH ROW IF NEW.entry = 'I' THEN
-  UPDATE product SET stock = stock - NEW.qty WHERE idproduct = NEW.idproduct;
-ELSE
-  UPDATE product SET stock = stock + NEW.qty WHERE idproduct = NEW.idproduct;
-END IF
-;;
-delimiter ;
-
--- ----------------------------
--- Triggers structure for table productmovement
--- ----------------------------
-DROP TRIGGER IF EXISTS `WhenUpdate`;
-delimiter ;;
-CREATE TRIGGER `WhenUpdate` AFTER UPDATE ON `productmovement` FOR EACH ROW IF NEW.entry = 'I' THEN
-  UPDATE product SET stock = stock - OLD.qty WHERE idproduct = NEW.idproduct;
-  UPDATE product SET stock = stock + NEW.qty WHERE idproduct = NEW.idproduct;
-ELSE
-  UPDATE product SET stock = stock + OLD.qty WHERE idproduct = NEW.idproduct;
-  UPDATE product SET stock = stock - NEW.qty WHERE idproduct = NEW.idproduct;
-END IF
-;;
-delimiter ;
-
--- ----------------------------
--- Triggers structure for table productmovement
--- ----------------------------
-DROP TRIGGER IF EXISTS `WhenDelete`;
-delimiter ;;
-CREATE TRIGGER `WhenDelete` AFTER DELETE ON `productmovement` FOR EACH ROW IF OLD.entry = 'I' THEN
-  UPDATE product SET stock = stock - OLD.qty WHERE idproduct = OLD.idproduct;
-ELSE
-  UPDATE product SET stock = stock + OLD.qty WHERE idproduct = OLD.idproduct;
-END IF
 ;;
 delimiter ;
 
