@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 09/09/2024 23:35:27
+ Date: 12/09/2024 03:08:18
 */
 
 SET NAMES utf8mb4;
@@ -69,7 +69,7 @@ CREATE TABLE `audit`  (
   PRIMARY KEY (`idaudit`) USING BTREE,
   INDEX `IDUSER`(`iduser` ASC) USING BTREE,
   CONSTRAINT `IDUSER` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 398 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 565 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of audit
@@ -471,6 +471,173 @@ INSERT INTO `audit` VALUES (394, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 INSERT INTO `audit` VALUES (395, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"35\",\"entry\":\"E\",\"qty\":\"25\",\"price\":\"4.5\",\"total\":\"112.5\"}', '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
 INSERT INTO `audit` VALUES (396, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveTransaction&id=94', '{\"idtransaction\":\"94\",\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"300\",\"price\":\"1.28\",\"total\":\"384\"}', '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
 INSERT INTO `audit` VALUES (397, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=anularTransaction&id=95', '{\"status\":0,\"idtransaction\":\"95\"}', '2024-09-09 21:46:51', '2024-09-09 21:46:51', NULL);
+INSERT INTO `audit` VALUES (398, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveMenu&id=29', '{\"order\":\"04.05\",\"name\":\"Productos por tipo de transaccion\",\"icon\":\"far fa-file-archive\",\"route\":\"lst_nummovimientos\",\"submenu\":\"0\",\"status\":\"1\",\"idmenu\":\"29\"}', '2024-09-09 23:40:32', '2024-09-09 23:40:32', NULL);
+INSERT INTO `audit` VALUES (399, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveMenu&id=-1', '{\"order\":\"03.08\",\"name\":\"C\\u00e1lculo de M\\u00ednimos y M\\u00e1ximos\",\"icon\":\"fas fa-calculator\",\"route\":\"minmax\",\"submenu\":\"0\",\"status\":\"1\"}', '2024-09-09 23:48:23', '2024-09-09 23:48:23', NULL);
+INSERT INTO `audit` VALUES (400, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'DELETE', '/api6ug8/?ruta=deleteMenu&id=41', '{\"idmenu\":\"41\"}', '2024-09-09 23:49:01', '2024-09-09 23:49:01', NULL);
+INSERT INTO `audit` VALUES (401, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":70,\"lastlogged\":\"2024-09-09 23:52:23\",\"iduser\":2}', '2024-09-09 23:52:23', '2024-09-09 23:52:23', NULL);
+INSERT INTO `audit` VALUES (402, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=recuperarMenu&id=41', '{\"deleted_at\":null,\"idmenu\":\"41\"}', '2024-09-09 23:58:11', '2024-09-09 23:58:11', NULL);
+INSERT INTO `audit` VALUES (403, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-09-09 23:58:21', '2024-09-09 23:58:21', NULL);
+INSERT INTO `audit` VALUES (404, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveRolMenu&id=2', '{\"0\":{\"idmenu\":\"9\"},\"1\":{\"idmenu\":\"15\"},\"2\":{\"idmenu\":\"35\"},\"3\":{\"idmenu\":\"1\"},\"4\":{\"idmenu\":\"2\"},\"5\":{\"idmenu\":\"4\"},\"6\":{\"idmenu\":\"3\"},\"7\":{\"idmenu\":\"21\"},\"8\":{\"idmenu\":\"37\"},\"9\":{\"idmenu\":\"6\"},\"10\":{\"idmenu\":\"5\"},\"11\":{\"idmenu\":\"8\"},\"12\":{\"idmenu\":\"7\"},\"13\":{\"idmenu\":\"28\"},\"14\":{\"idmenu\":\"36\"},\"15\":{\"idmenu\":\"39\"},\"16\":{\"idmenu\":\"40\"},\"17\":{\"idmenu\":\"41\"},\"18\":{\"idmenu\":\"10\"},\"19\":{\"idmenu\":\"11\"},\"20\":{\"idmenu\":\"12\"},\"21\":{\"idmenu\":\"13\"},\"22\":{\"idmenu\":\"14\"},\"23\":{\"idmenu\":\"29\"},\"24\":{\"idmenu\":\"30\"},\"25\":{\"idmenu\":\"38\"},\"26\":{\"idmenu\":\"16\"},\"27\":{\"idmenu\":\"17\"},\"28\":{\"idmenu\":\"18\"},\"29\":{\"idmenu\":\"19\"},\"30\":{\"idmenu\":\"22\"},\"31\":{\"idmenu\":\"20\"},\"idrole\":\"2\"}', '2024-09-09 23:58:21', '2024-09-09 23:58:21', NULL);
+INSERT INTO `audit` VALUES (405, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":71,\"lastlogged\":\"2024-09-09 23:58:43\",\"iduser\":2}', '2024-09-09 23:58:43', '2024-09-09 23:58:43', NULL);
+INSERT INTO `audit` VALUES (406, NULL, 'PostmanRuntime/7.41.2', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==\",\"operations\":72,\"lastlogged\":\"2024-09-10 00:43:41\",\"iduser\":2}', '2024-09-10 00:43:41', '2024-09-10 00:43:41', NULL);
+INSERT INTO `audit` VALUES (407, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":173,\"idproduct\":\"1\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (408, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":39,\"idproduct\":\"2\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (409, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":69,\"idproduct\":\"3\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (410, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":79,\"idproduct\":\"4\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (411, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"5\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (412, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":31,\"idproduct\":\"6\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (413, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":63,\"idproduct\":\"7\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (414, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":82,\"idproduct\":\"8\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (415, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":68,\"idproduct\":\"9\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (416, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":56,\"idproduct\":\"10\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (417, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":68,\"idproduct\":\"11\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (418, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":72,\"idproduct\":\"12\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (419, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":33,\"idproduct\":\"13\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (420, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"14\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (421, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":49,\"idproduct\":\"15\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (422, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":80,\"idproduct\":\"16\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (423, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":163,\"idproduct\":\"17\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (424, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"18\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (425, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":71,\"idproduct\":\"19\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (426, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":44,\"idproduct\":\"20\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (427, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":66,\"idproduct\":\"21\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (428, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":125,\"idproduct\":\"22\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (429, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":5,\"stock_max\":11,\"idproduct\":\"23\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (430, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":55,\"idproduct\":\"24\"}', '2024-09-10 00:48:38', '2024-09-10 00:48:38', NULL);
+INSERT INTO `audit` VALUES (431, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":31,\"idproduct\":\"25\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (432, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":55,\"idproduct\":\"26\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (433, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":90,\"idproduct\":\"27\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (434, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":42,\"idproduct\":\"28\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (435, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":75,\"idproduct\":\"29\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (436, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":5,\"stock_max\":276,\"idproduct\":\"30\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (437, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":54,\"idproduct\":\"31\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (438, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":31,\"idproduct\":\"32\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (439, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":114,\"idproduct\":\"33\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (440, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":59,\"idproduct\":\"34\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (441, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":6,\"stock_max\":35,\"idproduct\":\"35\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (442, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":54,\"idproduct\":\"36\"}', '2024-09-10 00:48:39', '2024-09-10 00:48:39', NULL);
+INSERT INTO `audit` VALUES (443, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":173,\"idproduct\":\"1\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (444, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":39,\"idproduct\":\"2\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (445, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":69,\"idproduct\":\"3\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (446, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":79,\"idproduct\":\"4\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (447, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"5\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (448, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":31,\"idproduct\":\"6\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (449, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":63,\"idproduct\":\"7\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (450, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":82,\"idproduct\":\"8\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (451, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":68,\"idproduct\":\"9\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (452, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":56,\"idproduct\":\"10\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (453, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":68,\"idproduct\":\"11\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (454, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":72,\"idproduct\":\"12\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (455, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":33,\"idproduct\":\"13\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (456, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"14\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (457, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":49,\"idproduct\":\"15\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (458, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":80,\"idproduct\":\"16\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (459, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":163,\"idproduct\":\"17\"}', '2024-09-10 00:52:01', '2024-09-10 00:52:01', NULL);
+INSERT INTO `audit` VALUES (460, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":67,\"idproduct\":\"18\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (461, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":71,\"idproduct\":\"19\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (462, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":44,\"idproduct\":\"20\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (463, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":66,\"idproduct\":\"21\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (464, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":125,\"idproduct\":\"22\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (465, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":5,\"stock_max\":11,\"idproduct\":\"23\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (466, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":55,\"idproduct\":\"24\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (467, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":31,\"idproduct\":\"25\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (468, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":55,\"idproduct\":\"26\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (469, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":90,\"idproduct\":\"27\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (470, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":42,\"idproduct\":\"28\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (471, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":75,\"idproduct\":\"29\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (472, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":5,\"stock_max\":276,\"idproduct\":\"30\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (473, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":54,\"idproduct\":\"31\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (474, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":2,\"stock_max\":31,\"idproduct\":\"32\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (475, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":114,\"idproduct\":\"33\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (476, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":3,\"stock_max\":59,\"idproduct\":\"34\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (477, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":6,\"stock_max\":35,\"idproduct\":\"35\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (478, 2, 'PostmanRuntime/7.41.2', 'PUT', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":1,\"stock_max\":54,\"idproduct\":\"36\"}', '2024-09-10 00:52:02', '2024-09-10 00:52:02', NULL);
+INSERT INTO `audit` VALUES (479, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"175\",\"idproduct\":\"1\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (480, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"39\",\"idproduct\":\"2\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (481, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"69\",\"idproduct\":\"3\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (482, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"79\",\"idproduct\":\"4\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (483, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"5\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (484, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"31\",\"idproduct\":\"6\"}', '2024-09-10 00:56:33', '2024-09-10 00:56:33', NULL);
+INSERT INTO `audit` VALUES (485, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"63\",\"idproduct\":\"7\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (486, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"82\",\"idproduct\":\"8\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (487, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"68\",\"idproduct\":\"9\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (488, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"56\",\"idproduct\":\"10\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (489, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"68\",\"idproduct\":\"11\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (490, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"72\",\"idproduct\":\"12\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (491, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"33\",\"idproduct\":\"13\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (492, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"14\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (493, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"49\",\"idproduct\":\"15\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (494, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"80\",\"idproduct\":\"16\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (495, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"163\",\"idproduct\":\"17\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (496, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"18\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (497, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"71\",\"idproduct\":\"19\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (498, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"44\",\"idproduct\":\"20\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (499, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"66\",\"idproduct\":\"21\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (500, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"125\",\"idproduct\":\"22\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (501, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"5\",\"stock_max\":\"11\",\"idproduct\":\"23\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (502, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"55\",\"idproduct\":\"24\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (503, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"31\",\"idproduct\":\"25\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (504, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"55\",\"idproduct\":\"26\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (505, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"90\",\"idproduct\":\"27\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (506, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"42\",\"idproduct\":\"28\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (507, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"75\",\"idproduct\":\"29\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (508, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"5\",\"stock_max\":\"276\",\"idproduct\":\"30\"}', '2024-09-10 00:56:34', '2024-09-10 00:56:34', NULL);
+INSERT INTO `audit` VALUES (509, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"54\",\"idproduct\":\"31\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (510, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"31\",\"idproduct\":\"32\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (511, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"114\",\"idproduct\":\"33\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (512, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"59\",\"idproduct\":\"34\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (513, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"6\",\"stock_max\":\"35\",\"idproduct\":\"35\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (514, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"54\",\"idproduct\":\"36\"}', '2024-09-10 00:56:35', '2024-09-10 00:56:35', NULL);
+INSERT INTO `audit` VALUES (515, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"173\",\"idproduct\":\"1\"}', '2024-09-10 00:58:48', '2024-09-10 00:58:48', NULL);
+INSERT INTO `audit` VALUES (516, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"39\",\"idproduct\":\"2\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (517, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"69\",\"idproduct\":\"3\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (518, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"79\",\"idproduct\":\"4\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (519, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"5\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (520, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"31\",\"idproduct\":\"6\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (521, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"63\",\"idproduct\":\"7\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (522, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"82\",\"idproduct\":\"8\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (523, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"68\",\"idproduct\":\"9\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (524, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"56\",\"idproduct\":\"10\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (525, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"68\",\"idproduct\":\"11\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (526, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"72\",\"idproduct\":\"12\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (527, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"33\",\"idproduct\":\"13\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (528, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"14\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (529, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"49\",\"idproduct\":\"15\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (530, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"80\",\"idproduct\":\"16\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (531, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"163\",\"idproduct\":\"17\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (532, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"67\",\"idproduct\":\"18\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (533, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"71\",\"idproduct\":\"19\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (534, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"44\",\"idproduct\":\"20\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (535, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"66\",\"idproduct\":\"21\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (536, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"125\",\"idproduct\":\"22\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (537, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"5\",\"stock_max\":\"11\",\"idproduct\":\"23\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (538, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"55\",\"idproduct\":\"24\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (539, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"31\",\"idproduct\":\"25\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (540, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"55\",\"idproduct\":\"26\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (541, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"90\",\"idproduct\":\"27\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (542, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"42\",\"idproduct\":\"28\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (543, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"75\",\"idproduct\":\"29\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (544, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"5\",\"stock_max\":\"276\",\"idproduct\":\"30\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (545, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"54\",\"idproduct\":\"31\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (546, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"2\",\"stock_max\":\"31\",\"idproduct\":\"32\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (547, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"114\",\"idproduct\":\"33\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (548, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"3\",\"stock_max\":\"59\",\"idproduct\":\"34\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (549, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"6\",\"stock_max\":\"35\",\"idproduct\":\"35\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (550, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveStockMinMax', '{\"stock_min\":\"1\",\"stock_max\":\"54\",\"idproduct\":\"36\"}', '2024-09-10 00:58:49', '2024-09-10 00:58:49', NULL);
+INSERT INTO `audit` VALUES (551, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RCtqUkt2Uk5aSVN1YmhmQkZGaGNGMWhBaWFjNzV5emRvRVF6R1hkSTRlc0E9PQ==\",\"operations\":73,\"lastlogged\":\"2024-09-10 12:47:51\",\"iduser\":2}', '2024-09-10 12:47:51', '2024-09-10 12:47:51', NULL);
+INSERT INTO `audit` VALUES (552, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RCtqUkt2Uk5aSVN1YmhmQkZGaGNGMWhBaWFjNzV5emRvRVF6R1hkSTRlc0E9PQ==\",\"operations\":74,\"lastlogged\":\"2024-09-10 13:09:34\",\"iduser\":2}', '2024-09-10 13:09:34', '2024-09-10 13:09:34', NULL);
+INSERT INTO `audit` VALUES (553, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4RCtqUkt2Uk5aSVN1YmhmQkZGaGNGMWhBaWFjNzV5emRvRVF6R1hkSTRlc0E9PQ==\",\"operations\":75,\"lastlogged\":\"2024-09-10 17:38:42\",\"iduser\":2}', '2024-09-10 17:38:42', '2024-09-10 17:38:42', NULL);
+INSERT INTO `audit` VALUES (554, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QzZxNVFaVjVTanZJcDVucmdQMnFuMnMwclpuQ253WFJvZW55WEE4QXRWY0E9PQ==\",\"operations\":76,\"lastlogged\":\"2024-09-11 20:57:04\",\"iduser\":2}', '2024-09-11 20:57:04', '2024-09-11 20:57:04', NULL);
+INSERT INTO `audit` VALUES (555, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"iduser\":2,\"idbeneficiary\":\"850\",\"idmovementtype\":\"1\",\"date\":\"2024-09-11 21:26:08\",\"numberdocument\":\"001-003-0000031\",\"subtotal\":\"447.8\",\"discount\":\"0\",\"total\":\"447.8\",\"reference\":\"\"}', '2024-09-11 21:26:08', '2024-09-11 21:26:08', NULL);
+INSERT INTO `audit` VALUES (556, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":96,\"idproduct\":\"34\",\"entry\":\"E\",\"qty\":\"12\",\"price\":\"9\",\"total\":\"108\"}', '2024-09-11 21:26:08', '2024-09-11 21:26:08', NULL);
+INSERT INTO `audit` VALUES (557, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":96,\"idproduct\":\"32\",\"entry\":\"E\",\"qty\":\"15\",\"price\":\"1.32\",\"total\":\"19.8\"}', '2024-09-11 21:26:09', '2024-09-11 21:26:09', NULL);
+INSERT INTO `audit` VALUES (558, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveTransaction&id=-1', '{\"idtransaction\":96,\"idproduct\":\"30\",\"entry\":\"E\",\"qty\":\"250\",\"price\":\"1.28\",\"total\":\"320\"}', '2024-09-11 21:26:09', '2024-09-11 21:26:09', NULL);
+INSERT INTO `audit` VALUES (559, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=login', '{\"token\":\"RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QzZxNVFaVjVTanZJcDVucmdQMnFuMnMwclpuQ253WFJvZW55WEE4QXRWY0E9PQ==\",\"operations\":77,\"lastlogged\":\"2024-09-11 23:01:37\",\"iduser\":2}', '2024-09-11 23:01:37', '2024-09-11 23:01:37', NULL);
+INSERT INTO `audit` VALUES (560, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=resetearclave&id=24', '{\"password\":\"cambiar\",\"iduser\":\"24\"}', '2024-09-12 01:15:24', '2024-09-12 01:15:24', NULL);
+INSERT INTO `audit` VALUES (561, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"0\",\"idrole\":\"2\"}', '2024-09-12 01:38:25', '2024-09-12 01:38:25', NULL);
+INSERT INTO `audit` VALUES (562, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveRolMenu&id=2', '{\"0\":{\"idmenu\":\"9\"},\"1\":{\"idmenu\":\"15\"},\"2\":{\"idmenu\":\"35\"},\"3\":{\"idmenu\":\"1\"},\"4\":{\"idmenu\":\"2\"},\"5\":{\"idmenu\":\"4\"},\"6\":{\"idmenu\":\"3\"},\"7\":{\"idmenu\":\"21\"},\"8\":{\"idmenu\":\"37\"},\"9\":{\"idmenu\":\"6\"},\"10\":{\"idmenu\":\"5\"},\"11\":{\"idmenu\":\"8\"},\"12\":{\"idmenu\":\"7\"},\"13\":{\"idmenu\":\"28\"},\"14\":{\"idmenu\":\"36\"},\"15\":{\"idmenu\":\"39\"},\"16\":{\"idmenu\":\"40\"},\"17\":{\"idmenu\":\"41\"},\"18\":{\"idmenu\":\"10\"},\"19\":{\"idmenu\":\"11\"},\"20\":{\"idmenu\":\"12\"},\"21\":{\"idmenu\":\"13\"},\"22\":{\"idmenu\":\"14\"},\"23\":{\"idmenu\":\"29\"},\"24\":{\"idmenu\":\"30\"},\"25\":{\"idmenu\":\"38\"},\"26\":{\"idmenu\":\"16\"},\"27\":{\"idmenu\":\"17\"},\"28\":{\"idmenu\":\"18\"},\"29\":{\"idmenu\":\"19\"},\"30\":{\"idmenu\":\"22\"},\"31\":{\"idmenu\":\"20\"},\"idrole\":\"2\"}', '2024-09-12 01:38:25', '2024-09-12 01:38:25', NULL);
+INSERT INTO `audit` VALUES (563, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'PUT', '/api6ug8/?ruta=saveRole&id=2', '{\"name\":\"Administrador\",\"scope\":\"RWD\",\"status\":\"1\",\"idrole\":\"2\"}', '2024-09-12 01:38:33', '2024-09-12 01:38:33', NULL);
+INSERT INTO `audit` VALUES (564, 2, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0', 'POST', '/api6ug8/?ruta=saveRolMenu&id=2', '{\"0\":{\"idmenu\":\"9\"},\"1\":{\"idmenu\":\"15\"},\"2\":{\"idmenu\":\"35\"},\"3\":{\"idmenu\":\"1\"},\"4\":{\"idmenu\":\"2\"},\"5\":{\"idmenu\":\"4\"},\"6\":{\"idmenu\":\"3\"},\"7\":{\"idmenu\":\"21\"},\"8\":{\"idmenu\":\"37\"},\"9\":{\"idmenu\":\"6\"},\"10\":{\"idmenu\":\"5\"},\"11\":{\"idmenu\":\"8\"},\"12\":{\"idmenu\":\"7\"},\"13\":{\"idmenu\":\"28\"},\"14\":{\"idmenu\":\"36\"},\"15\":{\"idmenu\":\"39\"},\"16\":{\"idmenu\":\"40\"},\"17\":{\"idmenu\":\"41\"},\"18\":{\"idmenu\":\"10\"},\"19\":{\"idmenu\":\"11\"},\"20\":{\"idmenu\":\"12\"},\"21\":{\"idmenu\":\"13\"},\"22\":{\"idmenu\":\"14\"},\"23\":{\"idmenu\":\"29\"},\"24\":{\"idmenu\":\"30\"},\"25\":{\"idmenu\":\"38\"},\"26\":{\"idmenu\":\"16\"},\"27\":{\"idmenu\":\"17\"},\"28\":{\"idmenu\":\"18\"},\"29\":{\"idmenu\":\"19\"},\"30\":{\"idmenu\":\"22\"},\"31\":{\"idmenu\":\"20\"},\"idrole\":\"2\"}', '2024-09-12 01:38:33', '2024-09-12 01:38:33', NULL);
 
 -- ----------------------------
 -- Table structure for beneficiary
@@ -2405,12 +2572,12 @@ CREATE TABLE `menu`  (
   INDEX `submenu`(`submenu` ASC) USING BTREE,
   INDEX `status`(`status` ASC) USING BTREE,
   INDEX `deleted_at`(`deleted_at` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES (1, '02', 'Administación', 'fa fa-cog', NULL, 1, 1, '2024-06-21 15:00:39', '2024-08-09 10:27:27', NULL);
+INSERT INTO `menu` VALUES (1, '02', 'Administración', 'fa fa-cog', NULL, 1, 1, '2024-06-21 15:00:39', '2024-09-11 21:39:55', NULL);
 INSERT INTO `menu` VALUES (2, '02.01', 'Usuarios', 'fas fa-user', 'users', 0, 1, '2024-06-21 15:00:50', '2024-08-09 10:27:32', NULL);
 INSERT INTO `menu` VALUES (3, '02.03', 'Roles', 'fas fa-shield-alt', 'roles', 0, 1, '2024-06-21 15:01:00', '2024-08-13 12:31:28', NULL);
 INSERT INTO `menu` VALUES (4, '02.02', 'Menú de Opciones', 'fas fa-prescription-bottle', 'menu', 0, 1, '2024-06-21 15:01:10', '2024-08-17 00:36:51', NULL);
@@ -2433,14 +2600,15 @@ INSERT INTO `menu` VALUES (20, '05.05', 'Auditoría', 'fas fa-user-secret', 'bot
 INSERT INTO `menu` VALUES (21, '02.04', 'Auditoría', 'fas fa-user-secret', 'audit', 0, 1, '2024-07-25 21:51:27', '2024-08-13 12:31:39', NULL);
 INSERT INTO `menu` VALUES (22, '05.04', 'Usuarios Registrados', 'fab fa-telegram-plane', 'bot_users', 0, 1, '2024-07-25 21:51:48', '2024-08-09 10:28:36', NULL);
 INSERT INTO `menu` VALUES (28, '03.04', 'Kardex', 'fas fa-boxes', 'kardex', 0, 1, '2024-08-16 23:00:38', '2024-08-17 00:11:42', NULL);
-INSERT INTO `menu` VALUES (29, '04.05', 'Productos por número de movimientos', 'far fa-file-archive', 'lst_nummovimientos', 0, 1, '2024-08-17 01:04:49', '2024-08-17 01:06:29', NULL);
+INSERT INTO `menu` VALUES (29, '04.05', 'Productos por tipo de transaccion', 'far fa-file-archive', 'lst_nummovimientos', 0, 1, '2024-08-17 01:04:49', '2024-09-09 23:40:32', NULL);
 INSERT INTO `menu` VALUES (30, '04.06', 'Inventario Valorado', 'far fa-file-archive', 'lst_invvalorado', 0, 1, '2024-08-17 01:06:24', '2024-09-06 17:48:34', NULL);
 INSERT INTO `menu` VALUES (35, '01.02', 'Compras', 'fas fa-chart-bar', 'dashcompras', 0, 1, '2024-08-17 01:38:33', '2024-08-17 01:38:54', NULL);
 INSERT INTO `menu` VALUES (36, '03.05', 'Tipo de Comprobantes', 'fas fa-ticket-alt', 'movtipo', 0, 1, '2024-08-19 09:33:33', '2024-08-23 01:07:40', NULL);
 INSERT INTO `menu` VALUES (37, '02.05', 'Configuracion General', 'fa fa-cog', 'config', 0, 1, '2024-08-19 11:23:18', '2024-08-19 11:23:18', NULL);
 INSERT INTO `menu` VALUES (38, '04.07', 'Análisis de Rotacion', 'far fa-file-archive', 'lst_rotacion', 0, 1, '2024-09-04 20:05:02', '2024-09-04 20:05:14', NULL);
-INSERT INTO `menu` VALUES (39, '03.06', 'Categoria', 'fas fa-project-diagram', 'categoria', 0, 1, '2024-09-09 16:10:54', '2024-09-09 16:12:44', NULL);
+INSERT INTO `menu` VALUES (39, '03.06', 'Categoria de Productos', 'fas fa-project-diagram', 'categoria', 0, 1, '2024-09-09 16:10:54', '2024-09-11 21:40:39', NULL);
 INSERT INTO `menu` VALUES (40, '03.07', 'Linea de Productos', 'fas fa-external-link-square-alt', 'linea', 0, 1, '2024-09-09 16:11:26', '2024-09-09 16:21:37', NULL);
+INSERT INTO `menu` VALUES (41, '03.08', 'Cálculo de Mínimos y Máximos', 'fas fa-calculator', 'minmax', 0, 1, '2024-09-09 23:48:23', '2024-09-09 23:58:11', NULL);
 
 -- ----------------------------
 -- Table structure for movementtype
@@ -2534,42 +2702,42 @@ CREATE TABLE `product`  (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, 173.0000, 7.50, 1.0000, 45.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (2, 1, 2, 2, 'BC001', '2201909185029', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 2.0000, 39.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (3, 1, 2, 2, 'BC002', '2201909186637', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 2.0000, 69.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (4, 1, 2, 2, 'BC003', '2201909186712', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 2.0000, 79.0000, 3.00, 1.0000, 60.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (5, 1, 3, 3, 'P000000048', '1311719106792', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 3.0000, 67.0000, 4.50, 1.0000, 7.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (6, 1, 2, 2, 'BP001', '2201909183148', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 2.0000, 31.0000, 3.00, 1.0000, 78.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (7, 1, 2, 2, 'BP002', '2201909183254', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 2.0000, 63.0000, 3.00, 1.0000, 47.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (8, 1, 2, 2, 'BP003', '2201909183315', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 2.0000, 82.0000, 3.00, 1.0000, 108.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (9, 1, 2, 2, 'BP004', '2201909183377', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 73.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (10, 1, 2, 2, 'BP005', '2201909184961', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 2.0000, 56.0000, 3.00, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (11, 1, 3, 3, 'P000000038', '9271759134488', 'BAL. PREINICIAL PELLET BR. 40 KG', 'BAL. PREINICIAL PELLET BR. 40 KG', 2.0000, 68.0000, 3.00, 1.0000, 22.0000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (12, 1, 2, 2, 'BAI', '2201909186774', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 2.0000, 72.0000, 3.00, 1.0000, 6.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (13, 1, 2, 2, 'BCC', '2201909191891', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 2.0000, 33.0000, 3.00, 1.0000, 28.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (14, 1, 2, 2, 'BCE', '2201909191983', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 2.0000, 67.0000, 3.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (15, 1, 2, 2, 'BAF', '2201909186828', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 2.0000, 49.0000, 3.00, 1.0000, 38.5000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (16, 1, 3, 3, 'P000000031', '9132052567598', 'BANDEJA CP-100 COMEDERO (PACA)', 'BANDEJA CP-100 COMEDERO (PACA)', 2.0000, 80.0000, 3.00, 1.0000, 1.1000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 11.0675, 163.0000, 12.00, 1.0000, 139.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (18, 1, 2, 3, 'P000000041', '1111841491823', 'CALIERMUTIN 100 PREMIX X 25 KG', 'CALIERMUTIN 100 PREMIX X 25 KG', 1.0000, 67.0000, 1.50, 1.0000, 4.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (19, 10, 1, 2, 'P000000005', '1071747301964', 'CHASQUI', 'CHASQUI', 1.0000, 71.0000, 1.50, 1.0000, 89.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (20, 1, 2, 3, 'P000000043', '9271818561866', 'DESINFECTANTE TH4 5 LT', 'DESINFECTANTE TH4 5 LT', 8.0000, 44.0000, 12.00, 1.0000, 11.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (21, 1, 2, 3, 'P000000044', '1111900267789', 'DESINFECTANTE TH4 X 1 LITRO', 'DESINFECTANTE TH4 X 1 LITRO', 1.0000, 66.0000, 1.50, 1.0000, 8.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (22, 1, 2, 3, 'P000000045', '1111901040657', 'DESINFECTANTE TH4 X 25 LITROS', 'DESINFECTANTE TH4 X 25 LITROS', 2.0000, 125.0000, 3.00, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (23, 1, 3, 3, '00022', '1300945551049', 'DESPADAC X 25 L', 'DESPADAC X 25 L', 1.0000, 11.0000, 1.50, 1.0000, 2.2000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (24, 1, 2, 3, 'P000000046', '1111901366429', 'DETERSTORM X 25 KG', 'DETERSTORM X 25 KG', 1.0000, 55.0000, 1.50, 1.0000, 34.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (25, 1, 3, 3, '00090', '1271302276465', 'HEPATOLAY 5 L', 'HEPATOLAY 5 L', 4.0000, 31.0000, 6.00, 1.0000, 30.8000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (26, 1, 3, 3, 'P000000034', '9132119151296', 'HIPRAGUMBORO CH/80 * 5000 DS', 'HIPRAGUMBORO CH/80 * 5000 DS', 1.0000, 55.0000, 1.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (27, 1, 3, 3, 'P000000035', '9132119151425', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 9.0000, 90.0000, 13.50, 1.0000, 29.7000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (28, 1, 3, 3, '00031', '1300950349907', 'INMUNAIR-17.5 X 500 CC', 'INMUNAIR-17.5 X 500 CC', 4.0000, 42.0000, 6.00, 1.0000, 3.3000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (29, 11, 1, 1, 'P000000003', '1061540376221', 'MAIZ AMARILLO', 'MAIZ AMARILLO', 1.0000, 75.0000, 1.50, 1.0000, 1.1000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (30, 1, 4, 4, 'P000000024', '8311002014981', 'POLLO BB', 'POLLO BB', 0.3832, 276.0000, 1.28, 1.0000, 15.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (31, 1, 2, 4, 'P000000025', '9080043093741', 'POLLO CRIOLLO', 'POLLO CRIOLLO', 0.2036, 54.0000, 0.50, 1.0000, 22.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.7358, 31.0000, 1.32, 1.0000, 17.6000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMOTOR L X GL', 'PROMOTOR L X GL', 5.0000, 114.0000, 7.50, 1.0000, 20.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 59.0000, 9.00, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 3.0000, 4.50, 1.0000, 26.4000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
-INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 42.9000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-09 21:46:51', NULL);
+INSERT INTO `product` VALUES (1, 7, 1, 1, 'P000000012', '1281320086946', 'AFRECHO DE TRIGO', 'AFRECHO DE TRIGO', 5.0000, 173.0000, 7.50, 1.0000, 173.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:58:48', NULL);
+INSERT INTO `product` VALUES (2, 1, 2, 2, 'BC001', '2201909185029', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 'BAL. CUNIFORTE C1 CRECIMIENTO 40KG', 2.0000, 39.0000, 3.00, 3.0000, 39.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (3, 1, 2, 2, 'BC002', '2201909186637', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 'BAL. CUNIFORTE C2 ENGORDE 40KG', 2.0000, 69.0000, 3.00, 2.0000, 69.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (4, 1, 2, 2, 'BC003', '2201909186712', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 'BAL. CUNIFORTE C3 REPRODUCTORES 40KG', 2.0000, 79.0000, 3.00, 2.0000, 79.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (5, 1, 3, 3, 'P000000048', '1311719106792', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 'BAL. MED APE1  PREINICIAL PELLET BR. 40 KG', 3.0000, 67.0000, 4.50, 2.0000, 67.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (6, 1, 2, 2, 'BP001', '2201909183148', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 'BAL. PORCIFORTE P1 INICIAL PELLET 40 KG', 2.0000, 31.0000, 3.00, 3.0000, 31.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (7, 1, 2, 2, 'BP002', '2201909183254', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 'BAL. PORCIFORTE P2 CRECIMIENTO PELLET 40 KG', 2.0000, 63.0000, 3.00, 2.0000, 63.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (8, 1, 2, 2, 'BP003', '2201909183315', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 'BAL. PORCIFORTE P3 ENGORDE PELLET 40 KG', 2.0000, 82.0000, 3.00, 2.0000, 82.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (9, 1, 2, 2, 'BP004', '2201909183377', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 'BAL. PORCIFORTE P4 GESTACION PELLET 40 KG', 2.0000, 68.0000, 3.00, 2.0000, 68.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (10, 1, 2, 2, 'BP005', '2201909184961', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 'BAL. PORCIFORTE P5 LACTANCIA PELLET 40 KG', 2.0000, 56.0000, 3.00, 3.0000, 56.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (11, 1, 3, 3, 'P000000038', '9271759134488', 'BAL. PREINICIAL PELLET BR. 40 KG', 'BAL. PREINICIAL PELLET BR. 40 KG', 2.0000, 68.0000, 3.00, 3.0000, 68.0000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (12, 1, 2, 2, 'BAI', '2201909186774', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 'BALVIT  INICIAL PELLET BR. 40 KG CAL', 2.0000, 72.0000, 3.00, 2.0000, 72.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (13, 1, 2, 2, 'BCC', '2201909191891', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 'BALVIT CERDOS CRECIMIENTO PELLET 40 KG CAL', 2.0000, 33.0000, 3.00, 3.0000, 33.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (14, 1, 2, 2, 'BCE', '2201909191983', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 'BALVIT CERDOS ENGORDE PELLET 40 KG CAL', 2.0000, 67.0000, 3.00, 2.0000, 67.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (15, 1, 2, 2, 'BAF', '2201909186828', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 'BALVIT FINALIZADOR PELLET BR. 40 KG CAL', 2.0000, 49.0000, 3.00, 3.0000, 49.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (16, 1, 3, 3, 'P000000031', '9132052567598', 'BANDEJA CP-100 COMEDERO (PACA)', 'BANDEJA CP-100 COMEDERO (PACA)', 2.0000, 80.0000, 3.00, 2.0000, 80.0000, '', 1, '5.1.01.01.01', '4.1.01.01', '1.1.03.01.01', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (17, 1, 2, 3, 'P000000040', '1111753189153', 'CALIER PROACID 20 KG', 'CALIER PROACID 20 KG', 11.0675, 163.0000, 12.00, 1.0000, 163.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (18, 1, 2, 3, 'P000000041', '1111841491823', 'CALIERMUTIN 100 PREMIX X 25 KG', 'CALIERMUTIN 100 PREMIX X 25 KG', 1.0000, 67.0000, 1.50, 2.0000, 67.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (19, 10, 1, 2, 'P000000005', '1071747301964', 'CHASQUI', 'CHASQUI', 1.0000, 71.0000, 1.50, 2.0000, 71.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (20, 1, 2, 3, 'P000000043', '9271818561866', 'DESINFECTANTE TH4 5 LT', 'DESINFECTANTE TH4 5 LT', 8.0000, 44.0000, 12.00, 3.0000, 44.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (21, 1, 2, 3, 'P000000044', '1111900267789', 'DESINFECTANTE TH4 X 1 LITRO', 'DESINFECTANTE TH4 X 1 LITRO', 1.0000, 66.0000, 1.50, 2.0000, 66.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (22, 1, 2, 3, 'P000000045', '1111901040657', 'DESINFECTANTE TH4 X 25 LITROS', 'DESINFECTANTE TH4 X 25 LITROS', 2.0000, 125.0000, 3.00, 1.0000, 125.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (23, 1, 3, 3, '00022', '1300945551049', 'DESPADAC X 25 L', 'DESPADAC X 25 L', 1.0000, 11.0000, 1.50, 5.0000, 11.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:38', NULL);
+INSERT INTO `product` VALUES (24, 1, 2, 3, 'P000000046', '1111901366429', 'DETERSTORM X 25 KG', 'DETERSTORM X 25 KG', 1.0000, 55.0000, 1.50, 2.0000, 55.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (25, 1, 3, 3, '00090', '1271302276465', 'HEPATOLAY 5 L', 'HEPATOLAY 5 L', 4.0000, 31.0000, 6.00, 3.0000, 31.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (26, 1, 3, 3, 'P000000034', '9132119151296', 'HIPRAGUMBORO CH/80 * 5000 DS', 'HIPRAGUMBORO CH/80 * 5000 DS', 1.0000, 55.0000, 1.50, 2.0000, 55.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (27, 1, 3, 3, 'P000000035', '9132119151425', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 'HIPRAVIAR S/H120 2500 DS (NEW.BRONQ.)', 9.0000, 90.0000, 13.50, 2.0000, 90.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.03.01', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (28, 1, 3, 3, '00031', '1300950349907', 'INMUNAIR-17.5 X 500 CC', 'INMUNAIR-17.5 X 500 CC', 4.0000, 42.0000, 6.00, 2.0000, 42.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (29, 11, 1, 1, 'P000000003', '1061540376221', 'MAIZ AMARILLO', 'MAIZ AMARILLO', 1.0000, 75.0000, 1.50, 2.0000, 75.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (30, 1, 4, 4, 'P000000024', '8311002014981', 'POLLO BB', 'POLLO BB', 0.3832, 26.0000, 1.28, 5.0000, 276.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-11 21:26:09', NULL);
+INSERT INTO `product` VALUES (31, 1, 2, 4, 'P000000025', '9080043093741', 'POLLO CRIOLLO', 'POLLO CRIOLLO', 0.2036, 54.0000, 0.50, 2.0000, 54.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (32, 6, 4, 4, 'P000000021', '1081729085065', 'POLLO VIVO', 'POLLO VIVO', 0.7358, 16.0000, 1.32, 2.0000, 31.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-11 21:26:09', NULL);
+INSERT INTO `product` VALUES (33, 1, 2, 3, 'P000000042', '1111848444723', 'PROMOTOR L X GL', 'PROMOTOR L X GL', 5.0000, 114.0000, 7.50, 1.0000, 114.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (34, 1, 3, 3, '00088', '1300948596887', 'TILMICOSIN', 'TILMICOSIN', 6.0000, 47.0000, 9.00, 3.0000, 59.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-11 21:26:09', NULL);
+INSERT INTO `product` VALUES (35, 1, 2, 3, 'P000000047', '1131527422941', 'ZOOBIOTIC GLOBULIT  25 kg', 'ZOOBIOTIC GLOBULIT  25 kg', 3.0000, 3.0000, 4.50, 6.0000, 35.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
+INSERT INTO `product` VALUES (36, 1, 2, 2, '00036', '1091643233541', 'ZURITOL  2.5  1 L', 'ZURITOL  2.5  1 L', 5.0000, 54.0000, 7.50, 1.0000, 54.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-07-11 00:46:36', '2024-09-10 00:48:39', NULL);
 INSERT INTO `product` VALUES (41, 1, 2, 4, 'A1', 'A2', 'AAAAAA', 'Cosa aaaa', 0.0000, 0.0000, 2.00, 0.0000, 0.0000, '', 1, '', '', '', '2024-08-14 01:38:39', '2024-08-14 02:10:43', '2024-08-14 02:10:43');
 INSERT INTO `product` VALUES (42, 1, 1, 1, '21343243das', '87954612321321', 'BBBBB', 'BBBB', 0.0000, 0.0000, 15.00, 0.0000, 0.0000, '', 1, '5.1.01.01.02', '4.1.01.02', '1.1.03.01.02', '2024-08-16 23:19:06', '2024-08-16 23:19:19', '2024-08-16 23:19:19');
 
@@ -2637,7 +2805,7 @@ CREATE TABLE `productmovement`  (
   INDEX `IDXTRAS`(`idtransaction` ASC) USING BTREE,
   CONSTRAINT `IDXPRO` FOREIGN KEY (`idproduct`) REFERENCES `product` (`idproduct`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXTRAS` FOREIGN KEY (`idtransaction`) REFERENCES `transaction` (`idtransaction`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1801 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1804 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of productmovement
@@ -4436,6 +4604,9 @@ INSERT INTO `productmovement` VALUES (1793, 93, 1, 100.0000, 'I', 5.0000, 500.00
 INSERT INTO `productmovement` VALUES (1795, 95, 30, 300.0000, 'I', 0.3832, 114.9600, '2024-09-09 19:44:24', '2024-09-09 19:44:24', NULL);
 INSERT INTO `productmovement` VALUES (1799, 94, 35, 25.0000, 'E', 4.5000, 112.5000, '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
 INSERT INTO `productmovement` VALUES (1800, 94, 30, 300.0000, 'E', 1.2800, 384.0000, '2024-09-09 21:10:10', '2024-09-09 21:10:10', NULL);
+INSERT INTO `productmovement` VALUES (1801, 96, 34, 12.0000, 'E', 9.0000, 108.0000, '2024-09-11 21:26:09', '2024-09-11 21:26:09', NULL);
+INSERT INTO `productmovement` VALUES (1802, 96, 32, 15.0000, 'E', 1.3200, 19.8000, '2024-09-11 21:26:09', '2024-09-11 21:26:09', NULL);
+INSERT INTO `productmovement` VALUES (1803, 96, 30, 250.0000, 'E', 1.2800, 320.0000, '2024-09-11 21:26:09', '2024-09-11 21:26:09', NULL);
 
 -- ----------------------------
 -- Table structure for province
@@ -4499,7 +4670,7 @@ CREATE TABLE `role`  (
 -- Records of role
 -- ----------------------------
 INSERT INTO `role` VALUES (1, 'Reporteador', 'R', 1, '2024-06-21 15:17:20', '2024-08-26 00:55:07', NULL);
-INSERT INTO `role` VALUES (2, 'Administrador', 'RWD', 1, '2024-06-21 15:17:44', '2024-08-26 01:19:31', NULL);
+INSERT INTO `role` VALUES (2, 'Administrador', 'RWD', 1, '2024-06-21 15:17:44', '2024-09-12 01:38:33', NULL);
 INSERT INTO `role` VALUES (3, 'Usuario', 'R', 1, '2024-06-21 15:18:01', '2024-08-23 01:45:59', NULL);
 INSERT INTO `role` VALUES (4, 'Super', 'RWD', 1, '2024-06-21 15:18:44', '2024-08-16 23:55:25', '2024-08-16 23:55:25');
 INSERT INTO `role` VALUES (5, 'UserBot', '', 0, '2024-07-04 12:49:39', '2024-07-04 12:49:44', NULL);
@@ -4517,7 +4688,7 @@ CREATE TABLE `rolemenu`  (
   INDEX `IDME`(`idmenu` ASC) USING BTREE,
   CONSTRAINT `IDME` FOREIGN KEY (`idmenu`) REFERENCES `menu` (`idmenu`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXROL` FOREIGN KEY (`idrole`) REFERENCES `role` (`idrole`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 470 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 566 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of rolemenu
@@ -4557,37 +4728,38 @@ INSERT INTO `rolemenu` VALUES (406, 3, 18);
 INSERT INTO `rolemenu` VALUES (407, 3, 19);
 INSERT INTO `rolemenu` VALUES (408, 3, 22);
 INSERT INTO `rolemenu` VALUES (409, 3, 20);
-INSERT INTO `rolemenu` VALUES (439, 2, 9);
-INSERT INTO `rolemenu` VALUES (440, 2, 15);
-INSERT INTO `rolemenu` VALUES (441, 2, 35);
-INSERT INTO `rolemenu` VALUES (442, 2, 1);
-INSERT INTO `rolemenu` VALUES (443, 2, 2);
-INSERT INTO `rolemenu` VALUES (444, 2, 4);
-INSERT INTO `rolemenu` VALUES (445, 2, 3);
-INSERT INTO `rolemenu` VALUES (446, 2, 21);
-INSERT INTO `rolemenu` VALUES (447, 2, 37);
-INSERT INTO `rolemenu` VALUES (448, 2, 6);
-INSERT INTO `rolemenu` VALUES (449, 2, 5);
-INSERT INTO `rolemenu` VALUES (450, 2, 8);
-INSERT INTO `rolemenu` VALUES (451, 2, 7);
-INSERT INTO `rolemenu` VALUES (452, 2, 28);
-INSERT INTO `rolemenu` VALUES (453, 2, 36);
-INSERT INTO `rolemenu` VALUES (454, 2, 39);
-INSERT INTO `rolemenu` VALUES (455, 2, 40);
-INSERT INTO `rolemenu` VALUES (456, 2, 10);
-INSERT INTO `rolemenu` VALUES (457, 2, 11);
-INSERT INTO `rolemenu` VALUES (458, 2, 12);
-INSERT INTO `rolemenu` VALUES (459, 2, 13);
-INSERT INTO `rolemenu` VALUES (460, 2, 14);
-INSERT INTO `rolemenu` VALUES (461, 2, 29);
-INSERT INTO `rolemenu` VALUES (462, 2, 30);
-INSERT INTO `rolemenu` VALUES (463, 2, 38);
-INSERT INTO `rolemenu` VALUES (464, 2, 16);
-INSERT INTO `rolemenu` VALUES (465, 2, 17);
-INSERT INTO `rolemenu` VALUES (466, 2, 18);
-INSERT INTO `rolemenu` VALUES (467, 2, 19);
-INSERT INTO `rolemenu` VALUES (468, 2, 22);
-INSERT INTO `rolemenu` VALUES (469, 2, 20);
+INSERT INTO `rolemenu` VALUES (534, 2, 9);
+INSERT INTO `rolemenu` VALUES (535, 2, 15);
+INSERT INTO `rolemenu` VALUES (536, 2, 35);
+INSERT INTO `rolemenu` VALUES (537, 2, 1);
+INSERT INTO `rolemenu` VALUES (538, 2, 2);
+INSERT INTO `rolemenu` VALUES (539, 2, 4);
+INSERT INTO `rolemenu` VALUES (540, 2, 3);
+INSERT INTO `rolemenu` VALUES (541, 2, 21);
+INSERT INTO `rolemenu` VALUES (542, 2, 37);
+INSERT INTO `rolemenu` VALUES (543, 2, 6);
+INSERT INTO `rolemenu` VALUES (544, 2, 5);
+INSERT INTO `rolemenu` VALUES (545, 2, 8);
+INSERT INTO `rolemenu` VALUES (546, 2, 7);
+INSERT INTO `rolemenu` VALUES (547, 2, 28);
+INSERT INTO `rolemenu` VALUES (548, 2, 36);
+INSERT INTO `rolemenu` VALUES (549, 2, 39);
+INSERT INTO `rolemenu` VALUES (550, 2, 40);
+INSERT INTO `rolemenu` VALUES (551, 2, 41);
+INSERT INTO `rolemenu` VALUES (552, 2, 10);
+INSERT INTO `rolemenu` VALUES (553, 2, 11);
+INSERT INTO `rolemenu` VALUES (554, 2, 12);
+INSERT INTO `rolemenu` VALUES (555, 2, 13);
+INSERT INTO `rolemenu` VALUES (556, 2, 14);
+INSERT INTO `rolemenu` VALUES (557, 2, 29);
+INSERT INTO `rolemenu` VALUES (558, 2, 30);
+INSERT INTO `rolemenu` VALUES (559, 2, 38);
+INSERT INTO `rolemenu` VALUES (560, 2, 16);
+INSERT INTO `rolemenu` VALUES (561, 2, 17);
+INSERT INTO `rolemenu` VALUES (562, 2, 18);
+INSERT INTO `rolemenu` VALUES (563, 2, 19);
+INSERT INTO `rolemenu` VALUES (564, 2, 22);
+INSERT INTO `rolemenu` VALUES (565, 2, 20);
 
 -- ----------------------------
 -- Table structure for transaction
@@ -4612,7 +4784,7 @@ CREATE TABLE `transaction`  (
   CONSTRAINT `IDUSS` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXB` FOREIGN KEY (`idbeneficiary`) REFERENCES `beneficiary` (`idbeneficiary`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `IDXM` FOREIGN KEY (`idmovementtype`) REFERENCES `movementtype` (`idmovementtype`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 97 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_spanish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of transaction
@@ -4676,6 +4848,7 @@ INSERT INTO `transaction` VALUES (92, 2, 76, 2, '2024-08-20 17:46:07', '125-012-
 INSERT INTO `transaction` VALUES (93, 2, 78, 2, '2024-08-23 18:22:33', '002-125-0002569', 1121.60, 0.00, 1121.60, '', 1);
 INSERT INTO `transaction` VALUES (94, 2, 850, 1, '2024-09-09 21:10:09', '001-003-0000031', 496.50, 0.00, 496.50, 'ninguna referencia modificado para prueba', 1);
 INSERT INTO `transaction` VALUES (95, 2, 735, 2, '2024-09-09 19:44:24', '153-220-0123457', 114.96, 0.00, 114.96, '', 0);
+INSERT INTO `transaction` VALUES (96, 2, 850, 1, '2024-09-11 21:26:08', '001-003-0000031', 447.80, 0.00, 447.80, '', 1);
 
 -- ----------------------------
 -- Table structure for user
@@ -4705,7 +4878,7 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 2, 'jorge', '$2y$12$nKDUhRshuMdplcHvok8nVe37Hj.1EAu1vli5QPAig3nO2YuXx8AWe', 'Jorge', 1, 0, 'es', 1, '2024-08-19 09:28:05', 'Q0hlTHR3elRaeFhsSG0vbk55dlloelRYaU5UVTFFeXh3UFEyVEFOenppOHk0OTJHSkUvb2JHUVNjSkFVRkNvMm50aFM5bVBuVWtUSFpVSUhRS3AzL0E9PQ==', '2024-06-21 15:30:34', '2024-08-19 09:28:05', NULL);
-INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 69, '2024-09-09 20:09:23', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QWM3Z3NBbnU0RXFsT2tZYjBKT1dPVnRXM0N5aHRxdW9tSkVQWDY2STVOZVE9PQ==', '2024-06-21 15:30:47', '2024-09-09 20:09:23', NULL);
+INSERT INTO `user` VALUES (2, 2, 'santiago', '$2y$12$eAar1nNNWJs/gv8IllJKIehMXtXpmR1ZimfPJ5BYak2CprW8HV8VS', 'Santiago', 1, 0, 'es', 77, '2024-09-11 23:01:37', 'RWd1aGNxWkQyMGVBTkV4R2JwRkVBR3RuQ3MvYTMyOEN6WTl0cjZ5T2F4QzZxNVFaVjVTanZJcDVucmdQMnFuMnMwclpuQ253WFJvZW55WEE4QXRWY0E9PQ==', '2024-06-21 15:30:47', '2024-09-11 23:01:37', NULL);
 INSERT INTO `user` VALUES (3, 2, 'hugo', '$2y$12$JfgZQaHQi/yELIpCWyhm9.70LE5A2rAIss8/9TyN7NuOWlRvz/FOC', 'Hugo', 1, 0, 'es', 1, '2024-08-05 22:15:52', 'ZG5RTTVkU1FJZmZsaG5FeVVGd3ZHUHhWWE82TFVaa1hxYzlWZ2E2YWtVZWt3STU5Z0pZVkZ6VGlCKzlQL2lxY1k1N0p3SmNrWHlDMEorYnZrV1NubWc9PQ==', '2024-06-21 15:31:03', '2024-08-23 01:47:54', NULL);
 INSERT INTO `user` VALUES (4, 2, 'joel', 'cambiar', 'Joel', 1, 0, 'es', 1, '2024-08-22 17:56:45', 'aE5zSGdtSlQ5Ym9vM2RadEJMSnhvUGxMbHZ0UUxwT1JCYTRTZDBtQWo4ZEVZNlh4N3R2YWRLOUJYbHo2Mm1kbDArVmFwTnpVV2YwaEViM2F5RVczWUE9PQ==', '2024-06-21 15:31:15', '2024-08-22 17:57:37', NULL);
 INSERT INTO `user` VALUES (5, 2, 'rick', 'cambiar', 'Ricardo', 1, 0, 'es', 0, NULL, NULL, '2024-06-21 15:31:31', '2024-08-22 17:47:49', NULL);
@@ -5309,6 +5482,7 @@ DECLARE faux CURSOR FOR
     AND pm.deleted_at IS NULL
     AND pm.entry = toASIENTO
     AND (t.date BETWEEN toDESDE AND toHASTA)
+    AND t.status=1
   GROUP BY
     p.idproduct,
     year(t.date),
@@ -5379,7 +5553,7 @@ IF toDESPLIEGA=1 THEN
 		FROM tmp_productos_mes
 		-- WHERE promedio>0
 		ORDER BY
-			total desc
+			producto
 	;
 END IF;
 
