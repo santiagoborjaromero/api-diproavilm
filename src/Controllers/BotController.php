@@ -93,6 +93,7 @@ class BotController extends Controller{
         Middleware::auditSecurity();
 
         $bot = new Model("bot_dictionary");
+        $bot->orderBy("menu");
         $rs = $bot->get();
 
         http_response_code(200);

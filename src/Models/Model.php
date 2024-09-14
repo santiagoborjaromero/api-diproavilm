@@ -80,7 +80,7 @@ class Model extends ConnController{
     }
 
     //TODO: metodo para determinar el orden 
-    public function orderBy($field, $order){
+    public function orderBy($field, $order="asc"){
         $this->setOrderBy[] = ["field" => $field, "order" => $order];
     }
 
