@@ -34,7 +34,7 @@ Lenguaje de programacion  <br>
 
 ## Configuracion
 
-1. `config.json`, determina los accesos a las bases de datos transaccional y dwh
+1. `anything.papajhons`, determina los accesos a las bases de datos transaccional y dwh
 ```json
 {
     "mysql": {

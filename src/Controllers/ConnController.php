@@ -3,7 +3,7 @@ class ConnController{
 	private PDO $db;
 
     public function Connect($connType) {
-        $file_config = __DIR__ . "/../../config.json";
+        $file_config = __DIR__ . "/../../anything.papajhons";
         if (!file_exists($file_config)){
             $structure = '{
     "mysql": {
@@ -24,7 +24,7 @@ class ConnController{
     }
             }';
             file_put_contents($file_config, $structure);
-            die("Error en la configuracion del acceso a la base de datos: config.json");
+            die("Error en la configuracion del acceso a la base de datos");
         }
         $json_config = json_decode(file_get_contents($file_config), true);
         $connData = $json_config[$connType];
