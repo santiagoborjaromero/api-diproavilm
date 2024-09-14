@@ -1,4 +1,5 @@
 {
+    
     "GET|healthy" : "RouterController::healthy()",
     
     "GET|config":  "ConfigController::getAll()",
