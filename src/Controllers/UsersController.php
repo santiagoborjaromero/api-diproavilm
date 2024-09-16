@@ -138,13 +138,18 @@ class UsersController extends Controller{
                 $iduser = $value["iduser"];
             }
 
-            $up = new Model("user");
-            $up->set("password", AuthController::hashed($requestBody["password_new"]));
-            $up->where("iduser", "=", $iduser);
-            $rs = $up->update();
+            if ($pass === null || $pass == "" || $pass == "cambiar"){
+                $up = new Model("user");
+                $up->set("password", AuthController::hashed($requestBody["password_new"]));
+                $up->where("iduser", "=", $iduser);
+                $rs = $up->update();
+                $error = "ok";
+                $message = "Establecimiento de contraseña realizado con exito";
+            } else {
+                $error = "error";
+                $message = "Ya tiene una cuenta con la contraseña establecida, si desea cambiar la contraseña, retorne a login y seleccione cambiar contraseña.";
+            }
 
-            $error = "ok";
-            $message = "Establecimiento de contraseña realizado con exito";
         } else{
             $error = "error";
             $message = "Usuario no valido";
