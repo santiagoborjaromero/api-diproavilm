@@ -22,6 +22,13 @@ class AuthController extends Controller{
         if (!$rs){
             $status = "error";
             $message = "Usuario invalido o inactivo";
+            $params = [
+                "username" => $username, 
+                "password" => $password, 
+                "error" => $message
+            ];
+            $audit = new Audit();
+            $audit->saveAudit(json_encode($params), false, false);
         } else{
             
             $status = "ok";
@@ -40,14 +47,22 @@ class AuthController extends Controller{
                 $message = "establecer clave";
                 $status = "error";
             } else {
+                $iduser = $message[0]["iduser"];
+                $idrole = $message[0]["idrole"];
+
                 if (!AuthController::verifyPass($pass, $password)){
                     $message = "Contraseña incorrecta";
                     $status = "error";
+                    $params = [
+                        "iduser" => $iduser,
+                        "username" => $username, 
+                        "password" => $password, 
+                        "error" => $message
+                    ];
+                    $audit = new Audit();
+                    $audit->saveAudit(json_encode($params), false, false);
                 } else { 
                     unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
-        
-                    $iduser = $message[0]["iduser"];
-                    $idrole = $message[0]["idrole"];
 
                     //TODO: Que pasaría si el rol esta desactivado o status = 0??? Se debe enviar un mensaje y no permitir ingreso
                     $rs = new Model("role");
@@ -58,6 +73,14 @@ class AuthController extends Controller{
                     if ($recRol == NULL){
                         $status = "error";
                         $message = "El Rol del usuario se encuentra inhabilitado para acceder al sistema. Contactese con el administrador.";
+                        $params = [
+                            "iduser" => $iduser,
+                            "idrole" => $idrole,
+                            "username" => $username, 
+                            "password" => $password, 
+                        ];
+                        $audit = new Audit();
+                        $audit->saveAudit(json_encode($params), false, false);
                     } else {
     
                         //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);

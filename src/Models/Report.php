@@ -28,4 +28,16 @@ class Report{
         $dataresult = $conn->Execute($sql);
         return $dataresult;
     }
+
+    public  function movimientoGeneral($requestBody){
+
+        $fecha_ini = $requestBody["fecha_ini"];
+        $fecha_fin = $requestBody["fecha_fin"];
+
+        $sql = "SELECT * FROM view_movements WHERE fecha BETWEEN '{$fecha_ini}' AND '{$fecha_fin}'";
+        $conn = new ConnController();
+        $conn->Connect($this->drive);
+        $dataresult = $conn->Execute($sql);
+        return $dataresult;
+    }
 }

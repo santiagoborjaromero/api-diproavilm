@@ -28,4 +28,16 @@ class ReportController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }
+
+    static public function movimientoGeneral(){
+        Middleware::auditSecurity();
+
+        $requestBody = Middleware::request();
+
+        $rpt = new Report();
+        $rs = $rpt->movimientoGeneral($requestBody);
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
 }

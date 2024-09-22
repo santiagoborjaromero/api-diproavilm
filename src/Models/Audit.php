@@ -20,14 +20,20 @@ class Audit{
         return $dataresult;
     }
 
-    public function saveAudit($json = [], $atake = false){
+    public function saveAudit($json = "", $atake = false, $contoken = true){
 
         if (!$atake){
-            $data = Middleware::getDataToken();
-    
+            
             $iduser = null;
-            if ($data){
-                $iduser = $data["iduser"];
+            if ($contoken){
+                $data = Middleware::getDataToken();
+        
+                if ($data){
+                    $iduser = $data["iduser"];
+                }
+            } else {
+                $datajson = json_decode($json, true);
+                $iduser = $datajson["iduser"];
             }
     
             $action = $_SERVER["REQUEST_METHOD"];

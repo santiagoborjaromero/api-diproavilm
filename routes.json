@@ -108,5 +108,8 @@
     "DELETE|botuserDelete":  "BotUsersController::delete()",
     
     "GET|lstanalisisrotacion":  "ReportController::analisisRotacion()",
-    "GET|lstmovproductos":  "ReportController::movimientoProductos()"
+    "GET|lstmovproductos":  "ReportController::movimientoProductos()",
+    "GET|movgeneral":  "ReportController::movimientoGeneral()"
+
+
 }
