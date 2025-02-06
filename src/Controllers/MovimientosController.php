@@ -152,7 +152,7 @@ class MovimientosController extends Controller{
         $kardx->recalcularSaldos();
 
         http_response_code(200);
-        echo Controller::formatoSalida("ok",$idtransaction);
+        echo Controller::formatoSalida("ok",$id);
     }
 
     

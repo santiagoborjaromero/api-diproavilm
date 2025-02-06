@@ -13,15 +13,26 @@ class AuthController extends Controller{
 
         $username = $requestBody["username"];
         $password = $requestBody["password"];
+        $app = "";
+        if (isset($requestBody["app"])){
+            if ($requestBody["app"] == "movil"){
+                $app = "grant_movil_access";
+            } else {
+                $app = $requestBody["app"];
+            }
+        }
 
         $user = new Model("user");
         $user->where("username", "=", $username);
         $user->where("status", "=", 1);
+        if ($app != ''){
+            $user->where($app, "=", 1);
+        }
         $rs = $user->get(true);
 
         if (!$rs){
             $status = "error";
-            $message = "Usuario invalido o inactivo";
+            $message = "Usuario invalido, inactivo o sin permisos de acceso";
             $params = [
                 "username" => $username, 
                 "password" => $password, 
@@ -82,10 +93,31 @@ class AuthController extends Controller{
                         $audit = new Audit();
                         $audit->saveAudit(json_encode($params), false, false);
                     } else {
+                        $idroleAux = 0;
+                        if ($app == "grant_movil_access"){
+                            foreach ($recRol as $key => $value) {
+                                $nameRole = "app" . $value["name"];
+                            }
+
+                            $rs = new Model("role");
+                            $rs->where("name", "=", $nameRole);
+                            $rs->where("status", "=", 1);
+                            $recRol2 = $rs->get(true);
+                            foreach ($recRol2 as $key => $value) {
+                                $idroleAux = $value["idrole"];
+                            }
+
+                        }
+
+
     
                         //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
                         $rs= new Model("view_get_menu");
-                        $rs->where("idrole", "=", $idrole);
+                        if ($idroleAux==0){
+                            $rs->where("idrole", "=", $idrole);
+                        }else{
+                            $rs->where("idrole", "=", $idroleAux);
+                        }
                         $recRolMenu = $rs->get(true);
                         
                         //TODO: $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
