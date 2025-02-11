@@ -5,8 +5,6 @@ require_once(__DIR__."/../Models/Model.php");
 //TODO: Clase para gestionar opciones como de autorizaacion y validacion
 class AuthController extends Controller{
     
-    
-
     static public function login(){
 
         $requestBody = Middleware::request();
@@ -14,7 +12,9 @@ class AuthController extends Controller{
         $username = $requestBody["username"];
         $password = $requestBody["password"];
         $app = "";
+        $application = "web";
         if (isset($requestBody["app"])){
+            $application = "movil";
             if ($requestBody["app"] == "movil"){
                 $app = "grant_movil_access";
             } else {
@@ -88,7 +88,7 @@ class AuthController extends Controller{
                             "iduser" => $iduser,
                             "idrole" => $idrole,
                             "username" => $username, 
-                            "password" => $password, 
+                            "password" => $password
                         ];
                         $audit = new Audit();
                         $audit->saveAudit(json_encode($params), false, false);
@@ -106,10 +106,7 @@ class AuthController extends Controller{
                             foreach ($recRol2 as $key => $value) {
                                 $idroleAux = $value["idrole"];
                             }
-
                         }
-
-
     
                         //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
                         $rs= new Model("view_get_menu");
@@ -144,7 +141,20 @@ class AuthController extends Controller{
                         $rs_up->set("operations", $operations);
                         $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
                         $rs_up->where("iduser", "=", $iduser);
-                        $mensaje = $rs_up->update();
+                        $mensaje = $rs_up->update(false, false);
+                        
+
+                        $params = [
+                            "iduser" => $iduser,
+                            "idrole" => $idrole ?? $idroleAux,
+                            "username" => $username, 
+                            "password" => $password,
+                            "app" => $application
+                        ];
+                        $audit = new Audit();
+                        $audit->saveAudit(json_encode($params), false, false);
+
+
                         // TODO: Antes SQL UPDATE
                         // $sql = "UPDATE user 
                         //         SET token = :token, lastlogged = :lastlogged

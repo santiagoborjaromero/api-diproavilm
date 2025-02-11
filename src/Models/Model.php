@@ -168,7 +168,7 @@ class Model extends ConnController{
     }
 
     //TODO: Metodo que actualiza un registro previo debe especificar con el metodo set
-    public function update($hasDeleted = false, ){
+    public function update($hasDeleted = false, $saveAudit = true ){
 
         $sql = "UPDATE " . $this->table . " SET ";  
 
@@ -202,8 +202,10 @@ class Model extends ConnController{
         }
         
         //TODO: Guarda ejecucion en el auditor
-        $audit = new Audit();
-        $audit->saveAudit(json_encode($params));
+        if ($saveAudit){
+            $audit = new Audit();
+            $audit->saveAudit(json_encode($params));
+        }
 
         $conn = new ConnController();
         $conn->Connect($this->drive);

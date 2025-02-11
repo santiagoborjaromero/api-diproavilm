@@ -23,9 +23,12 @@ class Audit{
     public function saveAudit($json = "", $atake = false, $contoken = true){
 
         if (!$atake){
+
+            $app  = "web";
             
             $iduser = null;
             if ($contoken){
+                echo "CON TOKEN " . $contoken;
                 $data = Middleware::getDataToken();
         
                 if ($data){
@@ -34,20 +37,26 @@ class Audit{
             } else {
                 $datajson = json_decode($json, true);
                 $iduser = $datajson["iduser"];
+                $app = $datajson["app"];
             }
-    
+
             $action = $_SERVER["REQUEST_METHOD"];
             $route  = $_SERVER["REQUEST_URI"];
             $ipaddr = $_SERVER["HTTP_USER_AGENT"];
+
+            if (strpos("Android", $ipaddr,0)>0 || strpos("iPhone", $ipaddr,0)>0){
+                $app  = "movil";
+            }
     
             $params = [
                 "iduser" =>$iduser ,
                 "ipaddr" =>$ipaddr ,
                 "action" =>$action ,
-                "route"   =>$route ,
-                "json" => $json
+                "route"  =>$route ,
+                "json"   => $json,
+                "app"    => $app
             ];
-            $sql="INSERT INTO audit (`iduser`, `ipaddr`, `action`, `route`, `json`) VALUE (:iduser, :ipaddr, :action, :route, :json)";
+            $sql="INSERT INTO audit (`iduser`, `ipaddr`, `action`, `route`, `json`, `app`) VALUE (:iduser, :ipaddr, :action, :route, :json, :app)";
         } else {
             $params = [
                 "ipaddr" => $this->get_client_ip() ,
