@@ -15,14 +15,9 @@ Jaime Santiago Borja Romero <br>
 Jorge Luis López Romo <br>
 
 ## Recursos utilizados
+![](https://img.shields.io/badge/MySQL-8.1.10-blue) 
+![](https://img.shields.io/badge/PHP-8.1.10-blue) 
 
-### Base de datos
-Transaccional <br>
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)  <br>
-
-#### Api restful
-Lenguaje de programacion  <br>
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) 
 
 ## Configuracion
 
