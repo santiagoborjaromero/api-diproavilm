@@ -1,4 +1,4 @@
-![6UG8](logo6UG8.jpg)
+![7UG8](logo7UG8.jpg)
 #### 7UG8 (Septimo Semestre Grupo 8)
 # API RESTFUL
 
