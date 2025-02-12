@@ -129,7 +129,7 @@ class UsersController extends Controller{
         $change->where("username", "=", $requestBody["username"]) ;
         $rs = $change->get(true);
 
-        $error = "";
+        $status = "";
         $message = "";
         $iduser = -1;
         if ($rs){
@@ -139,24 +139,24 @@ class UsersController extends Controller{
             }
 
             if ($pass === null || $pass == "" || $pass == "cambiar"){
-                $up = new Model("user");
-                $up->set("password", AuthController::hashed($requestBody["password_new"]));
-                $up->where("iduser", "=", $iduser);
-                $rs = $up->update();
-                $error = "ok";
+                // $up = new Model("user");
+                // $up->set("password", AuthController::hashed($requestBody["password_new"]));
+                // $up->where("iduser", "=", $iduser);
+                // $rs = $up->update();
+                $status = "ok";
                 $message = "Establecimiento de contraseña realizado con exito";
             } else {
-                $error = "error";
+                $status = "error";
                 $message = "Ya tiene una cuenta con la contraseña establecida, si desea cambiar la contraseña, retorne a login y seleccione cambiar contraseña.";
             }
 
         } else{
-            $error = "error";
+            $status = "error";
             $message = "Usuario no valido";
         }
 
         http_response_code(200);
-        echo Controller::formatoSalida($error,$message);
+        echo Controller::formatoSalida($status,$message);
     }
 
 
@@ -182,6 +182,22 @@ class UsersController extends Controller{
         $rs = $user->update();
         $status = "ok";
         $message = $rs;
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
+    static function bloquearUsuario(){
+
+        $requestBody = Middleware::request();
+
+        $user = new Model("user");
+        $user->set("status", 0);
+        $user->where("username", "=", $requestBody["username"]) ;
+        $rs = $user->update();
+        
+        $status = "ok";
+        $message = $rs;
+
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }

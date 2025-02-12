@@ -24,11 +24,10 @@ class Audit{
 
         if (!$atake){
 
-            $app  = "web";
+            $app = "";
             
             $iduser = null;
             if ($contoken){
-                echo "CON TOKEN " . $contoken;
                 $data = Middleware::getDataToken();
         
                 if ($data){
@@ -44,8 +43,14 @@ class Audit{
             $route  = $_SERVER["REQUEST_URI"];
             $ipaddr = $_SERVER["HTTP_USER_AGENT"];
 
-            if (strpos("Android", $ipaddr,0)>0 || strpos("iPhone", $ipaddr,0)>0){
-                $app  = "movil";
+            if ($app == ""){
+                $web_dispositivos = array("Android", "iPhone");
+                $componentes_ipaddress = explode(" ", $ipaddr);
+                if (in_array("Android", $componentes_ipaddress) || in_array("iPhone", $componentes_ipaddress)){
+                    $app  = "movil";
+                }else {
+                    $app  = "web";
+                }
             }
     
             $params = [

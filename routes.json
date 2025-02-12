@@ -17,6 +17,7 @@
     "POST|establecerclave":  "UsersController::establecerclave()",
     "POST|resetearclave":  "UsersController::resetearClaveUsuario()",
     "POST|recuperarUsuario":  "UsersController::recuperarUsuario()",
+    "POST|bloquearUsuario":  "UsersController::bloquearUsuario()",
     
     "GET|roles":  "RolesController::getAll()",
     "GET|roleshabiles":  "RolesController::getAllAvailables()",
