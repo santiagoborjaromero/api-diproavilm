@@ -1,5 +1,5 @@
-![7UG8](logo7UG8.jpg)
-#### 7UG8 (Septimo Semestre Grupo 8)
+![7AG8](logo7UG8.jpg)
+#### 7AUG8 (Septimo Semestre Grupo 8)
 # API RESTFUL
 
 **UNIVERSIDAD REGIONAL AUTÓNOMA DE LOS ANDES 
