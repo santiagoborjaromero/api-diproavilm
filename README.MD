@@ -15,8 +15,9 @@ Jaime Santiago Borja Romero <br>
 Jorge Luis López Romo <br>
 
 ## Recursos utilizados
-![](https://img.shields.io/badge/MySQL-8.1.10-blue) 
+![](https://img.shields.io/badge/MySQL-8.0.30-blue) 
 ![](https://img.shields.io/badge/PHP-8.1.10-blue) 
+![](https://img.shields.io/badge/Servidor_Apache-2.4.54-blue) 
 
 
 ## Configuracion
