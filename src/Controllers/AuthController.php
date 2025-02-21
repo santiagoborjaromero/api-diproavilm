@@ -98,7 +98,6 @@ class AuthController extends Controller{
                             foreach ($recRol as $key => $value) {
                                 $nameRole = "app" . $value["name"];
                             }
-
                             $rs = new Model("role");
                             $rs->where("name", "=", $nameRole);
                             $rs->where("status", "=", 1);
@@ -110,11 +109,12 @@ class AuthController extends Controller{
     
                         //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
                         $rs= new Model("view_get_menu");
-                        if ($idroleAux==0){
-                            $rs->where("idrole", "=", $idrole);
-                        }else{
+                        if ($application == "movil"){
                             $rs->where("idrole", "=", $idroleAux);
+                        }else{
+                            $rs->where("idrole", "=", $idrole);
                         }
+                       
                         $recRolMenu = $rs->get(true);
                         
                         //TODO: $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);

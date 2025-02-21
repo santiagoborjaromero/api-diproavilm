@@ -64,12 +64,17 @@ class UsersController extends Controller{
 
     static public function deleteUser(){
         Middleware::auditSecurity();
+
         $id = $_GET["id"];
         $user = new Model("user");
         $user->where("iduser", "=", $id);
         $rs = $user->delete();
-        $status = "ok";
-        $message = $rs;
+        if ($rs){
+            $status = "ok";
+            $message = $rs;
+
+        }
+
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
@@ -139,10 +144,10 @@ class UsersController extends Controller{
             }
 
             if ($pass === null || $pass == "" || $pass == "cambiar"){
-                // $up = new Model("user");
-                // $up->set("password", AuthController::hashed($requestBody["password_new"]));
-                // $up->where("iduser", "=", $iduser);
-                // $rs = $up->update();
+                $up = new Model("user");
+                $up->set("password", AuthController::hashed($requestBody["password_new"]));
+                $up->where("iduser", "=", $iduser);
+                $rs = $up->update();
                 $status = "ok";
                 $message = "Establecimiento de contraseña realizado con exito";
             } else {
@@ -178,6 +183,7 @@ class UsersController extends Controller{
         $id = $_GET["id"];
         $user = new Model("user");
         $user->set("deleted_at", NULL);
+        $user->set("status", 1);
         $user->where("iduser", "=", $id);
         $rs = $user->update();
         $status = "ok";

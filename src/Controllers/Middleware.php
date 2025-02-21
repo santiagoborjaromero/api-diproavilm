@@ -9,7 +9,7 @@ class Middleware{
 
         $authorization = getallheaders()["Authorization"];
         $token_to_evaluate = explode(" ", $authorization);
-        
+
         if ($token_to_evaluate[0] == "Bearer"){
             $payload = json_decode(Controller::decode(base64_decode($token_to_evaluate[1])), true);
             
