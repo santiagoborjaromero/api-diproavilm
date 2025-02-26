@@ -7,7 +7,9 @@ class AuthController extends Controller{
     
     static public function login(){
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $username = $requestBody["username"];
         $password = $requestBody["password"];
