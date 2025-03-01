@@ -54,4 +54,7 @@ Cada controlador debe estar creado en src/Controllers y el metodo definido para 
 }
 ```
 
-
+Para obtener log de git en formato para llenar a NOtion
+```
+git log --pretty=format:"%cs|%H|%s" > logs.txt     
+```
