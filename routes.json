@@ -8,6 +8,8 @@
     "GET|alertas":  "NotificationController::getAlertas()",
 
     "POST|login":  "AuthController::login()",
+    "POST|logout":  "AuthController::logout()",
+
 
     "GET|users" : "UsersController::getAll()",
     "POST|saveUser":  "UsersController::saveUser()",
@@ -25,7 +27,6 @@
     "PUT|saveRole":  "RolesController::updateRole()",
     "DELETE|deleteRole":  "RolesController::deleteRole()",
     "POST|recuperarRol":  "RolesController::recuperar()",
-    
     
     "GET|menus":  "MenuController::getAll()",
     "POST|saveMenu":  "MenuController::saveMenu()",

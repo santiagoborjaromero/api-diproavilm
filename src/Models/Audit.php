@@ -29,10 +29,17 @@ class Audit{
             $iduser = null;
             if ($contoken){
                 $data = Middleware::getDataToken();
-        
+            
                 if ($data){
                     $iduser = $data["iduser"];
+                } else {
+                    $status = "error"; 
+                    $message = "Operación interrumpida, no existe token, salga del sistema y vuelva a ingresar";
+                    http_response_code(200);
+                    echo Controller::formatoSalida($status,$message);
+                    die();
                 }
+
             } else {
                 $datajson = json_decode($json, true);
                 $iduser = $datajson["iduser"];

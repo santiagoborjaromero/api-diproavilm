@@ -5,6 +5,7 @@ require_once(__DIR__."/../Models/Model.php");
 //TODO: Clase para gestionar opciones como de autorizaacion y validacion
 class AuthController extends Controller{
     
+    
     static public function login(){
 
         $rqstBody = Middleware::request();
@@ -167,6 +168,23 @@ class AuthController extends Controller{
             }
         }
         
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+    
+    static public function logout(){
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+
+        $params = [];
+        $params["razon"] = "Cierre de Session";
+        if (isset($requestBody["app"])) $params["app"] = $requestBody["app"];
+
+        $audit = new Audit();
+        $audit->saveAudit(json_encode($params), false, true);
+
+        $status = "ok"; 
+        $message = "Session Cerrada con éxito";
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
