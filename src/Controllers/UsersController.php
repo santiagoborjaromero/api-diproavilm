@@ -128,7 +128,8 @@ class UsersController extends Controller{
 
     static function establecerclave(){
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;

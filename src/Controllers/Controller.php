@@ -13,7 +13,7 @@ class Controller extends ConnController {
             "status" => $code,
             "message" => Controller::encode(json_encode($dato))
         ];
-
+        // file_put_contents("logger.log", json_encode($resp, JSON_PRETTY_PRINT) , "\,", FILE_APPEND);
         return json_encode($resp, JSON_PRETTY_PRINT);
     }
 
