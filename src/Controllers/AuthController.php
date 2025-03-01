@@ -8,20 +8,17 @@ class AuthController extends Controller{
     static public function login(){
 
         $rqstBody = Middleware::request();
-
         $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $username = $requestBody["username"];
         $password = $requestBody["password"];
         $app = "";
-        $application = "web";
+        $application = "";
         if (isset($requestBody["app"])){
             $application = "movil";
             if ($requestBody["app"] == "movil"){
                 $app = "grant_movil_access";
-            } else {
-                $app = $requestBody["app"];
-            }
+            } 
         }
 
         $user = new Model("user");
@@ -108,7 +105,8 @@ class AuthController extends Controller{
                                 $idroleAux = $value["idrole"];
                             }
                         }
-    
+
+                        // file_put_contents("logger.log", "Aplicacion:" .  $application . "\n", FILE_APPEND);
                         //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
                         $rs= new Model("view_get_menu");
                         if ($application == "movil"){
@@ -116,7 +114,7 @@ class AuthController extends Controller{
                         }else{
                             $rs->where("idrole", "=", $idrole);
                         }
-                       
+
                         $recRolMenu = $rs->get(true);
                         
                         //TODO: $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
@@ -168,7 +166,7 @@ class AuthController extends Controller{
                 }
             }
         }
-
+        
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
