@@ -80,7 +80,8 @@ class UsersController extends Controller{
     }
 
     static public function cambioclave(){
-        $requestBody = json_decode(file_get_contents('php://input'), true);
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         if (!$requestBody){
             $requestBody = [
@@ -105,13 +106,47 @@ class UsersController extends Controller{
 
             if (AuthController::verifyPass($pass, $requestBody["password_old"])){
 
-                $up = new Model("user");
-                $up->set("password", AuthController::hashed($requestBody["password_new"]));
-                $up->where("iduser", "=", $iduser);
-                $rs = $up->update();
+                $exp = new Model("password_history");
+                $exp->where("iduser", "=", $iduser);
+                $recExp = $exp->get();
 
-                $error = "ok";
-                $message = "Cambio de contraseña realizado con exito";
+                /**
+                 * TODO: Chequeo para historial de contraseñas
+                 * Si esta cambiando se debe revisar si esa contraseña existe y emitir un mensaje de contraseña ya usada
+                 */
+                $found = false;
+                $$chk = false;
+                
+                if ($recExp){
+                    foreach ($recExp as $key => $value) {
+                        $chk = password_verify($requestBody["password_new"], $value["password"]);
+                        if ($chk){
+                            $found = true;
+                        }
+                    }
+                }
+
+                if (!$found){
+                    $exp = new Model("password_history");
+                    $exppass = [
+                        "iduser" => $iduser,
+                        "password" => AuthController::hashed($password)
+                    ];
+                    $exp->insertRecord($exppass);
+
+                    $up = new Model("user");
+                    $up->set("password", AuthController::hashed($requestBody["password_new"]));
+                    $up->set("password_expire", date('Y-m-d', strtotime('+1 year', strtotime(date('Y-m-d'))) ) );
+                    $up->where("iduser", "=", $iduser);
+                    $rs = $up->update(false,false);
+    
+                    $error = "ok";
+                    $message = "Cambio de contraseña realizado con exito";
+                } else{
+                    $error = "error";
+                    $message = "La contraseña ya fue utilizada, debe buscar otra";
+                }
+
             } else {
                 $error = "error";
                 $message = "La contraseña anterior con la almacenada no coincide";
@@ -133,6 +168,7 @@ class UsersController extends Controller{
 
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;
+        $change->where("status", "=", 1) ;
         $rs = $change->get(true);
 
         $status = "";
@@ -147,8 +183,9 @@ class UsersController extends Controller{
             if ($pass === null || $pass == "" || $pass == "cambiar"){
                 $up = new Model("user");
                 $up->set("password", AuthController::hashed($requestBody["password_new"]));
+                $up->set("password_expire", date('Y-m-d', strtotime('+1 year', strtotime(date('Y-m-d'))) ) );
                 $up->where("iduser", "=", $iduser);
-                $rs = $up->update();
+                $rs = $up->update(false,false);
                 $status = "ok";
                 $message = "Establecimiento de contraseña realizado con exito";
             } else {
@@ -171,6 +208,7 @@ class UsersController extends Controller{
         $id = $_GET["id"];
         $user = new Model("user");
         $user->set("password", "cambiar");
+        $user->set("password_expire", null);
         $user->where("iduser", "=", $id);
         $rs = $user->update();
         $status = "ok";
@@ -195,7 +233,8 @@ class UsersController extends Controller{
 
     static function bloquearUsuario(){
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $user = new Model("user");
         $user->set("status", 0);

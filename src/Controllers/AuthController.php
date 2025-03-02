@@ -60,6 +60,7 @@ class AuthController extends Controller{
             } else {
                 $iduser = $message[0]["iduser"];
                 $idrole = $message[0]["idrole"];
+                $caducidad = $message[0]["password_expire"];
 
                 if (!AuthController::verifyPass($pass, $password)){
                     $message = "Contraseña incorrecta";
@@ -73,96 +74,139 @@ class AuthController extends Controller{
                     $audit = new Audit();
                     $audit->saveAudit(json_encode($params), false, false);
                 } else { 
-                    unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
-
-                    //TODO: Que pasaría si el rol esta desactivado o status = 0??? Se debe enviar un mensaje y no permitir ingreso
-                    $rs = new Model("role");
-                    $rs->where("idrole", "=", $idrole);
-                    $rs->where("status", "=", 1);
-                    $recRol = $rs->get(true);
-
-                    if ($recRol == NULL){
+                    
+                    if ($caducidad === null || date("Y-m-d") > date($caducidad)){
+                        $message = "password expirado";
                         $status = "error";
-                        $message = "El Rol del usuario se encuentra inhabilitado para acceder al sistema. Contactese con el administrador.";
+
+                        $exp = new Model("password_history");
+                        $exp->where("iduser", "=", $iduser);
+                        // $exp->where("password", "=", $password);
+                        $recExp = $exp->get();
+
+                        $found = false;
+                        $$chk = false;
+                        
+                        if ($recExp){
+                            foreach ($recExp as $key => $value) {
+                                $chk = password_verify($password, $value["password"]);
+                                if ($chk){
+                                    $found = true;
+                                }
+                            }
+                        }
+                        
+                        if (!$found){
+                            $exp = new Model("password_history");
+                            $exppass = [
+                                "iduser" => $iduser,
+                                "password" => AuthController::hashed($password)
+                            ];
+                            $exp->insertRecord($exppass);
+                        }
+
                         $params = [
                             "iduser" => $iduser,
-                            "idrole" => $idrole,
                             "username" => $username, 
-                            "password" => $password
+                            "password" => $password, 
+                            "passwrord_expire" => $caducidad
                         ];
                         $audit = new Audit();
                         $audit->saveAudit(json_encode($params), false, false);
                     } else {
-                        $idroleAux = 0;
-                        if ($app == "grant_movil_access"){
-                            foreach ($recRol as $key => $value) {
-                                $nameRole = "app" . $value["name"];
+                        unset($message[0]["password"]); // No se puede enviar esta informacion es sencible
+    
+                        //TODO: Que pasaría si el rol esta desactivado o status = 0??? Se debe enviar un mensaje y no permitir ingreso
+                        $rs = new Model("role");
+                        $rs->where("idrole", "=", $idrole);
+                        $rs->where("status", "=", 1);
+                        $recRol = $rs->get(true);
+    
+                        if ($recRol == NULL){
+                            $status = "error";
+                            $message = "El Rol del usuario se encuentra inhabilitado para acceder al sistema. Contactese con el administrador.";
+                            $params = [
+                                "iduser" => $iduser,
+                                "idrole" => $idrole,
+                                "username" => $username, 
+                                "password" => $password
+                            ];
+                            $audit = new Audit();
+                            $audit->saveAudit(json_encode($params), false, false);
+                        } else {
+                            $idroleAux = 0;
+                            if ($app == "grant_movil_access"){
+                                foreach ($recRol as $key => $value) {
+                                    $nameRole = "app" . $value["name"];
+                                }
+                                $rs = new Model("role");
+                                $rs->where("name", "=", $nameRole);
+                                $rs->where("status", "=", 1);
+                                $recRol2 = $rs->get(true);
+                                foreach ($recRol2 as $key => $value) {
+                                    $idroleAux = $value["idrole"];
+                                }
                             }
-                            $rs = new Model("role");
-                            $rs->where("name", "=", $nameRole);
-                            $rs->where("status", "=", 1);
-                            $recRol2 = $rs->get(true);
-                            foreach ($recRol2 as $key => $value) {
-                                $idroleAux = $value["idrole"];
+    
+                            // file_put_contents("logger.log", "Aplicacion:" .  $application . "\n", FILE_APPEND);
+                            //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                            $rs= new Model("view_get_menu");
+                            if ($application == "movil"){
+                                $rs->where("idrole", "=", $idroleAux);
+                            }else{
+                                $rs->where("idrole", "=", $idrole);
                             }
+    
+                            $recRolMenu = $rs->get(true);
+                            
+                            //TODO: $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
+                            
+                            $message[0]["menu"] = $recRolMenu;
+                            $message[0]["role"] = $recRol;
+                            $message[0]["operations"] = $operations;
+                            
+                            if ($message[0]["token"]===null){
+                                $token = AuthController::setToken( $message[0] );
+                                $message[0]["token"] = $token;
+                            } else{
+                                $token = $message[0]["token"];
+                            }
+                            
+                            $verificacion = AuthController::validToken($token, $message[0]);
+                            if($verificacion != 'ok'){
+                                $token = AuthController::setToken( $message[0] );
+                                $message[0]["token"] = $token;
+                            }
+    
+                            $rs_up = new Model("user");
+                            $rs_up->set("token", $token);
+                            $rs_up->set("operations", $operations);
+                            $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
+                            $rs_up->where("iduser", "=", $iduser);
+                            $mensaje = $rs_up->update(false, false);
+                            
+    
+                            $params = [
+                                "iduser" => $iduser,
+                                "idrole" => $idrole ?? $idroleAux,
+                                "username" => $username, 
+                                "password" => $password,
+                                "app" => $application
+                            ];
+                            $audit = new Audit();
+                            $audit->saveAudit(json_encode($params), false, false);
+    
+    
+                            // TODO: Antes SQL UPDATE
+                            // $sql = "UPDATE user 
+                            //         SET token = :token, lastlogged = :lastlogged
+                            //         WHERE iduser= :iduser";
+                            // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
+    
                         }
-
-                        // file_put_contents("logger.log", "Aplicacion:" .  $application . "\n", FILE_APPEND);
-                        //TODO: Comando anterior:   $recRolMenu = $conn->Execute("SELECT * FROM view_get_menu WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                        $rs= new Model("view_get_menu");
-                        if ($application == "movil"){
-                            $rs->where("idrole", "=", $idroleAux);
-                        }else{
-                            $rs->where("idrole", "=", $idrole);
-                        }
-
-                        $recRolMenu = $rs->get(true);
-                        
-                        //TODO: $recRol = $conn->Execute("SELECT * FROM role WHERE idrole = :idrole", ["idrole"=>$idrole]);
-                        
-                        $message[0]["menu"] = $recRolMenu;
-                        $message[0]["role"] = $recRol;
-                        $message[0]["operations"] = $operations;
-                        
-                        if ($message[0]["token"]===null){
-                            $token = AuthController::setToken( $message[0] );
-                            $message[0]["token"] = $token;
-                        } else{
-                            $token = $message[0]["token"];
-                        }
-                        
-                        $verificacion = AuthController::validToken($token, $message[0]);
-                        if($verificacion != 'ok'){
-                            $token = AuthController::setToken( $message[0] );
-                            $message[0]["token"] = $token;
-                        }
-
-                        $rs_up = new Model("user");
-                        $rs_up->set("token", $token);
-                        $rs_up->set("operations", $operations);
-                        $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
-                        $rs_up->where("iduser", "=", $iduser);
-                        $mensaje = $rs_up->update(false, false);
-                        
-
-                        $params = [
-                            "iduser" => $iduser,
-                            "idrole" => $idrole ?? $idroleAux,
-                            "username" => $username, 
-                            "password" => $password,
-                            "app" => $application
-                        ];
-                        $audit = new Audit();
-                        $audit->saveAudit(json_encode($params), false, false);
-
-
-                        // TODO: Antes SQL UPDATE
-                        // $sql = "UPDATE user 
-                        //         SET token = :token, lastlogged = :lastlogged
-                        //         WHERE iduser= :iduser";
-                        // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
-
                     }
+
+
 
                 }
             }
