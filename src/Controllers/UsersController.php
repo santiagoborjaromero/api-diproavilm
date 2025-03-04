@@ -13,11 +13,25 @@ class UsersController extends Controller{
         echo Controller::formatoSalida("ok",$rec);
     }
 
+    static public function getOne(){
+        Middleware::auditSecurity();
+        
+        $id = $_GET["id"];
+
+        $rs = new Model("user");
+        $rs->where("iduser","=",$id);
+        $rec = $rs->get();
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rec);
+    }
+
     static public function saveUser(){
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         
         $user = new Model("user");
         $user->where("username","=",$requestBody["username"]);
@@ -40,7 +54,9 @@ class UsersController extends Controller{
         
         Middleware::auditSecurity();
         
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+
         $id = $_GET["id"];
 
         $user = new Model("user");
@@ -64,6 +80,9 @@ class UsersController extends Controller{
 
     static public function deleteUser(){
         Middleware::auditSecurity();
+
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
         $user = new Model("user");
