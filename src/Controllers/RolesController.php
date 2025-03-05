@@ -26,7 +26,8 @@ class RolesController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $user = new Model("role");
         $user->where("name","=",$requestBody["name"]);

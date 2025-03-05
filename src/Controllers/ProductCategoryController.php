@@ -16,7 +16,8 @@ class ProductCategoryController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $menu = new Model("productcategory");
         $menu->where("description","=",$requestBody["n"]);
@@ -40,7 +41,8 @@ class ProductCategoryController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
 
@@ -67,7 +69,8 @@ class ProductCategoryController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $menu = new Model("productcategory");

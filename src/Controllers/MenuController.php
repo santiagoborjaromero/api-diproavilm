@@ -18,7 +18,8 @@ class menuController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $menu = new Model("menu");
         $menu->where("route","=",$requestBody["route"]);
@@ -42,7 +43,8 @@ class menuController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $menu = new Model("menu");

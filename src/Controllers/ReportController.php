@@ -8,7 +8,8 @@ class ReportController extends Controller{
     static public function analisisRotacion(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $rpt = new Report();
         $rs = $rpt->analisisRotacion($requestBody);
@@ -20,7 +21,8 @@ class ReportController extends Controller{
     static public function movimientoProductos(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $rpt = new Report();
         $rs = $rpt->movimientoProductos($requestBody);
@@ -32,7 +34,8 @@ class ReportController extends Controller{
     static public function movimientoGeneral(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $rpt = new Report();
         $rs = $rpt->movimientoGeneral($requestBody);

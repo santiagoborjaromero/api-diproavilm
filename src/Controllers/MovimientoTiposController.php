@@ -34,7 +34,8 @@ class MovimientoTiposController extends Controller{
         
         Middleware::auditSecurity();
         
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $user = new Model("movementtype");
         $user->where("name","=",$requestBody["name"]);
@@ -57,7 +58,8 @@ class MovimientoTiposController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $menu = new Model("movementtype");

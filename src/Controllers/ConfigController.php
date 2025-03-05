@@ -17,7 +17,8 @@ class ConfigController extends Controller{
         
         Middleware::auditSecurity(); //valida el token
 
-        $requestBody = Middleware::request(); //recoge los datos
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true); //recoge los datos
 
         $config = new Model("config");
         $config->where("variable","=",$requestBody["variable"]);
@@ -41,7 +42,8 @@ class ConfigController extends Controller{
         Middleware::auditSecurity();
         
 
-        $requestBody = Middleware::request(); //recoge los datos
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true); //recoge los datos
         $id= $_GET["id"];
         $config = new Model("config");
         $config->where("variable","=",$requestBody["variable"]);

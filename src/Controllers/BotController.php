@@ -18,7 +18,8 @@ class BotController extends Controller{
     static public function capasSave(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $menu = new Model("bot_spelling");
         $menu->where("wordfind","=",$requestBody["wordfind"]);
@@ -42,7 +43,8 @@ class BotController extends Controller{
     static public function capasUpdate(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $menu = new Model("bot_spelling");

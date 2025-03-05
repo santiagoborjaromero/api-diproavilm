@@ -18,7 +18,8 @@ class BotDiccionarioController extends Controller{
         
         Middleware::auditSecurity();
         
-        $requestBody = Middleware::request();  
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);  
 
         $dic = new Model("bot_dictionary");
         $dic->where("menu","=",$requestBody["menu"]);
@@ -42,7 +43,8 @@ class BotDiccionarioController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $dic = new Model("bot_dictionary");

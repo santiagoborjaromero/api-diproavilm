@@ -17,7 +17,8 @@ class MovimientosController extends Controller{
     static public function getByFilter(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $trans= new Transaction();
         $rs = $trans->getData($requestBody);
@@ -30,7 +31,8 @@ class MovimientosController extends Controller{
     static public function getOne(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
 
@@ -64,7 +66,8 @@ class MovimientosController extends Controller{
     static public function save(){
         $payload = Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $transaction = [];
         $transaction["iduser"] = $payload["iduser"];
@@ -109,7 +112,8 @@ class MovimientosController extends Controller{
     static public function update(){
         $payload = Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
 
@@ -159,7 +163,8 @@ class MovimientosController extends Controller{
     static public function anular(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
 
@@ -190,7 +195,8 @@ class MovimientosController extends Controller{
     static public function recuperar(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
 

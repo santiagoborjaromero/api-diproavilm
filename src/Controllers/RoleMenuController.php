@@ -16,7 +16,8 @@ class RoleMenuController extends Controller{
     static public function getByRol(){
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         if (!$requestBody){
             $requestBody = ["idrole" => $_GET["idrole"]];
@@ -35,7 +36,8 @@ class RoleMenuController extends Controller{
         Middleware::auditSecurity();
         
         $requestBody = $_POST;
-        if (!$requestBody) $requestBody = Middleware::request();
+        if (!$requestBody) $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $idrole = $_GET["id"];
 

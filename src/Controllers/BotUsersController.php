@@ -18,7 +18,8 @@ class BotUsersController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         
         $user = new Model("user");
         $user->where("username","=",$requestBody["username"]);
@@ -41,7 +42,8 @@ class BotUsersController extends Controller{
         
         Middleware::auditSecurity();
         
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
 
         $user = new Model("user");
@@ -124,7 +126,8 @@ class BotUsersController extends Controller{
 
     static function establecerclave(){
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $change = new Model("user");
         $change->where("username", "=", $requestBody["username"]) ;
