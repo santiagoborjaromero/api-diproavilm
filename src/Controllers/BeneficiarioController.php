@@ -15,6 +15,19 @@ class BeneficiarioController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    static public function getOne(){
+        Middleware::auditSecurity();
+
+        $id = $_GET["id"];
+        
+        $role = new Model("view_beneficiary");
+        $role->where("idbeneficiary","=",$id);
+        $rs = $role->get();
+
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+
     static public function getByType(){
         Middleware::auditSecurity();
 
@@ -33,7 +46,8 @@ class BeneficiarioController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $menu = new Model("beneficiary");
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
@@ -57,9 +71,10 @@ class BeneficiarioController extends Controller{
         
         Middleware::auditSecurity();
 
-        $requestBody = Middleware::request();
-        $id = $_GET["id"];
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
+        $id = $_GET["id"];
 
         $menu = new Model("beneficiary");
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
