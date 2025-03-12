@@ -112,7 +112,7 @@
     
     "GET|lstanalisisrotacion":  "ReportController::analisisRotacion()",
     "GET|lstmovproductos":  "ReportController::movimientoProductos()",
-    "GET|movgeneral":  "ReportController::movimientoGeneral()"
+    "POST|movgeneral":  "ReportController::movimientoGeneral()"
 
 
 }

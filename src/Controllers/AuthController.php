@@ -9,8 +9,10 @@ class AuthController extends Controller{
     static public function login(){
 
         $rqstBody = Middleware::request();
-        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
+        //TODO: Desencripto la informaicon que viene del data
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);  
+    
         $username = $requestBody["username"];
         $password = $requestBody["password"];
         $app = "";
@@ -81,7 +83,6 @@ class AuthController extends Controller{
 
                         $exp = new Model("password_history");
                         $exp->where("iduser", "=", $iduser);
-                        // $exp->where("password", "=", $password);
                         $recExp = $exp->get();
 
                         $found = false;

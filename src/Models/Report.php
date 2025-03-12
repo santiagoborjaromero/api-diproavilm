@@ -30,7 +30,11 @@ class Report{
     }
 
     public  function movimientoGeneral($requestBody){
+        $rqstBody = Middleware::request();
 
+        //TODO: Desencripto la informaicon que viene del data
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);  
+        
         $fecha_ini = $requestBody["fecha_ini"];
         $fecha_fin = $requestBody["fecha_fin"];
 
