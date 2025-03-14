@@ -97,6 +97,35 @@ class BeneficiarioController extends Controller{
 
 
 
+    static public function deleteBeneficiario(){
+        
+        Middleware::auditSecurity();
+
+        $id = $_GET["id"];
+
+        if ($id === null){
+            $status = "error";
+            $message = "El ID beneficiario se encuentra vacio";
+        }else{
+            $bene = new Model("beneficiary");
+            $bene->where("idbeneficiary","=",$id);
+            $rs = $bene->get();
+    
+            if ($rs){
+                $bene = new Model("beneficiary");
+                $bene->where("idbeneficiary", "=", $id);
+                $d = $bene->delete();
+                $status = "ok";
+                $message = "Beneficiario eliminado  con éxito";
+            } else{
+                $status = "error";
+                $message = "El beneficiario que desea eliminar no existe";
+            }
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
     static public function recuperaBeneficiario(){
         
         Middleware::auditSecurity();
