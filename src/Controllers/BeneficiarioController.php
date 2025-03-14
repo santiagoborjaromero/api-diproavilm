@@ -8,8 +8,8 @@ class BeneficiarioController extends Controller{
     static public function getAll(){
         Middleware::auditSecurity();
         
-        $role = new Model("view_beneficiary");
-        $rs = $role->get();
+        $bene = new Model("view_beneficiary");
+        $rs = $bene->get();
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
@@ -20,9 +20,9 @@ class BeneficiarioController extends Controller{
 
         $id = $_GET["id"];
         
-        $role = new Model("view_beneficiary");
-        $role->where("idbeneficiary","=",$id);
-        $rs = $role->get();
+        $bene = new Model("view_beneficiary");
+        $bene->where("idbeneficiary","=",$id);
+        $rs = $bene->get();
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
@@ -33,10 +33,10 @@ class BeneficiarioController extends Controller{
 
         $tipo = $_GET["tipo"];
         
-        $role = new Model("view_beneficiary");
-        $role->where("type", "=", $tipo);
-        $role->orderBy("nombre", "asc");
-        $rs = $role->get();
+        $bene = new Model("view_beneficiary");
+        $bene->where("type", "=", $tipo);
+        $bene->orderBy("nombre", "asc");
+        $rs = $bene->get();
 
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
@@ -49,16 +49,16 @@ class BeneficiarioController extends Controller{
         $rqstBody = Middleware::request();
         $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
-        $menu = new Model("beneficiary");
-        $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
-        $rs = $menu->get(true);
+        $bene = new Model("beneficiary");
+        $bene->where("identificationnumber","=",$requestBody["identificationnumber"]);
+        $rs = $bene->get(true);
 
         if ($rs){
             $status = "error";
             $message = "El beneficiario ya existe";
         } else{
-            $user = new Model("beneficiary");
-            $d = $user->insertRecord($requestBody);
+            $bene = new Model("beneficiary");
+            $d = $bene->insertRecord($requestBody);
             $status = "ok";
             $message = $d;
         }
@@ -76,18 +76,14 @@ class BeneficiarioController extends Controller{
 
         $id = $_GET["id"];
 
-        
-        $menu = new Model("beneficiary");
-        $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
-        $rs = $menu->get(true);
-
-        $status = "error";
-        $message = $rs;
+        $bene = new Model("beneficiary");
+        $bene->where("identificationnumber","=",$requestBody["identificationnumber"]);
+        $rs = $bene->get(true);
 
         if ($rs){
-            $user = new Model("beneficiary");
-            $user->where("idbeneficiary", "=", $id);
-            $d = $user->updateRecord($requestBody);
+            $bene = new Model("beneficiary");
+            $bene->where("idbeneficiary", "=", $id);
+            $d = $bene->updateRecord($requestBody);
 
             $status = "ok";
             $message = $id;
@@ -101,29 +97,36 @@ class BeneficiarioController extends Controller{
 
 
 
-    static public function deleteBeneficiario(){
+    static public function recuperaBeneficiario(){
         
         Middleware::auditSecurity();
 
         $id = $_GET["id"];
 
-        $menu = new Model("beneficiary");
-        $menu->where("idbeneficiary","=",$id);
-        $rs = $menu->get();
-
-        if ($rs){
-            $user = new Model("beneficiary");
-            $user->where("idbeneficiary", "=", $id);
-            $d = $user->delete();
-
-            $status = "ok";
-            $message = $id;
-        } else{
+        if ($id === null){
             $status = "error";
-            $message = "El beneficiario que desea eliminar no existe";
+            $message = "El ID beneficiario se encuentra vacio";
+        }else{
+            $bene = new Model("beneficiary");
+            $bene->where("idbeneficiary","=",$id);
+            $rs = $bene->get();
+    
+            if ($rs){
+                $bene = new Model("beneficiary");
+                $bene->set("deleted_at", NULL);
+                $bene->where("idbeneficiary", "=", $id);
+                $d = $bene->update();
+                $status = "ok";
+                $message = "Beneficiario recuperado con éxito";
+            } else{
+                $status = "error";
+                $message = "El beneficiario que desea eliminar no existe";
+            }
         }
+
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
+
 
 }

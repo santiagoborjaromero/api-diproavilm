@@ -40,6 +40,7 @@
     "POST|saveBene":  "BeneficiarioController::saveBeneficiario()",
     "PUT|saveBene":  "BeneficiarioController::updateBeneficiario()",
     "DELETE|deleteBene":  "BeneficiarioController::deleteBeneficiario()",
+    "PUT|recuperaBene":  "BeneficiarioController::recuperaBeneficiario()",
 
     "GET|pais":  "PaisController::getAll()",
     "GET|provincia":  "ProvinciaController::getAll()",
