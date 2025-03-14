@@ -23,7 +23,7 @@ class ProductCategoryController extends Controller{
         $menu->where("description","=",$requestBody["n"]);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "La categoria del producto ya existe";
         } else{
@@ -50,7 +50,7 @@ class ProductCategoryController extends Controller{
         $menu->where("idproductcategory","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productcategory");
             $user->where("idproductcategory", "=", $id);
             $d = $user->updateRecord($requestBody);
@@ -77,7 +77,7 @@ class ProductCategoryController extends Controller{
         $menu->where("idproductcategory","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productcategory");
             $user->set("deleted_at", NULL);
             $user->where("idproductcategory", "=", $id);
@@ -105,7 +105,7 @@ class ProductCategoryController extends Controller{
         $menu->where("idproductcategory","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productcategory");
             $user->where("idproductcategory", "=", $id);
             $d = $user->delete();

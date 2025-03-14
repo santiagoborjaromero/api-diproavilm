@@ -25,7 +25,7 @@ class BotDiccionarioController extends Controller{
         $dic->where("menu","=",$requestBody["menu"]);
         $rs = $dic->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "El diccionario ya existe, no se puede duplicar";
         } else{
@@ -51,7 +51,7 @@ class BotDiccionarioController extends Controller{
         $dic->where("idbotdic","=",$id);
         $rs = $dic->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $dic = new Model("bot_dictionary");
             $dic->where("idbotdic", "=", $id);
             $d = $dic->updateRecord($requestBody);
@@ -77,7 +77,7 @@ class BotDiccionarioController extends Controller{
         $dic->where("idbotdic","=",$id);
         $rs = $dic->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $dic = new Model("bot_dictionary");
             $dic->where("idbotdic", "=", $id);
             $d = $dic->delete();
@@ -102,7 +102,7 @@ class BotDiccionarioController extends Controller{
         $dic->where("idbotdic","=",$id);
         $rs = $dic->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $dic = new Model("bot_dictionary");
             $dic->set("deleted_at", NULL);
             $dic->where("idbotdic", "=", $id);

@@ -25,7 +25,7 @@ class menuController extends Controller{
         $menu->where("route","=",$requestBody["route"]);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "La ruta del menu ya existe, no se puede duplicar";
         } else{
@@ -51,7 +51,7 @@ class menuController extends Controller{
         $menu->where("idmenu","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("menu");
             $user->where("idmenu", "=", $id);
             $d = $user->updateRecord($requestBody);
@@ -77,7 +77,7 @@ class menuController extends Controller{
         $menu->where("idmenu","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("menu");
             $user->where("idmenu", "=", $id);
             $d = $user->delete();
@@ -102,7 +102,7 @@ class menuController extends Controller{
         $menu->where("idmenu","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("menu");
             $user->set("deleted_at", NULL);
             $user->where("idmenu", "=", $id);

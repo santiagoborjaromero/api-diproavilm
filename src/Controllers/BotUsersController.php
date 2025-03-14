@@ -25,7 +25,7 @@ class BotUsersController extends Controller{
         $user->where("username","=",$requestBody["username"]);
         $rs = $user->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "Usuario ya existe, no puede duplicar";
         } else{
@@ -50,7 +50,7 @@ class BotUsersController extends Controller{
         $user->where("iduser","=",$id);
         $rs = $user->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("user");
             $user->where("iduser","=",$id);
             $d = $user->updateRecord($requestBody);

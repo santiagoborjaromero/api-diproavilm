@@ -26,7 +26,7 @@ class ProductosController extends Controller{
         $menu->where("productcode","=",$requestBody["productcode"]);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "El código del producto ya existe";
         } else{
@@ -34,7 +34,7 @@ class ProductosController extends Controller{
             $menu->where("barcode","=",$requestBody["barcode"]);
             $rs = $menu->get(true);
 
-            if ($rs != NULL){
+            if ($rs){
                 $status = "error";
                 $message = "El código de barras del producto ya existe";
             } else{
@@ -62,7 +62,7 @@ class ProductosController extends Controller{
         $menu->where("idproduct","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("product");
             $user->where("idproduct", "=", $id);
             $d = $user->updateRecord($requestBody);
@@ -108,7 +108,7 @@ class ProductosController extends Controller{
         $menu->where("idproduct","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("product");
             $user->set("deleted_at", NULL);
             $user->where("idproduct", "=", $id);
@@ -136,7 +136,7 @@ class ProductosController extends Controller{
         $menu->where("idproduct","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("product");
             $user->where("idproduct", "=", $id);
             $d = $user->delete();

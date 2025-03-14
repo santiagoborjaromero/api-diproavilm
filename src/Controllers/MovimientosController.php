@@ -43,7 +43,7 @@ class MovimientosController extends Controller{
         $data = array();
         $data = $rs[0];
         
-        if ($rs != NULL){
+        if ($rs){
             
             $menu = new Model("view_movements");
             $menu->where("idtransaction","=",$id);
@@ -172,7 +172,7 @@ class MovimientosController extends Controller{
         $menu->where("idtransaction","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $data = new Model("transaction");
             $data->set("status",0);
             $data->where("idtransaction", "=", $id);

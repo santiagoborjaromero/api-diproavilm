@@ -33,7 +33,7 @@ class RolesController extends Controller{
         $user->where("name","=",$requestBody["name"]);
         $rs = $user->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "Rol ya existe, no se puede duplicar";
         } else{
@@ -74,7 +74,7 @@ class RolesController extends Controller{
             $user->where("idrole","=",$id);
             $rs = $user->get();
     
-            if ($rs != NULL){
+            if ($rs){
                 $user = new Model("role");
                 $user->where("idrole","=",$id);
                 $d = $user->updateRecord($requestBody);
@@ -118,7 +118,7 @@ class RolesController extends Controller{
         $menu->where("idrole","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("role");
             $user->set("deleted_at", NULL);
             $user->where("idrole", "=", $id);

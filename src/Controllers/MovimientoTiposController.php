@@ -41,7 +41,7 @@ class MovimientoTiposController extends Controller{
         $user->where("name","=",$requestBody["name"]);
         $rs = $user->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "Tipo de movimiento ya existe, no puede duplicar";
         } else{
@@ -66,7 +66,7 @@ class MovimientoTiposController extends Controller{
         $menu->where("idmovementtype","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("movementtype");
             $user->where("idmovementtype", "=", $id);
             $d = $user->updateRecord($requestBody);

@@ -23,7 +23,7 @@ class ProductLineController extends Controller{
         $menu->where("description","=",$requestBody["n"]);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "La linea del producto ya existe";
         } else{
@@ -50,7 +50,7 @@ class ProductLineController extends Controller{
         $menu->where("idproductline","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productline");
             $user->where("idproductline", "=", $id);
             $d = $user->updateRecord($requestBody);
@@ -77,7 +77,7 @@ class ProductLineController extends Controller{
         $menu->where("idproductline","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productline");
             $user->set("deleted_at", NULL);
             $user->where("idproductline", "=", $id);
@@ -105,7 +105,7 @@ class ProductLineController extends Controller{
         $menu->where("idproductline","=",$id);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("productline");
             $user->where("idproductline", "=", $id);
             $d = $user->delete();

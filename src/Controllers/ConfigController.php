@@ -24,7 +24,7 @@ class ConfigController extends Controller{
         $config->where("variable","=",$requestBody["variable"]);
         $rs = $config->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "La configuracion ya existe, no se puede duplicar";
         } else{

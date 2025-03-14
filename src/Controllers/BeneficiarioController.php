@@ -53,7 +53,7 @@ class BeneficiarioController extends Controller{
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "El beneficiario ya existe";
         } else{
@@ -76,11 +76,15 @@ class BeneficiarioController extends Controller{
 
         $id = $_GET["id"];
 
+        
         $menu = new Model("beneficiary");
         $menu->where("identificationnumber","=",$requestBody["identificationnumber"]);
         $rs = $menu->get(true);
 
-        if ($rs != NULL){
+        $status = "error";
+        $message = $rs;
+
+        if ($rs){
             $user = new Model("beneficiary");
             $user->where("idbeneficiary", "=", $id);
             $d = $user->updateRecord($requestBody);
@@ -89,7 +93,7 @@ class BeneficiarioController extends Controller{
             $message = $id;
         } else{
             $status = "error";
-            $message = "La ruta del menu que desea modificar no existe";
+            $message = "El beneficiario que desea modificar no existe";
         }
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
@@ -107,7 +111,7 @@ class BeneficiarioController extends Controller{
         $menu->where("idbeneficiary","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("beneficiary");
             $user->where("idbeneficiary", "=", $id);
             $d = $user->delete();

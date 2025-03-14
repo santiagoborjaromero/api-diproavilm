@@ -26,7 +26,7 @@ class BotController extends Controller{
         $menu->where("menurun","=",$requestBody["menurun"]);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $status = "error";
             $message = "La capa ya existe, no se puede duplicar";
         } else{
@@ -75,7 +75,7 @@ class BotController extends Controller{
         $menu->where("idbotspelling","=",$id);
         $rs = $menu->get();
 
-        if ($rs != NULL){
+        if ($rs){
             $user = new Model("bot_spelling");
             $user->where("idbotspelling", "=", $id);
             $d = $user->delete();
