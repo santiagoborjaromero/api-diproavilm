@@ -9,6 +9,7 @@
 
     "POST|login":  "AuthController::login()",
     "POST|logout":  "AuthController::logout()",
+    "POST|codigoauth":  "AuthController::codigoAuth()",
 
     "GET|users" : "UsersController::getAll()",
     "GET|user" : "UsersController::getOne()",

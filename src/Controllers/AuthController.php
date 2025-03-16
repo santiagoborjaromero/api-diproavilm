@@ -178,15 +178,19 @@ class AuthController extends Controller{
                                 $token = AuthController::setToken( $message[0] );
                                 $message[0]["token"] = $token;
                             }
+
+                            $codigo = AuthController::generarCodigoUnico();
+                            AuthController::sendNotification($username, $codigo);
     
                             $rs_up = new Model("user");
                             $rs_up->set("token", $token);
                             $rs_up->set("operations", $operations);
                             $rs_up->set("lastlogged", date('Y-m-d H:i:s'));
+                            $rs_up->set("verification_code", $codigo );
+                            $rs_up->set("verification_expire", date('Y-m-d H:i:s', (strtotime ("+5 Minute"))));
                             $rs_up->where("iduser", "=", $iduser);
                             $mensaje = $rs_up->update(false, false);
-                            
-    
+
                             $params = [
                                 "iduser" => $iduser,
                                 "idrole" => $idrole ?? $idroleAux,
@@ -196,13 +200,6 @@ class AuthController extends Controller{
                             ];
                             $audit = new Audit();
                             $audit->saveAudit(json_encode($params), false, false);
-    
-    
-                            // TODO: Antes SQL UPDATE
-                            // $sql = "UPDATE user 
-                            //         SET token = :token, lastlogged = :lastlogged
-                            //         WHERE iduser= :iduser";
-                            // $recRol = $conn->Execute($sql, ["iduser"=>$iduser,"token"=>$token, "lastlogged" => date('Y-m-d H:i:s')]);
     
                         }
                     }
@@ -215,6 +212,66 @@ class AuthController extends Controller{
         
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
+    }
+
+    static public function codigoAuth(){
+        Middleware::auditSecurity();
+
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true); 
+
+        $codigo = $requestBody["codigo"];
+
+        $user = new Model("user");
+        $user->where("verification_code", "=", $codigo);
+        $rs = $user->get();
+
+        if ($rs){
+            foreach ($rs as $key => $value) {
+                $expire = $value["verification_expire"];
+            }
+
+            if (date($expire) >= date("Y-m-d H:i:s")){
+                $message = "Verificacion exitosa";
+                $status = "ok";
+
+                $user = new Model("user");
+                $user->set("verification_code", "");
+                $user->set("verification_expire", NULL);
+                $user->where("verification_code", "=", $codigo);
+                $rs = $user->update();
+            }else{
+                $message = "Codigo de verificacion ha expirado";
+                $status = "error";
+            }
+        }else{
+            $message = "Código erróneo, verifique y vuelva a intentarlo";
+            $status = "error";
+        }
+
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+    
+    static function generarCodigoUnico() {
+        do {
+            // TODO:Generar número aleatorio de 6 dígitos
+            $codigo = str_pad(random_int(111111,999999),6,"0",STR_PAD_LEFT);
+    
+            // TODO:Preparar la consulta
+            $rs = new Model("user");
+            $rs->where("verification_code", "=", $codigo);
+            $rec = $rs->get();
+            foreach ($rec as $key => $value) {
+                $existe = $value["verification_code"];
+            }
+        } while ($existe > 0);
+    
+        return $codigo;
+    }
+
+    static public function sendNotification($username, $code){
+        shell_exec("curl -d $code ntfy.sh/diproavilm_$username");
     }
     
     static public function logout(){
