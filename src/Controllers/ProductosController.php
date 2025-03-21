@@ -8,9 +8,25 @@ class ProductosController extends Controller{
 
     static public function getAll(){
         Middleware::auditSecurity();
-        $role = new Model("view_products");
-        $role->orderBy("name","asc");
-        $rs = $role->get();
+        $prod = new Model("view_products");
+        $prod->orderBy("name","asc");
+        $rs = $prod->get();
+        http_response_code(200);
+        echo Controller::formatoSalida("ok",$rs);
+    }
+
+    static public function getOne(){
+        Middleware::auditSecurity();
+
+        // $rqstBody = Middleware::request();
+        // $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+
+        $id = $_GET["id"];
+
+        $prod = new Model("product");
+        $prod->where("idproduct","=",$id);
+        $rs = $prod->get(true);
+
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rs);
     }

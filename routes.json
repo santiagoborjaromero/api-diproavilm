@@ -69,6 +69,7 @@
     "GET|presentacion":  "PresentacionController::getAll()",
 
     "GET|productos":  "ProductosController::getAll()",
+    "GET|producto":  "ProductosController::getOne()",
     "POST|saveProducto":  "ProductosController::save()",
     "PUT|saveProducto":  "ProductosController::update()",
     "POST|saveStockMinMax":  "ProductosController::saveStockMinMax()",
