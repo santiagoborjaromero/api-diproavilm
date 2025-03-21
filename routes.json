@@ -79,7 +79,7 @@
 
     "GET|transacciones":  "MovimientosController::getAll()",
     "GET|transaccionOne":  "MovimientosController::getOne()",
-    "GET|transaccionesFiltro":  "MovimientosController::getByFilter()",
+    "POST|transaccionesFiltro":  "MovimientosController::getByFilter()",
     "POST|saveTransaction":  "MovimientosController::save()",
     "PUT|saveTransaction":  "MovimientosController::update()",
     "POST|anularTransaction":  "MovimientosController::anular()",
