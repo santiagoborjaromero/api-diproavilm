@@ -3,8 +3,8 @@
 //TODO: Clase base de todo el sistema
 class Controller extends ConnController {
 
-    static $key     = "7PToGGTJ71knRd86WF39wfj619qewnbZ";
-    static $iv      = "q24nxK63oYShfXwU";
+    static $key     = "7PToGGTJ71knRd86WF39wfj619qewnbZ"; //Clave de 32 bits
+    static $iv      = "q24nxK63oYShfXwU"; //Vector de Inicializacion de 16 bits
     static $cifrado = "AES-256-CBC";
 
     //TODO: Determinar una estructura comun para todas las respuestas
