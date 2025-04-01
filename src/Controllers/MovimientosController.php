@@ -31,32 +31,31 @@ class MovimientosController extends Controller{
     static public function getOne(){
         Middleware::auditSecurity();
 
-        $rqstBody = Middleware::request();
-        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+        // $rqstBody = Middleware::request();
+        // $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $id = $_GET["id"];
-
-        $menu = new Model("view_transaction");
-        $menu->where("idtransaction","=",$id);
-        $rs = $menu->get();
-
-        $data = array();
-        $data = $rs[0];
         
-        if ($rs){
+        $comp = new Model("view_transaction");
+        $comp->where("idtransaction","=",$id);
+        $rs = $comp->get();
+
+        // if ($rs){
+            $data = array();
+            $data = $rs[0];
             
-            $menu = new Model("view_movements");
-            $menu->where("idtransaction","=",$id);
-            $rsmov = $menu->get();
+            $comp = new Model("view_movements");
+            $comp->where("idtransaction","=",$id);
+            $rsmov = $comp->get();
 
             $data["items"] = $rsmov;
 
             $status = "ok";
             $message = $data;
-        } else{
-            $status = "error";
-            $message = "El comprobamte a anular no existe";
-        }
+        // } else{
+        //     $status = "error";
+        //     $message = "El comprobante no existe";
+        // }
 
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
@@ -182,7 +181,7 @@ class MovimientosController extends Controller{
             $kardx->recalcularSaldos();
 
             $status = "ok";
-            $message = $id;
+            $message = "Comprobante $id anulado con exito";
         } else{
             $status = "error";
             $message = "El comprobamte a anular no existe";
@@ -214,7 +213,7 @@ class MovimientosController extends Controller{
             $kardx->recalcularSaldos();
 
             $status = "ok";
-            $message = $id;
+            $message ="Comprobante $id recuperado con exito";
         } else{
             $status = "error";
             $message = "El comprobamte a recuperar no existe";

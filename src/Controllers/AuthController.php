@@ -252,6 +252,35 @@ class AuthController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida($status,$message);
     }
+
+    static function solicitarCodigoAuth(){
+        Middleware::auditSecurity();
+
+        $data = Middleware::getDataToken();
+        $iduser = $data["iduser"];
+
+        $rs = new Model("user");
+        $rs->where("iduser","=",$iduser);
+        $rec = $rs->get();
+
+        foreach ($rec as $key => $value) {
+            $username = $value["username"];
+        }
+
+        $codigo = AuthController::generarCodigoUnico();
+        AuthController::sendNotification($username, $codigo);
+
+        $rs_up = new Model("user");
+        $rs_up->set("verification_code", $codigo );
+        $rs_up->set("verification_expire", date('Y-m-d H:i:s', (strtotime ("+5 Minute"))));
+        $rs_up->where("iduser", "=", $iduser);
+        $update = $rs_up->update(false, false);
+
+        $status = "ok";
+        $message = "Codigo generado exitosamente";
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
     
     static function generarCodigoUnico() {
         do {

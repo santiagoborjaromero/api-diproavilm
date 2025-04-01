@@ -10,6 +10,7 @@
     "POST|login":  "AuthController::login()",
     "POST|logout":  "AuthController::logout()",
     "POST|codigoauth":  "AuthController::codigoAuth()",
+    "POST|solicitarcodigoauth":  "AuthController::solicitarCodigoAuth()",
 
     "GET|users" : "UsersController::getAll()",
     "GET|user" : "UsersController::getOne()",
