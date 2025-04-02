@@ -28,6 +28,7 @@ class RolesController extends Controller{
 
         $rqstBody = Middleware::request();
         $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+        
 
         $user = new Model("role");
         $user->where("name","=",$requestBody["name"]);
@@ -49,9 +50,14 @@ class RolesController extends Controller{
     static public function updateRole(){
         
         Middleware::auditSecurity();
-        
-        $requestBody = json_decode(file_get_contents('php://input'), true);
+
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
         $id = $_GET["id"];
+
+
+        $status = "ok";
+        $message = $requestBody;
 
         if (isset($id) && $id<=0){
             $status = "error";
@@ -59,17 +65,7 @@ class RolesController extends Controller{
         }
 
         if ($status!="error"){
-
-            if (!$requestBody){
-                $ddata  = fopen("php://input", "r");
-                $data = fread($ddata, 1024);
-                $ndata = explode('&', $data);
-                foreach ($ndata as $key) {
-                    $a = explode("=", $key);
-                    $requestBody[$a[0]] = $a[1];
-                }
-            }
-    
+   
             $user = new Model("role");
             $user->where("idrole","=",$id);
             $rs = $user->get();
