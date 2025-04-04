@@ -8,7 +8,9 @@ class AuditController extends Controller{
     static public function getAll(){
         Middleware::auditSecurity();
 
-        $requestBody = $_GET;
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
+        // $requestBody = $_GET;
 
         $au = new Audit();
         $rs = $au->getData($requestBody);
@@ -20,7 +22,9 @@ class AuditController extends Controller{
     static public function getAuditBot(){
         Middleware::auditSecurity();
 
-        $requestBody = $_GET;
+        // $requestBody = $_GET;
+        $rqstBody = Middleware::request();
+        $requestBody = json_decode(Controller::decode($rqstBody["data"]),true);
 
         $au = new Audit();
         $rs = $au->getDataBot($requestBody);
