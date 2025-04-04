@@ -28,6 +28,33 @@ class BeneficiarioController extends Controller{
         echo Controller::formatoSalida("ok",$rs);
     }
 
+    
+    static public function verificaExistenciaCedula(){
+        Middleware::auditSecurity();
+        
+        $cedula = $_GET["id"];
+
+        if ($cedula!=""){
+            $rs = new Model("beneficiary");
+            $rs->where("identificationnumber","=",$cedula);
+            $rec = $rs->get(true);
+    
+            if ($rec){
+                $status = "error";
+                $message = "Identificación ya existe";
+            } else {
+                $status = "ok";
+                $message = "Identificación verificada";
+            }
+        } else{
+            $status = "ok";
+            $message = "";
+        }
+    
+        http_response_code(200);
+        echo Controller::formatoSalida($status,$message);
+    }
+
     static public function getByType(){
         Middleware::auditSecurity();
 

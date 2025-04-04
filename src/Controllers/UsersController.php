@@ -12,7 +12,7 @@ class UsersController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rec);
     }
-
+    
     static public function getOne(){
         Middleware::auditSecurity();
         
@@ -25,6 +25,7 @@ class UsersController extends Controller{
         http_response_code(200);
         echo Controller::formatoSalida("ok",$rec);
     }
+
 
     static public function saveUser(){
         

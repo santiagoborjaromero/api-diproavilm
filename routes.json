@@ -43,6 +43,7 @@
     "PUT|saveBene":  "BeneficiarioController::updateBeneficiario()",
     "DELETE|deleteBene":  "BeneficiarioController::deleteBeneficiario()",
     "PUT|recuperaBene":  "BeneficiarioController::recuperaBeneficiario()",
+    "GET|videntidad":  "BeneficiarioController::verificaExistenciaCedula()",
 
     "GET|pais":  "PaisController::getAll()",
     "GET|provincia":  "ProvinciaController::getAll()",
@@ -103,7 +104,6 @@
     "GET|botdiccionario":  "BotController::getDictionary()",
     "GET|botaudit":  "AuditController::getAuditBot()",
 
-
     "GET|botdics":  "BotDiccionarioController::getAll()",
     "POST|botdicSave":  "BotDiccionarioController::save()",
     "PUT|botdicSave":  "BotDiccionarioController::update()",
@@ -118,5 +118,5 @@
     "GET|lstmovproductos":  "ReportController::movimientoProductos()",
     "POST|movgeneral":  "ReportController::movimientoGeneral()"
 
-
+    
 }
